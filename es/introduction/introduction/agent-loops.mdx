@@ -1,0 +1,134 @@
+---
+title: "Cómo salir de un bucle de errores"
+---
+
+A veces, Rork no podrá corregir el error o empezará a alucinar. En este documento veremos cómo resolverlo
+
+<Tip>
+  **Retrocede antes de avanzar.** La forma más rápida de salir de un bucle es abandonarlo. **Deshacer** aparece debajo de la última respuesta y **Revertir** debajo de todas las anteriores, así que puedes volver a la última versión que funcionaba y pedir los cambios de nuevo en pasos más pequeños. Retroceder no consume créditos. Consulta [Deshacer un cambio y volver a una versión anterior](/es/features/undo-and-history).
+</Tip>
+
+<div id="when-the-model-hallucinates">
+  ## Cuando el modelo alucina
+</div>
+
+En ocasiones, el modelo puede generar respuestas incorrectas, incompletas o que no reflejan el estado real de tu project. A esto se le conoce como **alucinación**.
+
+Las alucinaciones suelen manifestarse de estas formas:
+
+* Hacer referencia a archivos, APIs o funciones que no existen
+* Afirmar que algo se «arregló» cuando en realidad nada cambió
+* Repetir soluciones que no resuelven el problema
+* Dar instrucciones con total seguridad, pero incorrectas
+
+Este es un comportamiento esperado en los sistemas de IA y no significa que tu project esté dañado.
+
+<div id="how-to-resolve-hallucinations">
+  ## Cómo resolver las alucinaciones
+</div>
+
+<div id="1-ground-the-model-with-facts">
+  ### 1. Fundamenta el modelo con datos concretos
+</div>
+
+Proporciona **entradas reales y concretas**:
+
+* Registros de errores
+* Contenido de los archivos
+* Salida del build
+* Mensajes de error exactos
+
+Evita prompts vagos como:
+
+> «Está roto, arréglalo».
+
+En su lugar, usa:
+
+> «Aquí tienes la salida completa del error del build. Corrige únicamente lo que está causando este error».
+
+<div id="2-constrain-the-scope">
+  ### 2. Limita el alcance
+</div>
+
+Indícale al modelo **exactamente qué puede y qué no puede modificar**.
+
+Ejemplos:
+
+* «Modifica únicamente `Info.plist`».
+* «No agregues bibliotecas nuevas».
+* «No des por hecho que existen archivos que no existen».
+
+Unas restricciones claras reducen notablemente las alucinaciones.
+
+<div id="3-force-verification">
+  ### 3. Exige verificación
+</div>
+
+Si el modelo afirma que algo está corregido, exígele una confirmación.
+
+Usa prompts como:
+
+* «Muéstrame exactamente qué cambió».
+* «¿Qué archivo se modificó y por qué?».
+* «Cita la línea que corrige el error».
+
+Si no puede señalar un cambio real, da por hecho que la corrección no es válida.
+
+<div id="4-reset-the-context">
+  ### 4. Reinicia el contexto
+</div>
+
+Si las alucinaciones persisten:
+
+* **Revierte** a la última respuesta que funcionó, para que los intentos fallidos queden fuera de la conversación
+* Empieza un **mensaje nuevo**
+* Pega solo los **archivos o registros relevantes**
+* Replantea el objetivo con claridad
+
+Las conversaciones largas aumentan las probabilidades de que el modelo se desvíe, y cada intento fallido sigue en el contexto hasta que lo reviertes.
+
+<div id="5-switch-models">
+  ### 5. Cambia de modelo
+</div>
+
+Cada modelo razona de forma distinta. Si uno se queda en bucle o alucina, abre el selector de modelos debajo del cuadro de prompt y elige otro; después:
+
+* Vuelve a pegar las mismas entradas fundamentadas
+* Vuelve a intentarlo con restricciones más estrictas
+
+Consulta [Design mode, modo Plan y construcción](/es/features/agent-modes).
+
+<div id="when-to-stop-iterating">
+  ## Cuándo dejar de iterar
+</div>
+
+Deja de enviarle prompts al modelo si:
+
+* Repite la misma solución una y otra vez
+* Hace referencia a archivos que no existen
+* Se contradice de una respuesta a otra
+
+Llegado ese punto, pasa a:
+
+* Inspección manual
+* Depuración empezando por los registros
+* Herramientas nativas (Xcode para apps de iPhone, Android Studio para apps de Android)
+
+<div id="best-practices-to-avoid-hallucinations">
+  ## Buenas prácticas para evitar alucinaciones
+</div>
+
+* Pega siempre **registros reales**
+* Mantén los prompts breves y específicos
+* Verifica cada corrección que la IA diga haber aplicado
+* Trata la respuesta de la IA como una **sugerencia**, no como una verdad absoluta
+
+<div id="key-principle">
+  ## Principio clave
+</div>
+
+> El modelo rinde mejor cuando reacciona a **entradas reales**, no cuando adivina el contexto que falta.
+
+Las alucinaciones son una señal de que el modelo necesita **más restricciones o un mejor anclaje**, no de que tu app esté fallando.
+
+<CtaBanner />

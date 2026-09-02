@@ -1,0 +1,200 @@
+---
+title: "Revisor de App Store con IA"
+---
+
+Rork analiza tu build de iOS conforme a las App Store Review Guidelines antes de que lo haga Apple, e informa de cada riesgo de rechazo con su número de directriz, la evidencia que lo respalda y una corrección sugerida.
+
+<div>
+  <video aria-label="Abrir Más, App Store, App Review en un proyecto de Rork y ejecutar el Revisor de App Store con IA hasta que aparezca el informe" />
+</div>
+
+<p>El flujo completo: abre Más → App Store → App Review, pulsa Ejecutar y lee el informe.</p>
+
+La revisión de Apple tarda días, y un rechazo supone empezar otra vuelta al proceso. El **Revisor de App Store con IA** analiza el build que estás a punto de enviar y te dice qué señalaría probablemente un revisor, antes de que lo envíes.
+
+Comprueba cinco áreas a la vez, las mismas cinco secciones que usan las App Store Review Guidelines:
+
+<div>
+  <div>
+    <span>Seguridad</span>
+    <span>Directriz 1.x</span>
+  </div>
+
+  <div>
+    <span>Rendimiento</span>
+    <span>Directriz 2.x</span>
+  </div>
+
+  <div>
+    <span>Negocio</span>
+    <span>Directriz 3.x</span>
+  </div>
+
+  <div>
+    <span>Diseño</span>
+    <span>Directriz 4.x</span>
+  </div>
+
+  <div>
+    <span>Legal</span>
+    <span>Directriz 5.x</span>
+  </div>
+</div>
+
+<Info>
+  El revisor tiene carácter orientativo. Nunca bloquea un envío ni garantiza una aprobación. Apple toma la decisión final, y su propia revisión sigue tardando días.
+</Info>
+
+<div id="what-you-need">
+  ## Qué necesitas
+</div>
+
+* Una suscripción de pago a Rork de cualquier nivel. Los créditos no sustituyen a la suscripción en este caso.
+* Acceso de editor al proyecto. Quienes tengan acceso de solo lectura pueden abrir el panel y consultar informes anteriores, pero no iniciar una revisión.
+* Una app de iOS en el proyecto: una app en Swift o un proyecto de Expo más antiguo. Las apps de Android y web no se revisan.
+
+<div id="run-a-review">
+  ## Ejecutar una revisión
+</div>
+
+<Steps>
+  <Step title="Abre Más y luego App Store">
+    En tu proyecto, abre **Más → App Store** y quédate en la pestaña **App Review**. Es la primera pestaña. El revisor no se encuentra en el menú de publicación.
+  </Step>
+
+  <Step title="Comprueba el build en el encabezado del panel">
+    Debajo del título verás el nombre de la app y el build que se está revisando, por ejemplo `Current build src_62bb`. Antes de la primera ejecución, el panel enumera las cinco áreas que analiza.
+
+    <Frame>
+      <img alt="Panel del AI App Store Reviewer que muestra Check this build for App Review risks con Safety, Performance, Business, Design y Legal" />
+    </Frame>
+  </Step>
+
+  <Step title="Pulsa Run">
+    Las cinco áreas se comprueban a la vez. **Run** pasa a ser **Stop**, que cancela la revisión. Puedes salir de la pestaña y volver mientras se ejecuta.
+
+    <Frame>
+      <img alt="Revisión en curso con un indicador de carga junto a Safety, Performance, Business, Design y Legal" />
+    </Frame>
+  </Step>
+
+  <Step title="Espera el informe">
+    Cuando termina la ejecución, el encabezado pasa a mostrar el build analizado, por ejemplo `Reviewed build src_62bb`, y cuánto tiempo hace que finalizó la revisión.
+
+    <Frame>
+      <img alt="Informe que muestra que no se encontraron riesgos de rechazo, cero rechazos, cero advertencias y cinco áreas aprobadas" />
+    </Frame>
+  </Step>
+</Steps>
+
+<div id="read-the-report">
+  ## Lee el informe
+</div>
+
+El informe tiene una fila por área de revisión, no una fila por regla. Cada fila termina como **Aprobado**, una advertencia, un rechazo o **Corregido**.
+
+Encima de las filas aparecen los recuentos y una línea de estado:
+
+| Línea de estado                          | Qué significa                                              |
+| ---------------------------------------- | ---------------------------------------------------------- |
+| **Riesgos de rechazo encontrados**       | Al menos un hallazgo podría provocar el rechazo de la app. |
+| **Advertencias por revisar**             | No hay riesgo de rechazo, pero conviene revisar algo.      |
+| **No se encontraron riesgos de rechazo** | No se marcó nada.                                          |
+
+Pulsa una fila para abrirla. Dentro encontrarás el número de la directriz, qué se detectó, la evidencia que lo respalda, a veces el archivo en el que aparece y la corrección sugerida.
+
+Una vez guardado el informe, el panel también muestra un resultado estimado: **Probable aprobación**, **Probable rechazo** o **Resultado incierto**. Junto a él, el panel indica: «Apple toma la decisión final».
+
+<Warning>
+  Toma la estimación como una predicción sobre tu build, no como un veredicto. Un informe limpio no garantiza la aprobación, y un riesgo de rechazo tampoco te impide enviar la app.
+</Warning>
+
+<div id="fix-what-the-review-found">
+  ## Corrige lo que encontró la revisión
+</div>
+
+Los hallazgos no se corrigen solos. Pídele a Rork en el chat que los corrija, uno a uno, e indica la directriz:
+
+> El informe de App Review señaló la directriz 5.1.1: la app no tiene forma de eliminar una cuenta. Agrega un flujo de eliminación de cuenta dentro de la app.
+
+También puedes pedirle a Rork en el chat que ejecute la revisión por ti. Una revisión iniciada desde el chat te pregunta qué hacer cuando encuentra algo: **Cancel**, o bien **Fix warnings** cuando hay advertencias, o **Done** cuando no hay ninguna. **Fix warnings** permite que Rork edite la app y la vuelva a comprobar en el mismo turno. Mientras esa revisión espera tu respuesta, el panel de App Store indica «This review is running in chat — respond there».
+
+Una revisión iniciada con el botón **Run** informa y se detiene: no cambia ningún código ni te pregunta nada.
+
+Después de que Rork modifique la app, ejecuta la revisión de nuevo para que el informe coincida con el código que vas a enviar.
+
+<div id="previous-reviews-and-new-builds">
+  ## Revisiones anteriores y nuevos builds
+</div>
+
+Rork conserva los últimos cuatro informes. El más reciente es el que aparece en el panel, y los anteriores se encuentran debajo, en **Revisiones anteriores**. Cada entrada muestra el build revisado, sus recuentos y la fecha en que se ejecutó. Abre cualquiera para volver a consultar sus hallazgos.
+
+Cuando el código cambia después de una revisión, el panel añade la etiqueta **Nuevo build disponible** junto al id del build. Eso significa que el informe guardado corresponde a un build anterior, así que vuelve a ejecutar la revisión antes de enviarlo.
+
+<div id="limits">
+  ## Límites
+</div>
+
+* Hasta 40 revisiones al día, contabilizadas en la cuenta que paga el proyecto.
+* Seis ejecuciones de revisión por turno de chat. A partir de ahí, el agente te lo indica y te pide que termines las correcciones pendientes y luego inicies una revisión nueva desde el panel de App Store.
+* Solo se revisan apps de iOS. En un proyecto que solo tenga apps de Android o Web, el panel te pide que añadas una app en lugar de mostrarte un informe.
+* El revisor lee el código fuente de tu proyecto y, además, tus datos de preparación en App Store Connect cuando la app está conectada a App Store Connect. Sin esa conexión, la revisión se basa únicamente en el código fuente.
+* El revisor no envía tu app. El envío sigue siendo un paso aparte.
+
+<div id="troubleshooting">
+  ## Solución de problemas
+</div>
+
+<AccordionGroup>
+  <Accordion title="No aparece la pestaña App Review">
+    La pestaña está en **Más → App Store**, no en el menú de publicación.
+  </Accordion>
+
+  <Accordion title="Al pulsar Run se abre un muro de pago">
+    El mensaje dice &quot;App Store reviews require a paid Rork subscription&quot;. Sirve cualquier plan, siempre que sea en la cuenta que paga el proyecto. Comprar créditos no lo desbloquea.
+  </Accordion>
+
+  <Accordion title="Run no hace nada y muestra Could not start the App Store review">
+    La causa más habitual es el acceso: necesitas permisos de editor en el proyecto, no de lector. Pide al propietario del proyecto que cambie tu rol y vuelve a intentarlo.
+  </Accordion>
+
+  <Accordion title="Run aparece atenuado">
+    Permanece desactivado mientras se carga el panel, mientras se ejecuta una revisión y cuando el proyecto todavía no tiene ningún build que revisar. Espera un momento, recarga la página y vuelve a intentarlo.
+  </Accordion>
+
+  <Accordion title="El panel me pide que añada una app">
+    &quot;Add an Expo or Swift app to this project before running an App Store review&quot; significa que el proyecto no tiene ninguna app de iOS. Añade una app de Swift: las apps de Expo existentes también se revisan, pero Expo ya no está disponible para apps nuevas; consulta [¿Qué pasó con Expo?](/es/expo).
+  </Accordion>
+
+  <Accordion title="La revisión parece atascada">
+    Pulsa **Stop** y después **Run** otra vez. Si la ejecución terminó mal, el panel muestra &quot;Review could not complete&quot; con el motivo encima del informe. Si sigue fallando, contacta con soporte e indica el enlace del proyecto y la hora de la ejecución.
+  </Accordion>
+
+  <Accordion title="Se alcanzó el límite diario">
+    El mensaje dice &quot;Daily App Store preflight review limit reached.&quot; El recuento se reinicia cada día.
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## Próximos pasos
+</div>
+
+<CardGroup>
+  <Card icon="list-check" href="/es/submitting-to-app-store/apple/app-store-checklist" title="Lista de verificación de la App Store">
+    Todo lo demás que debes preparar antes de enviar tu app.
+  </Card>
+
+  <Card icon="apple" href="/es/appstore-submission-checklist/app-review-guide" title="Cómo funciona la revisión de Apple">
+    Plazos, qué retrasa una revisión y la revisión acelerada.
+  </Card>
+
+  <Card icon="image" href="/es/appstore-screenshots/app-store-screenshots" title="Capturas de pantalla para la App Store">
+    Genera las capturas de pantalla que necesita tu ficha.
+  </Card>
+
+  <Card icon="rocket" href="/es/publishing" title="Publica tu app">
+    Lleva el build ya revisado a App Store Connect.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

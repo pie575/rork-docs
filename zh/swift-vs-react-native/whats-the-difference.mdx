@@ -1,0 +1,140 @@
+---
+title: "iPhone、Android 还是 Web：有什么区别"
+---
+
+Rork 使用 Swift 构建原生 iPhone 应用，使用 Kotlin 构建原生 Android 应用，使用 React 构建 web app。本页介绍每种类型各自擅长什么，帮你为产品选对方向。
+
+Rork 可以构建三种应用：
+
+| 应用类型            | 语言与框架            | 运行环境                    | 发布渠道                        |
+| --------------- | ---------------- | ----------------------- | --------------------------- |
+| **For iPhone**  | SwiftUI          | iPhone、iPad、Apple Watch | App Store 和 TestFlight      |
+| **For Android** | Kotlin + Compose | Android 手机和平板           | Google Play                 |
+| **For web**     | Vite + React     | 任意浏览器，桌面端和移动端           | 你自己的 `your-app.rork.app` 域名 |
+
+这三种都是真实的代码。Rork 生成的项目，和移动开发团队手写出来的项目是一回事，而且每一种都可以导出到 GitHub。
+
+<div id="what-is-swift">
+  ## 什么是 Swift？
+</div>
+
+Swift 是 Apple 的编程语言，用于构建**原生运行在 iPhone 及其他 Apple 设备上**的应用。Swift 应用的构建方式与 Apple 打造自家应用的方式完全一致：Xcode、SwiftUI 和 iOS SDK。
+
+借助 Swift，应用可以调用原生 iOS 能力，比如主屏幕小组件、实时活动、高级动效与身体追踪、增强现实、更出色的游戏性能，以及更精准的设备传感器访问。正是这些功能，让应用显得精致、响应灵敏，真正具备&quot;Apple 品质&quot;。
+
+这对你这位 Rork 用户意味着什么，其实很简单：
+Swift 让你用上顶尖 iOS 应用所用的同一套工具，让应用跑得更快、界面更清爽，并在 Apple 发布新功能时第一时间用上。如果你要打造以 iOS 为先的应用，或者在意能否在 Apple 设备上交付最佳体验，Swift 能带来最高的上限。
+
+简而言之，Swift 就是按 Apple 设想的方式来构建应用：更强的掌控力、更高的性能，以及更高端的成品。
+
+<div id="what-is-kotlin">
+  ## 什么是 Kotlin？
+</div>
+
+Kotlin 是 Google 用于开发**原生 Android 应用**的语言，而 Compose 则是构建应用界面的现代方式。Kotlin 应用直接与 Android 系统交互，和 Google 自家发布的应用别无二致。
+
+Rork 会用 Kotlin 生成一个真正的 Android Studio 项目，让你的 app 具备原生性能、原生导航与手势、Material You 主题，并能直接调用 Android 的各项能力：主屏幕小组件、后台任务、通知、相机以及设备传感器。
+
+这对 Rork 用户意味着什么：
+在世界大多数地区，Android 都是设备保有量更大的平台。原生 Android 应用对这些用户来说体验更自然，能作为普通 Android 应用通过 Google Play 审核，也能在 Android 新特性推出时第一时间用上。
+
+完整指南请查看[用 Rork 构建原生 Android 应用](/zh/android/rork-android)，涵盖从第一条提示词到 Google Play 发布的全过程。
+
+<div id="what-is-a-web-app">
+  ## 什么是 web app？
+</div>
+
+web app 在浏览器中运行。Rork 使用 React 和 Vite 构建，并将其发布到你在 `rork.app` 上的专属地址。没有应用商店、无需审核、也不用安装：你分享一个链接，别人点开就能用，无论是在笔记本电脑上还是手机上。
+
+Web 是让产品最快触达用户的方式，天然适合落地页、仪表盘、管理后台、内部工具或 SaaS 类产品。它做不到的是那些深度原生的能力：小组件、实时活动、后台追踪、Apple Watch，以及应用商店分发。
+
+示例请参见 [Rork Web](https://rork.com/web)，完整指南请参见 [Rork Web：构建并发布 web app](/zh/web/rork-web)。
+
+<div id="things-a-native-iphone-app-can-do-that-a-web-app-cant">
+  ## 原生 iPhone 应用能做、而 web app 做不到的事：
+</div>
+
+<div id="system-home-screen-features">
+  ### 系统与主屏幕功能
+</div>
+
+* 主屏幕和锁定屏幕小组件
+* 锁定屏幕与灵动岛上的实时活动
+* 可在后台继续运行的应用 (须符合 Apple 的规定)
+* 接入 iPhone 系统搜索 (可直接搜索到你的应用内内容)
+
+<div id="motion-fitness-body-tracking">
+  ### 运动、健身与身体追踪
+</div>
+
+* 高级运动与全身追踪
+* 追踪真实动作，如俯卧撑、出拳、深蹲、体态和动作规范
+* 更精准、更实时地读取运动传感器数据
+* 可离线运行的设备端分析
+
+<div id="augmented-reality-games">
+  ### 增强现实与游戏
+</div>
+
+* 增强现实功能与沉浸式 AR 体验
+* 基于 AR 的游戏与互动环境
+* 更流畅、性能更强、响应更灵敏的游戏
+
+<div id="focus-control-productivity">
+  ### 专注、控制与效率
+</div>
+
+* 面向效率类应用的屏幕限制与专注模式控制
+* 通过语音、搜索或自动化触发的系统级操作
+
+<div id="apple-watch-health-ecosystem">
+  ### Apple Watch 与健康生态
+</div>
+
+* 深度集成 Apple Watch，可开发配套的手表应用
+* 原生体能训练会话，支持后台心率与运动数据追踪
+* Apple Watch 复杂功能，在表盘上直接显示实时数据
+* 全面接入 Apple 健康生态 (健康数据、体能训练、运动路线、权限)
+
+<div id="voice-messaging-extensions">
+  ### 语音、消息与扩展
+</div>
+
+* Siri 语音控制与「快捷指令」自动化
+* iMessage 应用、贴纸包以及消息内互动体验
+* 可在主 app 之外运行的共享扩展与系统扩展
+
+<div id="audio-camera-car-integration">
+  ### 音频、相机与车载集成
+</div>
+
+* 低延迟音频，可用于实时语音、音效和音频处理
+* 高级相机功能，如高帧率视频、深度感知、LiDAR 和实时分析
+* 支持 CarPlay，适用于驾驶、音频、健身或导航类应用
+
+<div id="how-to-choose">
+  ## 如何选择：
+</div>
+
+**选择 For iPhone**：如果你要做的是 iOS 优先或只面向 Apple 平台的 app，并且希望把 Apple 设备的能力用足。如果你的 app 依赖 motion 或身体追踪、健身与运动数据、增强现实、游戏、小组件、实时活动、Apple Watch 或 Apple 健康数据集成，又或者深度的系统级 features，那么选它准没错。
+
+**选择 For Android**：如果你的用户主要在 Android 上，或者你需要一个真正的原生 Android app 上架 Google Play——原生性能、小组件、通知和后台任务，都按 Android 的方式来。
+
+**选择 For web**：如果核心体验就是一个网站：落地页、仪表盘、内部工具，或者你希望用户今天就能通过一个链接打开的 SaaS 产品。
+
+**简单来说：**
+如果产品与 iPhone 本身深度绑定，就做 iPhone app。
+如果你的用户在 Android 上，就做 Android app。
+如果用户点开一个链接就够了，就做 web app。
+
+<div id="do-i-have-to-pick-only-one">
+  ## 我只能选一个平台吗？
+</div>
+
+不用。一个 Rork project 可以同时包含 iPhone app、Android app 和 web app。每个 app 都有各自的代码，但共用同一份聊天记录；如果你配置了 backend，也会共用 backend。建议先从最重要的平台入手，之后再通过预览上方的平台切换器添加下一个，或在 **Project Settings → Add new app** 中添加。参见[在 iOS、Android 和 web 之间转换你的 app](/zh/import/convert-between-platforms)。
+
+<Info>
+  **那 React Native 和 Expo 呢？** React Native 是一种跨平台方案：用一套 JavaScript 代码库在 iOS 和 Android 上渲染原生界面。Rork 以前就是这样构建 app 的，但新建的 project 已不再采用这种方式。完整来龙去脉请阅读 [Expo 怎么了？](/zh/expo)，其中也说明了你现有的 project 会怎么处理。
+</Info>
+
+<CtaBanner />

@@ -1,0 +1,85 @@
+---
+title: "Публикация приложения"
+---
+
+Куда может отправиться ваше готовое приложение: в App Store, Google Play или в Web. У каждого магазина свой аккаунт, своя проверка и свои сроки ожидания. Начните отсюда и выберите свой маршрут.
+
+Rork собирает и загружает приложение за вас — на собственных серверах. Вам не нужны ни Mac, ни Xcode, ни Android Studio.
+
+Чего Rork не может, так это быть вами. Каждый магазин требует аккаунт на ваше имя, подтверждённую личность и заполненную страницу приложения. Займитесь этим заранее: время съедает не сборка, а ожидание.
+
+<div id="pick-your-route">
+  ## Выберите свой путь
+</div>
+
+<CardGroup>
+  <Card icon="globe" href="/ru/web/rork-web" title="Web">
+    Самый быстрый вариант. Без аккаунта, без проверки, без установки. Опубликуйте и поделитесь ссылкой уже сегодня.
+  </Card>
+
+  <Card icon="apple" href="/ru/store-guides/publish-app-store" title="App Store">
+    Членство в Apple Developer за $99 в год и проверка со стороны Apple.
+  </Card>
+
+  <Card icon="android" href="/ru/submitting-to-play-store/creating-the-aab-file" title="Google Play">
+    Разовый регистрационный взнос $25 и закрытое тестирование для новых личных аккаунтов.
+  </Card>
+</CardGroup>
+
+Эти три варианта не исключают друг друга. Один project может включать приложение для iPhone, приложение для Android и веб-приложение — многие основатели сначала публикуют веб-версию, чтобы проверить идею, пока аккаунты в магазинах проходят верификацию. См. [Конвертация приложения между iOS, Android и web](/ru/import/convert-between-platforms).
+
+<div id="iphone-in-order">
+  ## iPhone, по порядку
+</div>
+
+<Steps>
+  <Step title="Создайте аккаунт Apple Developer">
+    $99 в год, и Apple проверяет вашу личность. [Создайте аккаунт Apple Developer](/ru/store-guides/apple-developer-account).
+  </Step>
+
+  <Step title="Отправьте сборку в TestFlight">
+    Установите приложение на реальные телефоны — свой и телефоны тестировщиков. [TestFlight и тестировщики](/ru/store-guides/testflight-beta-testers).
+  </Step>
+
+  <Step title="Проверьте себя по правилам Apple">
+    Запустите [AI App Store Reviewer](/ru/ai-app-store-reviewer) и прочитайте [чек-лист App Store](/ru/submitting-to-app-store/apple/app-store-checklist).
+  </Step>
+
+  <Step title="Подготовьте страницу приложения">
+    Скриншоты, описание, ответы о конфиденциальности. [Скриншоты для App Store](/ru/appstore-screenshots/app-store-screenshots) и [Screenshot Studio](/ru/store-guides/screenshot-studio).
+  </Step>
+
+  <Step title="Отправьте на проверку и ждите">
+    [Опубликуйте приложение в Apple App Store](/ru/store-guides/publish-app-store), а затем загляните в [руководство по App Review](/ru/appstore-submission-checklist/app-review-guide) — там расшифрованы все статусы.
+  </Step>
+</Steps>
+
+Если сборка не прошла или так и не появилась, смотрите [Ошибки отправки](/ru/submitting-to-app-store/apple/submission-errors). О самых частых причинах отклонения читайте в статье [Основные причины отклонения в App Store](/ru/appstore-submission-checklist/whats-next-after-the-apps-finished).
+
+<div id="android-in-order">
+  ## Android, по порядку
+</div>
+
+<Steps>
+  <Step title="Зарегистрируйте аккаунт разработчика Google Play">
+    $25 единоразово плюс подтверждение личности. Для новых личных аккаунтов также требуется закрытое тестирование с 12 тестировщиками в течение 14 дней, поэтому начните именно с этого. [Создайте аккаунт разработчика Google Play](/ru/store-guides/google-play-developer-account).
+  </Step>
+
+  <Step title="Установите приложение на свой телефон">
+    [Как тестировать Android-приложения на своём Android-устройстве](/ru/submitting-to-play-store/apk-file).
+  </Step>
+
+  <Step title="Отправьте сборку в Play Console">
+    [Как опубликовать приложение Rork в Google Play Store](/ru/submitting-to-play-store/creating-the-aab-file).
+  </Step>
+</Steps>
+
+<div id="before-you-submit-anywhere">
+  ## Перед отправкой в любой магазин
+</div>
+
+* **Протестируйте то, что публикуете**, на реальном устройстве, а не только в предпросмотре.
+* **Подготовьте документы.** Оба магазина запрашивают политику конфиденциальности, а для подписки нужны условия использования. См. [Как создать политику конфиденциальности](/ru/make-your-app-profitable/paywalls/how-to-set-up-your-policies).
+* **Решите, как приложение будет зарабатывать**, ещё до подачи заявки: модель монетизации и пейволлы влияют на прохождение проверки. См. [Как добавить пейволл с RevenueCat](/ru/payment-guides/revenuecat-copied-1).
+
+<CtaBanner />

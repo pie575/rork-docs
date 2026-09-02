@@ -1,0 +1,185 @@
+---
+title: "Cómo añadir el inicio de sesión con Apple/Google a tu app de Rork"
+---
+
+En esta guía te explicamos cómo añadir el inicio de sesión social (Apple/Google) a tu app de Rork
+
+<iframe title="Reproductor de vídeo de YouTube" />
+
+<div id="prerequisites">
+  ## Requisitos previos
+</div>
+
+Necesitarás:
+
+* Un **proyecto de Supabase**
+* La **URL de tu proyecto de Supabase** + la **clave Anon/Public** (se usan para conectar Rork ↔ Supabase)
+* Acceso a:
+  * **Google Cloud Console** (para el Client ID y el Secret de Google OAuth)
+  * Una cuenta de **Apple Developer** (para configurar Sign in with Apple)
+
+<div id="step-1-connect-rork-to-supabase">
+  ## Paso 1 – Conecta Rork con Supabase
+</div>
+
+1. En Supabase, copia:
+   * **Project URL**
+   * **Public anon key**
+2. En Rork, escribe un prompt como:
+   * **“Conéctate a Supabase”**
+   * Luego proporciona la Project URL + la anon key cuando se te pidan
+
+Este es el primer paso obligatorio antes de configurar los proveedores.
+
+<div id="step-2-enable-google-sign-in-in-supabase">
+  ## Paso 2 – Habilitar el inicio de sesión con Google en Supabase
+</div>
+
+1. Ve a **Supabase → Authentication → Sign-in / Providers**
+2. Busca **Google** y actívalo
+
+<div id="create-google-oauth-credentials-client-id-secret">
+  ### Crear credenciales de OAuth de Google (Client ID + Secret)
+</div>
+
+1. Ve a la **Google Cloud Console**
+2. Crea un **nuevo cliente de OAuth**
+3. Elige &quot;**Web application.&quot;**
+4. Créalo y luego copia:
+   * **Client ID**
+   * **Client Secret**
+
+<div id="paste-credentials-into-supabase-add-redirect-url">
+  ### Pega las credenciales en Supabase + añade la URL de redirección
+</div>
+
+1. Pega el **Client ID** y el **Client Secret** en la configuración del proveedor de Google en Supabase
+2. Copia la **URL de callback/redirección** de Supabase
+3. De vuelta en Google Cloud Console (edita tu cliente de OAuth):
+   * Añade esa URL en **Authorized redirect URIs.** Paso 3 — Añade la pantalla de inicio de sesión en Rork (con el callback de Google)
+
+En Rork, escribe este prompt:
+
+* «Añade una página de inicio de sesión antes de que el usuario acceda a la app.»
+* Después, incluye tu URL de callback bajo una etiqueta como:
+
+**Ejemplo de formato del prompt:**
+
+* `Google: <SUPABASE_CALLBACK_URL>`
+
+Así Rork podrá conectar correctamente el inicio de sesión.
+
+<div id="step-4-enable-apple-sign-in-in-supabase-apple-developer">
+  ## Paso 4 — Habilitar el inicio de sesión con Apple en Supabase + Apple Developer
+</div>
+
+1. En **Supabase → Auth providers**, habilita **Apple**
+
+<div id="create-an-apple-key-sign-in-with-apple">
+  ### Crear una clave de Apple (Sign in with Apple)
+</div>
+
+En **Apple Developer**:
+
+1. Ve a **Identifiers** (trabajarás con tu app y la capacidad Sign in with Apple)
+2. Ve a **Keys**
+3. **Add Key**
+4. Activa/configura **Sign in with Apple**
+5. Selecciona tu app y guarda/continúa
+6. **Registra** la clave y luego **descárgala y guárdala**
+
+<div id="ensure-your-app-id-has-sign-in-with-apple-enabled">
+  ### Comprueba que tu App ID tenga habilitado «Sign in with Apple»
+</div>
+
+Sin salir de Apple Developer:
+
+1. Ve a **Identifiers → tu App ID**
+2. Habilita **Sign in with Apple**
+3. Guarda y confirma los cambios de capacidades
+
+<div id="add-bundle-id-to-supabase-apple-provider">
+  ### Añadir el Bundle ID al proveedor de Apple en Supabase
+</div>
+
+1. En Apple Developer, ve a la información de tu app y copia el **Bundle ID**
+2. En **Supabase → proveedor de Apple**, pega el Bundle ID como **Client ID**
+3. Guarda
+
+Después, copia también la **URL de callback de Apple** desde Supabase.
+
+<div id="step-5-final-rork-prompt-add-google-apple-oauth">
+  ## Paso 5 — Prompt final de Rork: añadir OAuth de Google + Apple
+</div>
+
+Ahora que ambos proveedores están configurados en Supabase, pídele a Rork que los añada.
+
+Usa un prompt como este:
+
+* «Añade OAuth de Google y Apple usando Supabase.»
+* Incluye ambas URL de callback en el prompt (Google + Apple)
+
+<div id="step-6-test-fix-common-issues">
+  ## Paso 6 — Prueba y corrige problemas comunes
+</div>
+
+<div id="issue-a-google-opens-safari-and-fails-to-connect">
+  ### Problema A: Google abre Safari y no logra conectarse
+</div>
+
+Si ves algo como:
+
+* «Safari no puede abrir la página porque no puede conectarse al servidor…»
+
+La solución del tutorial fue:
+
+* Habilitar que **los nuevos usuarios puedan registrarse** en la configuración de Auth de Supabase
+
+Una vez habilitados los registros, el inicio de sesión con Google debería completarse y devolver al usuario a la app.
+
+<div id="issue-b-apple-opens-safari-and-says-missing-oauth-secret">
+  ### Problema B: Apple abre Safari y muestra “missing OAuth secret”
+</div>
+
+Si el inicio de sesión con Apple pasa por el navegador y aparece:
+
+* “missing OAuth secret”
+
+Esto suele deberse a que el flujo está usando una ruta de OAuth basada en la Web en lugar del Sign in with Apple nativo.
+
+**Solución (recomendada):** pídele a Rork que rehaga el inicio de sesión con Apple en modo **solo nativo**.
+
+<div id="prompt-you-can-use">
+  ### Prompt que puedes usar
+</div>
+
+> «Rehaz el inicio de sesión con Apple para que sea solo nativo. No uses un navegador web para el inicio de sesión con Apple.»
+
+Después de esto, el inicio de sesión con Apple debería aparecer en la **interfaz nativa de Apple** (no en Safari).
+
+<div id="recommended-prompt-templates-copypaste">
+  ## Plantillas de prompts recomendadas (copiar y pegar)
+</div>
+
+<div id="1-add-sign-in-screen-google">
+  ### 1) Añadir pantalla de inicio de sesión + Google
+</div>
+
+> Añade una página de inicio de sesión antes de que el usuario acceda a la app.
+> Google: `<SUPABASE_GOOGLE_CALLBACK_URL>`
+
+<div id="2-add-google-apple-oauth-using-supabase">
+  ### 2) Añadir OAuth de Google + Apple con Supabase
+</div>
+
+> Añade OAuth de Google y Apple con Supabase.
+> Google: `<SUPABASE_GOOGLE_CALLBACK_URL>`
+> Apple: `<SUPABASE_APPLE_CALLBACK_URL>`
+
+<div id="3-fix-apple-to-be-native-only">
+  ### 3) Corregir Apple para que sea solo nativo
+</div>
+
+> Rehaz el inicio de sesión con Apple para que sea solo nativo. No abras el navegador web para el inicio de sesión con Apple.
+
+<CtaBanner />

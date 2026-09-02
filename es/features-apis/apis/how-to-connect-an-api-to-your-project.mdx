@@ -1,0 +1,66 @@
+---
+title: "Conectar una API a Rork"
+---
+
+Las API son geniales porque, en esencia, permiten que tus apps hagan de todo sin que tengas que programarlo tú.
+
+<div id="two-main-ways-to-connect-an-api-to-rork">
+  ## **Dos formas principales de conectar una API a Rork**
+</div>
+
+
+**Variables de entorno:**
+Las variables de entorno son el soporte nativo de Rork para APIs sin necesidad de conectarse a un backend como Supabase. Permiten que los usuarios simplemente ingresen sus claves de API y obtengan acceso instantáneo a la API.
+
+<img alt="Image" />
+
+Solo tienes que hacer clic en agregar variable, escribir un nombre para la clave que describa tu API y luego agregar un valor, que es tu clave de API.
+
+Después de eso, pídele a Rork que use la edge function.
+
+<Tip>
+  Consejo: adjunta la documentación del proveedor de la API para obtener los mejores resultados
+</Tip>
+
+
+
+**Edge Function de Supabase:**
+
+Conectar Supabase:
+Dale a Rork el prompt &quot;conecta Supabase a la app&quot; e incluye la Project URL y la Public Anon key.
+
+Luego ve a edge functions:
+
+<img alt="Image" />
+
+Una vez en la edge function, haz clic en secret. Luego ponle nombre a tu secret y agrega tu clave de API en el campo de valor.
+
+<img alt="Image" />
+
+Después copia y pega el nombre de tu secret en Rork o ChatGPT con el prompt: &quot;Quiero que mi app realice la tarea X usando esta API. Este es el nombre de mi secret (insertar nombre), créame el código de una edge function para esta API&quot;. 
+
+Luego, en Supabase, haz clic en Deploy New Function:
+
+<img alt="Image" />
+
+Después haz clic en editor:
+
+<img alt="Image" />
+
+Luego elimina el código anterior:
+
+<img alt="Image" />
+
+Pega tu código de ChatGPT o Rork y presiona deploy function. Después, copia la URL de tu endpoint y pégala en Rork con el prompt &quot;Usa esta Edge Function para realizar la tarea X enviando o solicitando los datos X: &lt;insertar enlace del endpoint aquí&gt;&quot;
+
+<img alt="Image" />
+
+
+**Solución de problemas:**
+Este método requiere mucha más prueba y error:
+
+* Los datos no se están procesando: repite el prompt hasta que funcione.
+* La edge function sigue fallando: puede que necesites reescribirla varias veces.
+* Clave de API inválida: escribiste mal la clave de API o necesitas volver a desplegar tu edge function.
+
+<CtaBanner />

@@ -1,0 +1,181 @@
+---
+title: "将 GitHub 仓库导入 Rork"
+---
+
+如何将 GitHub 仓库导入 Rork 并据此构建移动应用：粘贴仓库 URL、连接 Rork GitHub App，然后借助 AI 继续开发已有项目，并支持与 GitHub 双向同步。
+
+已经在 GitHub 上有代码了？可能是一个 web app、一个原型，或是用其他 AI 构建工具做的项目？不必从头再来。Rork 可以导入 GitHub 仓库，读取其中的实际源文件，并在此基础上继续将其构建为原生移动 app。
+
+<div id="two-ways-to-import">
+  ## 两种导入方式
+</div>
+
+| 你想要...                                | 使用方式                             |
+| ------------------------------------- | -------------------------------- |
+| 基于现有仓库创建一个**新的 Rork 项目**         | 首页上的 **GitHub to Mobile App** 按钮 |
+| 将仓库导入到**现有的 Rork 项目** 中 (作为关联源)  | 在 项目 聊天中粘贴仓库 URL            |
+
+两种方式都使用 **GitHub Sync**：Rork 会与该仓库保持连接，直接读取你真实的源文件，而不是靠截图或描述来猜测。
+
+<div id="start-a-new-project-from-a-github-repo">
+  ## 从 GitHub 仓库新建 项目
+</div>
+
+<div id="1-click-github-to-mobile-app">
+  ### 1. 点击「GitHub to Mobile App」
+</div>
+
+在 [rork.com](https://rork.com) 页面上，提示词输入框下方，点击 **GitHub to Mobile App**。
+
+<Frame>
+  <img alt="Rork 首页提示词输入框下方的导入按钮" />
+</Frame>
+
+<div id="2-paste-the-repository-url">
+  ### 2. 粘贴仓库 URL
+</div>
+
+此时会打开 **“Create an app from GitHub with Rork”** 对话框。粘贴你的仓库 URL (`https://github.com/owner/repo`) 。
+
+<Frame>
+  <img alt="已粘贴仓库 URL 的 GitHub 导入对话框" />
+</Frame>
+
+<div id="3-generate-the-app">
+  ### 3. 生成 app
+</div>
+
+* **Generate app now**：立即开始生成；
+* **I have extra requests**：将仓库附加到你的提示词中，方便你补充说明 (例如“导入这个仓库，并把仪表盘作为 home screen”) 。
+
+仓库会以 **GitHub Sync** 源的形式附加到提示词中，随后 Rork 创建 项目。
+
+<Frame>
+  <img alt="基于 GitHub 仓库创建的新 项目，已附加 GitHub Sync 源" />
+</Frame>
+
+<div id="4-grant-access-via-the-rork-github-app">
+  ### 4. 通过 Rork GitHub App 授予访问权限
+</div>
+
+GitHub Sync 依赖 **Rork GitHub App** 运行，因此需要授予它访问你要导入的仓库的权限。智能体会在聊天中一步步引导你完成：
+
+1. 如果尚未安装该 app，请在聊天窗口中点击 **Open GitHub** 完成安装。
+2. 如果已安装该 app，但它读取不到此仓库，请点击 **Update GitHub permissions** 并添加该仓库 (可以只授权这一个仓库) 。
+3. 回到 Rork，点击 **I&#39;ve updated permissions** / **Retry**，然后点击 **Continue** 确认。
+
+连接成功后，状态栏会显示 **“Connected owner/repo”**。
+
+<Info>
+  仓库必须位于你能够安装 Rork GitHub App 的 GitHub 账号或组织中。若要导入他人的公开仓库，请先 fork 到你的账号下，再导入你的 fork。
+</Info>
+
+<div id="5-the-agent-rebuilds-your-app-from-the-source">
+  ### 5. 智能体根据源码重建你的 app
+</div>
+
+连接完成后，智能体会扫描环境变量、梳理源码 (页面、代码模式、主题、Integrations) ，搭建原生 app 框架并复现你的产品，同时直接复用仓库中现有的 Assets：
+
+<Frame>
+  <img alt="Rork 导入仓库时的任务列表" />
+</Frame>
+
+几分钟后，这个基于你的仓库原生重建的 app 就会在云端模拟器中运行起来：
+
+<Frame>
+  <img alt="从 GitHub 导入的 app 在 Rork 模拟器中原生运行" />
+</Frame>
+
+<div id="import-without-changing-anything">
+  ## 原样导入，无需任何改动
+</div>
+
+导入时你不必描述任何改动。粘贴 URL，然后点击 **Generate app now**。**I have extra requests** 按钮是可选的：你可以稍后在后续的聊天消息中提出修改要求。
+
+开始之前需要了解一点：**导入是重建，而不是复制**。Rork 会把你的代码仓库作为只读源接入，并根据读取到的内容重新编写一个全新的原生 app，而不是把你的文件逐个搬进编辑器。你的界面、流程、品牌元素、数据模型和素材都会保留下来，而 UI 代码会变成 Swift、Kotlin 或 React。
+
+和其他提示词一样，导入同样会消耗 credits：创建 项目 消耗 1 个 credit，之后每条智能体消息也会消耗 credits。
+
+<div id="import-a-repo-into-an-existing-project">
+  ## 将仓库导入现有 项目
+</div>
+
+在任意 项目 中，将 GitHub 链接粘贴到聊天里，让 智能体 连接该仓库，例如：
+
+```
+连接 https://github.com/acme/inventory-api，并将其用作该应用的后端
+```
+
+智能体会将该仓库关联到你的项目 (关联在多次会话之间持续有效) ，从而读取代码、复用你的 API 约定和数据模型，并保持一切与源代码一致。
+
+<div id="keep-the-sync-two-way">
+  ## 保持双向同步
+</div>
+
+GitHub Sync 并非一次性复制。当所连接的源仓库有新提交时，项目会通知你，你只需一键即可拉取这些更改：
+
+<Frame>
+  <img alt="GitHub Sync 通知：有新更改可用，立即同步" />
+</Frame>
+
+而将 Rork 项目连接到它自己的 GitHub 仓库后，你还能获得完整的**双向同步**：
+
+* Rork 所做的每一处更改都会推送到 GitHub。
+* 你从本地编辑器推送的提交也会同步回 Rork。
+
+在项目中设置的方法：**⋯ 菜单 → GitHub → Connect**。
+
+<Frame>
+  <img alt="项目菜单中的 GitHub 双向同步选项" />
+</Frame>
+
+查看完整教程：[如何将项目与 GitHub 同步](/zh/tutorials/how-to-connect-github)。
+
+<div id="what-kinds-of-repos-work-best">
+  ## 哪些代码仓库最适合导入？
+</div>
+
+* **web app** (React、Vue、Next.js，以及任何源码可读的项目) ：Rork 会把产品重建为原生移动 app。
+* **其他 AI 构建工具的产物** (Lovable、Bolt、v0、Replit 等) ：参见[从任意 app 构建工具导入](/zh/import/import-from-any-app-builder)。
+* **React Native / Expo 项目**：智能体会读取源码，并将其重建为原生 Swift 或 Kotlin app，参见[在平台之间转换](/zh/import/convert-between-platforms)。
+* **原生 Swift 或 Kotlin 项目**：智能体会读取你现有的原生源码，并在 Rork 中重建该 app。它不会原样沿用你的 Xcode 或 Android Studio 项目，因此请把这次导入看作一个还原你产品的全新原生 app。
+* **backend / API**：把它们作为来源连接进来，让你的移动 app 与 API 完全对应。
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<div id="how-does-github-to-mobile-app-work">
+  ### GitHub to Mobile App 如何运作？
+</div>
+
+只需四步。在 [rork.com](https://rork.com) 的 **GitHub to Mobile App** 对话框中粘贴仓库 URL；授予 Rork GitHub App 访问该仓库的权限；智能体会读取你的真实源文件，梳理其中的页面、主题、Integrations 和环境变量；随后基于分析结果构建一个原生 app，并让仓库保持连接，方便你后续拉取新的提交。
+
+<div id="does-importing-change-my-repository">
+  ### 导入会改动我的仓库吗？
+</div>
+
+不会。导入只会读取你的代码。只有当你为该 项目 明确启用双向同步时，Rork 才会向仓库推送内容，而且推送的是 Rork 新建的 (或你自己指定的) 另一个独立仓库。
+
+<div id="which-plan-do-i-need-to-import-a-repo">
+  ### 导入代码仓库需要哪个 plan？
+</div>
+
+导入功能不限定于某个特定档位，它和普通提示词一样会消耗 credits。但你确实需要付费 plan，因为导入会构建出一个可运行的 app，而 **Free** plan 只能设计 app。
+
+真正的区别在于你要构建的平台。**Rork Pro** ($20/月) 支持 iPhone (SwiftUI) 、Android (Kotlin + Compose) 和 Web。**Rork Max** 则额外支持 iPad、Apple Watch、Vision Pro、原生游戏、iOS 小组件，以及优先聊天支持。因此，原生 Swift 仓库在 Rork Pro 上就能顺利导入，只有当你需要这些额外的 Apple 设备和 Max 专属 features 时，才需要升级到 Rork Max。详见 [Plans &amp; Subscriptions](/zh/introduction/subscriptions)。
+
+<div id="can-i-import-a-monorepo">
+  ### 我可以导入 monorepo 吗？
+</div>
+
+可以。请在提示词中说明你关注的是 monorepo 中的哪个文件夹或哪个 app，这样智能体就能聚焦到正确的代码。
+
+<div id="the-repo-isnt-found-or-access-fails">
+  ### 找不到仓库或访问失败
+</div>
+
+* 检查 URL 是否为 `https://github.com/owner/repo` 格式 (无需 `.git` 后缀，分支和子文件夹可在提示词中说明) 。
+* 如果是私有仓库，请确保 Rork GitHub App 已安装**到该仓库所属的账户/组织下**，并已授予对该仓库的访问权限。
+
+<CtaBanner />

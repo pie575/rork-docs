@@ -1,0 +1,75 @@
+---
+title: "Integraciones"
+---
+
+Preguntas frecuentes sobre las Integraciones con Rork
+
+<div id="can-i-integrate-rork-with-a-database-like-supabase-or-firebase">
+  ### ¿Puedo integrar Rork con una base de datos como Supabase o Firebase?
+</div>
+
+Sí. Pídeselo a Rork en el chat y conectará el backend por ti.
+Consulta [Cómo añadir un backend de Supabase a Rork](/es/backend/supabase) y [Cómo añadir un backend de Firebase a Rork](/es/backend/firebase). Si prefieres no encargarte tú del backend, usa [Rork Cloud](/es/backend/rork-cloud).
+
+<div id="what-is-rork-cloud-does-it-have-a-database">
+  ### ¿Qué es Rork Cloud? ¿Tiene base de datos?
+</div>
+
+Sí. **Rork Cloud** es un backend gestionado dentro de Rork, con una base de datos Postgres, funciones del lado del servidor y modelos de IA alojados.
+Puedes consultar tus tablas en el project y, más adelante, migrar a tu propio project de Supabase.
+Consulta [Qué es Rork Cloud](/es/backend/rork-cloud).
+
+<div id="how-can-i-build-apps-that-use-ai-features-like-chat-voice-or-image-generation">
+  ### ¿Cómo puedo crear apps que usen funciones de IA como chat, voz o generación de imágenes?
+</div>
+
+Rork Cloud le proporciona a tu app modelos de IA sin necesidad de que tengas tus propias claves de proveedor, por lo que los usuarios de pago no necesitan gestionar una cuenta de OpenAI para lanzar una función de IA.
+También puedes usar tu propia clave y guardarla como un secreto del lado del servidor. Consulta [Claves de API y variables de entorno](/es/features/secrets).
+
+<div id="can-i-integrate-rork-with-business-tools-like-google-sheets-airtable-notion-or-my-own-api">
+  ### ¿Puedo integrar Rork con herramientas de trabajo como Google Sheets, Airtable, Notion o mi propia API?
+</div>
+
+Sí. Solo pídele a Rork que se integre con el servicio que quieras.
+Te pedirá tu clave de API y puede que necesite la documentación de la API para mayor precisión.
+
+<div id="can-i-import-figma-files-into-rork">
+  ### ¿Puedo importar archivos de Figma en Rork?
+</div>
+
+Copia tus pantallas de Figma como imágenes y pégalas en el chat de Rork, o arrastra en bloque las imágenes exportadas de Figma.
+Rork lee el diseño de la imagen y crea la app a partir de ella. Por ahora no hay una conexión directa con Figma.
+
+<div id="how-can-i-add-payments-with-stripe-revenuecat-superwall-or-adapty">
+  ### ¿Cómo puedo añadir pagos con Stripe, RevenueCat, Superwall o Adapty?
+</div>
+
+La forma más sencilla de integrar pagos en Rork es añadiendo RevenueCat.
+Rork recomienda **RevenueCat** para compras dentro de la app y suscripciones. Conéctalo desde el panel de Monetización y el agente añadirá el SDK a tu app.
+👉 [Cómo añadir un paywall con RevenueCat](/es/payment-guides/revenuecat-copied-1)
+
+<div id="how-can-i-add-authentication-to-my-app">
+  ### ¿Cómo puedo añadir autenticación a mi app?
+</div>
+
+Para la mayoría de las apps, basta con el almacenamiento local de datos.
+Si necesitas autenticación, usa **Supabase Auth** con correo y contraseña o enlaces mágicos.
+Para el inicio de sesión social (Google, Apple, etc.), pídele al agente que lo configure y sigue la [guía de OAuth](/es/integrations/backend/how-to-set-up-oauth).
+
+<div id="how-can-i-add-push-notifications-to-my-app">
+  ### ¿Cómo puedo añadir notificaciones push a mi app?
+</div>
+
+Pídele al agente que añada notificaciones y las integrará en tu app nativa.
+En Android, las notificaciones push funcionan con **Firebase Cloud Messaging (FCM)**; en iPhone, con el servicio Apple Push Notification. Rork Cloud también ofrece notificaciones push, consulta [Rork Cloud](/es/backend/rork-cloud).
+
+***
+
+<div id="need-more-help">
+  ## ¿Necesitas más ayuda?
+</div>
+
+¿Todavía tienes dudas?
+📩 [Contactar con Soporte](mailto:support@rork.com)
+
+<CtaBanner />

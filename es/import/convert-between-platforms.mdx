@@ -1,0 +1,136 @@
+---
+title: "Convierte tu app entre iOS, Android y web"
+---
+
+Convierte una app de Android a iOS con IA (o al revés), transforma una base de código de React Native en Swift y Kotlin nativos, y publica en todas las plataformas desde un solo project de Rork.
+
+<video />
+
+Un project de Rork no está atado a una sola plataforma. Un mismo project puede contener una **app nativa de iOS (Swift)**, una **app nativa de Android (Kotlin)** y una **app web**. Cada app tiene su propio código y todas pueden compartir un mismo chat y un mismo backend. Así, &quot;convertir mi app a otra plataforma&quot; es una función más, no una reescritura desde cero.
+
+<div id="convert-an-android-app-to-ios-with-ai">
+  ## Convertir una app de Android a iOS (con IA)
+</div>
+
+¿Tienes una app de Android (en Rork o importada desde un repositorio) y la quieres en iPhone?
+
+1. Si la app todavía no está en Rork, primero [importa su repositorio](/es/import/import-from-github), incluido el código fuente en Kotlin/Java. El agente lo lee aunque la nueva app de iOS se vaya a escribir en Swift.
+2. En el project, pide en el chat:
+
+```
+Crea una versión para iOS de esta app
+```
+
+3. Confirma el widget **&quot;Add iOS app?&quot;**. El agente reconstruye las pantallas con una interfaz nativa de iOS y reutiliza el mismo backend, modelo de datos y reglas de negocio.
+4. Previsualízala en el simulador de iOS en la nube y luego [publícala en la App Store](/es/store-guides/publish-app-store).
+
+<div id="ios-app-native-android-app">
+  ## App de iOS → app nativa de Android
+</div>
+
+El camino inverso. En tu project de iOS, haz clic en **+** (Añadir plataforma de vista previa) → **Android (Kotlin)**, o pídelo en el chat:
+
+<Frame>
+  <img alt="El menú para añadir plataforma: Android (Kotlin) y Web" />
+</Frame>
+
+Rork crea una app nativa en Kotlin dentro del mismo project. Publicación: [crea el AAB para Google Play](/es/submitting-to-play-store/creating-the-aab-file).
+
+<div id="react-native-expo-codebase-native-app">
+  ## Base de código React Native / Expo → app nativa
+</div>
+
+¿Ya tienes una base de código React Native o Expo (de Bolt, de un colaborador externo o de tu propio trabajo)? Rork la reconstruye como código nativo.
+
+1. Súbela a GitHub si aún no está ahí.
+2. Impórtala: **GitHub to Mobile App** en [rork.com](https://rork.com) → pega la URL del repositorio → **Generate app now**.
+
+<Frame>
+  <img alt="El cuadro de diálogo de importación de GitHub" />
+</Frame>
+
+El agente lee tu código fuente en JavaScript o TypeScript y reconstruye las pantallas, la navegación, los flujos de datos y el diseño como una **app nativa de iPhone (Swift)**, una **app nativa de Android (Kotlin)** o una **app web**, según lo que elijas. Tu producto sigue siendo el mismo: lo que cambia es el código de la interfaz, que pasa a ser Swift, Kotlin o React.
+
+A partir de ahí, la publicación se gestiona desde Rork: el flujo de publicación integrado se encarga del build y del envío a la App Store o a Google Play, así que no tienes que configurar nada por tu cuenta.
+
+<Info>
+  ¿No sabes qué plataforma elegir? Consulta [iPhone, Android o web: cuál es la diferencia](/es/swift-vs-react-native/whats-the-difference).
+</Info>
+
+<div id="mobile-app-web-app">
+  ## App móvil → app web
+</div>
+
+Cualquier proyecto móvil puede tener su versión web: **Project Settings → Add new app → Web**, o pídelo así:
+
+```
+Añade una versión web de esta app
+```
+
+La app web se publica en una URL `your-app.rork.app` desde el menú **Publish** (más adelante puedes asociar un dominio personalizado). Ideal para landing pages, paneles de administración o una versión de escritorio complementaria.
+
+<div id="every-combination-at-a-glance">
+  ## Todas las combinaciones de un vistazo
+</div>
+
+| De \ A                                          | iOS (Swift)                              | Android (Kotlin)                         | Web                      |
+| ----------------------------------------------- | ---------------------------------------- | ---------------------------------------- | ------------------------ |
+| **iOS (Swift)**                                 | n/d                                      | Añadir plataforma / chat                 | Añadir plataforma / chat |
+| **Android (Kotlin)**                            | Añadir plataforma / chat                 | n/d                                      | Añadir plataforma / chat |
+| **Web (incluye sitios y creadores importados)** | Añadir plataforma / chat                 | Añadir plataforma / chat                 | n/d                      |
+| **React Native / Expo (repositorio importado)** | el agente lo reconstruye de forma nativa | el agente lo reconstruye de forma nativa | Añadir plataforma / chat |
+
+«Añadir plataforma / chat» = haz clic en **+** en el encabezado del project, usa **Project Settings → Add new app** o simplemente pídeselo al agente.
+
+<div id="per-app-settings">
+  ## Configuración por app
+</div>
+
+Cada app del project tiene su propio icono, nombre en la pantalla de inicio e identificador de paquete (bundle identifier / package name). Configúralos en **Project Settings** antes de publicar:
+
+<Frame>
+  <img alt="Configuración por app: icono, nombre, identificador de paquete" />
+</Frame>
+
+<div id="publishing-each-platform">
+  ## Publicar en cada plataforma
+</div>
+
+* **iOS**: [Publica en la App Store](/es/store-guides/publish-app-store) directamente desde Rork:
+
+<Frame>
+  <img alt="El asistente de publicación en la App Store en Rork" />
+</Frame>
+
+Cada envío (y su enlace de TestFlight) queda registrado en el cuadro de diálogo **Publish** del project:
+
+<Frame>
+  <img alt="Historial de envíos a la App Store con enlaces de TestFlight" />
+</Frame>
+
+* **Android**: [genera el AAB y súbelo a Google Play](/es/submitting-to-play-store/creating-the-aab-file).
+* **Web**: un clic en el menú **Publish** del project.
+
+<div id="faq">
+  ## Preguntas frecuentes
+</div>
+
+<div id="is-the-conversion-a-literal-code-translation">
+  ### ¿La conversión es una traducción literal del código?
+</div>
+
+No, y eso es algo bueno. El agente reconstruye la interfaz con los componentes nativos de cada plataforma, manteniendo tu producto idéntico: las mismas pantallas, los mismos flujos, los mismos datos. El resultado son apps que se sienten naturales en cada plataforma, en lugar de un port genérico que no destaca en ninguna.
+
+<div id="do-the-platforms-stay-in-sync-afterwards">
+  ### ¿Las plataformas se mantienen sincronizadas después?
+</div>
+
+Comparten el project, el backend y el chat. Cuando pidas una función, indícale al agente a qué apps se aplica («añade el modo oscuro tanto en iOS como en Android») y actualizará cada base de código nativa.
+
+<div id="can-i-have-different-features-per-platform">
+  ### ¿Puedo tener funciones distintas en cada plataforma?
+</div>
+
+Sí. Es habitual mantener las funciones del equipo de campo solo en móvil y añadir un panel de administración como app web.
+
+<CtaBanner />

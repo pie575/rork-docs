@@ -1,0 +1,159 @@
+---
+title: "将你的 Lovable 应用转换为移动 app"
+---
+
+如何把 Lovable 应用转换成原生 iOS 和 Android 移动 app：将你的 Lovable project 导入 Rork，沿用原有的 Supabase backend，然后发布到 App Store。不用 APK 套壳，也不用 webview。
+
+Lovable 很擅长快速做出 web app，但它产出的是网站，而不是原生移动 app。如果你想让 Lovable project 上架 App Store 或 Google Play，Rork 可以直接导入，并把它重建为**真正的原生移动应用** (而非 webview 套壳) ，同时保持与 Lovable project 源代码的连接。
+
+<div id="what-you-get">
+  ## 你将获得什么
+</div>
+
+* 一个基于现有 Lovable 应用构建的原生 iOS app (以及由同一 project 生成的 Android / web 版本) 。
+* **Lovable Sync**：Rork 会连接到 Lovable 应用背后的 GitHub 仓库，读取真实的源文件，并让后续同步始终与源代码保持关联。
+* 随后即可使用完整的 Rork 工作流：在云端模拟器中预览、在手机上测试、发布到 TestFlight 和 App Store，全程无需 Xcode。
+
+<Info>
+  Rork 会用原生 UI 重建你的应用，这与把网站塞进 webview 的封装类工具 (Capacitor、Median 等) 有本质区别。那类应用往往因为无法提供原生体验，被 Apple 依据准则 4.2 (最低功能要求) 拒绝。
+</Info>
+
+<div id="before-you-start">
+  ## 开始之前
+</div>
+
+1. **将你的 Lovable project 连接到 GitHub** (在 Lovable 中操作：Settings → GitHub → Connect) 。Lovable 会把项目代码推送到你 GitHub 账户下的仓库，Rork 需要通过该仓库读取你真实的源文件。
+2. 准备好 Lovable 应用网址，格式类似 `https://your-app.lovable.app`。
+
+<div id="step-by-step">
+  ## 分步操作
+</div>
+
+<div id="1-open-rork-and-click-lovable-to-mobile-app">
+  ### 1. 打开 Rork 并点击“Lovable to Mobile App”
+</div>
+
+在 [rork.com](https://rork.com) 页面上，提示词输入框正下方，点击 **Lovable to Mobile App** 按钮。
+
+<Frame>
+  <img alt="Rork 主页提示词输入框下方的导入按钮" />
+</Frame>
+
+<div id="2-paste-your-lovable-app-url">
+  ### 2. 粘贴你的 Lovable 应用网址
+</div>
+
+此时会弹出一个对话框：**“用 Rork 把你的 Lovable 应用变成移动应用。”** 在其中粘贴你的 `https://your-app.lovable.app` 网址。
+
+<Frame>
+  <img alt="rork.com 上的 Lovable 导入对话框" />
+</Frame>
+
+如果不确定去哪里找这个链接，可以点击对话框内的 **“我该如何获取 Lovable 链接？”**，查看简短的操作指引。
+
+<div id="3-generate-the-app">
+  ### 3. 生成应用
+</div>
+
+* 点击 **Generate app now** 立即开始，或
+* 如果想先在提示词中补充说明，点击 **I have extra requests** (例如：“保留品牌风格，但把导航重新设计为原生标签栏”) 。
+
+Rork 会创建一个新项目，智能体随即开始工作。
+
+<div id="4-link-the-github-repository-lovable-sync">
+  ### 4. 关联 GitHub 仓库 (Lovable Sync)
+</div>
+
+在新 project 的聊天中，智能体会提示你设置 **Lovable Sync**：
+
+<Frame>
+  <img alt="project 聊天中的 Set up Lovable Sync 组件" />
+</Frame>
+
+1. 粘贴 Lovable 为你的 project 创建的 GitHub 仓库 URL。
+2. 如果尚未安装 Rork GitHub App，请点击 **Install GitHub app**，并授予其访问该仓库的权限。若权限不足，你还可能看到 **Update GitHub permissions**。
+3. 点击 **Link repo**。
+
+连接完成后，Rork 会把你的 Lovable 源码克隆到该 project 中，并以其作为页面、逻辑和数据模型的唯一可信来源。
+
+符合条件的 Lovable project 可解锁**免费迁移 credits**。如果你的仓库符合条件，会直接在流程中看到提示：
+
+<Frame>
+  <img alt="符合条件的 Lovable project 的迁移 credits 对话框" />
+</Frame>
+
+<div id="5-environment-variables-come-along-automatically">
+  ### 5. 环境变量自动带过来
+</div>
+
+仓库链接完成后，Rork 会立即扫描源码中的环境变量。已提交在 Lovable 源码里的公开客户端密钥 (Supabase anon key、Firebase web config、Stripe publishable key、分析工具密钥) 会自动导入；如果有缺失或冲突，聊天中会弹出一个面板，让你填写对应的值：
+
+<Frame>
+  <img alt="环境变量扫描组件：自动保存的值以及可选项" />
+</Frame>
+
+<div id="6-watch-the-mobile-app-come-to-life">
+  ### 6. 见证移动应用成型
+</div>
+
+智能体会梳理你的页面、流程、文案、配色和素材，然后把产品重建为原生移动应用：用原生标签栏和导航栈取代网页导航栏，采用移动优先的布局，并直接从仓库中复制你真实的品牌素材。营销页/落地页通常会转化为引导流程和商店listing素材，而不是应用内页面：智能体保留的是&#95;产品&#95;本身，而非网站外壳。
+
+构建过程中，你可以在云端模拟器里看到应用实时运行。到这一步，它就是一个普通的 Rork project，继续通过对话迭代即可。
+
+<div id="what-about-my-supabase-backend">
+  ## 我的 Supabase backend 怎么办？
+</div>
+
+如果你的 Lovable app 使用了 Supabase，导入的源码会包含 Supabase 客户端代码和 schema 引用，已提交的 anon key 也会被环境变量扫描识别到，因此你的 web app 和移动 app 无需额外配置即可共用同一套数据库和认证。参见 [Supabase 设置](/zh/backend/supabase)。
+
+<div id="publish-it">
+  ## 发布应用
+</div>
+
+对应用满意后：
+
+* [发布到 App Store](/zh/store-guides/publish-app-store)：功能已内置于 Rork，无需 Xcode。
+* [发布到 Google Play](/zh/submitting-to-play-store/creating-the-aab-file)：导出并构建 AAB 文件即可。
+* 也可以再加一个 Web 版本：参见[添加 iOS、Android 和 Web 版本](/zh/import/convert-between-platforms)。
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<div id="can-lovable-itself-make-a-native-mobile-app">
+  ### Lovable 本身能做原生移动应用吗？
+</div>
+
+不能。Lovable 输出的是 React + Vite web app。你可以把它以 PWA 的形式添加到主屏幕，但它本质上仍是一个网站：无法通过 App Store 分发，离线支持也很有限。推送通知只在特定条件下才能用：在 iOS 和 iPadOS 16.4 及以上版本中，用户必须先把网站添加到主屏幕，再授予权限，因此你无法触达那些只在浏览器里访问的用户。
+
+<div id="can-i-convert-my-lovable-app-to-an-apk">
+  ### 我可以把 Lovable 应用转换成 APK 吗？
+</div>
+
+可以。导入 Rork 后，为该 app 添加一个 **Android** 版本 (Project Settings → Add new app → Android) ，Rork 会构建出原生的 Android app。你可以下载 APK 装到自己手机上，或分享一个测试 build 给他人。若要发布到 Google Play，则需上传 AAB，因为 Google Play 要求新 app 采用 Android App Bundle 格式。这是真正的原生 app，而不是给你的 Lovable 网址套一层 webview。
+
+<div id="does-this-convert-lovable-to-react-native">
+  ### 这会把 Lovable 转换成 React Native 吗？
+</div>
+
+不会，而这正是重点所在。Rork 会用原生代码重建你的 app：iPhone 用 **Swift**，Android 用 **Kotlin**。创建 project 时选好目标平台即可。智能体会以原生方式重建界面，而不是逐行移植 Web 代码，所以你得到的是一个真正的原生 app，而不是一层跨平台封装。
+
+<div id="can-i-export-my-lovable-code-without-github">
+  ### 不用 GitHub 能导出我的 Lovable 代码吗？
+</div>
+
+Lovable 自带的导出功能 (以及 Rork 中的 Lovable Sync) 都需要通过 GitHub 完成。如果你手上只有代码的 ZIP 压缩包，可以先将其推送到一个新建的 GitHub 仓库，然后改用常规的 [GitHub 导入](/zh/import/import-from-github)。
+
+<div id="do-i-need-to-keep-paying-for-lovable-after-migrating">
+  ### 迁移后我还需要继续为 Lovable 付费吗？
+</div>
+
+这由你自己决定。不少开发者会继续用 Lovable 做 web app，用 Rork 做移动端；但一个 Rork project 也可以在移动应用之外同时容纳 web app，因此你完全可以把所有东西都整合到 Rork 上。
+
+<div id="my-lovable-repo-isnt-recognized">
+  ### 我的 Lovable 仓库无法识别
+</div>
+
+Lovable Sync 会检查仓库是否确实由 Lovable 生成 (是否存在 Lovable 机器人的近期提交) 。请确认你关联的是 Lovable 管理的那个仓库，而不是手动复制的副本。如果仍然失败，请改用通用的 [GitHub 导入](/zh/import/import-from-github)，它适用于任何仓库。
+
+<CtaBanner />

@@ -1,0 +1,51 @@
+---
+title: "Публикация"
+---
+
+Часто задаваемые вопросы о публикации приложений в Rork
+
+<div id="publishing">
+  ## Публикация
+</div>
+
+Не знаете, какой способ выбрать? Начните с [обзора публикации](/ru/introduction/deploy-your-app).
+
+<div id="how-can-i-share-my-app-before-it-is-in-a-store">
+  ### Как поделиться приложением до его появления в магазине?
+</div>
+
+Опубликуйте веб-приложение в своём проекте и поделитесь ссылкой `.rork.app`. Открыть её в браузере может кто угодно — без App Store, без TestFlight и без установки. См. [Rork Web](/ru/web/rork-web).
+Для приложения на iPhone отправьте тестировщикам ссылку TestFlight после первой отправки на проверку. См. [TestFlight и тестировщики](/ru/store-guides/testflight-beta-testers).
+
+<div id="how-can-i-publish-to-app-store-or-testflight">
+  ### Как опубликовать приложение в App Store или TestFlight?
+</div>
+
+Используйте встроенную функцию публикации Rork: **Publish → App Store → Submit to App Store**.
+Вам понадобится **Apple Developer Account**. Rork собирает и загружает приложение на своих серверах, поэтому ни Mac, ни Xcode, ни отдельный аккаунт для сборки не нужны.
+Карточку приложения в магазине (страницу продукта, цены, скриншоты) вы оформляете в App Store Connect.
+
+<div id="how-can-i-publish-to-google-play-or-download-an-apk-file">
+  ### Как опубликовать приложение в Google Play или скачать файл .apk?
+</div>
+
+Откройте **Publish → Google Play → Upload to Google Play**. Rork соберёт Android App Bundle (AAB), подпишет его постоянным ключом загрузки и при необходимости отправит в ваш трек внутреннего тестирования.
+Карточку приложения в Google Play Console вы создаёте сами и там же отправляете релизы на проверку.
+Из этой же сборки можно **скачать APK**, если нужно установить приложение на телефон вручную.
+
+<div id="how-can-i-publish-to-the-web">
+  ### Как опубликовать приложение в вебе?
+</div>
+
+В один клик: **Publish → Publish to web**. Rork разместит приложение по адресу `your-app.rork.app`, а поддомен можно изменить в той же панели. После первой публикации вы сможете купить домен или подключить уже имеющийся. См. [Домены](/ru/web/rork-web#domains).
+
+***
+
+<div id="need-more-help">
+  ## Нужна помощь?
+</div>
+
+Остались вопросы?
+📩 [Написать в поддержку](mailto:support@rork.com)
+
+<CtaBanner />

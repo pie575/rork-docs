@@ -1,0 +1,95 @@
+---
+title: "Créditos de build vs. créditos de Cloud"
+---
+
+Rork tiene dos saldos independientes: los créditos de build, para crear tu app con el agente, y los créditos de Cloud, para las funciones de IA y de nube que usa tu app una vez terminada.
+
+Los créditos de build y los créditos de Cloud se facturan y se recargan por separado, así que conviene saber a cuál corresponde cada cargo:
+
+* Los **créditos de build** pagan la creación de tu app dentro de Rork.
+* Los **créditos de Cloud** pagan las funciones de IA y de nube que usa tu app mientras se ejecuta, incluidas las que consumen tus propios usuarios una vez publicada la app.
+
+<div id="where-to-find-them">
+  ## Dónde encontrarlos
+</div>
+
+Abre el menú de la cuenta desde tu avatar en la esquina superior derecha. Allí se muestran ambos saldos: **Credits** (tus credits de build) y **Cloud Credits** (el saldo en dólares). Ese mismo menú incluye accesos directos para mejorar tu suscripción, comprar Cloud Credits y abrir Billing.
+
+<Frame>
+  <img alt="Menú de cuenta de Rork que muestra el saldo de Credits y el saldo en dólares de Cloud Credits" />
+</Frame>
+
+<div id="build-credits">
+  ## créditos de build
+</div>
+
+Los créditos de build se consumen mientras creas y editas tu app en Rork. Cubren:
+
+* Los mensajes de chat con el agente de IA.
+* Los builds y las vistas previas que inicias desde el editor.
+* La generación de recursos durante el desarrollo (imágenes, audio, 3D y similares).
+* La publicación y el trabajo de plataforma.
+
+Están vinculados a tu plan y a tu suscripción, por lo que la cantidad que recibes y la forma en que se contabiliza el uso dependen de tu plan. Este es el saldo que va bajando a medida que sigues escribiendo prompts y construyendo.
+
+La pestaña créditos de build, dentro de facturación, muestra tu saldo restante, los créditos de build de suscripción frente a los de uso y tu plan actual, con la opción de recargar créditos de build sobre la marcha:
+
+<Frame>
+  <img alt="Panel de facturación de créditos de build de Rork que muestra los créditos de build restantes, los créditos de build de suscripción y de uso, y el plan actual con recargas de pago por uso" />
+</Frame>
+
+<div id="cloud-credits-rork-ai-cloud">
+  ## Créditos de Cloud (Rork AI Cloud)
+</div>
+
+Los créditos de Cloud son un saldo aparte que tu app ya terminada consume en tiempo de ejecución a través de Rork AI Cloud. No forman parte de tu plan: activas Rork AI Cloud en un proyecto y Rork te regala, por única vez, **$1 en créditos de Cloud** para que pruebes a agregar IA a tu app y hagas algunas pruebas. El saldo se muestra en USD y solo disminuye cuando tu app realmente usa una función de nube.
+
+Entre las funciones de nube que consumen este saldo se incluyen:
+
+* Funciones de backend.
+* Funciones de IA como chat, imágenes y voz.
+* Búsqueda web.
+* Generación de contenido multimedia y 3D.
+
+La pestaña créditos de Cloud, en facturación, muestra el saldo en USD y una sección **Add funds** donde puedes recargarlo, de $5 a $200 por vez. También incluye un interruptor para usar Rork Cloud y un resumen del uso reciente de la nube por parte de tu app:
+
+<Frame>
+  <img alt="Panel de facturación de Rork créditos de Cloud que muestra el interruptor Use créditos de Cloud, el saldo en dólares, la sección Add funds con montos predefinidos y el uso reciente de la nube" />
+</Frame>
+
+<Warning>
+  Antes de depender de las funciones de IA, asegúrate de que **Use créditos de Cloud** esté activado en el proyecto, como en el panel de arriba. Si está desactivado, la app se queda solo con las funciones heredadas y no usará Rork AI Cloud.
+</Warning>
+
+Cloud Usage desglosa ese gasto para que veas en qué se fue: por modelo de IA y por proyecto durante los últimos 30 días.
+
+<Frame>
+  <img alt="Desglose de Rork Cloud Usage con el costo y la cantidad de solicitudes por modelo de IA y por proyecto en los últimos 30 días" />
+</Frame>
+
+<div id="low-balance-and-top-ups">
+  ## Saldo bajo y recargas
+</div>
+
+Para que las funciones de nube de tu app no se interrumpan a mitad de uso, puedes:
+
+* Configurar una alerta por correo de saldo bajo.
+* Activar la recarga automática para que el saldo se reponga solo cuando esté por agotarse.
+
+Rork también puede mostrar una notificación en el proyecto cuando los credits de Cloud estén por agotarse o ya se hayan agotado, con un enlace rápido para añadir credits.
+
+<div id="if-a-charge-looks-wrong">
+  ## Si un cargo parece incorrecto
+</div>
+
+Primero comprueba si se debió a actividad de build (dentro del editor) o a uso de la nube (tu app en ejecución). Luego reúne el enlace del proyecto, la hora aproximada y la acción realizada, y escribe a soporte para que revisen el uso.
+
+<div id="available-ai-models">
+  ## Modelos de IA disponibles
+</div>
+
+Estos son los modelos de IA que puedes usar en tu app. No hace falta que elijas uno de antemano: basta con decirle a Rork qué quieres crear. Puedes indicar un modelo concreto o dejar que el agente elija el más adecuado para la tarea.
+
+Los precios son por cada millón de tokens. Los modelos de imagen, video, audio y embeddings se facturan de otra forma, por lo que sus precios por token aparecen con un guion.
+
+<CloudModels />

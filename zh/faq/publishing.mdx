@@ -1,0 +1,51 @@
+---
+title: "发布"
+---
+
+关于使用 Rork 发布应用的常见问题
+
+<div id="publishing">
+  ## 发布
+</div>
+
+不确定该走哪条路？不妨先看看[发布概览](/zh/introduction/deploy-your-app)。
+
+<div id="how-can-i-share-my-app-before-it-is-in-a-store">
+  ### 应用还没上架应用商店，我该怎么分享？
+</div>
+
+在你的 project 中发布 Web 应用，然后分享它的 `.rork.app` 链接。任何人都能直接在浏览器中打开，无需 App Store、无需 TestFlight、也无需安装。参见 [Rork Web](/zh/web/rork-web)。
+如果是 iPhone 应用，可在首次提交后向测试者发送 TestFlight 链接。参见 [TestFlight 与测试者](/zh/store-guides/testflight-beta-testers)。
+
+<div id="how-can-i-publish-to-app-store-or-testflight">
+  ### 如何发布到 App Store 或 TestFlight？
+</div>
+
+使用 Rork 内置的发布功能：**Publish → App Store → Submit to App Store**。
+你需要一个 **Apple Developer 账户**。Rork 会在自有服务器上完成应用的构建和上传，因此无需 Mac、Xcode 或额外的构建账户。
+商店列表信息 (产品页面、定价、截图) 则在 App Store Connect 中完成填写。
+
+<div id="how-can-i-publish-to-google-play-or-download-an-apk-file">
+  ### 如何发布到 Google Play 或下载 .apk 文件？
+</div>
+
+打开 **Publish → Google Play → Upload to Google Play**。Rork 会构建一个 Android App Bundle (AAB) ，使用固定的上传密钥签名，并可将其推送到你的内部测试轨道。
+应用记录需要你自己在 Google Play Console 中创建，版本也在那里提交审核。
+如果你想手动把应用装到手机上，同一个 build 还会提供 **APK 下载**。
+
+<div id="how-can-i-publish-to-the-web">
+  ### 我该如何发布到 Web？
+</div>
+
+一键搞定：**Publish → Publish to web**。Rork 会将应用托管在 `your-app.rork.app`，你也可以在同一面板中修改子域名。首次发布后，你可以购买域名，或接入自己已有的域名。参见[域名](/zh/web/rork-web#domains)。
+
+***
+
+<div id="need-more-help">
+  ## 需要更多帮助？
+</div>
+
+还有疑问？
+📩 [联系支持团队](mailto:support@rork.com)
+
+<CtaBanner />

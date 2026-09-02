@@ -1,0 +1,172 @@
+---
+title: "App 审核指南"
+---
+
+本指南介绍 Apple 的 App Store 审核流程如何运作、通常需要多长时间、哪些因素会拖慢审核，以及在时间紧迫时如何申请加急审核。
+
+提交到 App Store 的每一个应用、每一次更新都要经过 Apple 的审核。Apple 会检查你的应用是否：
+
+* 功能正常
+* 与 App Store 商品页面信息一致
+* 遵守《App Store 审核指南》
+* 妥善处理权限和用户数据
+* 不会崩溃或卡住核心流程
+
+以下情形均适用：
+
+* 首次提交
+* 版本更新
+* 需要提交新 build 的订阅或定价变更
+
+<div id="how-long-app-review-takes">
+  ## 应用审核需要多长时间
+</div>
+
+<div id="typical-review-timelines">
+  ### 常见审核时长
+</div>
+
+**首次提交应用**
+
+* **24–72 小时**
+
+**应用更新**
+
+* **12–48 小时**
+
+**仅修改元数据**
+
+* 通常**几小时内**即可通过
+* 有时当天就能完成
+
+大多数情况下，应用会在 **1–2 天**内完成审核。
+
+<div id="review-statuses-youll-see-in-app-store-connect">
+  ## 你在 App Store Connect 中会看到的审核状态
+</div>
+
+* **Prepare for Submission** (准备提交) – 设置构建版本与元数据
+* **Waiting for Review** (等待审核) – 应用已进入 Apple 的审核队列
+* **In Review** (审核中) – 应用正在审核中
+* **Pending Developer Release** (等待开发者发布) – 已通过审核，等待手动发布
+* **Ready for Sale** (可供销售) – 应用已上线
+* **Rejected** (被拒绝) – 需要进行修改
+
+<div id="common-reasons-reviews-take-longer">
+  ## 审核耗时较长的常见原因
+</div>
+
+* 权限说明缺失或表述不清
+* 应用崩溃或出现空白页面
+* 需要登录，但未提供测试账号
+* 启用了 iPad 支持，但未做好适配
+* 截图中展示的功能实际无法使用
+* 应用卡在加载页面，或依赖无法访问的后端服务
+
+***
+
+<div id="if-your-app-is-rejected">
+  ## 如果你的应用被拒
+</div>
+
+被拒很常见，也在意料之中，首次提交时尤其如此。
+
+**该怎么做**
+
+1. 仔细阅读拒绝说明
+2. 只修改 Apple 指出的问题
+3. 上传新的 build 或更新元数据
+4. 重新提交
+
+大多数应用在**再次提交一次**后就能通过审核。
+
+<div id="how-to-get-approved-faster-best-practices">
+  ## 如何更快通过审核 (最佳实践) 
+</div>
+
+* 在真机上测试
+* 确保所有按钮和流程都能正常使用
+* 避免出现占位文本或异常页面
+* 添加清晰的权限说明 (相机、照片、麦克风等) 
+* 如果需要登录，请提供演示账号
+* 如果同时支持 iPhone 和 iPad，确保应用在两种设备上都能正常运行
+
+<div id="expediting-app-reviews">
+  ## 加急 App 审核
+</div>
+
+在少数特定情况下，Apple 允许开发者**申请加急审核**。
+
+<div id="when-expedited-review-is-appropriate">
+  ### 何时适合申请加急审核
+</div>
+
+* 影响用户使用的严重 Bug 修复
+* 安全或数据问题
+* 有时间要求的发布或活动
+* 应用因重大问题被卡住无法上线
+
+加急审核**不保证一定通过**，但只要理由充分，通常都会获批。
+
+<div id="how-to-request-an-expedited-review">
+  ### 如何申请加急审核
+</div>
+
+1. 前往 **App Store Connect**
+2. 选择你的 App
+3. 打开已提交的版本
+4. 点击 **Request Expedited Review** (申请加急审核) 
+5. 清楚说明申请理由
+
+<div id="what-to-say-in-the-request">
+  ### 请求中该怎么写
+</div>
+
+内容要简短、具体。示例理由：
+
+* &quot;This build fixes a critical crash affecting all users.&quot; (此 build 修复了影响所有用户的严重崩溃问题。) 
+* &quot;This update resolves a blocking login issue.&quot; (此更新解决了导致无法登录的阻塞性问题。) 
+* &quot;This app supports a time-sensitive event.&quot; (此应用需配合一项有时效性的活动上线。) 
+
+避免&quot;希望尽快上线&quot;这类含糊的理由。
+
+***
+
+<div id="expedited-review-timing">
+  ### 加急审核时长
+</div>
+
+若申请获批：
+
+* 审核通常在 **24 小时内**完成
+* 有时当天即可完成
+
+若申请被拒：
+
+* 应用将继续留在常规审核队列中
+
+<div id="after-approval">
+  ## 审核通过后
+</div>
+
+通过审核后，你可以：
+
+* 立即发布
+* 定时发布
+* 采用分阶段发布
+
+大多数应用在发布后 **几小时内** 就会上架 App Store。
+
+<div id="summary">
+  ## 小结
+</div>
+
+* 大多数应用审核需要 **1–2 天**
+* 审核延迟通常源于崩溃、权限问题或信息缺失
+* 被拒很常见，也完全可以修复
+* 如果情况合理且确实时间紧迫，可以申请加急审核
+* 一旦通过，你的应用当天就能上线
+
+提前把审核流程纳入计划，可以避免上线延误和各种意外。
+
+<CtaBanner />

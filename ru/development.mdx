@@ -1,0 +1,106 @@
+---
+title: "Разработка"
+---
+
+Просматривайте изменения локально, чтобы обновлять документацию
+
+<Info>
+  **Требования**:
+
+  * Node.js версии 19 или выше
+  * Репозиторий документации с файлом `docs.json`
+</Info>
+
+Выполните эти шаги, чтобы установить и запустить Mintlify в вашей операционной системе.
+
+<Steps>
+  <Step title="Установите Mintlify CLI">
+    ```bash theme={null}
+    npm i -g mint
+    ```
+  </Step>
+
+  <Step title="Локальный предпросмотр">
+    Перейдите в каталог документации, где находится файл `docs.json`, и выполните следующую команду:
+
+    ```bash theme={null}
+    mint dev
+    ```
+
+    Локальный предпросмотр документации будет доступен по адресу `http://localhost:3000`.
+  </Step>
+</Steps>
+
+<div id="custom-ports">
+  ## Настройка портов
+</div>
+
+По умолчанию Mintlify использует порт 3000. Изменить порт, на котором работает Mintlify, можно с помощью флага `--port`. Например, чтобы запустить Mintlify на порту 3333, выполните следующую команду:
+
+```bash theme={null}
+mint dev --port 3333
+```
+
+Если вы попытаетесь запустить Mintlify на уже занятом порту, будет использован следующий свободный порт:
+
+```md theme={null}
+Порт 3000 уже занят. Пробуем 3001.
+```
+
+<div id="mintlify-versions">
+  ## Версии Mintlify
+</div>
+
+Обратите внимание, что каждый выпуск CLI привязан к определённой версии Mintlify. Если локальный предпросмотр отличается от продакшен-версии, обновите CLI:
+
+```bash theme={null}
+npm mint update
+```
+
+<div id="validating-links">
+  ## Проверка ссылок
+</div>
+
+CLI поможет проверить ссылки в вашей документации. Чтобы найти битые ссылки, выполните следующую команду:
+
+```bash theme={null}
+mint broken-links
+```
+
+<div id="deployment">
+  ## Развёртывание
+</div>
+
+Если развёртывание прошло успешно, вы увидите следующее:
+
+<Frame>
+  <img alt="Снимок экрана с сообщением об успешном развёртывании: All checks have passed." />
+</Frame>
+
+<div id="code-formatting">
+  ## Форматирование кода
+</div>
+
+Рекомендуем установить в вашей IDE расширения, которые распознают и форматируют MDX. Если вы работаете в VSCode, обратите внимание на [расширение MDX для VSCode](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) для подсветки синтаксиса и [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) для форматирования кода.
+
+<div id="troubleshooting">
+  ## Устранение неполадок
+</div>
+
+<AccordionGroup>
+  <Accordion title="Ошибка: Could not load the &#x22;sharp&#x22; module using the darwin-arm64 runtime">
+    Причиной может быть устаревшая версия Node. Попробуйте следующее:
+
+    1. Удалите текущую версию CLI: `npm remove -g mint`
+    2. Обновите Node до версии 19 или выше.
+    3. Установите CLI заново: `npm i -g mint`
+  </Accordion>
+
+  <Accordion title="Проблема: возникает неизвестная ошибка">
+    Решение: перейдите в корневую папку устройства и удалите папку `~/.mintlify`. Затем снова выполните `mint dev`.
+  </Accordion>
+</AccordionGroup>
+
+Хотите узнать, что изменилось в последней версии CLI? Загляните в [журнал изменений CLI](https://www.npmjs.com/package/mintlify?activeTab=versions).
+
+<CtaBanner />

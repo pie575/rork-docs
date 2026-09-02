@@ -1,0 +1,106 @@
+---
+title: "本地开发"
+---
+
+在本地预览改动，随时更新你的文档
+
+<Info>
+  **前置条件**：
+
+  * Node.js 19 或更高版本
+  * 包含 `docs.json` 文件的文档仓库
+</Info>
+
+按照以下步骤在你的操作系统上安装并运行 Mintlify。
+
+<Steps>
+  <Step title="安装 Mintlify CLI">
+    ```bash theme={null}
+    npm i -g mint
+    ```
+  </Step>
+
+  <Step title="本地预览">
+    进入 `docs.json` 文件所在的文档目录，运行以下命令：
+
+    ```bash theme={null}
+    mint dev
+    ```
+
+    随后即可通过 `http://localhost:3000` 在本地预览文档。
+  </Step>
+</Steps>
+
+<div id="custom-ports">
+  ## 自定义端口
+</div>
+
+Mintlify 默认使用 3000 端口。你可以使用 `--port` 参数指定 Mintlify 运行的端口。例如，要让 Mintlify 在 3333 端口上运行，请使用以下命令：
+
+```bash theme={null}
+mint dev --port 3333
+```
+
+如果你尝试在已被占用的端口上运行 Mintlify，它会自动改用下一个可用端口：
+
+```md theme={null}
+Port 3000 is already in use. Trying 3001 instead.
+```
+
+<div id="mintlify-versions">
+  ## Mintlify 版本
+</div>
+
+请注意，每个 CLI 版本都对应特定版本的 Mintlify。如果本地预览与线上版本不一致，请更新 CLI：
+
+```bash theme={null}
+npm mint update
+```
+
+<div id="validating-links">
+  ## 校验链接
+</div>
+
+CLI 可以帮你校验文档中的链接。若要查找失效链接，请使用以下命令：
+
+```bash theme={null}
+mint broken-links
+```
+
+<div id="deployment">
+  ## 部署
+</div>
+
+如果部署成功，你会看到如下界面：
+
+<Frame>
+  <img alt="部署确认消息的截图，显示所有检查均已通过。" />
+</Frame>
+
+<div id="code-formatting">
+  ## 代码格式化
+</div>
+
+建议在 IDE 中安装相应扩展来识别并格式化 MDX。如果你使用 VSCode，可以安装 [MDX VSCode 扩展](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) 实现语法高亮，并使用 [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) 进行代码格式化。
+
+<div id="troubleshooting">
+  ## 故障排查
+</div>
+
+<AccordionGroup>
+  <Accordion title="错误：无法使用 darwin-arm64 运行时加载 &#x22;sharp&#x22; 模块">
+    这可能是 node 版本过旧导致的。请尝试以下操作：
+
+    1. 卸载当前安装的 CLI：`npm remove -g mint`
+    2. 升级到 Node v19 或更高版本。
+    3. 重新安装 CLI：`npm i -g mint`
+  </Accordion>
+
+  <Accordion title="问题：遇到未知错误">
+    解决方法：进入设备的根目录，删除 `~/.mintlify` 文件夹，然后重新运行 `mint dev`。
+  </Accordion>
+</AccordionGroup>
+
+想知道最新版 CLI 有哪些变化？请查看 [CLI 更新日志](https://www.npmjs.com/package/mintlify?activeTab=versions)。
+
+<CtaBanner />

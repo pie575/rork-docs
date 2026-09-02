@@ -1,0 +1,224 @@
+---
+title: "Cómo añadir un paywall a tu app de Rork con RevenueCat"
+---
+
+¿Listo para añadir pagos a tu app? Sigue esta guía para configurar Rork con un paywall de RevenueCat y publicar tu app en Producción con un sistema de pagos completo que restringe el acceso a las funciones.
+
+<iframe title="Reproductor de video de YouTube" />
+
+<div id="step-by-step-tutorial-revenuecat-in-a-rork-app-end-to-end">
+  # Tutorial paso a paso: RevenueCat en una app de Rork (de principio a fin)
+</div>
+
+<div id="1-build-your-app-in-rork">
+  ## 1) Crea tu app en Rork
+</div>
+
+1. Escribe tu prompt (ejemplo del video: «contador de calorías con notas y estimación de calorías con IA»).
+2. Envía el prompt → Rork crea la app.
+3. Si se te ocurren funciones adicionales durante la creación (por ejemplo, «escanea tu comida»), añádelas a la **cola** para que Rork las gestione después del primer prompt.
+
+<div id="2-connect-revenuecat-inside-rork">
+  ## 2) Conecta RevenueCat dentro de Rork
+</div>
+
+1. En Rork, ve a **Integraciones**.
+2. Haz clic en **Connect with RevenueCat**.
+3. Inicia sesión o regístrate en RevenueCat.
+4. Autoriza a Rork a acceder a tu cuenta de RevenueCat.
+5. Haz clic en **Create new project** en RevenueCat.
+   * Ponle el nombre que quieras (por ejemplo, «Calorie Tracker»).
+6. Vuelve al **chatbot** de Rork y escribe:
+   **«Configura RevenueCat».**
+7. Rork configurará:
+   * Offerings
+   * Products
+   * Entitlements
+   * Variables de entorno / claves de API
+8. Cuando Rork te pida definir las variables de entorno → haz clic en **Yes**.
+
+<div id="3-test-purchases-in-revenuecat-test-store-sandbox-inside-rc">
+  ## 3) Probar compras en RevenueCat Test Store (sandbox dentro de RC)
+</div>
+
+1. En la app de Rork, toca la suscripción (ejemplo: **$40/año**).
+2. Verás opciones como:
+   * Probar una compra válida
+   * Probar una compra fallida
+3. Toca **Test valid purchase**.
+4. En el panel de RevenueCat → **Overview** → activa **Sandbox data**.
+5. Si ves el MRR de sandbox / la suscripción (ej.: $40/año), entonces:
+   ✅ Rork + RevenueCat Test Store están conectados.
+
+> Nota: Todavía NO son suscripciones reales de la App Store.
+
+<img alt="Image" />
+
+<div id="4-push-the-app-to-testflight-required-for-real-apple-iap">
+  ## 4) Sube la app a TestFlight (obligatorio para las compras dentro de la app reales de Apple)
+</div>
+
+1. En Rork, ve a **Get users → Submit to TestFlight**.
+2. Haz clic en **New submission**.
+3. (Opcional, pero recomendado) Genera un icono de app con Rork.
+4. Completa la información de **Apple Developer** cuando se te solicite.
+5. Envía y espera a que termine la generación y subida del build.
+6. Ve a **App Store Connect**. Completa la información de cumplimiento requerida para que el build se pueda probar.
+
+<img alt="Image" />
+
+<div id="5-create-subscriptions-in-app-store-connect-real-products">
+  ## 5) Crea suscripciones en App Store Connect (productos reales)
+</div>
+
+<div id="create-a-subscription-group">
+  ### Crear un grupo de suscripciones
+</div>
+
+1. App Store Connect → **Suscripciones**
+2. Crea un **grupo de suscripciones**
+   * Ponle un nombre sencillo (por ejemplo: «Suscripciones»)
+
+<img alt="Image" />
+
+<div id="create-monthly-subscription-repeat-for-yearly">
+  ### Crea la suscripción mensual (repite para la anual)
+</div>
+
+1. Crea una **Suscripción**
+2. Configura:
+   * Nombre de referencia: «Suscripción mensual».
+   * ID de producto: «monthly&#95;subscription» (o el mismo nombre)
+3. Completa los metadatos obligatorios:
+   * Duración: **1 mes**
+   * Disponibilidad: **En todas partes**
+   * Precio: por ejemplo **$4.99/mes**
+4. Añade la localización:
+   * Nombre visible: «Suscripción mensual».
+5. Añade una captura o imagen de tu paywall (obligatoria para poder enviarla a revisión)
+6. Envía / Guarda
+7. Repite los mismos pasos para la suscripción **anual**.
+
+✅ Hecho esto, los productos deberían aparecer como «Listos para enviar» en App Store Connect.
+
+<img alt="Image" />
+
+<div id="6-connect-app-store-connect-to-revenuecat-so-products-sync">
+  ## 6) Conecta App Store Connect con RevenueCat (para que se sincronicen los productos)
+</div>
+
+RevenueCat → **Apps → app de iOS**
+
+<img alt="Image" />
+
+<div id="add-app-info">
+  ### Añade la información de la app
+</div>
+
+1. Copia tu **Bundle ID** de App Store Connect y pégalo en RevenueCat.
+
+<div id="add-in-app-purchase-key">
+  ### Añade la clave de compras dentro de la app
+</div>
+
+1. App Store Connect → **Usuarios y acceso → Integraciones**
+2. En **Compra dentro de la app**, haz clic en **+**
+3. Ponle un nombre (por ejemplo: «RevenueCat Calorie Tracker»)
+4. Descarga el archivo de la clave
+5. Súbelo o arrástralo a RevenueCat
+6. Copia el **Issuer ID** (encima de la lista de claves de integración) → pégalo en RevenueCat
+
+<img alt="Image" />
+
+<div id="add-app-store-connect-api-key">
+  ### Añadir la clave de API de App Store Connect
+</div>
+
+1. Sin salir de **Usuarios y acceso → Integraciones**
+2. Crea una clave de **App Store Connect API**
+3. Descárgala → súbela a RevenueCat
+4. Vuelve a introducir el **Issuer ID**
+
+<img alt="Image" />
+
+<div id="add-vendor-number">
+  ### Añadir el número de proveedor (Vendor Number)
+</div>
+
+1. App Store Connect → **Reports** (sección Business)
+2. Arriba a la izquierda aparece el **Vendor Number**
+3. Cópialo y pégalo en RevenueCat
+
+<div id="enable-server-to-server-notifications-recommended">
+  ### Habilitar las notificaciones de servidor a servidor (recomendado)
+</div>
+
+* Activa: **Track new purchases from server-to-server notifications**
+
+<div id="add-app-specific-shared-secret">
+  ### Añade el secreto compartido específico de la app
+</div>
+
+1. App Store Connect → **Apps → Tu app → Información de la app**
+2. Desplázate hasta **Secreto compartido específico de la app**
+3. Haz clic en **Gestionar → Generar**
+4. Copia el secreto → pégalo en RevenueCat
+5. Haz clic en **Guardar cambios** en RevenueCat
+
+✅ Listo: Apple ↔ RevenueCat ya están conectados.
+
+<div id="7-import-your-app-store-products-into-revenuecat">
+  ## 7) Importa tus productos de la App Store a RevenueCat
+</div>
+
+1. RevenueCat → **Product Catalog**
+2. Elige **Default** (o tu catálogo activo)
+3. Haz clic en **Add new product → Import products**
+4. Selecciona los productos mensual y anual → **Import**
+5. Para cada producto importado:
+   * Asócialo a un **Entitlement** (lo habitual es usar el mismo entitlement para ambos)
+
+<img alt="Image" />
+
+<div id="8-attach-products-to-your-revenuecat-offering">
+  ## 8) Vincula los productos a tu Offering de RevenueCat
+</div>
+
+1. RevenueCat → **Offerings → Default**
+2. Haz clic en **Edit**
+3. Vincula cada producto de la App Store con el paquete correspondiente
+4. Haz clic en **Save**
+
+<div id="9-final-test-testflight-purchase">
+  ## 9) Prueba final: compra en TestFlight
+</div>
+
+1. Instala tu app desde **TestFlight**
+2. Abre el paywall dentro de la app
+3. Tus suscripciones ya deberían poder comprarse desde TestFlight y en producción una vez publicada la app.
+
+<div id="common-issues">
+  # Problemas comunes:
+</div>
+
+* Asegúrate de que toda tu información de Acuerdos/Datos bancarios esté activa. (Tus suscripciones no funcionarán si esto no está configurado
+
+<img alt="Image" />
+
+* La clave de API pública de App Store no está configurada correctamente.
+
+<img alt="Image" />
+
+* Solo tienes que darle esta clave a Rork y decirle: «Asegúrate de que Apple y RevenueCat estén conectados».
+
+<div id="what-to-do-next">
+  ## Qué hacer a continuación:
+</div>
+
+Después de añadir un paywall, la App Store seguirá rechazando tu app si no cuentas con una política de privacidad, términos y condiciones y un EULA visible.
+
+En la descripción de tu app en la App Store, asegúrate de mencionar que todas las funciones requieren una suscripción de pago si vas a bloquear tu app por completo con el paywall. Si no lo haces, Apple la rechazará.
+
+[¿Cómo crear las políticas?](/es/make-your-app-profitable/paywalls/how-to-set-up-your-policies)
+
+<CtaBanner />

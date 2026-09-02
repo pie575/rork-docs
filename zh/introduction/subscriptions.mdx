@@ -1,0 +1,250 @@
+---
+title: "套餐与订阅"
+---
+
+Rork 定价说明：Free、Rork Pro 和 Rork Max 三种 plan、Design mode 与 Build mode 的区别、credits 是什么、每种 plan 分别包含哪些内容 (iPhone、Android、Web) ，以及如何升级、降级或取消订阅。
+
+<img alt="Rork 定价套餐：Free、Rork Pro 和 Rork Max" />
+
+**Rork** 的定价简单透明，包含一个 **Free** plan 和两个付费层级 (**Rork Pro** 和 **Rork Max**) 。其中 Rork Max 为重度用户提供多种 credits 选项。你只需为实际使用的算力付费，并可随时升级、降级或取消。
+
+<Note>
+  **付费 plan (Rork Pro 和 Rork Max) 按首次购买日的每月对应日重置。** **Free** plan 则在每个自然月月初重置。
+</Note>
+
+<div id="design-mode-and-build-mode">
+  ## Design mode 与 Build mode
+</div>
+
+Rork 将工作分为两种模式，这也是 Free 方案与付费方案的主要区别。
+
+* **Design mode** 用于探索应用的设计。你描述想法，Rork 就会给出相应的页面和视觉风格。**Free** 方案运行在 Design mode 下。
+* **Build mode** 会把这些设计变成可运行的应用：生成真正的 Swift、Kotlin 或 React 代码，供你预览、在设备上测试并发布。付费方案可解锁 Build mode。
+
+<div id="what-is-a-credit">
+  ## 什么是 credit？
+</div>
+
+**credit** 是 AI 算力的计量单位，大致相当于 Rork 设计、构建或修改你的 app 时的一次请求。每种 plan 每月都包含一定数量的 credits。用完之后，你可以升级 plan，或等待下个月额度重置。
+
+* **Free** plan：**每天 5 个设计 credits**。每月额度视所在地区而定：**主要市场每月 35 credits** (美国、英国、加拿大、欧盟、日本、韩国、澳大利亚及其他主要国家) ，**其他地区每月 5 credits**。
+* **付费** plan (Pro 和 Max) ：**没有每日上限**，你可以随时用满整月的额度。
+
+部分操作消耗的 credit 不止一个。iOS builds 和云端模拟器会话需要租用真实机器，因此除了触发它们的那条消息外，还会另行计费。参见 [Build credits 与 cloud credits](/zh/billing/build-credits-vs-cloud-credits)。
+
+<div id="plans-at-a-glance">
+  ## 套餐一览
+</div>
+
+| 功能                                      | Free                   | Rork Pro  | Rork Max                       |
+| --------------------------------------- | ---------------------- | --------- | ------------------------------ |
+| **价格**                                  | $0                     | **$20/月** | **$200/月** 起                   |
+| **每月 credits**                          | 主要市场 35，其他地区 5 (每天 5)  | 100       | 1,000 · 2,500 · 5,000 · 10,000 |
+| **Design mode**                         | ✓                      | ✓         | ✓                              |
+| **Build mode**                          | ✗                      | ✓         | ✓                              |
+| **iPhone 应用 (SwiftUI)&#x20;**&#x20;          | 仅设计                    | ✓         | ✓                              |
+| **Android 应用 (Kotlin + Compose)&#x20;**&#x20;| 仅设计                    | ✓         | ✓                              |
+| **Web 应用**                              | 仅设计                    | ✓         | ✓                              |
+| **iPad、Apple Watch、Vision Pro**         | 仅设计                    | ✗         | ✓                              |
+| **原生游戏与 iOS 小组件**                       | ✗                      | ✗         | ✓                              |
+| **私有 project**                          | ✓                      | ✓         | ✓                              |
+| **Dev mode**                            | ✗                      | ✓         | ✓                              |
+| **支持**                                  | 无                      | 邮件        | 优先聊天支持                         |
+
+<Note>
+  **Rork Pro 已包含使用 SwiftUI 的原生 iPhone 应用。** 构建 iPhone 应用无需升级到 Rork Max。Rork Max 额外提供其余 Apple 设备 (iPad、Apple Watch、Vision Pro) 、原生游戏、iOS 小组件以及优先聊天支持。
+</Note>
+
+无论使用哪种 plan，所有 project 都是私有的。
+
+<div id="models-by-plan">
+  ## 各 plan 可用的模型
+</div>
+
+可用模型会随 Rork 新增或调整模型而更新。下方列表每日从 Rork 的公开模型目录同步刷新。
+
+<ModelAvailability />
+
+<Note>
+  **主要国家/地区**指美国、英国、加拿大、欧盟、日本、韩国、澳大利亚等主要市场。标记为**首条消息**的模型仅可用于新 project 的第一条提示词。
+</Note>
+
+<div id="free-0mo">
+  ## Free ($0/月)
+</div>
+
+免费设计你的 app，无需绑定银行卡。
+
+* **Design mode**：探索 iPhone、Android、web、iPad、Apple Watch 和 Vision Pro 上的 app 设计
+* **私有 project**
+* **每天 5 个设计 credits**，**主要市场每月最多 35 个 credits** (其他地区每月 5 个 credits)
+
+想把设计变成可 build、可发布的真正 app，请升级到付费 plan。
+
+<div id="rork-start-649mo-india-only">
+  ## Rork Start (₹649/月，仅限印度)
+</div>
+
+面向印度市场、以卢比计价的入门 plan。
+
+**支持平台：** iPhone (SwiftUI) 、Android (Kotlin + Compose) 、Web
+
+**包含内容：**
+
+* Build 模式
+* 使用 SwiftUI 开发 iPhone app
+* 使用 Kotlin + Compose 开发 Android app
+* Web app
+* 仅限轻量模型，且由系统自动选择
+* 私有 project
+* Dev 模式 (可编辑底层代码)
+* **每月 40 credits**
+
+<div id="rork-pro-20mo">
+  ## Rork Pro ($20/月)
+</div>
+
+用 **SwiftUI 构建原生 iPhone 应用**、用 **Kotlin + Compose 构建原生 Android 应用**，以及 **Web** 应用。适合打造第一款真正的产品，也适合做原型。
+
+**平台：** iPhone (SwiftUI) 、Android (Kotlin + Compose) 、Web
+
+**包含：**
+
+* Build 模式：将设计变成可运行的 app
+* 用 SwiftUI 构建 iPhone 应用
+* 用 Kotlin + Compose 构建 Android 应用
+* Web 应用
+* 私有 project
+* Dev 模式 (编辑底层代码)
+* **每月 100 credits**
+* 支持方式：**电子邮件**
+
+<div id="rork-max-from-200mo">
+  ## Rork Max ($200/月起)
+</div>
+
+面向完整 Apple 设备生态和重度用户。涵盖 Rork Pro 的全部内容，并覆盖 Apple 其余平台。
+
+**平台：** iPhone (SwiftUI) 、Android、Web、iPad、Apple Watch、Vision Pro
+
+**包含：**
+
+* Rork Pro 的全部内容
+* iPad、Apple Watch 和 Vision Pro
+* 原生性能级别的游戏
+* iOS 小组件
+* 优先在线客服支持
+
+**积分方案 (Scale) ：**
+
+| 价格       | 积分 / 月    |
+| -------- | --------- |
+| $200/月   | 1,000 积分  |
+| $500/月   | 2,500 积分  |
+| $900/月   | 5,000 积分  |
+| $1,800/月 | 10,000 积分 |
+
+<div id="what-the-icons-mean">
+  ## 图标含义
+</div>
+
+每个套餐都会显示一栏 **Platforms** (可构建应用的设备平台) ，下方列表中还有各项功能图标。
+
+<div id="platform-icons">
+  ### 平台图标
+</div>
+
+<div>
+  <div><img alt="Android" /><span><strong>Android (Kotlin + Compose) ：</strong>原生 Android 应用</span></div>
+  <div><img alt="iPhone" /><span><strong>iPhone (SwiftUI) ：</strong>原生 iOS 应用</span></div>
+  <div><img alt="Web" /><span><strong>Web：</strong>网页应用</span></div>
+  <div><img alt="iPad" /><span><strong>iPad：</strong>支持自适应布局的 iPad 应用</span></div>
+  <div><img alt="Apple Watch" /><span><strong>Apple Watch：</strong>Apple Watch 应用</span></div>
+  <div><img alt="Vision Pro" /><span><strong>Vision Pro：</strong>visionOS 空间体验</span></div>
+</div>
+
+<div id="feature-icons">
+  ### 功能图标
+</div>
+
+<div>
+  <div><img alt="包含" /><span>该套餐包含的功能</span></div>
+  <div><img alt="私有" /><span><strong>私有项目：</strong>你的代码保持私有</span></div>
+  <div><img alt="开发者模式" /><span><strong>开发者模式：</strong>可编辑底层代码</span></div>
+  <div><img alt="邮件" /><span><strong>邮件支持</strong></span></div>
+  <div><img alt="聊天" /><span><strong>聊天 / 优先聊天支持</strong></span></div>
+  <div><img alt="游戏" /><span><strong>游戏：</strong>原生级性能</span></div>
+  <div><img alt="小组件" /><span><strong>iOS 小组件</strong></span></div>
+</div>
+
+<div id="custom-scale-plans">
+  ## Custom 与 Scale 方案
+</div>
+
+每月需要超过 10,000 credits，或需要企业级条款？如果你需要**定制方案 (Custom Plan)&#x20;**，请[联系我们](mailto:support@rork.com)。
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<div id="what-is-a-credit-2">
+  ### 什么是 credit？
+</div>
+
+credit 是 AI 算力的计量单位，大致相当于 Rork 为你设计、构建或修改 app 的一次请求。每个 plan 每月都包含固定数量的 credits (重置周期见下文) 。
+
+<div id="whats-the-difference-between-rork-pro-and-rork-max">
+  ### Rork Pro 和 Rork Max 有什么区别？
+</div>
+
+**Rork Pro** 可以构建**原生 iPhone 应用 (SwiftUI)&#x20;**、**原生 Android 应用 (Kotlin + Compose) **以及 **web** 应用。**Rork Max** 在此基础上增加了 **iPad、Apple Watch 和 Vision Pro** 支持，还支持原生游戏、iOS 小组件和优先聊天支持。只需要 iPhone、Android 和 web，选 Pro；需要覆盖更多 Apple 设备，或用到 Max 独有功能，就选 Max。
+
+<div id="do-i-need-rork-max-to-build-an-iphone-app">
+  ### 构建 iPhone 应用需要 Rork Max 吗？
+</div>
+
+不需要。**Rork Pro 就能使用 SwiftUI 构建原生 iPhone 应用。** Rork Max 主要面向其他 Apple 设备 (iPad、Apple Watch、Vision Pro) 、原生游戏以及 iOS 小组件。
+
+<div id="are-my-projects-public-on-the-free-plan">
+  ### 使用 Free 套餐时，我的项目会公开吗？
+</div>
+
+不会。所有套餐 (包括 Free) 下的每个项目都是私有的。
+
+<div id="when-do-my-credits-reset">
+  ### 我的 credits 什么时候重置？
+</div>
+
+**付费 plan (Rork Pro 和 Rork Max)&#x20;**&#x20;在每月的 **首次购买对应日** 重置。**Free** plan 则在 **每个自然月的月初** 重置。
+
+<div id="how-do-i-upgrade-my-subscription">
+  ### 如何升级我的订阅？
+</div>
+
+在桌面端，点击右上角的个人头像。如果你使用的是 Free 套餐，点击 **Upgrade Plan** (升级套餐) ；如果你已订阅了某个套餐，则点击 **Manage Subscription** (管理订阅) 。完整的套餐选项仅在桌面端提供。在移动应用中，订阅通过 App Store 管理。
+
+<div id="how-do-i-downgrade-my-subscription">
+  ### 如何降级订阅？
+</div>
+
+在桌面端，点击右上角的个人头像，然后点击 **Manage Subscription** (管理订阅) ，选择更低级别的套餐。在移动端，请通过 App Store 管理你的订阅。
+
+<div id="how-do-i-cancel-my-subscription">
+  ### 如何取消订阅？
+</div>
+
+在桌面端，从个人资料菜单中打开 **Account Settings → Manage Subscription**，页面会跳转到 Stripe 账单门户，你可以在其中管理或取消订阅。在移动端，请通过 App Store 取消。
+
+<div id="can-i-get-free-credits">
+  ### 我可以获得免费的 credits 吗？
+</div>
+
+可以，有以下几种方式：
+
+* **连接 RevenueCat：**[连接你的 RevenueCat 账户](https://rork.com/revenuecat-gift)，根据你的 app 收入最多可获得 1,000 个免费 credits。
+* **开发者社区：**我们 [Discord 社区](https://discord.gg/rxBHytVKaT)的活跃成员可获得 credits。
+* **与我们一起创作：**分享源自你**亲身实践**的 Rork 实用指南。我们想要真实的第一手内容，而不是 AI 生成的内容。
+* **举办社区活动：**为开发者社区组织一场活动。在 [Discord](https://discord.gg/rxBHytVKaT) 上把你的想法告诉 **Dora (@acooldora)**。
+* **分享你的故事：**如果你用 Rork 做出了出色的作品，我们会对你进行访谈，并在 [Rork Founders](https://rork.com/founders) 和 [Rork 博客](https://rork.com/blog)上进行展示。
+
+<CtaBanner />

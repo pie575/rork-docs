@@ -1,0 +1,80 @@
+---
+title: "Principales motivos de rechazo en la App Store"
+---
+
+Estos son los motivos más habituales de rechazo en la App Store
+
+(añadir buenas prácticas y errores a evitar)
+Motivos de rechazo más comunes:
+
+* Problemas de permisos en `Info.plist`
+* Problemas con las suscripciones
+* Capturas de pantalla para iPad
+
+<div id="infoplist-permission-issues">
+  ## Problemas de permisos en Info.plist
+</div>
+
+<img alt="Image" />
+
+Esto ocurre cuando tu app solicita permisos en el teléfono del usuario, pero no especifica el motivo exacto.
+
+<img alt="Image" />
+
+<Warning>
+  Apple rechazaría el código anterior, ya que no explica correctamente por qué se necesita cada permiso.
+</Warning>
+
+<img alt="Image" />
+
+<Check>
+  El código anterior sí incluye una descripción detallada de por qué se necesita cada permiso.
+</Check>
+
+<div id="how-do-i-fix-this-issue">
+  ## ¿Cómo soluciono este problema?
+</div>
+
+Por lo general, Rork ya explica el propósito de cada permiso. Sin embargo, si se presenta este problema, abre `Info.plist` en la carpeta de la app de iOS y corrige las descripciones de los permisos, o pídele al agente en el chat que las reescriba.
+
+Si necesitas más ayuda, puedes consultar al agente de Rork.
+
+<div id="subscription-issues">
+  ## Problemas con las suscripciones
+</div>
+
+<img alt="Image" />
+
+Al añadir un paywall o compras dentro de la app, debes incluir tu política de privacidad, los términos y condiciones y tu EULA tanto en la descripción de tu app en la App Store como de forma visible en el paywall
+
+**¿Cómo crear las políticas?**
+
+Si usas un paywall estricto, debes indicar en la descripción de la App Store que todas las funciones están bloqueadas por un paywall; de lo contrario, Apple también rechazará tu app.
+
+<img alt="Image" />
+
+<div id="ipad-screenshots">
+  ## Capturas de pantalla para iPad
+</div>
+
+No basta con enviar capturas de pantalla de iPhone estiradas al tamaño de un iPad; Apple las rechazará.
+
+<img alt="Image" />
+
+<Danger>
+  Esto se rechazará porque no son capturas de pantalla reales de iPad; son solo capturas de iPhone estiradas.
+</Danger>
+
+<img alt="Image" />
+
+<Check>
+  Se aceptará porque es una captura de pantalla real de un iPad
+</Check>
+
+<div id="what-if-i-dont-have-access-to-an-ipad">
+  ## ¿Qué hago si no tengo acceso a un iPad?
+</div>
+
+Puedes ir a [Xcode](/es/how-to-set-up-xcode/how-to-set-up-xcoe) e iniciar un simulador de iPad para tomar ahí las capturas de pantalla.
+
+<CtaBanner />

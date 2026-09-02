@@ -1,0 +1,85 @@
+---
+title: "发布你的应用"
+---
+
+做好的应用有三个去处：App Store、Google Play 或 Web。每个商店都有各自的账号、各自的审核和各自的等待时间。从这里开始，选一条适合你的路线。
+
+Rork 会在自己的服务器上帮你完成构建和上传，你不需要 Mac、Xcode 或 Android Studio。
+
+Rork 唯一做不到的，就是代替你本人。每个商店都要求以你的名义注册账号、完成身份验证、并写好应用商店信息。这些事要尽早着手，因为慢的从来不是构建，而是等待。
+
+<div id="pick-your-route">
+  ## 选择你的发布路径
+</div>
+
+<CardGroup>
+  <Card icon="globe" href="/zh/web/rork-web" title="Web">
+    最快。无需账号、无需审核、无需安装，今天就能发布并分享链接。
+  </Card>
+
+  <Card icon="apple" href="/zh/store-guides/publish-app-store" title="App Store">
+    需要每年 $99 的 Apple Developer 会员资格，并通过 Apple 审核。
+  </Card>
+
+  <Card icon="android" href="/zh/submitting-to-play-store/creating-the-aab-file" title="Google Play">
+    需要一次性缴纳 $25 注册费，新个人账号还需完成一次封闭测试。
+  </Card>
+</CardGroup>
+
+这三条路径并不互斥。同一个 project 可以同时包含 iPhone 应用、Android 应用和 Web 应用，不少创始人会在等待商店账号审核期间先发布 Web 应用来验证想法。参见[在 iOS、Android 和 Web 之间转换你的应用](/zh/import/convert-between-platforms)。
+
+<div id="iphone-in-order">
+  ## iPhone 发布流程 (按顺序)
+</div>
+
+<Steps>
+  <Step title="创建 Apple Developer 账号">
+    每年 $99，Apple 会核实你的身份。[创建 Apple Developer 账号](/zh/store-guides/apple-developer-account)。
+  </Step>
+
+  <Step title="上传 build 到 TestFlight">
+    把应用装到真机上，你自己的和测试者的手机都要装。[TestFlight 与测试者](/zh/store-guides/testflight-beta-testers)。
+  </Step>
+
+  <Step title="对照审核指南自查">
+    运行 [AI App Store Reviewer](/zh/ai-app-store-reviewer)，并阅读 [App Store 检查清单](/zh/submitting-to-app-store/apple/app-store-checklist)。
+  </Step>
+
+  <Step title="准备应用商店信息">
+    截图、应用描述、隐私问题的回答。参见 [App Store 截图](/zh/appstore-screenshots/app-store-screenshots) 和 [Screenshot Studio](/zh/store-guides/screenshot-studio)。
+  </Step>
+
+  <Step title="提交并等待">
+    [将你的应用发布到 Apple App Store](/zh/store-guides/publish-app-store)，然后查看 [App Store 审核指南](/zh/appstore-submission-checklist/app-review-guide)，了解各个状态的含义。
+  </Step>
+</Steps>
+
+如果 build 失败或迟迟没有出现，请查看[提交错误](/zh/submitting-to-app-store/apple/submission-errors)。想了解最常见的拒审原因，请查看 [App Store 主要拒审原因](/zh/appstore-submission-checklist/whats-next-after-the-apps-finished)。
+
+<div id="android-in-order">
+  ## Android 发布顺序
+</div>
+
+<Steps>
+  <Step title="注册 Google Play 开发者账号">
+    一次性支付 $25，并需完成身份验证。新的个人账号还需完成为期 14 天、有 12 名测试人员参与的封闭测试，因此请先从这一步开始。[创建你的 Google Play 开发者账号](/zh/store-guides/google-play-developer-account)。
+  </Step>
+
+  <Step title="在自己的手机上安装应用">
+    [如何在你的 Android 设备上测试 Android 应用](/zh/submitting-to-play-store/apk-file)。
+  </Step>
+
+  <Step title="将 build 提交到 Play Console">
+    [如何将你的 Rork 应用发布到 Google Play 商店](/zh/submitting-to-play-store/creating-the-aab-file)。
+  </Step>
+</Steps>
+
+<div id="before-you-submit-anywhere">
+  ## 提交到任何平台之前
+</div>
+
+* **在真机上测试你要发布的版本**，不要只在预览中测试。
+* **提前准备好政策文件。** 两大应用商店都要求提供隐私政策，订阅还需要服务条款。参见[如何创建隐私政策](/zh/make-your-app-profitable/paywalls/how-to-set-up-your-policies)。
+* **在填写应用商店信息之前先确定盈利方式**，因为定价和付费墙会影响审核。参见[如何用 RevenueCat 添加付费墙](/zh/payment-guides/revenuecat-copied-1)。
+
+<CtaBanner />

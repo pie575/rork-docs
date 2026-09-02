@@ -1,0 +1,80 @@
+---
+title: "Rork 的后端能力有哪些？"
+---
+
+对于需要服务端功能的应用，Rork 提供了可选的后端基础设施。该功能目前处于 Beta 阶段，如果遇到任何问题，请联系支持团队。
+
+<div id="overview">
+  ### **概述**
+</div>
+
+后端让开发者能够在 Rork 应用中实现自定义的服务端逻辑、API 端点和数据库操作。
+
+<div id="capabilities">
+  ### **功能**
+</div>
+
+* **API 端点** — 定义客户端与服务端通信的自定义路由
+* **服务端逻辑** — 在客户端应用之外执行安全操作
+* **数据库集成** — 持久化存储与读取数据
+* **受保护路由** — 支持身份验证与授权
+
+<div id="technical-stack">
+  ### **技术栈**
+</div>
+
+| **组件** | **技术** |
+| :----- | :----- |
+| 服务端框架  | Hono   |
+| API 层  | tRPC   |
+
+<div id="when-to-use">
+  ### **何时使用**
+</div>
+
+以下场景推荐使用后端：
+
+* 存在用户之间互动的社交类应用
+* 多人在线或实时协作功能
+* 需要共享或集中式数据存储的应用
+
+**以下场景无需后端：**
+
+* 单用户应用
+* 仅需本地存储数据的场景
+* 仅使用内置 AI 功能的应用
+
+<div id="ai-capabilities">
+  ### **AI 能力**
+</div>
+
+要为你的应用添加 AI 能力，请使用 **Rork Toolkit**。Toolkit 内置了多种开箱即用的 AI 功能，包括文本生成、图像生成、语音转文字和智能助手——无需任何后端配置。
+
+<div id="whats-inside-the-rork-toolkit">
+  ## Rork Toolkit 包含哪些内容？
+</div>
+
+| **功能**                          | **模型**                 | **提供方**   |
+| :------------------------------ | :--------------------- | :-------- |
+| **AI 助手 (聊天/智能体)&#x20;**        | Claude Sonnet 4.5      | Anthropic |
+| **文本生成**                        | GPT-5 Chat             | OpenAI    |
+| **数据提取 (generateObject)&#x20;** | GPT-4.1                | OpenAI    |
+| **图像生成**                        | GPT-Image-1.5 (DALL-E) | OpenAI    |
+| **图像编辑**                        | Gemini 2.5 Flash Image | Google    |
+| **语音转文字**                       | Whisper-1              | OpenAI    |
+| **工具结果摘要**                      | Gemini 2.5 Flash       | Google    |
+
+这些模型通过以下 toolkit SDK 函数调用：
+
+* 使用 Anthropic Claude Sonnet 4.5 处理聊天与智能体工作流
+* 使用 OpenAI GPT-5 进行文本生成
+* 使用 OpenAI GPT-4.1 进行结构化数据提取
+* 图像生成使用 OpenAI DALL-E
+* 图像编辑使用 Gemini 2.5 Flash Image
+* 语音转文字使用 OpenAI Whisper-1
+
+**用 Rork Toolkit 可以构建什么**
+
+借助 Rork Toolkit，你只需一个工具包即可构建完整的 AI 应用——聊天智能体、内容生成器、数据提取器、图像与语音功能，以及多模态工作流。无需管理多个模型或提供方，就能打造智能、可直接投入生产的 AI 体验。
+
+<CtaBanner />

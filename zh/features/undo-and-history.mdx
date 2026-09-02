@@ -1,0 +1,166 @@
+---
+title: "撤销更改并回退到历史版本"
+---
+
+Rork 中的每一条消息都是一个可随时回退的版本。你可以撤销上一次更改、还原到之前的任意一次回答、查看具体改动了哪些文件，也可以在某条消息走偏时及时中止。
+
+在 Rork 中，任何操作都不是不可逆的。智能体的每一次回答都会保存为整个项目的一个版本，因此你随时可以回到上一个正常可用的版本。
+
+回退版本不消耗积分。
+
+<div id="undo-the-last-change">
+  ## 撤销上一次更改
+</div>
+
+聊天中最后一条回复的下方有一个 **Undo** 按钮。点击后，Rork 会回滚文件，并把这轮对话从聊天中移除。不会弹出确认框，因为这么做不会有任何损失：你回到的正是一分钟前的那个版本。
+
+<Frame>
+  <img alt="Rork 聊天回复，包含文件列表，下方的操作栏显示 Undo、复制按钮和三点菜单" />
+</Frame>
+
+如果上一次更改让情况变得更糟，你想立刻回到之前的状态，就用 **Undo**。
+
+<div id="go-back-several-versions">
+  ## 回退多个版本
+</div>
+
+更早的回答显示的是 **Revert** (还原) ，而不是 **Undo** (撤销) 。它会把你的 项目 恢复到那条回答刚生成时的状态。
+
+<Frame>
+  <img alt="较早的 Rork 回答下方的操作栏，在复制按钮和三点按钮旁显示 Revert 控件" />
+</Frame>
+
+Revert 会先弹出确认，因为你可能会丢失之后完成的工作：
+
+<Frame>
+  <img alt="标题为 Revert to Previous Version 的对话框，警告未保存的更改将会丢失，带有 Cancel 和 Revert 按钮" />
+</Frame>
+
+确认之后，Rork 会恢复文件并裁剪对话：该条回答之前的消息会保留，之后的内容全部清除。提示条会显示进度，先是 **Restoring project...**，随后是 **Version restored**。
+
+<Warning>
+  Revert 不可逆。目标版本之后的那些版本将不再位于历史记录顶部。在执行大幅度还原之前，先想清楚你是不是只需要撤销最后一次更改。
+</Warning>
+
+智能体 工作期间无法执行还原，按钮会说明原因：&quot;Hang tight, the agent&#39;s still working. Stop the message to revert here.&quot; (稍等，智能体 还在处理中。停止该消息后才能在此还原。)
+
+<div id="edit-a-message-and-try-again">
+  ## 编辑消息并重试
+</div>
+
+有时回答本身没问题，问题出在你的提问上。将鼠标悬停在你之前发送的某条消息上，点击 **Edit message**，修改措辞后点击 **Send**。
+
+Rork 会把 项目 恢复到发送该消息之前的状态，丢弃其后的所有内容，并针对你新的措辞重新作答。这相当于一步完成回退和重试，也是让跑偏的对话回到正轨最干净利落的方式。
+
+<div id="see-exactly-what-changed">
+  ## 精确查看改动内容
+</div>
+
+每条回答都可以单独查看差异对比。打开回答下方的 **⋯** 菜单，选择 **Review changes**。
+
+<Frame>
+  <img alt="Rork 中的消息详情菜单，显示 Review changes、Auto to Opus 5 High、78.5 credits 和 121.4k context tokens" />
+</Frame>
+
+这个菜单同时也回答了&quot;这花了多少钱？&quot;：它会标明实际运行的模型、该条消息消耗的 credits，以及智能体携带的上下文量。
+
+**Review changes** 会全屏打开差异对比，展示该回答改动过的所有文件，并与改动前的版本对照。标题栏会显示文件数量，按 **ESC** 关闭。
+
+<Frame>
+  <img alt="Rork 差异视图，显示 rork.json 和 gitignore，新增行以绿色高亮，标题栏显示 88 files changed" />
+</Frame>
+
+发布前请先查看差异对比；遇到自己没有完全理解的改动，也同样要看一遍。
+
+<div id="stop-a-message-that-is-going-wrong">
+  ## 中止跑偏的消息
+</div>
+
+智能体运行期间，发送按钮会变成停止按钮。按下后，Rork 会做完当前这一步，保存已经完成的内容，然后停下。
+
+中止既安全又省钱：
+
+* 已完成的部分会保留在聊天中，并标记为 **Stopped — progress saved**。
+* 你的提示词会回到输入框，方便你改写后重新发送。
+* 未完成的 build 不计费。
+
+尽早中止。让一次跑偏的长回合继续下去，代价远高于中止并重写一个更好的提示词。
+
+<div id="fix-an-error-instead-of-undoing">
+  ## 修复错误，而不是撤销
+</div>
+
+如果预览报错，Rork 会显示该错误并提出帮你修复。对话框标题为 **Runtime error**，按钮显示 **Fix with Rork**。若同时存在多个错误，按钮会变成 **Fix all with Rork** (或显示错误数量) ，旁边还有 **Dismiss**。
+
+默认情况下，点击该按钮会立即发送修复请求。你可以在 **Account settings → Preferences** 中更改这一行为：
+
+<Frame>
+  <img alt="Rork 账户设置中的 Preferences 面板，显示 Auto-send error fixes 开关已开启" />
+</Frame>
+
+另有两处也提供同样的帮助：包含 TypeScript 问题的回答会带 **Fix errors** 按钮；**More → Code** 中的 **Logs** 面板会显示应用在运行时输出的内容——当错误原因不明显时，就把这些内容粘贴到聊天里。
+
+<div id="what-a-version-actually-is">
+  ## 版本到底是什么
+</div>
+
+智能体的一次回复，就对应项目的一个保存版本。Rork 会在每一轮对话结束时提交你的文件，并连同聊天记录一起保存，因此聊天与代码永远不会脱节。
+
+由此带来两个实用的好处：
+
+* 版本列表就是聊天记录，不用再去熟悉一个独立的历史面板。
+* 项目历史会跟着代码走。连接 GitHub 后，你在自己的仓库里也能看到同样的提交记录。参见[如何将项目与 GitHub 同步](/zh/tutorials/how-to-connect-github)。
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<AccordionGroup>
+  <Accordion title="撤销或回退会消耗 credits 吗？">
+    不会。回到之前的版本是免费的，你只需为真正执行了工作的消息付费。
+  </Accordion>
+
+  <Accordion title="最多能回退到多早的版本？">
+    可以回退到聊天中的任意一条回复。向上滚动，更早的消息会陆续加载出来。
+  </Accordion>
+
+  <Accordion title="回退之后还能撤销吗？">
+    不能。如果不确定，请取消该对话框；如果只是想撤回最近一次改动，建议使用 **Undo**。
+  </Accordion>
+
+  <Accordion title="回退会连同发布一起撤销吗？">
+    不会。已上线的 web app 或已提交的 build 会保持原样，直到你再次发布。参见 [Rork Web](/zh/web/rork-web)。
+  </Accordion>
+
+  <Accordion title="回退会恢复已删除的密钥吗？">
+    环境变量不属于代码版本。回退后请检查 **More → Secrets**。参见 [API 密钥与环境变量](/zh/features/secrets)。
+  </Accordion>
+
+  <Accordion title="智能体陷入了反复修复失败的循环。">
+    先回退到最近一个正常版本，再把请求的范围缩小。[如何摆脱错误循环](/zh/introduction/introduction/agent-loops) 一文有详细说明。
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## 下一步
+</div>
+
+<CardGroup>
+  <Card icon="sparkles" href="/zh/features/agent-modes" title="智能体的工作方式">
+    Design mode、Plan mode 与构建。
+  </Card>
+
+  <Card icon="triangle-alert" href="/zh/introduction/introduction/agent-loops" title="跳出错误循环">
+    同一个修复反复失败时该怎么办。
+  </Card>
+
+  <Card icon="github" href="/zh/tutorials/how-to-connect-github" title="与 GitHub 同步">
+    在你自己的仓库中保留同一份历史记录。
+  </Card>
+
+  <Card icon="users" href="/zh/collaborate/share-a-project" title="共享项目">
+    谁可以回退，谁只能查看。
+  </Card>
+</CardGroup>
+
+<CtaBanner />

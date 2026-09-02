@@ -1,0 +1,125 @@
+---
+title: "Crea tu cuenta de desarrollador de Google Play"
+---
+
+Lo que necesitas antes de que Rork pueda publicar tu app de Android: una cuenta de desarrollador de Google Play, la verificación de identidad y, si se trata de una cuenta personal nueva, una prueba cerrada con 12 testers durante 14 días.
+
+Rork compila tu app de Android y puede enviarla a Google por ti. Lo que Rork no puede hacer es ser tú: la cuenta de desarrollador, las verificaciones de identidad y la ficha de la tienda dependen de tu cuenta de Google.
+
+Crea la cuenta antes de terminar la app, porque las verificaciones de Google tardan días, no minutos.
+
+<div id="what-google-asks-for">
+  ## Qué pide Google
+</div>
+
+<Steps>
+  <Step title="Registra una cuenta de desarrollador">
+    Entra en [Google Play Console](https://play.google.com/console/signup) y regístrate con la cuenta de Google que quieras que sea la propietaria de la app. Google cobra una **tarifa de registro única de $25**, a diferencia de la membresía anual de Apple.
+  </Step>
+
+  <Step title="Elige cuenta personal o de organización">
+    Una cuenta personal eres tú. Una cuenta de organización es una empresa, y Google pide datos comerciales para comprobar que existe. Escoge la que coincida con quién va a recibir los pagos, porque cambiarla después es un dolor de cabeza.
+  </Step>
+
+  <Step title="Verifica tu identidad">
+    Google pide tu nombre legal, tu dirección y un documento que los confirme. Usa datos que coincidan con los de tu banco, o los pagos se te atascarán más adelante.
+  </Step>
+
+  <Step title="Configura los pagos si piensas cobrar">
+    Una app de pago o con compras dentro de la app necesita un perfil de pagos. Una app gratuita no, así que esto puede esperar.
+  </Step>
+</Steps>
+
+<Warning>
+  **Las cuentas personales nuevas tienen que hacer primero una prueba cerrada.** Las cuentas de desarrollador personales creadas después del 13 de noviembre de 2023 necesitan una prueba cerrada con **al menos 12 testers inscritos de forma continua durante 14 días** antes de que Google les dé acceso a producción. Las pruebas internas no cumplen esa regla.
+
+  Tenlo en cuenta al planificar: doce personas reales, inscritas, durante dos semanas enteras es la parte más lenta de publicar tu primera app de Android.
+</Warning>
+
+<div id="what-rork-does-for-you">
+  ## Qué hace Rork por ti
+</div>
+
+Una vez creada la cuenta, la publicación se realiza desde el project. Abre **Publish**, elige tu app de Android y luego **Upload to Google Play**.
+
+Rork puede encargarse de todo el proceso:
+
+1. **Build AAB for Play** genera el Android App Bundle que exige Google.
+2. **Connect Google Play** vincula la cuenta de Google que administra la app. Rork explica el motivo: «Conecta la cuenta que administra esta app de Play. La subida manual del AAB sigue disponible».
+3. Rork comprueba que puede acceder a tu app en Play Console.
+4. **Send to Google Play** sube el bundle. Cuando se completa, Rork te indica exactamente dónde quedó: «La versión 1 está en pruebas internas. Todavía no es pública».
+
+Si prefieres hacerlo manualmente, **Download AAB for Play Console** te da el archivo para que lo subas tú mismo. Consulta [Cómo publicar tu app de Rork en Google Play Store](/es/submitting-to-play-store/creating-the-aab-file).
+
+<div id="what-you-still-do-in-play-console">
+  ## Lo que sigues haciendo en Play Console
+</div>
+
+Rork no puede crear tu ficha de tienda ni aceptar las políticas de Google por ti. En Play Console te toca:
+
+* **Crear la app** la primera vez. Rork te guía paso a paso, incluida la opción **Copiar nombre del paquete** para que la ficha coincida con tu build.
+* **Completar la ficha**: título, descripción, gráficos, categoría, clasificación de contenido, seguridad de los datos y los cuestionarios de políticas.
+* **Añadir testers** para tu prueba cerrada y compartirles el enlace de participación.
+* **Enviar la versión a revisión** cuando estés listo para producción.
+
+La revisión de Google suele ser más rápida que la de Apple, pero la primera versión de una cuenta nueva tarda más, porque las verificaciones de la cuenta se hacen al mismo tiempo.
+
+<div id="the-order-that-works">
+  ## El orden que funciona
+</div>
+
+1. Registra la cuenta e inicia la verificación de identidad. Hazlo primero, desde el día uno.
+2. Crea la app en Rork y pruébala en tu propio dispositivo. Consulta [Cómo probar apps de Android en tu dispositivo Android](/es/submitting-to-play-store/apk-file).
+3. Crea la app en Play Console y luego deja que Rork envíe un build a las pruebas internas.
+4. Inicia la prueba cerrada con tus 12 testers y deja que corran los 14 días mientras terminas la app.
+5. Completa la ficha de la tienda y luego solicita el acceso a producción y envía la app.
+
+<div id="faq">
+  ## Preguntas frecuentes
+</div>
+
+<AccordionGroup>
+  <Accordion title="¿Necesito una cuenta de Google Play para probar mi app?">
+    No. Primero instala el APK en tu propio teléfono. La cuenta sirve para la distribución. Consulta [Cómo probar apps de Android en tu dispositivo Android](/es/submitting-to-play-store/apk-file).
+  </Accordion>
+
+  <Accordion title="¿La regla de los 12 testers se aplica a las cuentas de organización?">
+    La regla afecta a las cuentas personales creadas después del 13 de noviembre de 2023. Consulta el requisito vigente en tu propia Play Console, ya que Google lo indica ahí según tu cuenta.
+  </Accordion>
+
+  <Accordion title="¿Los 12 testers pueden ser amigos?">
+    Tienen que ser cuentas de Google reales que se inscriban y sigan inscritas. Lo difícil es reclutarlos. Pregunta en el [Discord de Rork](https://discord.gg/rxBHytVKaT), donde los fundadores se ayudan entre sí con las pruebas.
+  </Accordion>
+
+  <Accordion title="¿Rork sube la app a producción?">
+    La ruta automatizada de Rork apunta a las **pruebas internas**. Promover una versión a producción es una decisión que tomas tú en Play Console.
+  </Accordion>
+
+  <Accordion title="Tengo una app para iPhone en el mismo proyecto. ¿Necesito ambas cuentas?">
+    Sí, una por tienda. Apple cobra 99 USD al año y Google, 25 USD una sola vez. Consulta [Crea tu cuenta de Apple Developer](/es/store-guides/apple-developer-account).
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## Próximos pasos
+</div>
+
+<CardGroup>
+  <Card icon="upload" href="/es/submitting-to-play-store/creating-the-aab-file" title="Publicar en Google Play">
+    Genera el archivo AAB y súbelo a Play Console.
+  </Card>
+
+  <Card icon="mobile" href="/es/submitting-to-play-store/apk-file" title="Probar en tu teléfono Android">
+    Instala la app antes de que la vea nadie más.
+  </Card>
+
+  <Card icon="apple" href="/es/store-guides/apple-developer-account" title="Cuenta de Apple Developer">
+    Lo mismo, pero en la otra tienda.
+  </Card>
+
+  <Card icon="compass" href="/es/swift-vs-react-native/whats-the-difference" title="iPhone, Android o web">
+    Qué plataformas debería tener tu project.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

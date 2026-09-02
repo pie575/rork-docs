@@ -1,0 +1,184 @@
+---
+title: "如何为 Rork 添加 Firebase backend"
+---
+
+本指南将帮助你使用 Firebase 为你的 Rork project 创建 backend，其中包括用户身份验证，以及为应用各项功能定制的数据库结构。
+
+<Warning>
+  **大多数应用并不需要 backend。** 这项工作相当复杂，还可能让原本正常运行的 project 出问题。请先阅读[你的应用需要 backend 吗？](/zh/backend/index)。如果确实需要，又不想自己动手维护，[Rork Cloud](/zh/backend/rork-cloud) 可以直接在 Rork 内提供数据库和服务器函数，无需另外注册账号。
+</Warning>
+
+本指南将帮助你使用 Firebase 搭建 backend。读完本指南后，你将能够让用户通过邮箱登录，建立应用正常运行所需的全部 backend 数据库，并构建各类所需函数，为用户打造个性化的应用体验。
+
+<div id="create-a-firebase-account">
+  ### **创建 Firebase 账号**
+</div>
+
+* 前往 [Firebase](https://console.firebase.google.com/)，使用你的 Google 账号登录。在创建第一个 project 之前，你可能需要回答几个问题，只需几分钟即可完成。
+
+* **新建一个 Firebase 项目 (取个名字) 。**
+  Gemini AI 辅助和 Analytics 部分暂时可以跳过，之后随时都能添加。
+
+  <Frame>
+    <img alt="Firebase 控制台在创建新 project 时要求填写 project 名称" />
+  </Frame>
+
+* **注册你的应用。**
+  有了 Firebase 项目 之后，就可以在该 project 中注册你的应用。
+  * 你应该会看到一个&quot;**Add App**&quot;按钮，后面跟着一组平台选项。选择与你的应用相匹配的平台：iPhone (Swift) 应用选 **iOS**，Android (Kotlin) 应用选 **Android**，网页应用选 **Web**。随后 Firebase 会给你一份配置：iOS 是 `GoogleService-Info.plist` 文件，Android 是 `google-services.json` 文件，web 则是一个 `firebaseConfig` 对象。在聊天中把这份配置交给 agent，它就会把 SDK 接入你的应用。下面的截图以 **Web** 选项为例。
+
+    <img alt="Firebase 中的 Add App 一行，包含 iOS、Android 和 Web 平台按钮" />
+
+  * 输入应用的昵称。这个名称仅供内部使用，公众看不到。
+
+    <img alt="Firebase 的 Register app 步骤，要求填写应用昵称" />
+
+  * 点击 Register app。
+
+  * 页面会显示你的配置。接下来该做什么，请参阅 **Collect Your Config** 中的后续步骤。
+
+<div id="collect-your-config">
+  ### 获取你的配置
+</div>
+
+在同一页面注册应用后，你会看到配置信息和 SDK 说明。接下来我们要做的，基本上就是让 Rork 项目编辑器把这些内容添加进去。
+
+<img alt="Firebase SDK 设置界面，显示待复制的 firebaseConfig 对象" />
+
+请复制第二个窗口中包含 firebaseConfig 的内容，然后返回 Rork 编辑器。
+
+**在 Rork 编辑器中，请输入以下内容：**
+
+```
+请安装 firebase 包并完成初始化配置。
+同时请配置 Firebase Auth 和 Firebase Database：
+{在此粘贴你上面实际复制的配置}
+```
+
+<img alt="将 Firebase 配置粘贴到提示词中的 Rork 聊天界面" />
+
+<Note>
+  本指南后续将构建 **VibeVoice**，一款纯语音社交应用。截图中智能体把同一个 project 称为 SPEEK，那是它之前的名称。你自己的 project 会保留你所取的名称。
+</Note>
+
+<div id="creating-the-backend-data-schema">
+  ## 创建 backend 数据结构
+</div>
+
+如果你从未做过这类工作，这可能是整个流程中最有挑战的一环，不过你也可以借助 AI (在 Rork 内) 来搞定。你需要理清应用正常运行所需的数据结构，以及它应当支持的各项功能。
+
+和 SQL 一样，你仍然需要定义应用需要哪些对象，只不过 Firebase 用的是 NoSQL 而非数据表。也就是说：
+
+* 你要创建集合 (相当于表)
+* 每个用户或帖子都是一个文档
+* 文档中包含字段
+* 你还可以在文档内嵌套子集合
+
+**你可以这样问 Rork：**
+
+> 请列出我们的应用正常运行所需的全部数据结构集合。我会用这份清单来创建 Firestore 集合和安全规则。
+
+<Frame>
+  <img alt="Rork answering with a list of Firestore collections and their fields" />
+</Frame>
+
+<div id="create-your-first-database">
+  ### 创建你的第一个数据库
+</div>
+
+我们需要启用 Firestore Database，才能把数据存储到云端。在 Firebase 项目中，点击左侧面板的 **Firestore Database**。
+
+创建一个数据库，并选择离用户最近的区域。该设置之后无法更改，且会直接影响 backend 的速度。
+
+**进入之后，添加 Rork 提示你添加的安全规则：切换到 Rules 标签页，将规则粘贴进去。**
+
+<Frame>
+  <img alt="Firestore Database 的 Rules 标签页，用于粘贴安全规则" />
+</Frame>
+
+明确了对象结构和安全规则之后，就可以着手创建 Firestore 集合了。
+
+与 Supabase 不同，Firebase **不**需要提前编写 SQL 或创建数据表。当应用向集合写入数据时，Firestore 会“即时”创建集合。所以，这些工作现在都可以交给 Rork 来完成。不过在此之前，我们得先配置好 Auth，这样用户才能注册并获得各自的用户 id。
+
+<div id="set-up-authentication-in-the-firebase-dashboard-eg-emailpassword-oauth-providers">
+  ### 在 Firebase 控制台中设置身份验证 (例如邮箱/密码、OAuth 提供商)
+</div>
+
+在将数据结构接入 Firestore 之前，我们需要先确保用户能够顺利注册和登录。Firebase Authentication 是整个 backend 搭建过程中最简单的一环，不需要任何数据库或 SQL。
+
+<div id="enable-email-password-authentication">
+  ### **启用邮箱 + 密码身份验证**
+</div>
+
+1. 在 Firebase 控制台中进入 **Authentication**，点击 **Get Started**。
+2. 切换到 **Sign-in method** 标签页。
+3. 启用 **Email/Password**。
+4. (可选) 关闭邮箱验证，方便开发调试。
+5. (可选) 如果后续需要，也可以启用 Google、Apple 或手机号登录。这几项是大多数用户最常提出的需求。
+
+Firebase 会自动保存这些设置，接下来只需让 Rork 启用即可。
+
+<div id="integrating-auth-into-rork">
+  ### 将身份验证集成到 Rork
+</div>
+
+身份验证启用后，Rork 就能直接在你的项目中生成全部登录和注册逻辑。
+
+在 Rork 编辑器中，输入：
+
+```
+请将 Firebase Authentication 集成到这个项目中。
+我需要邮箱+密码的注册、登录、退出登录，以及完善的会话处理。
+请使用：
+- createUserWithEmailAndPassword
+- signInWithEmailAndPassword
+- onAuthStateChanged 用于会话管理
+注册完成后，请同时在 Firestore 的 "users" 集合中创建一个用户文档。
+```
+
+Rork 将生成：
+
+* 注册函数
+* 登录函数
+* 认证状态监听器
+* 在 Firestore 中创建初始用户文档的代码
+* 针对已登录与未登录用户的导航逻辑更新
+
+这样，你的应用就拥有了一套完整可用的身份验证系统。
+
+<div id="ask-rork-to-apply-your-schema-and-build-your-functions">
+  ## 让 Rork 应用你的数据结构并构建函数
+</div>
+
+现在身份验证已经正常工作，Firebase 安全规则也已就位，最后一步就是把应用的数据结构交给 Rork，让它生成项目所需的全部后端功能。
+
+这一步会让你的后端真正*落地*。Rork 将构建：
+
+* Firestore 集合/文档结构
+* 创建/读取/更新/删除函数
+* 查询 (信息流、用户帖子、列表等)
+* 各类子集合逻辑 (评论、点赞、关注者等)
+* Firebase Storage 上传辅助函数 (如果你的数据结构包含图片/音频/视频)
+* 应用可直接调用的完整类型化辅助函数
+
+要完成这一步，请打开 Rork 编辑器并发送以下消息：
+
+```
+我已经添加了 Firebase 安全规则。
+请把你之前给出的 schema 应用到这个 project 中，并生成所需的全部
+辅助函数，包括创建、读取、更新、删除、查询，
+以及需要的任何子集合或媒体上传功能。
+```
+
+Rork 会读取你的 schema，并搭建出 backend 正常运行所需的一切。
+如果遗漏了某个关联关系或字段，只需更新 schema 后重新发起请求即可。
+
+完成这一步后，你的应用就与 Firebase 完全打通了。身份验证、Firestore 以及应用的所有 backend 功能都能端到端地正常运行了！
+
+<div id="test-and-make-sure-your-database-updates-with-functions-in-your-app">
+  ### 测试并确认应用中的功能能正常更新数据库
+</div>
+
+现在一切都已连接完毕，你应该能看到操作会改变数据库表中的数据，并且这些数据会持久保存！恭喜你搭建好了自己的 backend！
+
+<CtaBanner />

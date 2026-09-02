@@ -1,0 +1,137 @@
+---
+title: "Convierte tu sitio web en una app móvil"
+---
+
+Cómo convertir un sitio web en una app para iOS y Android: importa tu sitio en Rork y obtén una app móvil nativa de verdad, no un envoltorio webview ni el resultado de un conversor de APK.
+
+Tienes un sitio web (una tienda, una página de reservas, un SaaS, una comunidad) y quieres que esté en la pantalla de inicio de tus clientes como una app de verdad. Rork crea una app **nativa** de iOS / Android a partir de tu sitio actual: navegación y pantallas nativas, impulsadas por el mismo contenido y el mismo backend que ya usas.
+
+<div id="pick-your-path">
+  ## Elige tu camino
+</div>
+
+| Tu situación                                                                    | Mejor camino                                                                              |
+| ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| El código del sitio está en GitHub (o puedes exportarlo)                        | [Importar el repositorio](#path-a-import-the-website-code)                                |
+| Creado con Lovable                                                              | [Importación desde Lovable](/es/import/lovable-to-mobile-app)                                |
+| Creado con otro creador de apps (Bolt, v0, Replit, FlutterFlow...)              | [Importar desde cualquier creador de apps](/es/import/import-from-any-app-builder)           |
+| Sin acceso al código (Wix, Squarespace, WordPress, sitio hecho por una agencia) | [Describir + capturas de pantalla](#path-b-no-code-access)                                |
+| Ya tienes una app web en Rork                                                   | [Añadir iOS / Android al proyecto](#add-ios-and-android-apps-to-an-existing-rork-project) |
+
+<div id="path-a-import-the-website-code">
+  ## Ruta A. Importar el código del sitio web
+</div>
+
+Si tienes disponible el código fuente de tu sitio web, la importación le da al agente mucho más material con el que trabajar:
+
+1. En [rork.com](https://rork.com), haz clic en **GitHub to Mobile App** y pega la URL del repositorio.
+2. En tu prompt (mediante **I have extra requests**), indica en qué debe centrarse la app móvil; por ejemplo: «crea una app para clientes que permita explorar y reservar; omite las páginas de administración».
+3. El agente analiza el código fuente, conserva tu marca y tus flujos de datos, y crea pantallas móviles nativas.
+
+<Frame>
+  <img alt="El cuadro de diálogo de importación de GitHub en rork.com" />
+</Frame>
+
+<div id="path-b-no-code-access">
+  ## Ruta B. Sin acceso al código
+</div>
+
+¿No tienes repositorio? No hay problema: en su lugar, dale al agente el producto:
+
+1. Crea un nuevo proyecto de Rork y pega la **URL de tu sitio web** en el prompt.
+2. Adjunta **capturas de pantalla** de las páginas clave (inicio, página de producto/detalle, pago/reserva, perfil).
+3. Describe en una o dos frases lo que debe hacer la app, por ejemplo:
+
+```
+Crea una app de iOS para el sitio web de mi salón https://example.com.
+Los clientes deben poder ver los servicios, elegir un estilista, reservar un horario
+y recibir una notificación push de recordatorio antes de la cita.
+```
+
+El agente diseña una app nativa en torno al contenido de tu sitio y se conecta con tus sistemas existentes siempre que sea posible (APIs, sistemas de reservas, enlaces de pago).
+
+<div id="add-ios-and-android-apps-to-an-existing-rork-project">
+  ## Añadir apps de iOS y Android a un proyecto de Rork existente
+</div>
+
+Cada proyecto de Rork puede alojar **varias apps que comparten un mismo proyecto y backend**: iOS, Android y web. Cada plataforma conserva su propio código nativo, y Rork las actualiza desde el mismo proyecto. Si ya tienes (o acabas de importar) una app web en Rork, añadir las versiones nativas para móvil es cuestión de dos clics:
+
+<div id="option-1-the-button-next-to-the-platform-switcher">
+  ### Opción 1. El botón «+» junto al selector de plataforma
+</div>
+
+En el encabezado del proyecto, haz clic en **+** (Añadir plataforma de vista previa) y elige la plataforma que quieras añadir:
+
+<Frame>
+  <img alt="El menú para añadir plataformas en un proyecto: Android (Kotlin) y Web" />
+</Frame>
+
+<div id="option-2-project-settings-add-new-app">
+  ### Opción 2. Configuración del proyecto → Agregar nueva app
+</div>
+
+Abre **Configuración del proyecto** (el engranaje junto al título del proyecto) → **Agregar nueva app** → elige **Android** o **Web** (o iOS si el proyecto se creó en otra plataforma):
+
+<Frame>
+  <img alt="Configuración del proyecto con el menú Agregar nueva app abierto" />
+</Frame>
+
+<div id="option-3-just-ask-in-chat">
+  ### Opción 3. Simplemente pídelo en el chat
+</div>
+
+```
+Añade una versión de Android de esta app
+```
+
+El agente muestra una confirmación de **&quot;¿Añadir app de Android?&quot;** y luego compila la app nativa de Android (Kotlin) reutilizando la lógica y el backend de tu proyecto.
+
+Cada app tiene su propio icono, nombre en la pantalla de inicio e identificador de paquete en la Configuración del proyecto:
+
+<Frame>
+  <img alt="Ajustes por app: icono, nombre en la pantalla de inicio, identificador de paquete" />
+</Frame>
+
+<div id="why-native-instead-of-a-webview-wrapper">
+  ## ¿Por qué nativo en lugar de un envoltorio webview?
+</div>
+
+Los servicios que convierten sitios web en apps se limitan a envolver tu URL en un webview. Es rápido, pero:
+
+* **Riesgo en la App Store**: la directriz 4.2 de Apple (Funcionalidad mínima) rechaza con frecuencia apps que son &quot;solo un sitio web&quot;.
+* **Sin funciones nativas reales**: los metadatos de la cámara, el modo sin conexión, las tareas en segundo plano, los widgets y las notificaciones push que llegan a todos los usuarios requieren código nativo. En la web, iOS solo envía notificaciones push si el usuario añade el sitio a la pantalla de inicio en iOS 16.4 o posterior y concede el permiso.
+* **Nunca acaba de sentirse bien**: desplazamiento de navegador, sin gestos nativos, sin el acabado propio de una app de la pantalla de inicio.
+
+Una app de Rork es código nativo compilado con interfaz nativa. Tu sitio web sigue haciendo lo que mejor sabe hacer y la app se convierte en un canal de primer nivel: los mismos datos, mejor experiencia.
+
+<div id="faq">
+  ## Preguntas frecuentes
+</div>
+
+<div id="does-this-work-with-wordpress-shopify-wix-or-squarespace-sites">
+  ### ¿Funciona con sitios de WordPress, Shopify, Wix o Squarespace?
+</div>
+
+Sí, usa la [Ruta B](#path-b-no-code-access). Estas plataformas no exponen código fuente listo para apps, así que dale al agente tu URL y capturas de pantalla. Si tienes una tienda, indícale al agente qué checkout debe conservar (muchos negocios redirigen al checkout web ya existente en la v1).
+
+<div id="can-i-convert-my-website-to-an-app-for-free">
+  ### ¿Puedo convertir mi sitio web en una app gratis?
+</div>
+
+Puedes empezar gratis: el plan **Free** funciona en Design mode, así que puedes importar el sitio y explorar cómo se vería la app. Para generar la app funcional, previsualizarla en el simulador y ejecutarla en tu teléfono, necesitas un plan de pago. Publicar en la App Store / Google Play también requiere una cuenta de desarrollador de cada tienda (Apple, 99 $/año; Google, 25 $ pago único).
+
+<div id="website-to-app-converters-give-me-an-apk-in-minutes-why-is-this-different">
+  ### Los conversores de sitio web a app me dan un APK en minutos. ¿Qué diferencia hay aquí?
+</div>
+
+Esos conversores envuelven tu URL en un webview, así que la «app» no es más que tu sitio web dentro de un navegador. Rork crea pantallas nativas de verdad. Tarda más de 60 segundos, pero el resultado se siente como una app de verdad. Las pantallas nativas también te ayudan a cumplir la Directriz 4.2 de Apple (Funcionalidad mínima), que es justo donde suelen fallar los envoltorios de webview. Aun así, App Review evalúa cada envío por separado, de modo que una interfaz nativa por sí sola no garantiza la aprobación.
+
+<div id="ship-it">
+  ## Publícala
+</div>
+
+* [Publica en la App Store](/es/store-guides/publish-app-store) desde Rork, sin Xcode.
+* [Crea el archivo AAB de Android para Google Play](/es/submitting-to-play-store/creating-the-aab-file).
+* Mantén viva la versión web en tu propio dominio: consulta el flujo de publicación web en el menú **Publish** de tu proyecto.
+
+<CtaBanner />
