@@ -1,0 +1,64 @@
+---
+title: "Connecting an API to Rork"
+---
+
+API's are great because they essentially allow your apps to do anything without you needing to do it.
+
+## **Two main ways to connect an API to Rork**
+
+\
+**Environment Variables:**\
+Environment Variables are Rorks native support for API's without needing to connect to a backend like Supabase. It allows the users to just enter in thier api keys and get instant access to the api.
+
+<img alt="Image" />
+
+All you have to do is click add variable, enter a name for the key describing your api, then add a value, which is your api key.\
+\
+After that prompt Rork to use the edge function.
+
+<Tip>
+  Tip: attach documentation from the api provider for the best results
+</Tip>
+
+\
+\
+**Supaabase Edge Function:**\
+\
+Connect Supabase:\
+Provide Rork with the prompt saying connect "Supabase to the app" and including the Project URL and Public Anon key.
+
+Then navigate to edge functions:
+
+<img alt="Image" />
+
+Once in the edge function, click secret. Then name your secret and add your api key in the value.
+
+<img alt="Image" />
+
+Then copy and paste the name of your secret into Rork or ChatGPT with the prompt: "I want my app to achieve X task using this API. This is the name of my secret (insert name), make me an edge function code for this API". \
+\
+Then, in Supabase, click Deploy New Function:
+
+<img alt="Image" />
+
+Then click editor:
+
+<img alt="Image" />
+
+Then delete the previous code:
+
+<img alt="Image" />
+
+Paste in your code from ChatGPT or Rork, then hit the deploy function. After that, copy your endpoint URL and paste it into Rork with the prompt "Use this Edge Function to achieve X task by sending or requesting X data: \<insert endpoint link here>"
+
+<img alt="Image" />
+
+\
+**Troubleshooting:**\
+This method requires a lot more trial and error:
+
+- Data is not being parsed, keep reprompting till it works.
+- Edge function keeps failing; you may need to rewrite it a few times.
+- Invalid api key, you mistyped the api key, or you need to redeploy your edge function.
+
+<CtaBanner />

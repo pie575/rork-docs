@@ -1,0 +1,147 @@
+---
+title: "Import a GitHub repository into Rork"
+---
+
+How to import a GitHub repo into Rork and build a mobile app from it: paste the repository URL, connect the Rork GitHub App, and continue your existing project with AI, with two-way GitHub sync.
+
+Already have code on GitHub? Maybe a web app, a prototype, or a project from another AI builder? You don't have to start from scratch. Rork can import a GitHub repository, inspect the actual source files, and continue building from there as a native mobile app.
+
+## Two ways to import
+
+| You want to...                                                              | Use                                             |
+| --------------------------------------------------------------------------- | ----------------------------------------------- |
+| Start a **new Rork project** from an existing repository                    | **GitHub to Mobile App** button on the homepage |
+| Pull a repository **into an existing Rork project** (as a connected source) | Paste the repo URL in the project chat          |
+
+Both use **GitHub Sync**: Rork stays connected to the repository, so it reads your real source files instead of guessing from screenshots or descriptions.
+
+## Start a new project from a GitHub repo
+
+### 1. Click "GitHub to Mobile App"
+
+On [rork.com](https://rork.com), under the prompt box, click **GitHub to Mobile App**.
+
+<Frame>
+  <img alt="Import buttons under the prompt box on the Rork homepage" />
+</Frame>
+
+### 2. Paste the repository URL
+
+The dialog **"Create an app from GitHub with Rork"** opens. Paste your repository URL (`https://github.com/owner/repo`).
+
+<Frame>
+  <img alt="The GitHub import dialog with a repository URL pasted" />
+</Frame>
+
+### 3. Generate the app
+
+- **Generate app now** starts immediately, or
+- **I have extra requests** attaches the repo to your prompt so you can add instructions ("import this and make the dashboard the home screen").
+
+The repository is attached to the prompt as a **GitHub Sync** source, and Rork creates the project.
+
+<Frame>
+  <img alt="A new project created from a GitHub repository, with the GitHub Sync source attached" />
+</Frame>
+
+### 4. Grant access via the Rork GitHub App
+
+GitHub Sync works through the **Rork GitHub App**, so the app needs access to the repository you're importing. The agent guides you through it right in the chat:
+
+1. If the app isn't installed yet, click **Open GitHub** in the chat widget and install it.
+2. If the app is installed but can't see this repository, click **Update GitHub permissions** and add the repo (you can limit access to just that one repo).
+3. Back in Rork, click **I've updated permissions** / **Retry**, then **Continue** to confirm.
+
+The status line shows **"Connected owner/repo"** when the link is live.
+
+<Info>
+  The repository must live in a GitHub account or organization where you can install the Rork GitHub App. To import someone else's public repository, fork it to your account first and import your fork.
+</Info>
+
+### 5. The agent rebuilds your app from the source
+
+Once connected, the agent scans environment variables, audits the source (screens, patterns, theme, integrations), scaffolds the native app, and reproduces your product, reusing your real assets straight from the repo:
+
+<Frame>
+  <img alt="Rork's task list while importing a repository" />
+</Frame>
+
+A few minutes later the app is running in the cloud simulator, rebuilt natively from your repository:
+
+<Frame>
+  <img alt="An app imported from GitHub running natively in the Rork simulator" />
+</Frame>
+
+## Import without changing anything
+
+You don't have to describe changes to import. Paste the URL and click **Generate app now**. The **I have extra requests** button is optional: you can ask for changes later, in your next chat messages.
+
+One thing to know before you start: **import is a rebuild, not a copy**. Rork connects your repository as a read-only source and writes a fresh native app from what it reads there. It does not move your files into an editor one by one. Your screens, flows, branding, data model, and assets carry over. The UI code becomes Swift, Kotlin, or React.
+
+Import also costs credits, like any other prompt: one credit creates the project, and each following agent message costs credits too.
+
+## Import a repo into an existing project
+
+Inside any project, paste a GitHub URL in the chat and ask the agent to connect it, for example:
+
+```
+Connect https://github.com/acme/inventory-api and use it as the backend for this app
+```
+
+The agent links the repository to your project (it stays attached across sessions), so it can read the code, reuse your API contracts and data models, and keep everything consistent with the source.
+
+## Keep the sync two-way
+
+GitHub Sync is not a one-time copy. When new commits land in the connected source repository, the project notifies you and you can pull them in with one click:
+
+<Frame>
+  <img alt="The GitHub Sync notification: new changes are available, Sync now" />
+</Frame>
+
+And by connecting your Rork project to its own GitHub repository you get full **two-way sync**:
+
+- Every change Rork makes is pushed to GitHub.
+- Commits you push from your editor are imported back into Rork.
+
+To set it up from a project: **⋯ menu → GitHub → Connect**.
+
+<Frame>
+  <img alt="The GitHub two-way sync option in the project menu" />
+</Frame>
+
+See the full walkthrough: [How to sync your project with GitHub](/tutorials/how-to-connect-github).
+
+## What kinds of repos work best?
+
+- **Web apps** (React, Vue, Next.js, anything with readable source): Rork rebuilds the product as a native mobile app.
+- **Output of other AI builders** (Lovable, Bolt, v0, Replit, and others): see [Import from any app builder](/import/import-from-any-app-builder).
+- **React Native / Expo projects**: the agent reads the source and rebuilds it as a native Swift or Kotlin app, see [Convert between platforms](/import/convert-between-platforms).
+- **Native Swift or Kotlin projects**: the agent reads your existing native source and rebuilds the app in Rork. It does not adopt your Xcode or Android Studio project as-is, so treat the import as a fresh native app that reproduces your product.
+- **Backends / APIs**: connect them as a source so your mobile app matches the API exactly.
+
+## FAQ
+
+### How does GitHub to Mobile App work?
+
+In four steps. You paste your repository URL in the **GitHub to Mobile App** dialog on [rork.com](https://rork.com). You give the Rork GitHub App access to that repository. The agent reads your real source files and audits the screens, theme, integrations, and environment variables. Then it builds a native app from what it found, and keeps the repository connected so you can pull in later commits.
+
+### Does importing change my repository?
+
+No. Importing reads your code. Rork only pushes to a repository if you explicitly connect two-way sync for the project, and that's a separate repository that Rork creates (or one you choose).
+
+### Which plan do I need to import a repo?
+
+Import is not locked to a specific tier. It costs credits, like a normal prompt. You do need a paid plan, because the import builds a working app, and the **Free** plan only designs apps.
+
+The platform you build for is what differs. **Rork Pro** (\$20/month) covers iPhone (SwiftUI), Android (Kotlin + Compose), and web. **Rork Max** adds iPad, Apple Watch, Vision Pro, native games, iOS widgets, and priority chat support. So a native Swift repository imports fine on Rork Pro, and you only need Rork Max for the extra Apple devices and Max-only features. See [Plans & Subscriptions](/introduction/subscriptions).
+
+### Can I import a monorepo?
+
+Yes. Mention which folder or app inside the monorepo you care about in your prompt so the agent focuses on the right code.
+
+### The repo isn't found or access fails
+
+- Check the URL is `https://github.com/owner/repo` (no `.git` suffix needed, branches and subfolders can be mentioned in your prompt).
+- For private repos, make sure the Rork GitHub App is installed **on the account/organization that owns the repo**, with access to that specific repository.
+
+<CtaBanner />

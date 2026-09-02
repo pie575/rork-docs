@@ -1,0 +1,171 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Rork Docs (Local)",
+  "colors": {
+    "primary": "#F97316",
+    "light": "#FB923C",
+    "dark": "#C2410C"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "elements-of-a-good-idea/how-to-tell-if-your-idea-is-good",
+          "introduction/build-your-first-app",
+          "introduction/introduction/prompting-strategy"
+        ]
+      },
+      {
+        "group": "Platform Selection",
+        "pages": [
+          "swift-vs-react-native/whats-the-difference",
+          "android/rork-android",
+          "web/rork-web",
+          "expo"
+        ]
+      },
+      {
+        "group": "Project Import & Migration",
+        "pages": [
+          "import/lovable-to-mobile-app",
+          "import/import-from-github",
+          "import/import-from-any-app-builder",
+          "import/website-to-mobile-app",
+          "import/convert-between-platforms"
+        ]
+      },
+      {
+        "group": "Troubleshooting & Features",
+        "pages": [
+          "introduction/introduction/agent-loops",
+          "features/agent-modes",
+          "features/analytics",
+          "features/assets",
+          "features/code-and-logs",
+          "features/index",
+          "features-apis/apis/how-to-connect-an-api-to-your-project",
+          "features/imagegeneration",
+          "features/secrets",
+          "features/undo-and-history",
+          "quick-start-examples/nano-banana-image-app",
+          "tutorials/how-to-connect-github"
+        ]
+      },
+      {
+        "group": "Backend Setup",
+        "pages": [
+          "backend/index",
+          "backend/rork-cloud",
+          "integrations/backend/how-to-set-up-oauth",
+          "building-complex-apps/backend/what-is-rork-toolkit",
+          "backend/supabase",
+          "backend/firebase"
+        ]
+      },
+      {
+        "group": "Testing & Publishing",
+        "pages": [
+          "rork-max-swift",
+          "rork-max/rork-max-app",
+          "how-to-set-up-xcode/how-to-set-up-xcoe",
+          "introduction/deploy-your-app"
+        ]
+      },
+      {
+        "group": "Apple App Store",
+        "pages": [
+          "store-guides/apple-developer-account",
+          "store-guides/publish-app-store",
+          "publishing",
+          "submitting-to-app-store/apple/submission-errors",
+          "submitting-to-app-store/apple/app-store-checklist",
+          "appstore-screenshots/app-store-screenshots",
+          "store-guides/screenshot-studio",
+          "store-guides/testflight-beta-testers",
+          "ai-app-store-reviewer",
+          "appstore-submission-checklist/app-review-guide",
+          "appstore-submission-checklist/whats-next-after-the-apps-finished"
+        ]
+      },
+      {
+        "group": "Google Play Store",
+        "pages": [
+          "store-guides/google-play-developer-account",
+          "submitting-to-play-store/apk-file",
+          "submitting-to-play-store/creating-the-aab-file"
+        ]
+      },
+      {
+        "group": "Monetization",
+        "pages": [
+          "payment-guides/revenuecat-copied-1",
+          "make-your-app-profitable/paywalls/how-to-add-a-free-trial",
+          "make-your-app-profitable/paywalls/how-to-set-up-your-policies"
+        ]
+      },
+      {
+        "group": "Rork Playbook",
+        "pages": [
+          "rork-playbook/playbook",
+          "rork-playbook/untitled-page",
+          "rork-playbook/untitled-page-1",
+          "rork-playbook/untitled-page-2",
+          "rork-playbook/untitled-page-3",
+          "rork-playbook/untitled-page-4",
+          "rork-playbook/scale-to-50k-month",
+          "rork-playbook/seven-ways-to-scale-your-app"
+        ]
+      },
+      {
+        "group": "Billing & Plans",
+        "pages": [
+          "introduction/subscriptions",
+          "billing/build-credits-vs-cloud-credits"
+        ]
+      },
+      {
+        "group": "FAQ",
+        "pages": [
+          "faq/index",
+          "faq/general",
+          "faq/technical",
+          "faq/integrations",
+          "faq/publishing",
+          "faq/code-export",
+          "faq/collaboration",
+          "faq/billing",
+          "faq/support"
+        ]
+      },
+      {
+        "group": "More",
+        "pages": [
+          "request-documentation",
+          "development",
+          "quick-start-examples/share-and-clone",
+          "collaborate/share-a-project"
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      { "label": "Community", "href": "https://discord.gg/rxBHytVKaT" },
+      { "label": "Blog", "href": "https://rork.com/blog" }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open Rork",
+      "href": "https://rork.com"
+    }
+  },
+  "footer": {
+    "socials": {
+      "discord": "https://discord.gg/rxBHytVKaT"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+---
+title: "Project analytics and revenue"
+---
+
+The Analytics tab shows how much you have built in a project and, once you connect RevenueCat, what your app earns: revenue, MRR, subscriptions, trials, and conversion.
+
+Open **More → Analytics** in a project. The tab has two halves: **Activity**, which is about your building, and **Revenue**, which is about your app's money.
+
+<Frame>
+  <img alt="The Rork Analytics tab showing an Activity heatmap with This week, Best streak, Best day and Daily avg, and a Revenue section offering to connect RevenueCat" />
+</Frame>
+
+## Activity
+
+Activity counts **the messages you sent in this project**, over the last year, as a heatmap. It is a picture of your own work, not of your users.
+
+| Stat            | What it counts                                       |
+| --------------- | ---------------------------------------------------- |
+| **This week**   | Messages you sent in this project this week          |
+| **Best streak** | The longest run of consecutive days you worked on it |
+| **Best day**    | The busiest single day, in messages                  |
+| **Daily avg**   | Messages per day, averaged across the year           |
+
+The **Daily**, **Weekly**, **Monthly** switch and the range picker above, from **Last 7 days** to **Last 12 months**, change how the charts are grouped.
+
+<Tip>
+  **Share** turns the graph into an image you can post. Pick what to include, press **Generate**, and Rork renders a PNG with your totals, the heatmap, and your streak.
+</Tip>
+
+## Revenue
+
+Revenue comes from **RevenueCat**, the service that handles in-app purchases and subscriptions in your app. Until you connect it, this section only offers the connect button.
+
+<Steps>
+  <Step title="Press Connect RevenueCat">
+    Rork opens RevenueCat and asks for access to your account.
+  </Step>
+
+  <Step title="Pick the RevenueCat project">
+    Choose the project that matches this app, or press **Create new project** if you have none yet.
+  </Step>
+
+  <Step title="Read the numbers">
+    The section fills with your app's money.
+  </Step>
+</Steps>
+
+Once connected, the tab shows:
+
+- **Total revenue** and **MRR**, plus **ARR** and **ARPU**
+- **Active subs** and **Active trials**
+- **Downloads**, for the selected range and all time
+- **Conversion**, and charts grouped as **Overview**, **Revenue Metrics**, **Subscriptions**, and **Conversion**
+
+If a range has nothing in it, Rork says so rather than drawing an empty chart: "RevenueCat has no revenue points in the selected range."
+
+<Note>
+  Connecting RevenueCat here is about **reading** the numbers. To make your app sell subscriptions in the first place, follow [How to add a paywall with RevenueCat](/payment-guides/revenuecat-copied-1).
+</Note>
+
+## Ask Rork about your numbers
+
+**Evaluate metrics** sends your activity and revenue snapshot into the chat and asks the agent to read it. You get a written assessment in the chat: what stands out, what looks weak, and what to try next. It is a normal message, so it costs credits like any other.
+
+## What analytics does not include
+
+- **Your app's users.** Screen views, sessions, and retention are not here. Ask Rork to add an analytics SDK to your app if you need those.
+- **Web traffic.** A published web app's visitor numbers are not in this tab.
+- **Credits spent.** That lives in your account. See [Build credits vs Cloud credits](/billing/build-credits-vs-cloud-credits), or open the **⋯** menu under any answer for the cost of that single message.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Why does Activity say 2 messages when I have been building for weeks?">
+    Activity counts messages in **this project** only. Each project has its own graph.
+  </Accordion>
+
+  <Accordion title="I connected RevenueCat but see no revenue.">
+    Check that you picked the RevenueCat project that matches this app, and that the range you selected contains sales. A brand new app with no purchases yet has nothing to show.
+  </Accordion>
+
+  <Accordion title="Do collaborators see the revenue numbers?">
+    Anyone with access to the project sees the tab. Invite deliberately. See [Share a project and work together](/collaborate/share-a-project).
+  </Accordion>
+
+  <Accordion title="Can I track downloads without RevenueCat?">
+    Not in this tab. App Store Connect and Play Console both report downloads on their own.
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup>
+  <Card icon="credit-card" href="/payment-guides/revenuecat-copied-1" title="Add a paywall">
+    Set up subscriptions with RevenueCat.
+  </Card>
+
+  <Card icon="megaphone" href="/rork-playbook/scale-to-50k-month" title="Scale to $50k a month">
+    What to do once the numbers start moving.
+  </Card>
+
+  <Card icon="coins" href="/billing/build-credits-vs-cloud-credits" title="Credits">
+    What building costs you, as opposed to what your app earns.
+  </Card>
+
+  <Card icon="sparkles" href="/features/agent-modes" title="How the agent works">
+    Design mode, Plan mode, and building.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

@@ -1,0 +1,75 @@
+---
+title: "Submission errors"
+---
+
+Here are the most common issues with submissions on Rork and the work arounds.
+
+## The build succeeded, but the app is not in App Store Connect
+
+Sometimes the build itself works and the upload to App Store Connect is what fails.
+
+Open the **App Store** tab in your project. Every submission is listed there with its state and its logs. Open the failed submission and read the log to see where it stopped:
+
+- **The build is still running.** Wait for it to finish, the upload starts on its own.
+- **The build failed.** Fix the build first, see the next section.
+- **Apple needs to approve a capability.** Rork shows the request with a link to Apple. Approve it there, then start the submission again.
+- **A version is already waiting for review.** Apple allows one build per version in review. Either replace that build or raise the version number, then submit again.
+
+If the submission still fails, start a new submission from **Publish → App Store → Submit to App Store**. Rork rebuilds and uploads with the same settings.
+
+## Build error
+
+If the build fails, the log tells you exactly what Xcode did not like.
+
+### How to resolve a build error
+
+1. **Open the build logs**
+   - In the **App Store** tab, open the failed submission and expand the log.
+   - Scroll until you see the complete error message.
+2. **Copy the entire error log**
+   - Include all lines related to the failure (do not truncate).
+   - The more complete the log, the faster the issue can be resolved.
+3. **Paste the error log into Rork**
+   - Provide the log directly to Rork and ask it to fix the build.
+   - Rork uses the exact error output to identify missing configuration, invalid values, or dependency conflicts.
+4. **Apply the suggested fix and rebuild**
+   - Rerun the build after the fix is applied.
+   - If the build fails again, repeat the process with the new error output.
+
+### Why this works
+
+Build errors are highly specific to the state of your project. Passing the **exact build output** lets Rork reason over the same information the build machine used, which makes the fix faster and more accurate.
+
+In most cases, repeating this loop resolves the issue within one or two iterations.
+
+### Common causes of build errors
+
+- An iOS permission key is missing from `Info.plist`, so Apple rejects the upload
+- A Swift package fails to resolve, or two packages need different versions
+- A capability in the project is not enabled on your Apple Developer account
+- The bundle identifier or version does not match what App Store Connect expects
+
+### Tip:
+
+Always paste **full logs**, not summaries. Partial logs can hide the root cause and slow resolution.
+
+## Testflight Bugs
+
+There are two common Testflight issues:
+
+1. The app will instantly crash once you open it
+2. The AI functionality will not work inside Rork.
+
+### Issue #1
+
+First click share:
+
+<img alt="Image" />
+
+Copy the Crash logs from App Store Connect and paste them into Rork, telling it to fix it. If that doesn't work, go to XCode
+
+<img alt="Image" />
+
+Check the logs in either Xcode or VS Code after running yarn start and run it through ChatGPT or Rork till the issue is resolved.
+
+<CtaBanner />

@@ -1,0 +1,114 @@
+---
+title: "How to get out of an error loop"
+---
+
+Sometimes, Rork will be unable to fix the error and/or start to hallucinate. In this doc, we will go over how to solve that
+
+<Tip>
+  **Go back before you push forward.** The fastest way out of a loop is to leave it. **Undo** sits under the last answer and **Revert** sits under every earlier one, so you can return to the last version that worked and ask again in smaller steps. Going back costs no credits. See [Undo a change and go back a version](/features/undo-and-history).
+</Tip>
+
+## When the Model Hallucinates
+
+Occasionally, the model may generate output that is incorrect, incomplete, or not grounded in your actual project state. This is referred to as **hallucination**.
+
+Hallucinations usually appear as:
+
+- Referencing files, APIs, or features that don’t exist
+- Claiming something was “fixed” when nothing changed
+- Repeating solutions that don’t resolve the issue
+- Providing confident but incorrect instructions
+
+This is expected behavior in AI systems and does not indicate a broken project.
+
+## How to Resolve Hallucinations
+
+### 1. Ground the Model With Facts
+
+Provide **real, concrete inputs**:
+
+- Error logs
+- File contents
+- Build output
+- Exact error messages
+
+Avoid vague prompts like:
+
+> “It’s broken, fix it.”
+
+Instead use:
+
+> “Here is the full build error output. Fix only what’s causing this error.”
+
+### 2. Constrain the Scope
+
+Tell the model **exactly what it can and cannot change**.
+
+Examples:
+
+- “Only modify `Info.plist`.”
+- “Do not add new libraries.”
+- “Do not assume files that don’t exist.”
+
+Clear constraints reduce hallucination significantly.
+
+### 3. Force Verification
+
+If the model claims something is fixed, require confirmation.
+
+Use prompts like:
+
+- “Show me exactly what changed.”
+- “Which file was modified and why?”
+- “Quote the line that fixes the error.”
+
+If it cannot point to a real change, assume the fix is invalid.
+
+### 4. Reset the Context
+
+If hallucinations persist:
+
+- **Revert** to the last answer that worked, so the broken attempts leave the conversation
+- Start a **new message**
+- Paste only the **relevant files or logs**
+- Restate the goal clearly
+
+Long conversations increase the chance of drift, and every failed attempt stays in the context until you revert it.
+
+### 5. Switch Models
+
+Different models reason differently. If one is looping or hallucinating, open the model picker under the prompt box and pick another, then:
+
+- Re-paste the same grounded inputs
+- Retry with tighter constraints
+
+See [Design mode, Plan mode, and building](/features/agent-modes).
+
+## When to Stop Iterating
+
+Stop prompting the model if:
+
+- It repeats the same fix multiple times
+- It references non-existent files
+- It contradicts itself across responses
+
+At that point, move to:
+
+- Manual inspection
+- Logs-first debugging
+- Native tools (Xcode for iPhone apps, Android Studio for Android apps)
+
+## Best Practices to Avoid Hallucinations
+
+- Always paste **real logs**
+- Keep prompts short and specific
+- Verify every claimed fix
+- Treat AI output as a **suggestion**, not ground truth
+
+## Key Principle
+
+> The model is strongest when reacting to **real inputs**, not guessing missing context.
+
+Hallucinations are a signal that the model needs **more constraints or better grounding**, not that your app is broken.
+
+<CtaBanner />

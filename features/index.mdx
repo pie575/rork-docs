@@ -1,0 +1,62 @@
+---
+title: "What is an API?"
+---
+
+An external third party API can enhance the functionality of your apps and help you build the unthinkable. This document explains what they are, which ones are already available on Rork, and how to quickly add new custom ones.
+
+## So you've built an awesome app on Rork...
+
+But now you want to take it to the next level. Maybe your users want a new feature that requires more complicated tooling. For example, a Photo app made in Rork might want to add AI filters when people take pictures, or a music discovery app could add a way to detect genres from song recordings. Whatever you are building on Rork can be iterated and improved upon. That's the power of **External APIs** and our state-of-the-art app builder inside Rork.
+
+### What is an API?
+
+In its simplest explanation, an API can be seen as a **contract**. A contract binds specific agreements that two parties agree to. Imagine the two parties are your app and another. In the same way, an API says, "If you provide this API with Data A from your app, this company promises to provide you with Data B from their services".
+
+> For example, you may be building an app on Rork that helps you find the best restaurants near you with your dietary preferences. In order to get a list of restaurants in a nearby location, you would look for an API like Googles Maps API. In your app, you would grab the location of your user (Rork can do that easily) and then send that data to the Google Maps API (See later in docs on how to do this), and in return, the contract promises to give you a list of restaurants.
+
+Developers rely on this contract not to change, as any changes can break their application. That's why APIs have documentation and clear schemas on how it works.
+
+### What is an External or Third-Party API?
+
+To answer this, let us answer what an internal API is. An API is a contract between two parties. That can be internal too! For example, when you submit a prompt to Rork, we are using an internal API we built on our backend to process your prompt and build your app. That is an internal API that does not require a third party.
+
+A third party or external API is controlled and maintained outside of Rork. These are not necessarily in our control, but Rork can help you connect and maintain your connection to those APIs. A few examples of third-party APIs include (but are not limited to):
+
+### How to find the Right API for your project
+
+For AI image, video, audio, or 3D generation you do not need an external API at all. Rork generates that media for you, and [Images, video, audio, and 3D models](/features/assets) explains how to ask for it. For any other feature you need, read on.
+
+1. **Determine the feature change on your app**\
+   This is the single change that you want to see in your application that is different from its current state. If you cannot name the change you want to see, it will be difficult to find an API to solve for it. Make sure it's simple, or else it may fail the feasibility test in the next step. Another way to think about this is what data sources you currently have (users' location, their food preferences, photos they took, etc), and what you want to see done with that data.
+2. **Run a feasibility check on it**\
+   In ChatGPT, Gemini, or any other web search-driven LLM, you can search for APIs by the following prompt:
+
+   > I am building a mobile app. Its (describe your mobile app briefly). Currently, the functionality is (explain current functionality and data sources that you have). I would like to add/change to (new change you determined in step 1). Please search the web and find any reliable and well maintained APIs that I can plug in to help me with this.
+
+   This will determine if your request is feasible or not. This is an important check that all developers do before they use a new API. Otherwise, you risk using something that does not work for your use case, or it breaks on you because it is not well-maintained.
+
+3. **Sign up for that API, Find the Documentation, and Generate your Credentials**\
+   Most APIs will require you to make an account with them and also create some sort of authentication credential. This changes per API, but usually it is an API key and or some authentication request. This can get confusing manually, so in the same ChatGPT thread, ask it to help you figure out exactly what credentials you need. Just link the documentation and ask:
+
+   > What are the keys/credentials I need to use this API, and how do I generate/find them? I need them to add into my Rork app afterwards. Please also generate the instructions for how to use the API that I can pass into the Rork AI editor to make changes on my mobile app.
+
+4. **You are ready to pass this information to Rork and build your new feature!**\
+   Please refer to the next section on how to pass this information into Rork and build your new changes.
+
+Now that you have done the work required to determine the proper API to use in your project, we can pass all of that information into Rork and build it out. Here are the best practices in doing so:
+
+### How to tell Rork to use External APIs
+
+1. Let's build up a simple set of rules that we will pass into our Rork editor to add our functionality:
+   1. **We want to change this (current feature on the app) to this (new feature for the app).**
+   2. **In order to do this, we will use the external API (name of External API).**
+   3. **Here is the full documentation of what we need: (Copy the documentation or paste the instructions that you asked ChatGPT to generate in Step 3 of the previous part)**
+   4. **Here are my credentials needed to use that API: (Paste your credentials that you found through Step 3 of the previous part)**
+2. Pass those filled-out 4 sentences into the Rork editor. Rork will intelligently determine the best way to add the API to your codebase and application.
+3. Test your new changes on your application and iterate if anything is broken.
+4. **Troubleshooting tips:**
+   1. If the function fails, you should be able to send the error to Rork and have it fix it. If it doesn't show a proper error, ask Rork: **Log the call to the API so we can debug why it's failing**.
+   2. If the function works, but the data you receive isn't what you expected or is missing something, ask Rork: **Log the returned data from the API call so we can utilize it the proper way for our app**
+5. Congrats! You've just increased the value of your app and added an external API! Share what you're building with us on our Discord _(Linked on the top left of the Docs)_. We'd love to see how you're using external APIs!
+
+<CtaBanner />

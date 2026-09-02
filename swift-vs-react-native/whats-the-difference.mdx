@@ -1,0 +1,114 @@
+---
+title: "iPhone, Android, or web: what's the difference"
+---
+
+Rork builds native iPhone apps with Swift, native Android apps with Kotlin, and web apps with React. This page explains what each one is good at, so you can pick the right one for your product.
+
+Rork builds three kinds of apps:
+
+| App type        | Language and framework | Runs on                         | Where it ships                       |
+| --------------- | ---------------------- | ------------------------------- | ------------------------------------ |
+| **For iPhone**  | SwiftUI                | iPhone, iPad, Apple Watch       | App Store and TestFlight             |
+| **For Android** | Kotlin + Compose       | Android phones and tablets      | Google Play                          |
+| **For web**     | Vite + React           | Any browser, desktop and mobile | Your own `your-app.rork.app` address |
+
+All three are real code. Rork writes the same kind of project a mobile studio would write by hand, and you can export any of them to GitHub.
+
+## What is Swift?
+
+Swift is Apple's programming language for building apps that run **natively on iPhones and other Apple devices**. Swift apps are built the same way Apple builds its own apps: Xcode, SwiftUI, and the iOS SDK.
+
+With Swift, apps can use native iOS capabilities like home screen widgets, Live Activities, advanced motion and body tracking, augmented reality, better game performance, and more precise access to device sensors. These are the features that make apps feel polished, responsive, and truly "Apple-quality."
+
+Why this matters to you as a Rork user is simple:\
+Swift unlocks the same tools used by top-performing iOS apps. It allows apps to feel faster, look cleaner, and take advantage of new Apple features as soon as they're released. If you're building an iOS-first app or care about delivering the best possible experience on Apple devices, Swift gives you the highest ceiling.
+
+In short, Swift is about building apps the way Apple intends: more control, more performance, and a more premium result.
+
+## What is Kotlin?
+
+Kotlin is Google's language for **native Android apps**, and Compose is the modern way to build their screens. A Kotlin app talks straight to Android, the same way the apps Google ships do.
+
+Rork writes a real Android Studio project in Kotlin. That gives your app native performance, native navigation and gestures, Material You theming, and direct access to Android capabilities: home screen widgets, background work, notifications, the camera, and device sensors.
+
+Why this matters to you as a Rork user:\
+Android is the larger platform by device count in most of the world. A native Android app feels right to those users, passes Google Play review as a normal Android app, and can use new Android features as they arrive.
+
+See [Build a native Android app with Rork](/android/rork-android) for the full guide, from the first prompt to the Google Play release.
+
+## What is a web app?
+
+A web app runs in the browser. Rork builds it with React and Vite, and publishes it to your own address on `rork.app`. There is no app store, no review, and no install: you share a link and people open it, on a laptop or on a phone.
+
+Web is the fastest way to put a product in front of people. It is the natural choice for a landing page, a dashboard, an admin panel, an internal tool, or a SaaS-style product. What it cannot do is the deeply native work: widgets, Live Activities, background tracking, Apple Watch, or store distribution.
+
+See [Rork Web](https://rork.com/web) for examples, and [Rork Web: build and publish a web app](/web/rork-web) for the full guide.
+
+## Things a native iPhone app can do that a web app can't:
+
+### System & Home Screen Features
+
+- Home screen and lock screen widgets
+- Live Activities on the lock screen and Dynamic Island
+- Apps that continue working in the background (within Apple's rules)
+- Integration with iPhone system search (search inside your app)
+
+### Motion, Fitness & Body Tracking
+
+- Advanced motion and full body tracking
+- Tracking real movements like pushups, punches, squats, posture, and form
+- More accurate, real-time access to motion sensors
+- On-device analysis that works offline
+
+### Augmented Reality & Games
+
+- Augmented reality features and immersive AR experiences
+- AR-based games and interactive environments
+- Smoother, higher-performance games with better responsiveness
+
+### Focus, Control & Productivity
+
+- Screen blocking and focus-style controls for productivity apps
+- System-level actions triggered by voice, search, or automations
+
+### Apple Watch & Health Ecosystem
+
+- Deep Apple Watch integration with companion watch apps
+- Native workout sessions with background heart-rate and movement tracking
+- Apple Watch complications that show live data on the watch face
+- Full integration with Apple's Health ecosystem (health data, workouts, routes, permissions)
+
+### Voice, Messaging & Extensions
+
+- Siri voice control and Apple Shortcuts automation
+- iMessage apps, sticker packs, and in-message experiences
+- Share extensions and system extensions that work outside the main app
+
+### Audio, Camera & Car Integration
+
+- Low-latency audio for real-time voice, sound effects, and audio processing
+- Advanced camera features like high-frame-rate video, depth sensing, LiDAR, and real-time analysis
+- CarPlay support for driving, audio, fitness, or navigation-style apps
+
+## How to choose:
+
+**Choose For iPhone** if you're building an app that is iOS-first or Apple-only, and you care about taking full advantage of what Apple devices can do. This is the right choice if your app relies on motion or body tracking, fitness or workout data, augmented reality, games, widgets, Live Activities, Apple Watch or Health integrations, or deep system-level features.
+
+**Choose For Android** if Android is where your users are, or if you need a real native Android app for Google Play: native performance, widgets, notifications, and background work on Android terms.
+
+**Choose For web** if the main experience is a website: a landing page, a dashboard, an internal tool, or a SaaS product you want people to open from a link today.
+
+**In simple terms:**\
+If the product feels deeply tied to the iPhone itself, build it for iPhone.\
+If your audience is on Android, build it for Android.\
+If people should just open a link, build it for web.
+
+## Do I have to pick only one?
+
+No. One Rork project can hold an iPhone app, an Android app, and a web app at the same time. Each app has its own code. They share the chat, and the backend if you have one. Start with the platform that matters most, then add the next one from the platform switcher above the preview, or from **Project Settings → Add new app**. See [Convert your app between iOS, Android, and web](/import/convert-between-platforms).
+
+<Info>
+  **What about React Native and Expo?** React Native is a cross-platform approach: one JavaScript codebase that renders native UI on both iOS and Android. Rork used to build apps this way and no longer does for new projects. Read [What happened to Expo?](/expo) for the full story, including what happens to projects you already have.
+</Info>
+
+<CtaBanner />

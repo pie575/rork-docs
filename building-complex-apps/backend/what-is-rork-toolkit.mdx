@@ -1,0 +1,68 @@
+---
+title: "What is Rork's Backend Capabilities?"
+---
+
+Rork provides an optional backend infrastructure for applications requiring server-side functionality. Currently in its beta phase, if you run into any issues, please reach out to Support.
+
+### **Overview**
+
+The backend enables developers to implement custom server logic, API endpoints, and database operations within their Rork applications.
+
+### **Capabilities**
+
+- **API Endpoints** — Define custom routes for client-server communication
+- **Server-Side Logic** — Execute secure operations outside the client application
+- **Database Integration** — Persistent data storage and retrieval
+- **Protected Routes** — Authentication and authorization support
+
+### **Technical Stack**
+
+| **Component**    | **Technology** |
+| :--------------- | :------------- |
+| Server Framework | Hono           |
+| API Layer        | tRPC           |
+
+### **When to Use**
+
+A backend is recommended for:
+
+- Social applications with user-to-user interactions
+- Multiplayer or real-time collaborative features
+- Applications requiring shared or centralized data storage
+
+**A backend is not required for:**
+
+- Single-user applications
+- Local data storage use cases
+- Applications utilizing only built-in AI features
+
+### **AI Capabilities**
+
+To add AI capabilities to your application, use the **Rork Toolkit**. The Toolkit provides pre-built AI features including text generation, image creation, voice-to-text, and intelligent assistants—no backend configuration required.
+
+## What's inside the Rork Toolkit?
+
+| **Feature**                          | **Model**              | **Provider** |
+| :----------------------------------- | :--------------------- | :----------- |
+| **AI Assistant (Chat/Agent)**        | Claude Sonnet 4.5      | Anthropic    |
+| **Text Generation**                  | GPT-5 Chat             | OpenAI       |
+| **Data Extraction (generateObject)** | GPT-4.1                | OpenAI       |
+| **Image Generation**                 | GPT-Image-1.5 (DALL-E) | OpenAI       |
+| **Image Editing**                    | Gemini 2.5 Flash Image | Google       |
+| **Voice to Text**                    | Whisper-1              | OpenAI       |
+| **Tool Result Summarization**        | Gemini 2.5 Flash       | Google       |
+
+The models are accessed through these toolkit SDK functions:
+
+- Uses Anthropic Claude Sonnet 4.5 for chat and agentic workflows
+- Uses OpenAI GPT-5 for text generation
+- Uses OpenAI GPT-4.1 for structured data extraction
+- Image generation uses OpenAI DALL-E
+- Image editing uses Gemini 2.5 Flash Image
+- Speech-to-text uses OpenAI Whisper-1
+
+**What you can build with the Rork Toolkit**
+
+The Rork Toolkit lets you build full AI-powered apps—chat agents, content generators, data extractors, image and voice features, and multimodal workflows—all from one toolkit. It’s everything you need to create smart, production-ready AI experiences without managing multiple models or providers.
+
+<CtaBanner />

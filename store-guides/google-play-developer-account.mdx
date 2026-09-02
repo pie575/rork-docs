@@ -1,0 +1,113 @@
+---
+title: "Create your Google Play developer account"
+---
+
+What you need before Rork can publish your Android app: a Google Play developer account, identity verification, and, for new personal accounts, a closed test with 12 testers for 14 days.
+
+Rork builds your Android app and can send it to Google for you. What Rork cannot do is be you: the developer account, the identity checks, and the store listing belong to your Google account.
+
+Set the account up before you finish the app, because Google's checks take days, not minutes.
+
+## What Google asks for
+
+<Steps>
+  <Step title="Register a developer account">
+    Go to [Google Play Console](https://play.google.com/console/signup) and sign up with the Google account you want to own the app. Google charges a **one-time \$25 registration fee**, unlike Apple's yearly membership.
+  </Step>
+
+  <Step title="Choose personal or organization">
+    A personal account is you. An organization account is a company, and Google asks for business details to prove it exists. Pick the one that matches who will be paid, because changing it later is painful.
+  </Step>
+
+  <Step title="Verify your identity">
+    Google asks for your legal name, address, and a document to confirm them. Use details that match your bank, or payouts stall later.
+  </Step>
+
+  <Step title="Set up payments if you plan to charge">
+    A paid app or in-app purchases need a payments profile. A free app does not, so this can wait.
+  </Step>
+</Steps>
+
+<Warning>
+  **New personal accounts have to run a closed test first.** Personal developer accounts created after 13 November 2023 need a closed test with **at least 12 testers opted in continuously for 14 days** before Google grants access to production. Internal testing does not satisfy that rule.
+
+Plan for it. Twelve real people, opted in, for two full weeks, is the slowest part of shipping your first Android app.
+</Warning>
+
+## What Rork does for you
+
+Once the account exists, publishing happens from the project. Open **Publish**, pick your Android app, then **Upload to Google Play**.
+
+Rork can go the whole way:
+
+1. **Build AAB for Play** produces the Android App Bundle Google requires.
+2. **Connect Google Play** links the Google account that manages the app. Rork explains why: "Connect the account that manages this Play app. Manual AAB upload stays available."
+3. Rork checks that it can reach your Play Console app.
+4. **Send to Google Play** uploads the bundle. When it lands, Rork tells you exactly where it went: "Version 1 is in internal testing. It isn't public yet."
+
+If you would rather do it by hand, **Download AAB for Play Console** gives you the file to upload yourself. See [How to publish your Rork app to Google Play Store](/submitting-to-play-store/creating-the-aab-file).
+
+## What you still do in Play Console
+
+Rork cannot create your store listing or accept Google's policies for you. In Play Console you:
+
+- **Create the app** the first time. Rork walks you through it, including **Copy package name** so the listing matches your build.
+- **Fill in the listing**: title, description, graphics, category, content rating, data safety, and the policy questionnaires.
+- **Add testers** for your closed test, and share the opt-in link with them.
+- **Send the release for review** when you are ready for production.
+
+Google's review is usually faster than Apple's, but the first release of a new account takes longer because the account checks run alongside it.
+
+## The order that works
+
+1. Register the account and start identity verification. Do this first, on day one.
+2. Build the app in Rork and test it on your own device. See [How to test Android apps on your Android device](/submitting-to-play-store/apk-file).
+3. Create the app in Play Console, then let Rork send a build to internal testing.
+4. Start the closed test with your 12 testers, and let the 14 days run while you finish the app.
+5. Fill in the listing, then request production access and submit.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Do I need a Google Play account to test my app?">
+    No. Install the APK on your own phone first. The account is for distribution. See [How to test Android apps on your Android device](/submitting-to-play-store/apk-file).
+  </Accordion>
+
+  <Accordion title="Does the 12-tester rule apply to organization accounts?">
+    The rule targets personal accounts created after 13 November 2023. Check the current requirement in your own Play Console, because Google states it there for your account.
+  </Accordion>
+
+  <Accordion title="Can the 12 testers be friends?">
+    They have to be real Google accounts that opt in and stay opted in. Recruiting them is the work. Ask in the [Rork Discord](https://discord.gg/rxBHytVKaT), where founders swap testing.
+  </Accordion>
+
+  <Accordion title="Does Rork upload to production?">
+    Rork's automated route targets **internal testing**. Promoting a release to production is a decision you make in Play Console.
+  </Accordion>
+
+  <Accordion title="I have an iPhone app in the same project. Do I need both accounts?">
+    Yes, one per store. Apple charges $99 a year, Google charges $25 once. See [Create your Apple Developer Account](/store-guides/apple-developer-account).
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup>
+  <Card icon="upload" href="/submitting-to-play-store/creating-the-aab-file" title="Publish to Google Play">
+    Build the AAB and get it into Play Console.
+  </Card>
+
+  <Card icon="mobile" href="/submitting-to-play-store/apk-file" title="Test on your Android phone">
+    Install the app before anyone else sees it.
+  </Card>
+
+  <Card icon="apple" href="/store-guides/apple-developer-account" title="Apple Developer account">
+    The same job on the other store.
+  </Card>
+
+  <Card icon="compass" href="/swift-vs-react-native/whats-the-difference" title="iPhone, Android, or web">
+    Which platforms your project should have.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

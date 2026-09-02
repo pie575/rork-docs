@@ -1,0 +1,172 @@
+---
+title: "Images, video, audio, and 3D models"
+---
+
+Rork generates the pictures, video, sound, and 3D models your app needs, keeps them in the Assets tab, and puts them into the code for you. Ask for them in chat.
+
+An app made of grey boxes looks unfinished. Rork fills those boxes for you: it generates the photography, the video, the sound, and the 3D models, then wires them into the code.
+
+You ask for media in chat, in plain words. There is no separate generator screen to learn.
+
+```
+Replace the placeholder photos with real product shots of dark roast coffee bags
+```
+
+## Where your media lives
+
+Open **More → Assets** in a project. Everything Rork generated, and everything you attached to the chat, is collected there.
+
+<Frame>
+  <img alt="The Rork Assets tab showing the Images, 3D Models, Videos and Audio filters with five generated coffee photographs" />
+</Frame>
+
+The filters are **Images**, **3D Models**, **Videos**, **Audio**, and **Other** for files like PDFs. Each card offers:
+
+- **Use in Chat**, which attaches that asset to your next message
+- **Remove**, which deletes it from the project
+- The card itself, which opens the asset full size
+
+<Tip>
+  **Use in Chat** is the shortest way to say "this one". Attach the asset, then write "use this photo in the hero instead".
+</Tip>
+
+## Images
+
+Ask in chat and Rork generates the image, saves it to Assets, and puts it in the screen you meant.
+
+<Frame>
+  <img alt="A Rork chat showing generated coffee photographs in a row and a generated app icon below them" />
+</Frame>
+
+Rork generates in three shapes: square, portrait, and landscape. Say what the picture is for and it picks a sensible one:
+
+```
+Generate a landscape hero photo of a fire-lit roasting drum, dark and smoky
+```
+
+Images work the other way round too. Attach a photo and ask Rork to build a feature around generating from it, which is how photo filter apps, avatar apps, and "turn my selfie into X" apps get made. There is a full walkthrough in [the NanoBanana image app tutorial](/quick-start-examples/nano-banana-image-app).
+
+## Your app icon
+
+The app icon is generated the same way:
+
+```
+Generate an app icon: an ember on a dark background, no text
+```
+
+Rork writes it into the right place for each platform, so an iPhone build, an Android build, and a web app all pick it up. The icon you approve is the icon that goes to the App Store.
+
+## Video
+
+Ask for video and Rork generates it, then places it in the screen:
+
+```
+Add a looping background video of coffee beans falling into the roaster
+```
+
+Video generation goes further than a prompt. Rork can start from your text, from a still image, from a reference clip, or edit a video it already made. Video is the most expensive kind of media to generate, so describe the shot you want before you ask for it.
+
+## Audio and voice
+
+Rork generates four kinds of sound:
+
+| Kind              | Use it for                                      |
+| ----------------- | ----------------------------------------------- |
+| **Music**         | Background loops, menu music in a game          |
+| **Sound effects** | Taps, wins, notifications, whooshes             |
+| **Voice**         | A narrator, an onboarding voice, an audio guide |
+| **Dialogue**      | Two or more speakers in a scene                 |
+
+```
+Add a short success sound when the user finishes a workout
+```
+
+## 3D models
+
+Rork generates 3D models for games, product viewers, and playful onboarding. It asks before it spends the credits, with a card that shows what it plans to make and what it will cost:
+
+- **Yes, make the 3D model** starts the work
+- **No, and tell Rork what to do differently** lets you correct the idea first
+
+If you leave the card alone it goes ahead after about a minute and a half. Models come out in the formats iPhone, Android, and web apps can all use, and Rork bundles them into the app for you.
+
+```
+Add a spinning 3D coffee bag on the product page that users can drag to rotate
+```
+
+## Bring your own files
+
+You do not have to generate everything. Use **+ → Upload image** in the composer, or drop files onto the chat. Rork reads photos, screenshots, PDFs, video, audio, and 3D models, and anything you upload lands in Assets.
+
+<Frame>
+  <img alt="The Rork attachment menu showing Upload image, Upload attachment, MCP Servers, and integration entries for Payments, Device, and AI" />
+</Frame>
+
+Free accounts upload files up to **10MB**. Paid plans go up to **5GB**, which is what video needs.
+
+A screenshot is often better than a paragraph. Show Rork the design you want instead of describing it.
+
+## What it costs
+
+Generating media spends **build credits**, the same balance as your normal messages. Bigger media costs more: an image is cheap, a 3D model is a few credits, and video is the most expensive of them.
+
+Two habits keep the bill sensible:
+
+1. Generate at the end, once the layout is settled. Placeholder boxes are free to move around.
+2. Reuse from Assets with **Use in Chat** instead of generating a near-duplicate.
+
+See [Build credits vs Cloud credits](/billing/build-credits-vs-cloud-credits) for how the balances work, and open the **⋯** menu under any answer to see what that message actually cost.
+
+<Note>
+  This page is about media Rork generates for you while you build. If you want your *users* to generate images or audio inside your finished app, that is a Rork Cloud feature. See [What is Rork Cloud](/backend/rork-cloud).
+</Note>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I use the generated images commercially?">
+    Yes, they are assets of your app. Do not ask for a real brand's logo, a real person's face, or copyrighted artwork, because the App Store rejects apps over exactly that. See the [App Review guide](/appstore-submission-checklist/app-review-guide).
+  </Accordion>
+
+  <Accordion title="The image is nearly right. Can I fix it instead of starting again?">
+    Yes. Attach it with **Use in Chat** and describe the change: "same photo, but brighter and without the mug on the left".
+  </Accordion>
+
+  <Accordion title="Can I upload my own brand photography?">
+    Yes. Drop the files into the chat, then tell Rork where each one goes. Uploaded files sit in Assets next to the generated ones.
+  </Accordion>
+
+  <Accordion title="Why is my Assets tab empty?">
+    Nothing has been generated or attached yet. The empty state says it: "Files you share in chat will show up here."
+  </Accordion>
+
+  <Accordion title="Does a cloned project keep the assets?">
+    Yes. See [Share a project and work together](/collaborate/share-a-project).
+  </Accordion>
+
+  <Accordion title="Can I download an asset?">
+    Yes, open the card in the Assets tab. Everything is also in your repository if you connect GitHub. See [How to sync your project with GitHub](/tutorials/how-to-connect-github).
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup>
+  <Card icon="image" href="/quick-start-examples/nano-banana-image-app" title="Build an AI image app">
+    A full walkthrough of image generation inside an app.
+  </Card>
+
+  <Card icon="camera" href="/appstore-screenshots/app-store-screenshots" title="App Store screenshots">
+    Turn a finished app into store artwork.
+  </Card>
+
+  <Card icon="database" href="/backend/rork-cloud" title="Rork Cloud">
+    Let your users generate media inside your app.
+  </Card>
+
+  <Card icon="sparkles" href="/features/agent-modes" title="How the agent works">
+    Design mode, Plan mode, and building.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

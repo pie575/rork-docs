@@ -1,0 +1,123 @@
+---
+title: "Convert your Lovable app to a mobile app"
+---
+
+How to convert a Lovable app to a native iOS and Android mobile app: import your Lovable project into Rork, keep your Supabase backend, and ship to the App Store. No APK wrappers, no webviews.
+
+Lovable is great at shipping web apps, but it produces a website, not a native mobile app. If you want your Lovable project on the App Store or Google Play, Rork can import it directly and rebuild it as a **real native mobile app** (not a webview wrapper), while staying connected to your Lovable project's source code.
+
+## What you get
+
+- A native iOS app (and Android / web versions from the same project) built from your existing Lovable app.
+- **Lovable Sync**: Rork connects to the GitHub repository behind your Lovable app, inspects the actual source files, and keeps future syncs connected to the source.
+- The full Rork workflow afterwards: preview in a cloud simulator, test on your phone, publish to TestFlight and the App Store, all without Xcode.
+
+<Info>
+  Rork rebuilds your app with native UI. This is different from wrapper tools (Capacitor, Median, and similar) that put your website inside a webview. Those often get rejected under Apple's Guideline 4.2 (Minimum Functionality) because they don't offer a native experience.
+</Info>
+
+## Before you start
+
+1. **Connect your Lovable project to GitHub** (done inside Lovable: Settings → GitHub → Connect). Lovable pushes your project code to a repository on your GitHub account. Rork needs that repository to see your real source files.
+2. Have your Lovable app URL ready. It looks like `https://your-app.lovable.app`.
+
+## Step-by-step
+
+### 1. Open Rork and click "Lovable to Mobile App"
+
+On [rork.com](https://rork.com), right under the prompt box, click the **Lovable to Mobile App** button.
+
+<Frame>
+  <img alt="Import buttons under the prompt box on the Rork homepage" />
+</Frame>
+
+### 2. Paste your Lovable app URL
+
+A dialog opens: **"Turn your Lovable app into a mobile app with Rork."** Paste your `https://your-app.lovable.app` link.
+
+<Frame>
+  <img alt="The Lovable import dialog on rork.com" />
+</Frame>
+
+If you're not sure where to find your link, click **"How do I get my Lovable link?"** inside the dialog for a short walkthrough.
+
+### 3. Generate the app
+
+- Click **Generate app now** to start immediately, or
+- Click **I have extra requests** if you want to add instructions to the prompt first (for example: "keep the branding but redesign the navigation as native tabs").
+
+Rork creates a new project and the agent starts working.
+
+### 4. Link the GitHub repository (Lovable Sync)
+
+In the new project's chat, the agent asks you to set up **Lovable Sync**:
+
+<Frame>
+  <img alt="The Set up Lovable Sync widget in the project chat" />
+</Frame>
+
+1. Paste the URL of the GitHub repository that Lovable created for your project.
+2. If you haven't installed the Rork GitHub App yet, click **Install GitHub app** and grant it access to that repository. You may also see **Update GitHub permissions** if access is missing.
+3. Click **Link repo**.
+
+Once connected, Rork clones your Lovable source into the project and uses it as the source of truth for screens, logic, and data models.
+
+Eligible Lovable projects unlock **free migration credits**. If your repository qualifies, you'll see this right in the flow:
+
+<Frame>
+  <img alt="The migration credits dialog for eligible Lovable projects" />
+</Frame>
+
+### 5. Environment variables come along automatically
+
+Right after the repo is linked, Rork scans your source for environment variables. Public client keys that are committed in the Lovable source (Supabase anon key, Firebase web config, Stripe publishable key, analytics keys) are imported automatically; if anything is missing or conflicting, an in-chat panel asks you for the values:
+
+<Frame>
+  <img alt="The environment variables scan widget: values saved automatically plus optional ones" />
+</Frame>
+
+### 6. Watch the mobile app come to life
+
+The agent surveys your screens, flows, copy, colors, and assets, then rebuilds the product as a native mobile app: native tab bars and navigation stacks instead of a web navbar, mobile-first layouts, your real brand assets copied straight from the repo. Marketing/landing pages typically become onboarding and store-listing material rather than in-app screens: the agent keeps the _product_, not the website chrome.
+
+You'll see the app running in the cloud simulator as it's built. From here it's a normal Rork project, so keep iterating by chatting.
+
+## What about my Supabase backend?
+
+If your Lovable app uses Supabase, the imported source includes your Supabase client code and schema references, and the committed anon key is picked up by the env scan, so your web app and mobile app share the same database and auth out of the box. See [Supabase setup](/backend/supabase).
+
+## Publish it
+
+When you're happy with the app:
+
+- [Publish to the App Store](/store-guides/publish-app-store), built into Rork, no Xcode needed.
+- [Publish to Google Play](/submitting-to-play-store/creating-the-aab-file) by exporting and building the AAB.
+- Or add a web version too: see [Add iOS, Android, and web versions](/import/convert-between-platforms).
+
+## FAQ
+
+### Can Lovable itself make a native mobile app?
+
+No. Lovable outputs React + Vite web applications. You can pin them to a home screen as a PWA, but that's still a website: no App Store distribution and limited offline support. Push notifications work only under conditions: on iOS and iPadOS 16.4 or later the user must add the site to the Home Screen first and then grant permission, so you cannot reach people who just visit in the browser.
+
+### Can I convert my Lovable app to an APK?
+
+Yes. After importing into Rork, add an **Android** version of the app (Project Settings → Add new app → Android). Rork builds a native Android app. You can download an APK to install on your own phone or to share a test build. To publish on Google Play you upload the AAB, because Google Play requires an Android App Bundle for new apps. That's a real native app, not a webview wrapped around your Lovable URL.
+
+### Does this convert Lovable to React Native?
+
+No, and that is the point. Rork rebuilds your app as native code: **Swift** for iPhone, **Kotlin** for Android. Pick the platform when you create the project. The agent rebuilds the UI natively instead of porting web code line by line, so you get a real native app rather than a cross-platform layer.
+
+### Can I export my Lovable code without GitHub?
+
+Lovable's own exports (and Lovable Sync in Rork) go through GitHub. If you only have a ZIP of your code, push it to a new GitHub repository and use the regular [GitHub import](/import/import-from-github) instead.
+
+### Do I need to keep paying for Lovable after migrating?
+
+That's up to you. Many builders keep Lovable for their web app and use Rork for mobile, but a Rork project can also hold a web app next to the mobile apps, so you can consolidate everything into Rork.
+
+### My Lovable repo isn't recognized
+
+Lovable Sync checks that the repository was actually generated by Lovable (recent commits from the Lovable bot). Make sure you linked the repo that Lovable manages, not a manual copy. If it still fails, use the generic [GitHub import](/import/import-from-github) instead. It works with any repository.
+
+<CtaBanner />

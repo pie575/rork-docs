@@ -1,0 +1,263 @@
+---
+title: "Build a native Android app with Rork"
+---
+
+Rork writes native Android apps in Kotlin with Jetpack Compose, runs them on a cloud Android emulator next to the chat, signs the App Bundle for you, and sends the release to Google Play.
+
+<Frame>
+  <img alt="A Rork Android project with the build summary in the chat and the finished plant care app running in the emulator" />
+</Frame>
+
+An Android app in Rork is a **native Android app**. Rork writes it in **Kotlin** with **Jetpack Compose**, the stack a native Android team would use by hand. It is not a website in a shell, and it is not an iPhone app converted at runtime.
+
+You describe the app, Rork builds it, and you watch it run on a cloud Android emulator next to the chat. When it is ready, Rork signs the Android App Bundle and sends the release to Google Play.
+
+## Start an Android app
+
+Pick the platform before you send your first message. On [rork.com](https://rork.com?utm_source=docs&utm_medium=referral&utm_campaign=docs-cta&utm_content=android-start), open the platform picker under the prompt box and choose **For Android**. The picker describes it as **Native Android with Kotlin + Compose**.
+
+<Frame>
+  <img alt="The Rork platform picker open, with For iPhone, For Android, and For web, and a note that you can add another platform later" />
+</Frame>
+
+The picker says it plainly: **you can add another platform later**. One project can hold an Android app, an iPhone app, and a web app at the same time. See [Convert your app between iOS, Android, and web](/import/convert-between-platforms).
+
+Then describe the product, not the technology:
+
+```
+A plant care app that reminds me to water each plant and tracks how each one is doing
+```
+
+## Answer the questions about the look
+
+Rork does not start writing Kotlin straight away. It asks a few short questions first, and each answer is a picture, not a word. You can also type your own answer in **Other**.
+
+<Frame>
+  <img alt="Rork asking what the first screen of the plant care app should show, with four answers to choose from" />
+</Frame>
+
+Answer them, then press **Submit**. Skip this step by writing the look into your first prompt instead.
+
+## Approve the design, then build
+
+Next Rork draws the screens and shows them in **Design mode**. Nothing is built yet, so this is the cheap moment to change your mind. Ask for a different screen in chat, or press **Build** to turn the design into a working Android app.
+
+<Frame>
+  <img alt="Design mode showing four proposed screens for a plant care app and a Review design card with View Design and Build buttons" />
+</Frame>
+
+## Run the app on an Android emulator
+
+Rork runs your Kotlin app on a **cloud Android emulator** in your browser. It is the real app on a real Android system, not a picture, so you tap through it while you build.
+
+<div>
+  <div>
+    <video aria-label="The plant care app running in the Rork Android emulator: checking off a watering, the plant grid, and a plant detail screen" />
+  </div>
+</div>
+
+<p>Recorded in the emulator with the Record button.</p>
+
+Android's own permission dialogs show up, which is the clearest sign that the app is native:
+
+<div>
+  <img alt="The plant care app in the emulator showing the Android system dialog asking to allow notifications" />
+</div>
+
+<p>Android's own permission dialog, on first launch.</p>
+
+The emulator does not run all the time. It waits behind a **Turn on emulator** button, and it tells you what it costs while it runs:
+
+<div>
+  <img alt="The emulator panel reading Turn on emulator, 0.1 build credits per minute while running, and no simulator credits used in this project yet" />
+</div>
+
+<p>The emulator waits until you start it.</p>
+
+<Tip>
+  The panel says **0.1 build credits/min while running**, so press **Stop emulator** when you finish a testing round. It also tells you how much emulator time this project has used so far. See [Build credits vs cloud credits](/billing/build-credits-vs-cloud-credits).
+</Tip>
+
+The controls above the emulator do this:
+
+<Frame>
+  <img alt="The emulator toolbar with record, screenshot, home, settings and element select buttons, a Share button, and a Live indicator with restart and stop" />
+</Frame>
+
+| Control               | What it does                                                                                                       |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **Record**            | Records the preview and attaches it to the chat. This is how you show the agent a bug that only happens in motion. |
+| **Screenshot**        | Attaches a screenshot to the chat.                                                                                 |
+| **Home**              | Presses the Android home button.                                                                                   |
+| **Emulator settings** | Switches the system between **Light** and **Dark**, and changes **Text size**.                                     |
+| **Select an element** | Point at a part of the screen, then write what to change about it. The agent gets the exact element.               |
+| **Share**             | Takes a screenshot and wraps it in a phone mockup you can post.                                                    |
+| **Restart**           | Restarts the emulator, which is what you press when the instance is gone.                                          |
+| **Stop emulator**     | Shuts it down and stops the per-minute cost.                                                                       |
+
+<Frame>
+  <img alt="The emulator settings popover with a Light and Dark appearance switch and a Text size field" />
+</Frame>
+
+Use **Emulator settings** before you publish. Dark mode and large text are where Android layouts break, and both are one click here. Changing the text size reloads the current screen.
+
+<Note>
+  An emulator instance does not live forever. When it says "This instance no longer exists and can't be reconnected", press **Restart**. Your app and your project are untouched, only the running machine is gone.
+</Note>
+
+## Test on your own phone
+
+The emulator covers most testing. When you want the app in your own hand, Rork builds the APK for you, so there is no terminal and no build service:
+
+1. Open **Publish**, then open the Google Play section.
+2. Press **Download APK**.
+3. Open the `.apk` file on your Android phone and install it. Android asks you to allow installs from your browser or file manager the first time.
+
+The full walkthrough, including testing through Google Play, is in [How to test Android apps on your Android device](/submitting-to-play-store/apk-file).
+
+## Publish to Google Play
+
+Rork builds and signs the release for you. What Rork cannot do is be you: the developer account and the store listing belong to your Google account.
+
+Open **Publish** in the project. The Google Play section says what it does, and shows whether a release build exists yet:
+
+<Frame>
+  <img alt="The Publish menu showing a Google Play section that generates an Android App Bundle, a No release build yet status, and an Upload to Google Play button" />
+</Frame>
+
+<Steps>
+  <Step title="Create your Google Play developer account">
+    Google charges a **one-time \$25 registration fee**, and the identity checks take days. Start this early. See [Create your Google Play developer account](/store-guides/google-play-developer-account).
+  </Step>
+
+  <Step title="Create the app in Play Console">
+    Google's API cannot create the first app record for you, so the listing has to exist in Play Console before Rork can publish to it. When Rork needs it, the panel says **Create Play Console app**: "Create the app listing, then Rork can check access again." Use **Copy package name** so the listing matches your build.
+  </Step>
+
+  <Step title="Connect Google Play">
+    Press **Upload to Google Play**. The dialog names the app it will build for, one app per bundle: "This AAB contains this Kotlin app only." It also names the account it will publish with. Until you connect one it says **Connect Google Play**: "Connect the Google account that manages this Play Console app."
+
+    <Frame>
+      <img alt="The Upload to Google Play dialog naming the Kotlin Android target, saying it is ready to build the Android App Bundle, showing a connected Google account, and offering Build AAB for Play" />
+    </Frame>
+
+  </Step>
+
+  <Step title="Build the bundle">
+    Press **Build AAB for Play**. Rork builds a release Android App Bundle and signs it with a persistent upload key that belongs to your project. The dialog reads "Building Android App Bundle. This can take a few minutes. You can close this window."
+  </Step>
+
+  <Step title="Send the release, or take the file">
+    When the bundle is ready the button becomes **Send to Google Play**, and Rork uploads it to your internal testing track. **Download AAB for Play Console** gives you the signed file to upload by hand instead. **Download APK** gives you a file you can install on your own phone.
+  </Step>
+</Steps>
+
+A release lands in **internal testing** first, which is visible only to the testers you list. Rork says so plainly when the upload finishes: "Version 1 is in internal testing. It isn't public yet."
+
+## Ask the agent to promote the release
+
+Google Play work is not limited to the buttons. The agent can drive the Play tracks from chat:
+
+```
+Promote this release to closed testing
+```
+
+```
+Promote this to production at 5% of users
+```
+
+It handles internal testing, closed testing, open testing, production, and a staged rollout you can increase, halt, resume, or complete. Two limits are worth knowing: there is no rollback, so a bad release is halted or replaced by a corrective one, and custom testing tracks are not supported yet.
+
+Internal testing does **not** satisfy Google's 12-testers-for-14-days rule. That has to be a closed test. See [Create your Google Play developer account](/store-guides/google-play-developer-account).
+
+<Warning>
+  **Do not ask the agent to add signing keys, keystores, or SHA-1 fingerprints to the project.** Google Play ties your app to the key used for the first upload. Rork manages that key for you, and changing signing files can make Google Play reject every later upload. If Play Console reports a signing key mismatch, contact support with your project link instead of regenerating anything.
+</Warning>
+
+For app updates, make the change in Rork and press **Rebuild AAB**, then send the new build to Google Play.
+
+The step-by-step version, with the Play Console screens, is in [How to publish your Rork app to Google Play Store](/submitting-to-play-store/creating-the-aab-file).
+
+## Add an Android app to a project you already have
+
+Any project can grow an Android app. Click **+** above the preview and pick **Android (Kotlin)**:
+
+<Frame>
+  <img alt="The add platform menu above the preview, offering Android (Kotlin) as a native Android app and Web as a responsive web app" />
+</Frame>
+
+You can also use **Project Settings → Add new app**, or just ask:
+
+```
+Add a native Android app to this project
+```
+
+The agent recreates your screens, navigation, data flows, and design as an Android app. Both apps then live in one project, with **two codebases**: Swift for iPhone, Kotlin for Android. They share the chat and the backend, and they publish from the same **Publish** menu.
+
+## What a Rork Android app can do
+
+Android hands an app the device directly, and so does Rork:
+
+- Screens in Jetpack Compose: bottom navigation, lists, forms, Material controls, and system-style settings
+- The hardware in the phone: camera, Bluetooth, location, local storage, and permission prompts
+- Work that keeps running in the background
+- Accounts, data, and push notifications from the same backend as your other apps, see [Backend](/backend/index)
+- A real Android Studio project you can export to GitHub, see [How to sync your project with GitHub](/tutorials/how-to-connect-github)
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Is this a wrapped web app?">
+    No. A Rork Android app is a Kotlin codebase built with Jetpack Compose. It is not a browser app in a shell, and it is not an iOS app.
+  </Accordion>
+
+  <Accordion title="Do I need a keystore or a signing key?">
+    No. Rork signs the bundle with a persistent upload key for the project. There is no `.jks` file, no key alias, and no keystore password for you to store, rotate, or lose.
+  </Accordion>
+
+  <Accordion title="Which plan builds Android apps?">
+    Android apps with Kotlin + Compose are part of **Rork Pro**. The Free plan designs an Android app but does not build one. See [Plans & Subscriptions](/introduction/subscriptions).
+  </Accordion>
+
+  <Accordion title="What does the emulator cost?">
+    **0.1 build credits per minute while it runs**, and nothing when it is off. The panel shows how much this project has used. See [Build credits vs cloud credits](/billing/build-credits-vs-cloud-credits).
+  </Accordion>
+
+  <Accordion title="Can I upload the bundle myself?">
+    Yes. **Download AAB for Play Console** gives you the signed file, and you upload it in Play Console as usual.
+  </Accordion>
+
+  <Accordion title="Why can my new account not go straight to production?">
+    Google requires it. A personal developer account created after 13 November 2023 needs a closed test with at least 12 testers opted in continuously for 14 days before it gets production access. See [Create your Google Play developer account](/store-guides/google-play-developer-account).
+  </Accordion>
+
+  <Accordion title="Can the same project also have an iPhone app?">
+    Yes. An Android app is Android only, but you can add an iPhone app or a web app to the same project and share one backend between them. See [Convert your app between iOS, Android, and web](/import/convert-between-platforms).
+  </Accordion>
+
+  <Accordion title="I have an Expo project. Can it become a native Android app?">
+    Yes. Add a native Android app to the same project and the agent rebuilds your screens in Kotlin. Your Expo app stays where it is. See [What happened to Expo?](/expo).
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup>
+  <Card icon="compass" href="/swift-vs-react-native/whats-the-difference" title="iPhone, Android, or web">
+    What each platform is good at, and how to choose.
+  </Card>
+
+  <Card icon="mobile" href="/submitting-to-play-store/apk-file" title="Test on your Android phone">
+    Install the app before anyone else sees it.
+  </Card>
+
+  <Card icon="upload" href="/store-guides/google-play-developer-account" title="Google Play account">
+    The account, the checks, and the 12-tester rule.
+  </Card>
+
+  <Card icon="database" href="/backend/index" title="Add a backend">
+    Accounts, data, files, and push notifications.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

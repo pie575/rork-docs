@@ -1,0 +1,57 @@
+---
+title: "Integrations"
+---
+
+Frequently Asked Questions about Integrations with Rork
+
+### Can I integrate Rork with a database like Supabase or Firebase?
+
+Yes. Ask Rork in chat and it connects the backend for you.\
+See [How to add a Supabase backend to Rork](/backend/supabase) and [How to add a Firebase backend to Rork](/backend/firebase). If you would rather not run a backend yourself, use [Rork Cloud](/backend/rork-cloud).
+
+### What is Rork Cloud? Does it have a database?
+
+Yes. **Rork Cloud** is a managed backend inside Rork, with a Postgres database, server-side functions, and hosted AI models.\
+You can browse your tables in the project, and you can move to your own Supabase project later.\
+See [What is Rork Cloud](/backend/rork-cloud).
+
+### How can I build apps that use AI features like chat, voice, or image generation?
+
+Rork Cloud gives your app AI models without your own provider keys, so paid users do not manage an OpenAI account to ship an AI feature.\
+You can also bring your own key and store it as a server-side secret. See [API keys and environment variables](/features/secrets).
+
+### Can I integrate Rork with business tools like Google Sheets, Airtable, Notion, or my own API?
+
+Yes. Just ask Rork to integrate with the service you want.\
+It will ask for your API key and might need API documentation for accuracy.
+
+### Can I import Figma files into Rork?
+
+Copy your Figma screens as images and paste them into the Rork chat, or drag exported Figma images in in bulk.\
+Rork reads the design from the picture and builds from it. There is no direct Figma connection today.
+
+### How can I add payments with Stripe, RevenueCat, Superwall, or Adapty?
+
+The easiest way to integrate payments into Rork is by adding RevenueCat.\
+Rork recommends **RevenueCat** for in-app purchases and subscriptions. Connect it from the Monetization panel, and the agent adds the SDK to your app.\
+👉 [How to add a paywall with RevenueCat](/payment-guides/revenuecat-copied-1)
+
+### How can I add authentication to my app?
+
+For most apps, local data storage is enough.\
+If you need authentication, use **Supabase Auth** for email/password or magic links.\
+For social login (Google, Apple, etc.), ask the agent to set it up and follow the [OAuth guide](/integrations/backend/how-to-set-up-oauth).
+
+### How can I add push notifications to my app?
+
+Ask the agent for notifications and it wires them into your native app.\
+For push notifications on Android, that means **Firebase Cloud Messaging (FCM)**; on iPhone it is Apple Push Notification service. Rork Cloud also offers push, see [Rork Cloud](/backend/rork-cloud).
+
+---
+
+## Need more help?
+
+Still have questions?\
+📩 [Contact Support](mailto:support@rork.com)
+
+<CtaBanner />

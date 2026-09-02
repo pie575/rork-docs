@@ -1,0 +1,70 @@
+---
+title: "Main App Store rejection reasons"
+---
+
+These are the most common reasons for App Store rejections
+
+(add dos and don'ts)\
+Most common rejection reasons:
+
+- Permission problems in `Info.plist`
+- Subscription issues
+- iPad Screenshots
+
+## Info.plist permission issues
+
+<img alt="Image" />
+
+This happens when your app asks for permission from the user's phone, but they don't specify the exact reason why.
+
+<img alt="Image" />
+
+<Warning>
+  The code above would be rejected by Apple. It does not properly explain the need for each permission.
+</Warning>
+
+<img alt="Image" />
+
+<Check>
+  The above code shows a thorough description of why each permission is needed.
+</Check>
+
+## How do I fix this issue?
+
+Typically, Rork already explains the purpose of each permission. However, if this issue occurs, open `Info.plist` in the iOS app folder and correct the permission descriptions, or ask the agent in chat to rewrite them.\
+\
+For more guidance, you can refer to the Rork agent.
+
+## Subscription issues
+
+<img alt="Image" />
+
+When adding a paywall or in-app purchases to your app, you need to have your privacy policy, terms and conditions, and your EULA both in your App store description and visible in your paywall
+
+**How to create policies?**\
+\
+If you are using a hard paywall, you must mention that all features are blocked by a paywall in your App Store description, otherwise apple will also reject you.
+
+<img alt="Image" />
+
+## Ipad Screenshots
+
+You can't just submit photos of an iPhone screenshot just stretched to the size of an iPad; Apple will reject you.
+
+<img alt="Image" />
+
+<Danger>
+  This will be rejected because they're not real iPad screenshots; they're just stretched iPhone screenshots.
+</Danger>
+
+<img alt="Image" />
+
+<Check>
+  Will be accepted because it's a real screenshot of an iPad
+</Check>
+
+## What if I don't have access to an iPad?
+
+You can go to [Xcode](/how-to-set-up-xcode/how-to-set-up-xcoe) and launch an iPad simulator, then take the screenshots.
+
+<CtaBanner />

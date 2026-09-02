@@ -1,0 +1,243 @@
+---
+title: "Rork Web: build and publish a web app"
+---
+
+Rork builds web apps with Vite and React, previews them next to the chat, and publishes them to your own address on rork.app. Use it for a website, a dashboard, a client portal, or an admin tool.
+
+<div>
+  <img alt="A Rork web project: the chat on the left and the finished Ember Roast website in the live preview on the right" />
+</div>
+
+<p>One prompt, one project: the chat on the left, the running site on the right.</p>
+
+A Rork web app runs in the browser. Rork writes it with **Vite and React**, previews it next to the chat, and publishes it to your own address on `rork.app`. There is no app store, no review, and no install. You share a link, and people open it on a laptop or on a phone.
+
+Web is the right platform for a website, a dashboard, a client portal, an admin tool, or a SaaS product. It is also the fastest way to put something in front of people today. See what it builds on the [Rork Web page](https://rork.com/web).
+
+## Start a web app
+
+Pick the platform before you send your first message. On [rork.com](https://rork.com), open the platform picker under the prompt box and choose **For web**. Then describe the product, not the technology.
+
+<Frame>
+  <img alt="The Rork prompt box with a coffee roastery prompt typed in and the platform set to For web" />
+</Frame>
+
+The picker says it plainly: **you can add another platform later**. One project can hold an iPhone app, an Android app, and a web app at the same time. See [Convert your app between iOS, Android, and web](/import/convert-between-platforms).
+
+## Answer the questions about the look
+
+Rork does not start writing code straight away. It asks a few short questions about the look first, and each answer is a picture, not a word. You can also type your own answer in **Other**.
+
+<Frame>
+  <img alt="Rork asking what overall look the site should have, with four palette options to choose from" />
+</Frame>
+
+Answer all three, then press **Submit**. Skip this step by writing the look into your first prompt instead.
+
+## Approve the design, then build
+
+Next Rork draws the screens and shows them in **Design mode**. Nothing is built yet, so this is the cheap moment to change your mind. Ask for a different screen in chat, or press **Build** to turn the design into a working site.
+
+<Frame>
+  <img alt="Design mode showing three proposed screens for Ember Roast and a Review design card with View Design and Build buttons" />
+</Frame>
+
+## Work in the project
+
+The project has the chat on the left and a live preview on the right. The preview is the real app, not a picture, so you can click through it while you build.
+
+The controls above the preview do this:
+
+| Control                               | What it does                                                            |
+| ------------------------------------- | ----------------------------------------------------------------------- |
+| **Switch preview platform**           | Moves the preview between the apps in the project, and adds a platform. |
+| **Switch preview size**               | Cycles the preview through **Desktop**, **Tablet**, and **Phone**.      |
+| **Go to home**                        | Returns the preview to the first page.                                  |
+| **Reload preview**                    | Loads the app again after a change.                                     |
+| **Select an element for your prompt** | Point at a part of the page, then write what to change about it.        |
+| **Publish**                           | Opens the publish panel.                                                |
+
+<Tip>
+  Use **Select an element for your prompt** instead of describing a position in words. Point at the element, then say "make this button darker". The agent gets the exact element and changes less around it.
+</Tip>
+
+## Check the phone width
+
+A web app has to work in a phone browser as well as on a laptop. Press **Switch preview size** until it reads **Phone**. Rork draws the site inside a phone frame, so you read the same pages at the width your visitors get.
+
+<Frame>
+  <img alt="The Ember Roast site in the Phone preview size, drawn inside a phone frame next to the chat" />
+</Frame>
+
+Then ask for the fixes you need:
+
+```
+On phone widths the hero text overlaps the image. Stack them instead.
+```
+
+## Publish to the web
+
+Open **Publish**, then press **Publish to web**. Rork builds the app and hosts it at your own address on `rork.app`.
+
+<Frame>
+  <img alt="The Rork publish panel showing ember-roast-website.rork.app, a Site offline status, a disabled Add a custom domain row, and the Publish to web button" />
+</Frame>
+
+What the panel shows:
+
+- **The address.** Rork picks one from the project name, like `ember-roast-website.rork.app`. Press the pencil to change the subdomain.
+- **The status.** It reads **Site offline** until you publish for the first time.
+- **Add a custom domain.** This row stays off until the first publish. The panel says so: "Publish the project first to add a custom domain."
+
+Publishing is a separate step from building. Your changes stay in the preview until you publish again, and the **Publish** button marks itself when the live site is behind your project.
+
+After the first publish the panel changes: the status reads **Live**, it tells you when the version went out, and **Unpublish** takes the site down again.
+
+<Frame>
+  <img alt="The publish panel showing the rork.app address with a Live status, an active Add a custom domain row, and Published and Unpublish buttons" />
+</Frame>
+
+## Domains
+
+A `rork.app` address is fine for testing, but a real product wants a real name. Domains work in two places, and it helps to know which does what:
+
+- **Account Settings → Domains** is where a domain enters Rork. You buy one or bring your own, once per domain.
+- **The project's Publish panel** is where you point an address at one app. You do this once per project.
+
+### The domains list
+
+Open the account menu, then **Account settings → Domains**. Every domain on your account is listed here with each of its addresses underneath.
+
+<Frame>
+  <img alt="The Domains tab of Rork account settings, showing the Add a domain panel and a connected domain with two addresses marked Live" />
+</Frame>
+
+Each address carries its own state. **Live** means it serves your app. While Rork is still setting one up it reads **Finishing, routing traffic to the app**. **Add more subdomains** adds another address on the same domain, and the bin icon removes the whole domain.
+
+### Buy a new domain, or connect one you own
+
+Press **Add domain**. Rork hands this step to **Entri**, its domain partner, which does the technical setup for you. The first screen is the fork:
+
+<Frame>
+  <img alt="The Entri dialog titled Add a domain to Rork, offering Buy a new domain and Connect a domain" />
+</Frame>
+
+| Route                | Pick it when                                                      | What happens                                                                          |
+| -------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| **Buy a new domain** | You have no domain yet, or you want a fresh one for this product. | You search for a name and buy it inside the flow. It arrives already pointed at Rork. |
+| **Connect a domain** | You already own the name, at any registrar.                       | You give the domain, and Entri sets the DNS records that point it at Rork.            |
+
+<Note>
+  Buying goes through Entri, not through your Rork credits, and a domain is a yearly cost like any other registration.
+</Note>
+
+Either way the domain lands in the list above. Wait for the address to read **Live** before you point a project at it.
+
+### Point a project at an address
+
+The domain is on the account, but no app answers on it yet. That link is made in the project.
+
+<Steps>
+  <Step title="Publish the project once">
+    The custom domain row stays off until you do. Before the first publish the panel says "Publish the project first to add a custom domain."
+  </Step>
+
+  <Step title="Open Add a custom domain">
+    In the project, open **Publish**, then press **Add a custom domain**.
+
+    <Frame>
+      <img alt="The Connect a domain dialog with a Domain picker, two addresses marked Connected to another project, an Add a subdomain button, and Cancel and Connect buttons" />
+    </Frame>
+
+  </Step>
+
+  <Step title="Pick the domain">
+    Choose it in the **Domain** field. The list holds the domains on your account.
+  </Step>
+
+  <Step title="Tick the addresses">
+    Under **Put your app on these addresses**, tick where this project should answer: the bare domain, the `www` version, or both. Press **Add a subdomain** for an address like `app.example.com`.
+  </Step>
+
+  <Step title="Press Connect">
+    **Connect** stays off until you tick at least one address.
+  </Step>
+</Steps>
+
+One address serves one project. An address that another project already uses is marked **Connected to another project** and cannot be ticked. When every address on a domain is taken, the dialog says so and sends you to a subdomain, or to another domain in **Account Settings**.
+
+## Add a web app to a project you already have
+
+Any mobile project can grow a web version. Open **Project Settings → Add new app → Web**, use the platform switcher above the preview, or just ask:
+
+```
+Add a web version of this app
+```
+
+Each app keeps its own code. They share the chat, and the backend if you have one. A common split is a mobile app for customers and a web app as the admin dashboard.
+
+## What a web app cannot do
+
+A web app runs inside the browser, so the deeply native features are out of reach:
+
+- No App Store or Google Play distribution
+- No home screen or lock screen widgets, no Live Activities, no Dynamic Island
+- No Apple Watch app and no Apple Health integration
+- No background tracking, and no advanced motion or body tracking
+- Push notifications are limited. On iPhone and iPad the user must add the site to the Home Screen first, on iOS 16.4 or later, and then grant permission
+
+If your product needs any of those, build the native app and keep the web app beside it. See [iPhone, Android, or web: what's the difference](/swift-vs-react-native/whats-the-difference).
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="What code does Rork write for the web?">
+    A real Vite and React project in TypeScript, styled with Tailwind. You can export it to GitHub and run it anywhere. See [How to connect GitHub](/tutorials/how-to-connect-github).
+  </Accordion>
+
+  <Accordion title="Can I skip the questions and the design step?">
+    Yes. Write the look into your first prompt, and the agent has less to ask. In **Design mode** you can also press **Build** straight away.
+  </Accordion>
+
+  <Accordion title="Can a web app have a backend?">
+    Yes. Use [Rork Cloud](/backend/rork-cloud) for a backend inside Rork, or connect [Supabase](/backend/supabase) or [Firebase](/backend/firebase). The apps in one project can share the same backend.
+  </Accordion>
+
+  <Accordion title="Can I use my own domain?">
+    Yes, and you can buy one inside Rork if you do not have it yet. Publish to the `rork.app` address first, then see [Domains](#domains).
+  </Accordion>
+
+  <Accordion title="Can two projects share one address?">
+    No. An address belongs to one project. The dialog marks an address that is already taken as **Connected to another project**, and you pick a subdomain instead.
+  </Accordion>
+
+  <Accordion title="I have a Lovable project. Do I have to rebuild it?">
+    No. Rork imports it. See [Lovable to mobile app](/import/lovable-to-mobile-app), and keep the web app in the same project.
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup>
+  <Card icon="compass" href="/swift-vs-react-native/whats-the-difference" title="iPhone, Android, or web">
+    What each platform is good at, and how to choose.
+  </Card>
+
+  <Card icon="repeat" href="/import/convert-between-platforms" title="Add another platform">
+    Grow the project into iOS and Android from the same chat.
+  </Card>
+
+  <Card icon="database" href="/backend/rork-cloud" title="Add a backend">
+    Accounts, data, and files for your web app.
+  </Card>
+
+  <Card icon="download" href="/import/website-to-mobile-app" title="Website to mobile app">
+    Turn an existing site into a native app.
+  </Card>
+
+  <Card icon="globe" href="https://rork.com/web" title="Rork Web">
+    The product page, with examples of what Rork builds for the browser.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

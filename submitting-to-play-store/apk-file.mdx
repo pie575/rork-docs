@@ -1,0 +1,33 @@
+---
+title: "How to test Android apps on your Android device"
+---
+
+How to test your Rork app on a real Android phone, and how to get an installable APK build when you need one.
+
+Android apps in Rork are **native Android (Kotlin)** apps. They come with a built-in Android emulator: Rork builds the app and runs it in the emulator right in your browser, so most testing needs no extra setup. See [Build a native Android app with Rork](/android/rork-android) for what the emulator can do.
+
+When you want the app on your own phone, you have two ways: install the APK by hand, or test through Google Play.
+
+<Note>
+  An iPhone (Swift) app is iOS only and does not run on Android. To reach Android users, add an Android app to the same project, see [Convert your app between iOS, Android, and web](/import/convert-between-platforms).
+</Note>
+
+## Install the APK on your own phone
+
+Rork builds the APK for you, so you do not need a terminal or any build service:
+
+1. Open your project and click **Publish** at the top of the page, then open the Google Play section.
+2. Click **Download APK**. If the button is not there yet, build the app first and wait for the build to finish.
+3. Open the downloaded `.apk` file on your Android phone and install it. Android asks you to allow installs from your browser or file manager the first time.
+
+## Test through Google Play instead
+
+Use Google Play internal testing when you want testers to install from the Play Store, or when you want to check your Play Console setup before launch:
+
+1. Follow the [Google Play publishing guide](/submitting-to-play-store/creating-the-aab-file) to build the AAB and send it to an internal testing track.
+2. Add your own email as a tester and accept the invite link.
+3. Install the app on your phone directly from the Play Store.
+
+Internal testing releases are only visible to your testers. This is the same path you will use for the real launch, so testing this way also verifies your Play Console setup.
+
+<CtaBanner />
