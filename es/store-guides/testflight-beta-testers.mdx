@@ -1,0 +1,149 @@
+---
+title: "TestFlight: instala tu app en teléfonos reales"
+---
+
+Rork sube tu build de iPhone a TestFlight y después te da un enlace para invitar a testers. Esta página cubre los pasos del envío, el enlace de la beta y exactamente qué tiene que hacer un tester.
+
+TestFlight es la forma que tiene Apple de instalar una app en teléfonos reales antes de que llegue a la App Store. Úsalo para probar tu app en un dispositivo real y para que otras personas la prueben antes de la revisión.
+
+Rork sube el build por ti. No necesitas Xcode ni un Mac.
+
+<div id="get-a-build-onto-testflight">
+  ## Sube un build a TestFlight
+</div>
+
+<Steps>
+  <Step title="Abre Publish y luego Submit to App Store">
+    En el encabezado del project, pulsa **Publish** y elige tu app de iPhone.
+  </Step>
+
+  <Step title="Revisa la información de la app">
+    Rork muestra el nombre y los detalles que verá la tienda; luego pulsa **Continue**.
+  </Step>
+
+  <Step title="Inicia sesión en Apple">
+    Rork necesita tu cuenta de Apple Developer. La membresía cuesta **$99 al año** y puede variar según el país. Si aún no la tienes, consulta [Crea tu cuenta de Apple Developer](/es/store-guides/apple-developer-account).
+  </Step>
+
+  <Step title="Inicia el envío">
+    Rork descarga el project, prepara el build, compila la app y la sube a App Store Connect. El chat muestra cada etapa, así que puedes salir y volver más tarde.
+  </Step>
+
+  <Step title="Espera a que aparezca Available on TestFlight">
+    Cuando termina la subida, Rork indica que el build ya está disponible en TestFlight e indica su número.
+  </Step>
+</Steps>
+
+Tras la subida, Apple procesa el build durante unos minutos. Hasta que ese proceso termine, es posible que TestFlight aún no lo muestre.
+
+<div id="invite-testers-with-a-link">
+  ## Invita a testers con un enlace
+</div>
+
+Tras un build exitoso, Rork ofrece la opción **Share Beta Link**. Te genera una dirección del tipo `rork.com/beta/…` que guía al tester durante todo el proceso de instalación.
+
+El cuadro de diálogo te permite **Copy invite link**, **Regenerate** si se filtró y **Revoke** cuando terminen las pruebas.
+
+<Note>
+  Solo el propietario del project y los editores pueden compartir un enlace de beta. Un viewer no ve el botón. Consulta [Compartir un project y trabajar en equipo](/es/collaborate/share-a-project).
+</Note>
+
+<div id="what-your-tester-does">
+  ## Qué hace tu tester
+</div>
+
+Envíale el enlace y verá «Te han invitado a probar», con el nombre de tu app, seguido de cinco pasos breves:
+
+<Steps>
+  <Step title="Instalar TestFlight">
+    La app TestFlight de Apple, desde la App Store. La página muestra la opción **Get TestFlight** para quienes no la tengan.
+  </Step>
+
+  <Step title="Introducir su correo">
+    Tiene que ser el correo de su **Apple ID**; si no, la invitación no llega a ninguna parte.
+  </Step>
+
+  <Step title="Aceptar la invitación al equipo de App Store Connect">
+    Pulsa **Request Team Invitation** y luego acepta el correo que envía Apple. Si no llega, ahí está **Resend**.
+  </Step>
+
+  <Step title="Unirse al grupo de TestFlight">
+    **Join TestFlight** y luego acepta en la app TestFlight. **Refresh Status** actualiza la página.
+  </Step>
+
+  <Step title="Abrir la app">
+    La página lo confirma: la app queda instalada y se abre desde la pantalla de inicio como cualquier otra.
+  </Step>
+</Steps>
+
+Diles a tus testers que usen el correo de su Apple ID y avísales de que hay dos invitaciones que aceptar: una por correo y otra en TestFlight. Esas dos cosas son las que más confusión generan.
+
+<div id="how-big-a-beta-this-suits">
+  ## Para qué tamaño de beta sirve
+</div>
+
+El enlace de Rork añade testers a través de tu **equipo de App Store Connect**. Esa vía es rápida y no requiere una revisión adicional de Apple, aunque Apple limita el número de personas permitidas, así que encaja bien con un grupo de testers formado por amigos, colegas y primeros usuarios.
+
+Para una beta pública grande, añade tú mismo testers externos en App Store Connect. Apple revisa el build antes de que llegue a un grupo externo, lo que implica una espera adicional.
+
+<div id="after-the-beta">
+  ## Después de la beta
+</div>
+
+TestFlight no es la App Store. Una build en TestFlight no está a la venta ni es pública.
+
+Cuando la app supere la prueba de tus testers, envíala a revisión. Consulta [Publica tu app en la Apple App Store](/es/store-guides/publish-app-store), ejecuta primero el [AI App Store Reviewer](/es/ai-app-store-reviewer) y lee los [Principales motivos de rechazo en la App Store](/es/appstore-submission-checklist/whats-next-after-the-apps-finished) para que la revisión no te pille por sorpresa.
+
+<div id="faq">
+  ## Preguntas frecuentes
+</div>
+
+<AccordionGroup>
+  <Accordion title="¿Necesito una Mac o Xcode?">
+    No. Rork compila y sube todo en la nube. Xcode es opcional y solo para quienes quieran depurar de forma local. Consulta [Cómo probar y publicar tu app de Rork con Xcode](/es/how-to-set-up-xcode/how-to-set-up-xcoe).
+  </Accordion>
+
+  <Accordion title="¿Necesito la membresía de Apple de $99 solo para usar TestFlight?">
+    Sí. La distribución por TestFlight se gestiona desde App Store Connect, que requiere una cuenta de pago de Apple Developer.
+  </Accordion>
+
+  <Accordion title="¿Puedo probar en mi propio iPhone sin TestFlight?">
+    Sí, instálala directamente desde Rork por USB con la app Companion, o usa la app Rork Max. Consulta [App Rork Max para iPhone](/es/rork-max/rork-max-app).
+  </Accordion>
+
+  <Accordion title="Mi tester dice que el enlace no hace nada.">
+    Comprueba que haya usado el correo de su Apple ID y que haya aceptado ambas invitaciones. Si el enlace en sí ya no funciona, pulsa **Regenerate** y envía el nuevo.
+  </Accordion>
+
+  <Accordion title="El build nunca apareció en TestFlight.">
+    Las subidas pueden fallar aunque parezcan haber terminado, normalmente por la firma o por algún dato que falta. Consulta [Errores de envío](/es/submitting-to-app-store/apple/submission-errors).
+  </Accordion>
+
+  <Accordion title="¿Los testers reciben automáticamente un nuevo build?">
+    Los testers que ya están en el grupo reciben el siguiente build que subas. No tienen que volver a aceptar las invitaciones.
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## Próximos pasos
+</div>
+
+<CardGroup>
+  <Card icon="upload" href="/es/store-guides/publish-app-store" title="Publicar en la App Store">
+    Envía a revisión la build ya probada.
+  </Card>
+
+  <Card icon="shield-check" href="/es/ai-app-store-reviewer" title="AI App Store Reviewer">
+    Detecta incumplimientos de las directrices antes que Apple.
+  </Card>
+
+  <Card icon="triangle-alert" href="/es/submitting-to-app-store/apple/submission-errors" title="Errores de envío">
+    Cuando la build falla o nunca llega a aparecer.
+  </Card>
+
+  <Card icon="apple" href="/es/store-guides/apple-developer-account" title="Cuenta de Apple Developer">
+    La membresía que requiere TestFlight.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

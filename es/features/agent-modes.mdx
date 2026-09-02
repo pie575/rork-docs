@@ -1,0 +1,182 @@
+---
+title: "Design mode, modo Plan y Build"
+---
+
+Rork puede diseñar tu app antes de escribir código, redactar un plan antes de modificar archivos o Build directamente. Esta página explica las tres vías, dónde están los controles y cuánto cuesta cada una.
+
+Rork tiene tres formas de responder a un mensaje: puede **diseñar** primero las pantallas, **planificar** primero el trabajo o **Build** el cambio de inmediato. Todas las vías llegan al mismo destino, una app funcionando, pero tienen costes distintos y te ofrecen distintos momentos para cambiar de opinión.
+
+| Vía             | Rork produce                                          | Úsala cuando                                    |
+| --------------- | ----------------------------------------------------- | ----------------------------------------------- |
+| **Design mode** | Imágenes de las pantallas, aún sin construir nada     | Empiezas una app nueva y te importa su aspecto  |
+| **Modo Plan**   | Un plan escrito del trabajo, sin tocar ningún archivo | El cambio es grande o afecta a muchas pantallas |
+| **Build**       | Código funcionando en la vista previa                 | Sabes lo que quieres y es un cambio normal      |
+
+<div id="where-the-switches-are">
+  ## Dónde están los interruptores
+</div>
+
+En [rork.com](https://rork.com), abre el botón **+** que hay debajo del cuadro del prompt. **modo Plan** y **Design mode** están en ese menú.
+
+<Frame>
+  <img alt="El cuadro del prompt de Rork con el menú del signo más abierto, mostrando los interruptores Subir imagen, Upload attachment, modo Plan y Design mode" />
+</Frame>
+
+Los dos interruptores son excluyentes: al activar uno, se desactiva el otro.
+
+<Note>
+  El interruptor **Design mode** solo está disponible en los planes de pago. En el plan gratuito, Rork igualmente diseña tu app primero, y al pulsar **Build** sobre el diseño se te pedirá elegir un plan. El muro de pago lo dice sin rodeos: «Free credits cover design — building your app needs a plan». Consulta [Planes y suscripciones](/es/introduction/subscriptions).
+</Note>
+
+Dentro de un project, el compositor tiene en su lugar un botón **Plan**, cuya descripción emergente dice **Enable modo Plan**. Dentro de un project no hay interruptor de Design, porque el Design mode corresponde al arranque de una app.
+
+<Frame>
+  <img alt="La entrada de chat de Rork con un prompt escrito y el botón Plan activado" />
+</Frame>
+
+<div id="design-mode">
+  ## Design mode
+</div>
+
+El modo Design es la forma barata de decidir cómo se ve tu app. Rork dibuja las pantallas y no se construye nada hasta que las apruebas.
+
+<Steps>
+  <Step title="Responde unas cuantas preguntas sobre el aspecto">
+    Antes de dibujar nada, Rork hace unas cuantas preguntas breves, normalmente entre una y tres, y a veces alguna adicional. La mayoría de las respuestas incluyen una pequeña vista previa del estilo que representan, así que eliges un aspecto en lugar de describirlo. Cada pregunta ofrece además **Surprise me** y un campo **Other...** para escribirlo con tus palabras. Pulsa **Submit** cuando termines.
+  </Step>
+
+  <Step title="Lee la propuesta">
+    Rork propone tres o cuatro pantallas y las abre en la pestaña **Design**. Es una imagen de tu app, no una app en funcionamiento.
+  </Step>
+
+  <Step title="Cambia de opinión por muy poco">
+    Pide otra pantalla, otra paleta u otra disposición en el chat. Cambiar un diseño cuesta mucho menos que rehacer una app ya funcionando.
+  </Step>
+
+  <Step title="Pulsa Build">
+    La tarjeta **Review Design** aparece en la parte inferior del chat. **View Design** vuelve a abrir las pantallas y **Build** las convierte en una app en funcionamiento.
+
+    <Frame>
+      <img alt="Una tarjeta Review Design en el chat de Rork que enumera tres pantallas, con View Design y Built debajo" />
+    </Frame>
+  </Step>
+</Steps>
+
+**Build** envía un mensaje por ti: `Build a working app from the approved design.` A continuación, Rork escribe la app y guarda las decisiones de diseño en `.rork/DESIGN.md`, de modo que los mensajes posteriores mantengan el mismo aspecto. Puedes leer ese archivo en **More → Code**.
+
+Después del build, la propuesta no desaparece: vuelves a encontrarla en **More → Design**.
+
+<Tip>
+  Describe el aspecto en tu primer prompt y Rork tendrá menos que preguntar. «Un sitio de tostaduría oscuro y ahumado con grandes tarjetas de fotos» responde la mayoría de las preguntas antes de que Rork las haga.
+</Tip>
+
+<div id="plan-mode">
+  ## Modo Plan
+</div>
+
+El modo Plan sirve para esos cambios demasiado grandes como para delegarlos a ciegas. Rork deja por escrito lo que piensa hacer y no modifica ningún archivo hasta que lo apruebes.
+
+Activa **Plan** en el compositor y envía tu mensaje. Rork crea un archivo de plan en `.rork/plans/` y muestra una tarjeta **Review Plan** en el chat:
+
+* **View Plan** abre el plan en la pestaña **Plan**.
+* **Build** pone el trabajo en marcha: envía `Build the plan.` y desactiva el modo Plan.
+
+Rork también puede proponer el modo Plan por su cuenta cuando una solicitud parece grande. La tarjeta dice **Switch to Plan Mode?**, con las opciones **Approve** y **Decline**. Si la rechazas, seguirá con el build de la forma habitual.
+
+El modo Plan no tiene un precio aparte: consume los mismos credits de build que cualquier otro mensaje.
+
+<div id="building">
+  ## Construcción
+</div>
+
+Construir es el modo predeterminado. No hay ningún interruptor activado: describes el cambio y Rork edita el código.
+
+Mientras trabaja, el chat muestra lo que va haciendo: **Explored 7 files**, **Made 9 actions**, **Running checks**, **Building app**. Cada mensaje finalizado enumera los archivos que modificó y muestra una vista previa del resultado.
+
+Rork se detiene y te consulta cuando un paso lo requiere: una clave que no tiene, una pregunta con varias respuestas válidas, una decisión de diseño que no puede adivinar. Esas consultas llegan como tarjetas con botones en el chat, no como muros de texto.
+
+<div id="choose-the-ai-model">
+  ## Elige el modelo de IA
+</div>
+
+El compositor tiene un selector de modelo. De forma predeterminada muestra **Auto**.
+
+<Frame>
+  <img alt="El menú de modelos de Rork abierto, con Auto seleccionado y una lista de modelos con nombre debajo" />
+</Frame>
+
+**Auto** elige el modelo y el nivel de razonamiento de cada mensaje, así que la mayoría de la gente nunca abre este menú. Selecciona un modelo manualmente cuando quieras usar uno concreto. Los modelos que están por encima de tu plan llevan una etiqueta **Pro** o **Max**, y al elegir uno se abre el selector de planes. Consulta la lista completa en [Planes y suscripciones](/es/introduction/subscriptions).
+
+<div id="talk-instead-of-typing">
+  ## Habla en lugar de escribir
+</div>
+
+El botón del micrófono graba tu voz y escribe el texto en el compositor. Léelo, edítalo y luego envíalo. Rork no envía la grabación directamente al agente, así que una palabra mal transcrita no te cuesta nada.
+
+<div id="attach-what-you-already-have">
+  ## Adjunta lo que ya tienes
+</div>
+
+Usa **+ → Subir imagen** o arrastra un archivo al chat. Rork lee capturas de pantalla, fotos, PDF, video, audio y modelos 3D.
+
+Una captura de pantalla es la forma más rápida de describir un diseño. Haz una captura de un frame de Figma, o de una app que te guste, y explica qué quieres de ella.
+
+Las cuentas gratuitas pueden adjuntar archivos de hasta **10 MB**. Los planes de pago llegan hasta **5 GB**.
+
+<div id="queue-the-next-message">
+  ## Pon en cola el siguiente mensaje
+</div>
+
+No hace falta que esperes al agente. Envía otro mensaje mientras trabaja y Rork lo pondrá en cola. El encabezado de la cola muestra cuántos hay, por ejemplo **2 en cola**, y cada fila se puede editar o eliminar antes de que llegue su turno.
+
+Si un turno se detiene o falla, la cola se marca como **· En pausa** para que nada se ejecute sobre un trabajo defectuoso. Pulsa **Reanudar** cuando quieras continuar.
+
+<div id="faq">
+  ## Preguntas frecuentes
+</div>
+
+<AccordionGroup>
+  <Accordion title="¿El paso de diseño consume créditos?">
+    Sí, pero créditos de diseño, no créditos de build. El plan gratuito incluye una asignación mensual para diseñar. Convertir un diseño aprobado en una app funcional requiere un plan de pago. Consulta [Créditos de build vs. créditos de Cloud](/es/billing/build-credits-vs-cloud-credits).
+  </Accordion>
+
+  <Accordion title="¿Puedo saltarme el Design mode?">
+    Sí. Desactiva el interruptor en el menú **+** o pulsa **Build** en la primera propuesta sin pedir cambios.
+  </Accordion>
+
+  <Accordion title="¿Cuánto costó ese mensaje?">
+    Abre el menú **⋯** que aparece debajo de cualquier respuesta. Ahí verás el modelo que se ejecutó, los créditos que consumió y el tamaño del contexto. Consulta [Deshacer un cambio y volver a una versión anterior](/es/features/undo-and-history).
+  </Accordion>
+
+  <Accordion title="Rork sigue rompiendo lo mismo. ¿Qué hago?">
+    Deja de acumular mensajes sobre el problema. Vuelve a la última versión correcta y describe el cambio de forma más acotada. Consulta [Cómo salir de un bucle de errores](/es/introduction/introduction/agent-loops).
+  </Accordion>
+
+  <Accordion title="¿Dónde se guardan los archivos del plan y del diseño?">
+    Los planes van a `.rork/plans/` y el contrato de diseño a `.rork/DESIGN.md`. Ambos viajan con tu código a GitHub. Consulta [Cómo sincronizar tu project con GitHub](/es/tutorials/how-to-connect-github).
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## Próximos pasos
+</div>
+
+<CardGroup>
+  <Card icon="rotate-left" href="/es/features/undo-and-history" title="Deshacer e historial de versiones">
+    Revierte un cambio o vuelve varias versiones atrás.
+  </Card>
+
+  <Card icon="wand-magic-sparkles" href="/es/features/assets" title="Imágenes, video y 3D">
+    Genera las imágenes y los sonidos que tu app necesita.
+  </Card>
+
+  <Card icon="message" href="/es/introduction/introduction/prompting-strategy" title="Cómo escribir buenos prompts">
+    Pide una experiencia, no una lista de funcionalidades.
+  </Card>
+
+  <Card icon="users" href="/es/collaborate/share-a-project" title="Comparte el project">
+    Invita a otras personas a ver o editar la misma app.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

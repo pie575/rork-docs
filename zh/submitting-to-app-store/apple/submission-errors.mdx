@@ -1,0 +1,91 @@
+---
+title: "提交错误"
+---
+
+以下是在 Rork 上提交应用时最常见的问题及相应的解决办法。
+
+<div id="the-build-succeeded-but-the-app-is-not-in-app-store-connect">
+  ## 构建 成功了，但 App Store Connect 里没有这个 app
+</div>
+
+有时候构建本身是成功的，失败的其实是上传到 App Store Connect 这一步。
+
+打开项目中的 **App Store** 标签页，每次提交都会列在这里，并显示其状态和日志。打开失败的那次提交，查看日志，确认它在哪一步中断：
+
+* **构建 仍在进行中。** 等它跑完，上传会自动开始。
+* **构建 失败。** 先修复构建，请参见下一节。
+* **Apple 需要批准某项功能。** Rork 会显示该请求并附上前往 Apple 的链接。在那里批准后，重新发起提交。
+* **已有一个版本正在等待审核。** 同一版本下，Apple 只允许一个构建处于审核中。你可以替换那个构建，或者提高版本号后再次提交。
+
+如果提交依然失败，请通过 **Publish → App Store → Submit to App Store** 发起一次新的提交，Rork 会以相同的设置重新构建并上传。
+
+<div id="build-error">
+  ## 构建错误
+</div>
+
+如果构建失败，日志会明确告诉你 Xcode 具体卡在哪里。
+
+<div id="how-to-resolve-a-build-error">
+  ### 如何解决构建错误
+</div>
+
+1. **打开构建日志**
+   * 在 **App Store** 标签页中，打开失败的提交记录并展开日志。
+   * 向下滚动，直到看到完整的错误信息。
+2. **复制完整的错误日志**
+   * 包含与本次失败相关的所有行 (请勿截断) 。
+   * 日志越完整，问题解决得越快。
+3. **将错误日志粘贴到 Rork 中**
+   * 把日志直接提供给 Rork，并要求它修复此次构建。
+   * Rork 会依据具体的错误输出，定位缺失的配置、无效的取值或依赖冲突。
+4. **应用建议的修复方案并重新构建**
+   * 修复应用后，重新运行构建。
+   * 如果构建再次失败，请用新的错误输出重复上述流程。
+
+<div id="why-this-works">
+  ### 为什么这样做有效
+</div>
+
+构建错误与项目当时的状态高度相关。把**完整的构建输出**原样提供给 Rork，它就能基于与构建机器完全相同的信息进行分析，从而更快、更准确地给出修复方案。
+
+多数情况下，这样重复一到两轮就能解决问题。
+
+<div id="common-causes-of-build-errors">
+  ### 构建错误的常见原因
+</div>
+
+* `Info.plist` 中缺少某个 iOS 权限键，导致 Apple 拒绝上传
+* Swift 包无法解析，或两个包依赖的版本不一致
+* 项目中启用的某项功能 (capability) 未在你的 Apple Developer 账户中开通
+* bundle identifier 或版本号与 App Store Connect 的预期不符
+
+<div id="tip">
+  ### 提示：
+</div>
+
+请务必粘贴**完整日志**，而不是摘要。不完整的日志可能会掩盖根本原因，拖慢问题解决速度。
+
+<div id="testflight-bugs">
+  ## TestFlight 问题
+</div>
+
+TestFlight 常见的问题有两类：
+
+1. 打开 app 后立即崩溃
+2. Rork 内的 AI 功能无法使用。
+
+<div id="issue-1">
+  ### 问题 #1
+</div>
+
+先点击分享：
+
+<img alt="Image" />
+
+从 App Store Connect 复制崩溃日志，粘贴到 Rork 中并让它修复。如果无效，请打开 XCode
+
+<img alt="Image" />
+
+运行 yarn start 后，在 Xcode 或 VS Code 中查看日志，将日志交给 ChatGPT 或 Rork 处理，直到问题解决。
+
+<CtaBanner />

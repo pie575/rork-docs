@@ -1,0 +1,136 @@
+---
+title: "在 iOS、Android 和 Web 之间转换你的应用"
+---
+
+用 AI 把 Android 应用转成 iOS 应用 (或反过来) ，把 React Native 代码库转成原生 Swift 和 Kotlin，并在同一个 Rork 项目里发布到所有平台。
+
+<video />
+
+Rork 项目不会被锁定在某一个平台上。同一个 项目可以同时包含**原生 iOS 应用 (Swift)&#x20;**、**原生 Android 应用 (Kotlin) **和 **Web 应用**。每个应用都有各自的代码，同时可以共用一个聊天和一个 backend。因此，“把应用转换到另一个平台”在这里是一项功能，而不是从零重写。
+
+<div id="convert-an-android-app-to-ios-with-ai">
+  ## 用 AI 将 Android 应用转换为 iOS 应用
+</div>
+
+已经有一个 Android 应用 (在 Rork 中，或从代码仓库导入) ，想让它跑在 iPhone 上？
+
+1. 如果该应用还没有在 Rork 中，请先[导入它的代码仓库](/zh/import/import-from-github)，包含 Kotlin/Java 源代码。虽然新的 iOS 应用会使用 Swift，但智能体照样能读懂这些代码。
+2. 在项目中，于聊天里输入：
+
+```
+创建这个应用的 iOS 版本
+```
+
+3. 确认 **&quot;Add iOS app?&quot;** 组件。智能体会用原生 iOS UI 重建界面，并复用同一套 backend、数据模型和业务规则。
+4. 在 iOS 云端模拟器中预览，然后[发布到 App Store](/zh/store-guides/publish-app-store)。
+
+<div id="ios-app-native-android-app">
+  ## iOS 应用 → 原生 Android 应用
+</div>
+
+反过来也一样。在你的 iOS 项目中，点击 **+** (添加预览平台) → **Android (Kotlin)**，或直接在聊天中提出需求：
+
+<Frame>
+  <img alt="添加平台菜单：Android (Kotlin) 和 Web" />
+</Frame>
+
+Rork 会在同一个项目中构建一个原生 Kotlin 应用。发布方式：[创建用于 Google Play 的 AAB 文件](/zh/submitting-to-play-store/creating-the-aab-file)。
+
+<div id="react-native-expo-codebase-native-app">
+  ## React Native / Expo 代码库 → 原生应用
+</div>
+
+已经有 React Native 或 Expo 代码库 (来自 Bolt、外包开发者或你自己的项目) ？Rork 可以把它重建为原生代码。
+
+1. 如果代码还没在 GitHub 上，先推送上去。
+2. 导入代码：在 [rork.com](https://rork.com) 上选择 **GitHub to Mobile App** → 粘贴仓库 URL → **Generate app now**。
+
+<Frame>
+  <img alt="GitHub 导入对话框" />
+</Frame>
+
+智能体会读取你的 JavaScript 或 TypeScript 源码，然后按你选择的平台，把页面、导航、数据流和设计重建为**原生 iPhone 应用 (Swift)&#x20;**、**原生 Android 应用 (Kotlin) **或**Web 应用**。产品本身不变，只是 UI 代码变成了 Swift、Kotlin 或 React。
+
+之后的发布同样在 Rork 内完成：内置的 Publish 流程会处理 build 以及 App Store 或 Google Play 的提交，无需你自行配置。
+
+<Info>
+  不确定该选哪个平台？请参阅 [iPhone、Android 还是网页：有什么区别](/zh/swift-vs-react-native/whats-the-difference)。
+</Info>
+
+<div id="mobile-app-web-app">
+  ## 移动应用 → 网页应用
+</div>
+
+任何移动端 项目 都可以扩展出网页版本：**Project Settings → Add new app → Web**，或者直接这样提问：
+
+```
+为这个应用添加一个 Web 版本
+```
+
+Web 应用通过 **Publish** 菜单发布到 `your-app.rork.app` 网址 (之后可绑定自定义域名) 。非常适合落地页、管理后台或桌面端配套应用。
+
+<div id="every-combination-at-a-glance">
+  ## 所有组合一览
+</div>
+
+| 从 \ 到                                 | iOS (Swift) | Android (Kotlin) | Web       |
+| ------------------------------------- | ----------- | ---------------- | --------- |
+| **iOS (Swift)**                       | 不适用         | 添加平台 / 聊天        | 添加平台 / 聊天 |
+| **Android (Kotlin)**                  | 添加平台 / 聊天   | 不适用              | 添加平台 / 聊天 |
+| **Web (含导入的站点和建站工具)&#x20;**&#x20;          | 添加平台 / 聊天   | 添加平台 / 聊天        | 不适用       |
+| **React Native / Expo (导入的仓库)&#x20;**&#x20;| 由智能体原生重建    | 由智能体原生重建         | 添加平台 / 聊天 |
+
+“添加平台 / 聊天”即：点击项目标题栏中的 **+**、使用 **Project Settings → Add new app**，或直接在聊天中告诉智能体。
+
+<div id="per-app-settings">
+  ## 各应用的独立设置
+</div>
+
+项目 中的每个应用都有各自的图标、主屏幕名称以及 bundle identifier / package name。发布前请在 **Project Settings** 中完成配置：
+
+<Frame>
+  <img alt="各应用的独立设置：图标、名称、bundle identifier" />
+</Frame>
+
+<div id="publishing-each-platform">
+  ## 各平台发布方式
+</div>
+
+* **iOS**：直接在 Rork 中[发布到 App Store](/zh/store-guides/publish-app-store)：
+
+<Frame>
+  <img alt="Rork 中的“发布到 App Store”向导" />
+</Frame>
+
+每次提交 (及其 TestFlight 链接) 都会记录在项目的 **Publish** 对话框中：
+
+<Frame>
+  <img alt="带有 TestFlight 链接的 App Store 提交记录" />
+</Frame>
+
+* **Android**：[生成 AAB 文件并上传到 Google Play](/zh/submitting-to-play-store/creating-the-aab-file)。
+* **Web**：在项目的 **Publish** 菜单中一键发布。
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<div id="is-the-conversion-a-literal-code-translation">
+  ### 转换是逐行翻译代码吗？
+</div>
+
+不是，而这恰恰是好事。智能体会用各平台的原生组件重建界面，同时保持产品本身完全一致：相同的页面、相同的流程、相同的数据。这样你得到的应用在每个平台上都原汁原味，而不是一个迁就各方、只求最低标准的移植版。
+
+<div id="do-the-platforms-stay-in-sync-afterwards">
+  ### 之后各平台会保持同步吗？
+</div>
+
+它们共享同一个 项目、backend 和聊天记录。当你要求添加功能时，请告诉智能体该功能适用于哪些应用 (例如“给 iOS 和 Android 都加上深色模式”) ，它会分别更新各自的原生代码库。
+
+<div id="can-i-have-different-features-per-platform">
+  ### 不同平台可以有不同的功能吗？
+</div>
+
+可以。常见做法是把外勤团队相关的功能只放在移动端，同时把管理后台做成 Web 应用。
+
+<CtaBanner />

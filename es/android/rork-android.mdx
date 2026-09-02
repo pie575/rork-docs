@@ -1,0 +1,284 @@
+---
+title: "Crea una app nativa de Android con Rork"
+---
+
+Rork escribe apps nativas de Android en Kotlin con Jetpack Compose, las ejecuta en un emulador de Android en la nube junto al chat, firma el App Bundle por ti y envía la versión a Google Play.
+
+<Frame>
+  <img alt="Un proyecto de Android en Rork con el resumen del build en el chat y la app terminada de cuidado de plantas ejecutándose en el emulador" />
+</Frame>
+
+Una app de Android en Rork es una **app nativa de Android**. Rork la escribe en **Kotlin** con **Jetpack Compose**, la misma tecnología que usaría a mano un equipo nativo de Android. No es un sitio web dentro de un contenedor ni una app de iPhone convertida en tiempo de ejecución.
+
+Tú describes la app, Rork la construye y la ves funcionar en un emulador de Android en la nube junto al chat. Cuando esté lista, Rork firma el Android App Bundle y envía la versión a Google Play.
+
+<div id="start-an-android-app">
+  ## Crear una app de Android
+</div>
+
+Elige la plataforma antes de enviar tu primer mensaje. En [rork.com](https://rork.com?utm_source=docs\&utm_medium=referral\&utm_campaign=docs-cta\&utm_content=android-start), abre el selector de plataforma que aparece debajo del cuadro del prompt y elige **For Android**. El selector la describe como **Native Android with Kotlin + Compose**.
+
+<Frame>
+  <img alt="El selector de plataforma de Rork abierto, con For iPhone, For Android y For web, y una nota que indica que puedes añadir otra plataforma más adelante" />
+</Frame>
+
+El selector lo dice con claridad: **puedes añadir otra plataforma más adelante**. Un mismo proyecto puede contener una app de Android, una app de iPhone y una app web a la vez. Consulta [Convierte tu app entre iOS, Android y Web](/es/import/convert-between-platforms).
+
+Después, describe el producto, no la tecnología:
+
+```
+Una app de cuidado de plantas que me recuerde regar cada planta y lleve un seguimiento de cómo está cada una
+```
+
+<div id="answer-the-questions-about-the-look">
+  ## Responde las preguntas sobre la apariencia
+</div>
+
+Rork no se pone a escribir Kotlin de inmediato. Primero te hace unas cuantas preguntas breves, y cada respuesta es una imagen, no una palabra. También puedes escribir tu propia respuesta en **Other**.
+
+<Frame>
+  <img alt="Rork preguntando qué debe mostrar la primera pantalla de la app de cuidado de plantas, con cuatro respuestas para elegir" />
+</Frame>
+
+Respóndelas y pulsa **Submit**. Puedes saltarte este paso si describes la apariencia directamente en tu primer prompt.
+
+<div id="approve-the-design-then-build">
+  ## Aprueba el diseño y luego construye
+</div>
+
+A continuación, Rork dibuja las pantallas y las muestra en **Design mode**. Todavía no se ha construido nada, así que este es el mejor momento para cambiar de idea sin costes. Pide otra pantalla en el chat o pulsa **Build** para convertir el diseño en una app de Android funcional.
+
+<Frame>
+  <img alt="Design mode con cuatro pantallas propuestas para una app de cuidado de plantas y una tarjeta de revisión del diseño con los botones View Design y Build" />
+</Frame>
+
+<div id="run-the-app-on-an-android-emulator">
+  ## Ejecuta la app en un emulador de Android
+</div>
+
+Rork ejecuta tu app de Kotlin en un **emulador de Android en la nube** dentro de tu navegador. Es la app real sobre un sistema Android real, no una imagen, así que puedes ir tocando la pantalla mientras la construyes.
+
+<div>
+  <div>
+    <video aria-label="La app de cuidado de plantas ejecutándose en el emulador de Android de Rork: marcando un riego, la cuadrícula de plantas y una pantalla de detalle de planta" />
+  </div>
+</div>
+
+<p>Grabado en el emulador con el botón Grabar.</p>
+
+Aparecen los propios diálogos de permisos de Android, la señal más clara de que la app es nativa:
+
+<div>
+  <img alt="La app de cuidado de plantas en el emulador mostrando el diálogo del sistema Android que pide permitir notificaciones" />
+</div>
+
+<p>El diálogo de permisos propio de Android, en el primer inicio.</p>
+
+El emulador no está funcionando todo el tiempo. Espera detrás de un botón **Turn on emulator** y te indica cuánto cuesta mientras está en marcha:
+
+<div>
+  <img alt="El panel del emulador con el texto Turn on emulator, 0,1 créditos de build por minuto mientras se ejecuta y ningún crédito de simulador usado todavía en este proyecto" />
+</div>
+
+<p>El emulador espera hasta que lo inicies.</p>
+
+<Tip>
+  El panel indica **0.1 build credits/min while running**, así que pulsa **Stop emulator** cuando termines una ronda de pruebas. También te muestra cuánto tiempo de emulador ha consumido este proyecto hasta ahora. Consulta [Créditos de build frente a créditos de nube](/es/billing/build-credits-vs-cloud-credits).
+</Tip>
+
+Los controles situados encima del emulador hacen lo siguiente:
+
+<Frame>
+  <img alt="La barra de herramientas del emulador con los botones de grabar, captura de pantalla, inicio, ajustes y selección de elemento, un botón Share y un indicador Live con reiniciar y detener" />
+</Frame>
+
+| Control               | Qué hace                                                                                                     |
+| --------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Record**            | Graba la vista previa y la adjunta al chat. Así le muestras al agente un fallo que solo se ve en movimiento. |
+| **Screenshot**        | Adjunta una captura de pantalla al chat.                                                                     |
+| **Home**              | Pulsa el botón de inicio de Android.                                                                         |
+| **Emulator settings** | Cambia el sistema entre **Light** y **Dark**, y modifica el **Text size**.                                   |
+| **Select an element** | Señala una parte de la pantalla y escribe qué quieres cambiar en ella. El agente recibe el elemento exacto.  |
+| **Share**             | Toma una captura de pantalla y la enmarca en una maqueta de teléfono lista para publicar.                    |
+| **Restart**           | Reinicia el emulador; es lo que pulsas cuando la instancia ha desaparecido.                                  |
+| **Stop emulator**     | Lo apaga y detiene el coste por minuto.                                                                      |
+
+<Frame>
+  <img alt="La ventana emergente de ajustes del emulador con un selector de apariencia Light y Dark y un campo de tamaño de texto" />
+</Frame>
+
+Usa **Emulator settings** antes de publicar. Es en el modo oscuro y con texto grande donde se rompen los diseños de Android, y aquí ambos están a un clic. Cambiar el tamaño del texto recarga la pantalla actual.
+
+<Note>
+  Una instancia de emulador no dura para siempre. Cuando aparezca &quot;This instance no longer exists and can&#39;t be reconnected&quot;, pulsa **Restart**. Tu app y tu proyecto quedan intactos; solo desaparece la máquina en ejecución.
+</Note>
+
+<div id="test-on-your-own-phone">
+  ## Prueba en tu propio teléfono
+</div>
+
+El emulador cubre la mayoría de las pruebas. Cuando quieras tener la app en la mano, Rork genera el APK por ti, así que no necesitas terminal ni ningún servicio de build:
+
+1. Abre **Publish** y luego ve a la sección de Google Play.
+2. Pulsa **Download APK**.
+3. Abre el archivo `.apk` en tu teléfono Android e instálalo. La primera vez, Android te pedirá que permitas instalaciones desde tu navegador o gestor de archivos.
+
+Encontrarás la guía completa, incluidas las pruebas a través de Google Play, en [Cómo probar apps de Android en tu dispositivo Android](/es/submitting-to-play-store/apk-file).
+
+<div id="publish-to-google-play">
+  ## Publicar en Google Play
+</div>
+
+Rork compila y firma la versión de lanzamiento por ti. Lo que Rork no puede hacer es ser tú: la cuenta de desarrollador y la ficha de la tienda son de tu cuenta de Google.
+
+Abre **Publish** en el proyecto. La sección de Google Play explica qué hace y muestra si ya existe un build de lanzamiento:
+
+<Frame>
+  <img alt="El menú Publish mostrando una sección de Google Play que genera un Android App Bundle, el estado No release build yet y un botón Upload to Google Play" />
+</Frame>
+
+<Steps>
+  <Step title="Crea tu cuenta de desarrollador de Google Play">
+    Google cobra una **tarifa de registro única de $25** y las verificaciones de identidad tardan días. Empieza cuanto antes. Consulta [Crea tu cuenta de desarrollador de Google Play](/es/store-guides/google-play-developer-account).
+  </Step>
+
+  <Step title="Crea la app en Play Console">
+    La API de Google no puede crear el primer registro de la app por ti, así que la ficha debe existir en Play Console antes de que Rork pueda publicar en ella. Cuando Rork lo necesita, el panel muestra **Create Play Console app**: &quot;Crea la ficha de la app y luego Rork podrá volver a comprobar el acceso&quot;. Usa **Copy package name** para que la ficha coincida con tu build.
+  </Step>
+
+  <Step title="Conecta Google Play">
+    Pulsa **Upload to Google Play**. El cuadro de diálogo indica para qué app va a compilar, una app por paquete: &quot;Este AAB contiene únicamente esta app de Kotlin&quot;. También indica con qué cuenta va a publicar. Mientras no conectes ninguna, muestra **Connect Google Play**: &quot;Conecta la cuenta de Google que gestiona esta app de Play Console&quot;.
+
+    <Frame>
+      <img alt="El cuadro de diálogo Upload to Google Play indicando el destino Android en Kotlin, señalando que está listo para compilar el Android App Bundle, mostrando una cuenta de Google conectada y ofreciendo Build AAB for Play" />
+    </Frame>
+  </Step>
+
+  <Step title="Compila el paquete">
+    Pulsa **Build AAB for Play**. Rork compila un Android App Bundle de lanzamiento y lo firma con una clave de subida persistente que pertenece a tu proyecto. El cuadro de diálogo dice &quot;Compilando el Android App Bundle. Esto puede tardar unos minutos. Puedes cerrar esta ventana&quot;.
+  </Step>
+
+  <Step title="Envía la versión o quédate con el archivo">
+    Cuando el paquete está listo, el botón cambia a **Send to Google Play** y Rork lo sube a tu canal de pruebas internas. **Download AAB for Play Console** te entrega el archivo firmado para que lo subas tú mismo. **Download APK** te da un archivo que puedes instalar en tu propio teléfono.
+  </Step>
+</Steps>
+
+Toda versión llega primero a **pruebas internas**, visible solo para los testers que indiques. Rork lo dice sin rodeos cuando termina la subida: &quot;La versión 1 está en pruebas internas. Todavía no es pública&quot;.
+
+<div id="ask-the-agent-to-promote-the-release">
+  ## Pide al agente que promocione la versión
+</div>
+
+El trabajo en Google Play no se limita a los botones. El agente puede gestionar los canales de Play desde el chat:
+
+```
+Promueve esta versión a pruebas cerradas
+```
+
+```
+Promociona esto a producción para el 5 % de los usuarios
+```
+
+Gestiona las pruebas internas, cerradas y abiertas, la producción y el lanzamiento por fases, que puedes ampliar, detener, reanudar o completar. Conviene conocer dos limitaciones: no existe la reversión, así que un lanzamiento defectuoso se detiene o se sustituye por uno correctivo, y todavía no se admiten canales de prueba personalizados.
+
+Las pruebas internas **no** cumplen la regla de Google de 12 testers durante 14 días: para eso hace falta una prueba cerrada. Consulta [Crea tu cuenta de desarrollador de Google Play](/es/store-guides/google-play-developer-account).
+
+<Warning>
+  **No le pidas al agente que añada claves de firma, keystores ni huellas SHA-1 al proyecto.** Google Play vincula tu app a la clave usada en la primera subida. Rork gestiona esa clave por ti, y modificar los archivos de firma puede hacer que Google Play rechace todas las subidas posteriores. Si Play Console indica una discrepancia en la clave de firma, escribe al equipo de soporte con el enlace de tu proyecto en lugar de regenerar nada.
+</Warning>
+
+Para actualizar la app, haz el cambio en Rork y pulsa **Rebuild AAB**; después envía el nuevo build a Google Play.
+
+La versión paso a paso, con las pantallas de Play Console, está en [Cómo publicar tu app de Rork en Google Play Store](/es/submitting-to-play-store/creating-the-aab-file).
+
+<div id="add-an-android-app-to-a-project-you-already-have">
+  ## Añade una app de Android a un proyecto que ya tengas
+</div>
+
+Cualquier proyecto puede incorporar una app de Android. Haz clic en **+** encima de la vista previa y elige **Android (Kotlin)**:
+
+<Frame>
+  <img alt="El menú para añadir plataforma encima de la vista previa, que ofrece Android (Kotlin) como app nativa de Android y Web como app web adaptable" />
+</Frame>
+
+También puedes usar **Project Settings → Add new app**, o simplemente pedirlo:
+
+```
+Añade una app nativa de Android a este proyecto
+```
+
+El agente recrea tus pantallas, la navegación, los flujos de datos y el diseño como una app de Android. A partir de ahí, ambas apps conviven en un mismo proyecto, con **dos bases de código**: Swift para iPhone y Kotlin para Android. Comparten el chat y el backend, y se publican desde el mismo menú **Publish**.
+
+<div id="what-a-rork-android-app-can-do">
+  ## Qué puede hacer una app de Android creada con Rork
+</div>
+
+Android le da a la app acceso directo al dispositivo, y Rork hace lo mismo:
+
+* Pantallas en Jetpack Compose: navegación inferior, listas, formularios, controles Material y ajustes con estilo del sistema
+* El hardware del teléfono: cámara, Bluetooth, ubicación, almacenamiento local y solicitudes de permisos
+* Tareas que siguen ejecutándose en segundo plano
+* Cuentas, datos y notificaciones push desde el mismo backend que tus otras apps, consulta [Backend](/es/backend/index)
+* Un proyecto real de Android Studio que puedes exportar a GitHub, consulta [Cómo sincronizar tu proyecto con GitHub](/es/tutorials/how-to-connect-github)
+
+<div id="faq">
+  ## Preguntas frecuentes
+</div>
+
+<AccordionGroup>
+  <Accordion title="¿Es una app web empaquetada?">
+    No. Una app de Android de Rork es una base de código en Kotlin creada con Jetpack Compose. No es una app de navegador metida en un contenedor, ni es una app de iOS.
+  </Accordion>
+
+  <Accordion title="¿Necesito un keystore o una clave de firma?">
+    No. Rork firma el paquete con una clave de subida persistente para el proyecto. No hay archivo `.jks`, ni alias de clave, ni contraseña de keystore que tengas que guardar, rotar o perder.
+  </Accordion>
+
+  <Accordion title="¿Qué plan compila apps de Android?">
+    Las apps de Android con Kotlin + Compose forman parte de **Rork Pro**. El plan Free diseña una app de Android, pero no la compila. Consulta [Planes y suscripciones](/es/introduction/subscriptions).
+  </Accordion>
+
+  <Accordion title="¿Cuánto cuesta el emulador?">
+    **0,1 build credits por minuto mientras está en marcha**, y nada cuando está apagado. El panel muestra cuánto ha consumido este proyecto. Consulta [Build credits frente a cloud credits](/es/billing/build-credits-vs-cloud-credits).
+  </Accordion>
+
+  <Accordion title="¿Puedo subir el paquete yo mismo?">
+    Sí. **Descargar AAB para Play Console** te da el archivo firmado y lo subes en Play Console como de costumbre.
+  </Accordion>
+
+  <Accordion title="¿Por qué mi cuenta nueva no puede pasar directamente a producción?">
+    Es un requisito de Google. Una cuenta de desarrollador personal creada después del 13 de noviembre de 2023 necesita una prueba cerrada con al menos 12 testers inscritos de forma continua durante 14 días antes de obtener acceso a producción. Consulta [Crea tu cuenta de desarrollador de Google Play](/es/store-guides/google-play-developer-account).
+  </Accordion>
+
+  <Accordion title="¿El mismo proyecto puede tener también una app para iPhone?">
+    Sí. Una app de Android es solo para Android, pero puedes añadir una app para iPhone o una app web al mismo proyecto y compartir un mismo backend entre ellas. Consulta [Convierte tu app entre iOS, Android y web](/es/import/convert-between-platforms).
+  </Accordion>
+
+  <Accordion title="Tengo un proyecto de Expo. ¿Puede convertirse en una app nativa de Android?">
+    Sí. Añade una app nativa de Android al mismo proyecto y el agente reconstruye tus pantallas en Kotlin. Tu app de Expo se queda tal cual. Consulta [¿Qué pasó con Expo?](/es/expo).
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## Próximos pasos
+</div>
+
+<CardGroup>
+  <Card icon="compass" href="/es/swift-vs-react-native/whats-the-difference" title="iPhone, Android o web">
+    En qué destaca cada plataforma y cómo elegir.
+  </Card>
+
+  <Card icon="mobile" href="/es/submitting-to-play-store/apk-file" title="Pruébala en tu teléfono Android">
+    Instala la app antes de que la vea nadie más.
+  </Card>
+
+  <Card icon="upload" href="/es/store-guides/google-play-developer-account" title="Cuenta de Google Play">
+    La cuenta, las verificaciones y la regla de los 12 testers.
+  </Card>
+
+  <Card icon="database" href="/es/backend/index" title="Añade un backend">
+    Cuentas, datos, archivos y notificaciones push.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

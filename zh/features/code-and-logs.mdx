@@ -1,0 +1,137 @@
+---
+title: "读代码，读日志"
+---
+
+每个 Rork project 都是一个真实的代码库，你可以打开、阅读，付费方案下还能手动编辑。下方的日志面板会显示应用运行时打印的内容。
+
+Rork 不是黑盒。打开 **More → Code**，你看到的就是真实的 project：文件树、每个文件的源码，以及下方的运行时日志面板。
+
+<Frame>
+  <img alt="Rork 代码编辑器显示一个 web project 的文件树，以及带语法高亮的 src/App.tsx 内容" />
+</Frame>
+
+用 Rork 并不需要你会读代码。但有四种情况值得打开看看：
+
+1. 遇到 bug，想看看智能体到底写了什么。
+2. 想核对某个具体的值，比如价格或某段文案。
+3. 把 project 交给开发者，你得清楚他们拿到的是什么。
+4. 纯粹好奇——大多数人正是这样学会读代码的。
+
+<div id="read-the-tree">
+  ## 读懂文件树
+</div>
+
+文件树中，项目里的每个应用对应一个文件夹，因此同时包含 iPhone 应用和 web 应用的项目会有两个文件夹。文件夹内就是一个普通的代码库：`src/`、`components/`、`pages/`、`package.json`，以及开发者熟悉的各类配置文件。
+
+有一个文件夹是刻意隐藏的。Rork 会把自己的记录信息存放在 `.rork/` 中，文件树不会显示它，唯一的例外是 `.rork/DESIGN.md`,其中记录了 [Design mode](/zh/features/agent-modes) 中做出的设计决策。
+
+右上角的 **Copy** 会复制当前打开文件的全部内容，想把内容粘贴到其他工具里，这是最快的方式。
+
+<div id="edit-by-hand">
+  ## 手动编辑
+</div>
+
+<Note>
+  编辑代码需要付费方案。在免费方案下，编辑器会显示横幅：&quot;只读。升级到付费方案即可编辑代码。&quot; 你仍然可以查看所有文件。
+</Note>
+
+付费方案下编辑器可写。修改任意一行后，顶栏会出现 **Unsaved Changes**，并显示 **Save** 和 **Reset All**。在 Mac 上按 `Cmd + S`、在 Windows 上按 `Ctrl + S` 也可保存。
+
+有两条规则要记住：
+
+* 智能体运行期间无法保存，顶栏会一直显示 **Project updating...**，直到本轮完成。
+* Rork 能看到你的改动。下一条消息会基于保存后的文件，而不是它先前写出的内容。
+
+<Warning>
+  手动编辑是 Rork 中唯一没有独立撤销功能的操作。**Reset All** 会丢弃未保存的更改，而点击 **Save** 后，你的改动就成为 project 的一部分。条件允许时，建议把修改交给智能体来做，这样它会生成一个可回退的版本。参见[撤销更改并回退版本](/zh/features/undo-and-history)。
+</Warning>
+
+只要不是一行就能改完的小问题，都建议在聊天中提出，而不是自己动手改：
+
+```
+在 src/pages/Index.tsx 中，免运费门槛是 $30。请把所有出现的地方都改成 $45。
+```
+
+智能体会找出所有相关的地方，而不只是你发现的那一处。
+
+<div id="read-the-logs">
+  ## 查看日志
+</div>
+
+Code 区域底部的面板名为 **Logs**，并显示条目数量。它会实时展示应用在预览中运行时打印的内容，并按级别标记：`[log]`、`[info]`、`[warn]`、`[error]`、`[debug]`。
+
+向上滚动即可查看更早的日志，面板会随滚动逐步加载。需要整个窗口来显示代码时，点击右侧的箭头即可折叠该面板。
+
+遇到智能体看不到的 Bug，日志是最快的突破口。当应用出现异常却没有弹出错误提示时，先要日志：
+
+```
+把 API 调用返回的数据打到日志里，好让我们看清列表为什么是空的
+```
+
+然后复现该问题，查看面板，并把其中关键的那行内容粘贴到对话中。
+
+<Tip>
+  如果预览界面直接显示了明确的错误，就不需要这些操作了。直接在错误提示上点击 **Fix with Rork**。参见[撤销更改并回退版本](/zh/features/undo-and-history#fix-an-error-instead-of-undoing)。
+</Tip>
+
+<div id="take-the-code-with-you">
+  ## 把代码带走
+</div>
+
+这个标签页里的代码归你所有。连接 GitHub 后，你会得到一个标准的代码仓库，智能体每执行一轮就生成一次提交，你可以克隆下来、在本地运行，并用 Xcode 或 Android Studio 打开。
+
+请参阅[如何将项目与 GitHub 同步](/zh/tutorials/how-to-connect-github)和[如何通过 Xcode 测试并发布你的 Rork 应用](/zh/how-to-set-up-xcode/how-to-set-up-xcoe)。
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<AccordionGroup>
+  <Accordion title="免费方案可以编辑代码吗？">
+    不可以。查看代码免费，编辑需要付费方案。参见[方案与订阅](/zh/introduction/subscriptions)。
+  </Accordion>
+
+  <Accordion title="智能体会覆盖我手动编辑吗？">
+    不会悄悄覆盖。它在改动任何内容前都会先读取已保存的文件。冲突通常发生在某一轮对话运行期间你又编辑了相同的代码行，这也正是运行期间禁止保存的原因。
+  </Accordion>
+
+  <Accordion title=".rork 文件夹在哪里？">
+    它在文件树中处于隐藏状态，因为那是 Rork 自己的记录数据。`.rork/DESIGN.md` 仍然可见。
+  </Accordion>
+
+  <Accordion title="可以跨文件搜索吗？">
+    在这个标签页里不行。可以直接问智能体：“哪个文件设置了免运费门槛？”
+  </Accordion>
+
+  <Accordion title="日志面板是空的。">
+    面板会显示“No logs yet. Logs from your app will appear here.”。与预览交互一下，应用打印的内容就会出现。
+  </Accordion>
+
+  <Accordion title="我可以在自己的电脑上运行这个 project 吗？">
+    可以。导出到 GitHub，然后像运行任何 Vite、Swift 或 Kotlin 项目一样运行它。
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## 后续步骤
+</div>
+
+<CardGroup>
+  <Card icon="github" href="/zh/tutorials/how-to-connect-github" title="与 GitHub 同步">
+    把代码同步到你自己的代码仓库。
+  </Card>
+
+  <Card icon="rotate-left" href="/zh/features/undo-and-history" title="撤销与历史记录">
+    查看智能体每一次改动的差异对比。
+  </Card>
+
+  <Card icon="triangle-alert" href="/zh/introduction/introduction/agent-loops" title="摆脱错误循环">
+    借助日志跳出反复修复失败的怪圈。
+  </Card>
+
+  <Card icon="key" href="/zh/features/secrets" title="密钥与机密">
+    为什么密钥不该出现在你刚打开的代码里。
+  </Card>
+</CardGroup>
+
+<CtaBanner />

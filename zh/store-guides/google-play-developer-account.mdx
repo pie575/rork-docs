@@ -1,0 +1,125 @@
+---
+title: "创建你的 Google Play 开发者账号"
+---
+
+在 Rork 发布你的 Android 应用之前，你需要准备好：一个 Google Play 开发者账号、身份验证，以及 (针对新注册的个人账号) 一次由 12 名测试者参与、持续 14 天的封闭测试。
+
+Rork 会构建你的 Android 应用，并可以代你提交给 Google。但 Rork 无法代替你本人：开发者账号、身份核验和商店listing都归属于你的 Google 账号。
+
+建议在应用完工之前就把账号准备好，因为 Google 的核验往往需要几天，而不是几分钟。
+
+<div id="what-google-asks-for">
+  ## Google 会要求哪些资料
+</div>
+
+<Steps>
+  <Step title="注册开发者账号">
+    前往 [Google Play Console](https://play.google.com/console/signup)，用你希望作为应用归属方的 Google 账号注册。与 Apple 的年费会员制不同，Google 只收取**一次性 $25 注册费**。
+  </Step>
+
+  <Step title="选择个人或组织账号">
+    个人账号代表你本人，组织账号代表一家公司，Google 会要求提供企业资料以证明公司真实存在。请选择与实际收款方一致的类型，后续再改会非常麻烦。
+  </Step>
+
+  <Step title="验证身份">
+    Google 会要求提供你的法定姓名、地址，以及一份可以佐证的证明文件。填写的信息要与银行账户一致，否则后续打款会被卡住。
+  </Step>
+
+  <Step title="如果打算收费，先配置付款信息">
+    付费应用或应用内购买需要付款资料；免费应用则不需要，这一步可以稍后再做。
+  </Step>
+</Steps>
+
+<Warning>
+  **新的个人账号必须先跑一轮封闭测试。** 2023 年 11 月 13 日之后创建的个人开发者账号，必须完成一轮**至少 12 名测试者连续 14 天保持加入状态**的封闭测试，Google 才会开放正式发布权限。内部测试不算数。
+
+  请提前安排。凑齐 12 位真实用户、持续加入、整整两周，是发布第一款 Android 应用时最耗时的环节。
+</Warning>
+
+<div id="what-rork-does-for-you">
+  ## Rork 能帮你做什么
+</div>
+
+账号创建好后，发布就在项目中进行。打开 **Publish**，选择你的 Android 应用，然后点击 **Upload to Google Play**。
+
+Rork 可以全程代劳：
+
+1. **Build AAB for Play** 会生成 Google 所要求的 Android App Bundle。
+2. **Connect Google Play** 会关联管理该应用的 Google 账号。Rork 会说明原因：“连接管理此 Play 应用的账号。手动上传 AAB 仍然可用。”
+3. Rork 会检查能否访问你在 Play Console 中的应用。
+4. **Send to Google Play** 会上传该 bundle。上传成功后，Rork 会明确告诉你它进入了哪个环节：“版本 1 已进入内部测试，尚未公开。”
+
+如果你更想手动操作，**Download AAB for Play Console** 会提供文件供你自行上传。参见[如何将你的 Rork 应用发布到 Google Play Store](/zh/submitting-to-play-store/creating-the-aab-file)。
+
+<div id="what-you-still-do-in-play-console">
+  ## 你仍需在 Play Console 中完成的操作
+</div>
+
+Rork 无法替你创建商店listing，也无法代你接受 Google 的各项政策。你需要在 Play Console 中：
+
+* 首次**创建应用**。Rork 会全程引导你，包括**复制包名**，确保listing与你的 build 相匹配。
+* **填写listing内容**：标题、描述、图形素材、类别、内容分级、数据安全，以及各项政策问卷。
+* 为封闭测试**添加测试者**，并把加入链接分享给他们。
+* 准备好正式发布时，**提交版本进行审核**。
+
+Google 的审核通常比 Apple 快，但新账号的首个版本耗时会更长，因为账号审查会同步进行。
+
+<div id="the-order-that-works">
+  ## 行之有效的顺序
+</div>
+
+1. 注册账号并启动身份验证。第一天就先把这件事做了。
+2. 在 Rork 中构建应用，并在自己的设备上测试。参见[如何在 Android 设备上测试 Android 应用](/zh/submitting-to-play-store/apk-file)。
+3. 在 Play Console 中创建应用，然后让 Rork 把 build 推送到内部测试。
+4. 找齐 12 位测试者开始封闭测试，一边完善应用，一边让这 14 天跑完。
+5. 填写商店listing信息，然后申请正式发布权限并提交。
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<AccordionGroup>
+  <Accordion title="测试应用需要 Google Play 账号吗？">
+    不需要。先把 APK 装到自己的手机上试。账号是用来分发应用的。参见[如何在 Android 设备上测试 Android 应用](/zh/submitting-to-play-store/apk-file)。
+  </Accordion>
+
+  <Accordion title="12 名测试者的规则适用于组织账号吗？">
+    该规则针对 2023 年 11 月 13 日之后创建的个人账号。请在自己的 Play Console 中查看当前要求，Google 会在那里针对你的账号给出具体说明。
+  </Accordion>
+
+  <Accordion title="这 12 名测试者可以是朋友吗？">
+    必须是真实的 Google 账号，主动加入并持续保持加入状态。难点就在于招募。可以到 [Rork Discord](https://discord.gg/rxBHytVKaT) 里问问，创始人们会在那里互相帮忙测试。
+  </Accordion>
+
+  <Accordion title="Rork 会上传到正式版吗？">
+    Rork 的自动化流程面向的是**内部测试**。是否将版本提升到正式版，由你在 Play Console 中自行决定。
+  </Accordion>
+
+  <Accordion title="我在同一个 project 里还有一个 iPhone 应用，两个账号都需要吗？">
+    是的，每个商店各需要一个。Apple 每年收费 99 美元，Google 一次性收费 25 美元。参见[创建 Apple Developer 账号](/zh/store-guides/apple-developer-account)。
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## 下一步
+</div>
+
+<CardGroup>
+  <Card icon="upload" href="/zh/submitting-to-play-store/creating-the-aab-file" title="发布到 Google Play">
+    构建 AAB 文件并上传到 Play Console。
+  </Card>
+
+  <Card icon="mobile" href="/zh/submitting-to-play-store/apk-file" title="在你的Android手机上测试">
+    抢在其他人之前先装上应用试试。
+  </Card>
+
+  <Card icon="apple" href="/zh/store-guides/apple-developer-account" title="Apple Developer 账号">
+    在另一个应用商店完成同样的工作。
+  </Card>
+
+  <Card icon="compass" href="/zh/swift-vs-react-native/whats-the-difference" title="iPhone、Android还是网页">
+    你的项目该支持哪些平台。
+  </Card>
+</CardGroup>
+
+<CtaBanner />

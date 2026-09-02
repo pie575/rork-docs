@@ -1,0 +1,44 @@
+---
+title: "技术"
+---
+
+关于使用 Rork 进行技术开发的常见问题
+
+<div id="are-rork-apps-actually-native-iosandroid-apps-or-is-it-just-web-apps">
+  ## Rork 做出来的应用真的是原生 iOS/Android 应用吗？还是只是网页应用？
+</div>
+
+它们是真正的原生应用。Rork 为 iPhone 编写 **SwiftUI** 代码，为 Android 编写 **Kotlin + Compose** 代码，与 Apple 和 Google 开发自家应用所用的语言完全一致。新建项目使用的是 Swift、Kotlin 或 Web，而不是用 web view 套壳的网站。
+
+原生代码追求的是性能、精准和细腻的体验：动画流畅、界面响应迅速，还能第一时间用上平台的最新特性——从 iOS 上的小组件和实时活动，到 Android 上的 Material You 主题和后台任务。
+
+如果产品本身更适合跑在浏览器里，Rork 也可以用 React 构建 **网页应用**。这类应用从设计之初就是网页应用，发布到你自己的网址即可，无需上架应用商店。参见 [iPhone、Android 还是 Web：有什么区别](/zh/swift-vs-react-native/whats-the-difference)。
+
+<div id="can-i-use-rork-to-build-production-ready-apps">
+  ### 我可以用 Rork 构建可投入生产的 app 吗？
+</div>
+
+可以。Rork 支持的 app 规模从 0 用户到 10 万用户不等。
+
+<div id="does-it-work-on-ios-and-android">
+  ### 它能同时支持 iOS 和 Android 吗？
+</div>
+
+可以。iPhone 应用和 Android 应用是两个独立的原生应用，而同一个 Rork project 可以同时容纳两者。你随时都可以要求添加第二个平台，agent 会在该平台上重新构建你的界面和流程。详见[在 iOS、Android 和 web 之间转换你的 app](/zh/import/convert-between-platforms)。
+
+<div id="i-have-an-older-expo-react-native-project-does-it-still-work">
+  ### 我有一个较早的 Expo (React Native) 项目，它还能用吗？
+</div>
+
+能。Rork 已不再创建新的 Expo 项目，但你现有的项目仍可正常使用：你可以构建、发布，也可以把代码导出到 GitHub。如果你想改用 Swift 或 Kotlin，可以让 agent 在该项目中添加一个原生 iPhone 或 Android 应用。参见 [Expo 怎么了？](/zh/expo)。
+
+***
+
+<div id="need-more-help">
+  ## 需要更多帮助？
+</div>
+
+还有疑问？
+📩 [联系支持团队](mailto:support@rork.com)
+
+<CtaBanner />

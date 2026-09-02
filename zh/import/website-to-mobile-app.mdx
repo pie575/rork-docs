@@ -1,0 +1,137 @@
+---
+title: "把你的网站变成移动应用"
+---
+
+如何将网站转换成 iOS 和 Android 应用：把网站导入 Rork，得到一个真正的原生移动应用，而不是 webview 套壳或 APK 转换工具生成的东西。
+
+你有一个网站 (网店、预约页、SaaS 或社区) ，希望它以一个真正的应用出现在客户的主屏幕上。Rork 会基于你现有的网站构建**原生** iOS / Android 应用：原生的导航和页面，由你正在使用的同一套内容和 backend 驱动。
+
+<div id="pick-your-path">
+  ## 选择你的路径
+</div>
+
+| 你的情况                                        | 最佳路径                                                                         |
+| ------------------------------------------- | ---------------------------------------------------------------------------- |
+| 网站代码在 GitHub 上 (或你可以导出代码)                   | [导入代码仓库](#path-a-import-the-website-code)                                    |
+| 用 Lovable 构建的                               | [Lovable 导入](/zh/import/lovable-to-mobile-app)                                  |
+| 用其他构建工具构建的 (Bolt、v0、Replit、FlutterFlow...)  | [从任意应用构建工具导入](/zh/import/import-from-any-app-builder)                           |
+| 拿不到代码 (Wix、Squarespace、WordPress、代理商定制站点)   | [描述 + 截图](#path-b-no-code-access)                                            |
+| 你已经有一个 Rork Web 应用                          | [为项目添加 iOS / Android](#add-ios-and-android-apps-to-an-existing-rork-project) |
+
+<div id="path-a-import-the-website-code">
+  ## 路径 A：导入网站代码
+</div>
+
+如果你的网站有源码，导入后智能体能获得最充分的参考信息：
+
+1. 在 [rork.com](https://rork.com) 上点击 **GitHub to Mobile App**，粘贴代码仓库 URL。
+2. 在提示词中 (通过 **I have extra requests**) 说明移动应用的侧重点，例如&quot;做一个供顾客浏览和预订的应用，跳过管理后台页面&quot;。
+3. 智能体会分析源码，保留你的品牌风格和数据流，并构建原生移动端界面。
+
+<Frame>
+  <img alt="rork.com 上的 GitHub 导入对话框" />
+</Frame>
+
+<div id="path-b-no-code-access">
+  ## 路径 B：无法访问代码
+</div>
+
+没有代码仓库？没关系，直接把产品本身交给智能体：
+
+1. 新建一个 Rork 项目，把你的**网站链接**粘贴到提示词里。
+2. 附上关键页面的**截图** (首页、产品/详情页、结算/预订页、个人资料页) 。
+3. 用一两句话描述这个应用要做什么，例如：
+
+```
+为我的美发沙龙网站 https://example.com 做一个 iOS 应用。
+顾客可以浏览服务项目、挑选发型师、预约时段，
+并在预约开始前收到提醒推送通知。
+```
+
+智能体会围绕你网站的内容设计一款原生应用，并尽可能对接你现有的系统 (API、预订系统、支付链接) 。
+
+<div id="add-ios-and-android-apps-to-an-existing-rork-project">
+  ## 在现有 Rork project 中添加 iOS 和 Android 应用
+</div>
+
+每个 Rork project 都可以包含**共用同一个 project 和 backend 的多个应用**：iOS、Android 和 Web。各平台各自保留独立的原生代码库，而 Rork 会基于同一个 project 统一更新它们。如果你在 Rork 中已有 (或刚刚导入) 一个 Web 应用，那么添加原生移动端只需两次点击：
+
+<div id="option-1-the-button-next-to-the-platform-switcher">
+  ### 方式一：平台切换器旁的“+”按钮
+</div>
+
+在项目顶部栏中，点击 **+** (添加预览平台) ，然后选择要添加的平台：
+
+<Frame>
+  <img alt="项目中的添加平台菜单：Android (Kotlin) 和 Web" />
+</Frame>
+
+<div id="option-2-project-settings-add-new-app">
+  ### 方式 2：项目设置 → 添加新应用
+</div>
+
+打开 **Project Settings** (项目标题旁的齿轮图标) → **Add new app** → 选择 **Android** 或 **Web** (若该项目最初在其他平台创建，也可选择 iOS) ：
+
+<Frame>
+  <img alt="项目设置界面中已展开 Add new app 菜单" />
+</Frame>
+
+<div id="option-3-just-ask-in-chat">
+  ### 方式 3：直接在对话中提出需求
+</div>
+
+```
+为这个应用添加一个 Android 版本
+```
+
+智能体会弹出 **“添加 Android 应用？”** 的确认提示，随后复用你 project 中的逻辑和 backend，构建原生 Android (Kotlin) 应用。
+
+每个应用在 Project Settings 中都有各自的图标、主屏幕名称和 bundle identifier：
+
+<Frame>
+  <img alt="Per-app settings: icon, home screen name, bundle identifier" />
+</Frame>
+
+<div id="why-native-instead-of-a-webview-wrapper">
+  ## 为什么要做原生应用，而不是 webview 套壳？
+</div>
+
+网站转应用的服务只是把你的网址塞进一个 webview。这样做很快，但是：
+
+* **App Store 风险**：苹果审核指南第 4.2 条 (最低功能要求) 经常拒绝那些“只是一个网站”的应用。
+* **没有真正的原生能力**：相机元数据、离线模式、后台任务、小组件，以及能触达每一位用户的推送通知，都需要原生代码。在 Web 上，只有当用户使用 iOS 16.4 或更高版本把网站添加到主屏幕并授予权限后，iOS 才会推送。
+* **体验始终不对味**：浏览器式滚动、没有原生手势、也没有主屏幕级别的精致质感。
+
+Rork 应用是编译成的原生代码，搭配原生界面。你的网站继续发挥它最擅长的作用，而应用则成为一个一流的渠道：同样的数据，更好的体验。
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<div id="does-this-work-with-wordpress-shopify-wix-or-squarespace-sites">
+  ### 这适用于 WordPress、Shopify、Wix 或 Squarespace 网站吗？
+</div>
+
+适用，请走[方案 B](#path-b-no-code-access)。这些平台不会开放可直接用于构建应用的源代码，因此请把网址和截图提供给智能体。如果是电商网站，请告诉智能体要保留哪套结算流程 (很多商家在 v1 中会直接跳转到现有的 Web 结算页面) 。
+
+<div id="can-i-convert-my-website-to-an-app-for-free">
+  ### 我可以免费把网站转换成应用吗？
+</div>
+
+可以先免费上手：**Free** 套餐支持 Design mode，你可以导入网站，看看应用大致会是什么样子。但要构建出真正可运行的应用、在模拟器中预览并在手机上运行，就需要付费套餐了。发布到 App Store / Google Play 还需要各应用商店自己的开发者账号 (Apple 每年 99 美元，Google 一次性 25 美元) 。
+
+<div id="website-to-app-converters-give-me-an-apk-in-minutes-why-is-this-different">
+  ### 网站转应用工具几分钟就能给我一个 APK，这有什么不一样？
+</div>
+
+那些工具只是把你的网址包进一个 webview 里，所谓的&quot;应用&quot;其实就是套了浏览器外壳的网站。Rork 构建的是真正的原生界面。这确实比 60 秒要久一些，但成品用起来就是一个真正的应用。原生界面还能帮你满足 Apple 的审核指南第 4.2 条 (最低功能要求) ，而 webview 套壳往往就栽在这一条上。App Review 仍会对每一次提交单独审核，因此仅靠原生界面并不能保证一定过审。
+
+<div id="ship-it">
+  ## 发布上线
+</div>
+
+* 直接在 Rork 中[发布到 App Store](/zh/store-guides/publish-app-store)，无需 Xcode。
+* [为 Google Play 生成 Android AAB 文件](/zh/submitting-to-play-store/creating-the-aab-file)。
+* 用自己的域名让 Web 版持续在线：详见项目 **Publish** 菜单中的 Web 发布流程。
+
+<CtaBanner />

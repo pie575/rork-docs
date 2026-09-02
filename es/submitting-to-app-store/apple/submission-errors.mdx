@@ -1,0 +1,91 @@
+---
+title: "Errores de envío"
+---
+
+Estos son los problemas más habituales al enviar apps en Rork y cómo solucionarlos.
+
+<div id="the-build-succeeded-but-the-app-is-not-in-app-store-connect">
+  ## El build se completó, pero la app no aparece en App Store Connect
+</div>
+
+A veces el build funciona bien y lo que falla es la subida a App Store Connect.
+
+Abre la pestaña **App Store** de tu proyecto. Allí se listan todos los envíos con su estado y sus registros. Abre el envío fallido y lee el registro para ver dónde se detuvo:
+
+* **El build todavía se está ejecutando.** Espera a que termine: la subida se inicia sola.
+* **El build falló.** Corrige primero el build; consulta la siguiente sección.
+* **Apple debe aprobar una capacidad.** Rork muestra la solicitud con un enlace a Apple. Apruébala allí y vuelve a iniciar el envío.
+* **Ya hay una versión en espera de revisión.** Apple solo permite un build por versión en revisión. Reemplaza ese build o sube el número de versión y vuelve a enviar.
+
+Si el envío sigue fallando, inicia uno nuevo desde **Publish → App Store → Submit to App Store**. Rork vuelve a compilar y subir con la misma configuración.
+
+<div id="build-error">
+  ## Error de build
+</div>
+
+Si el build falla, el registro indica exactamente qué fue lo que no le gustó a Xcode.
+
+<div id="how-to-resolve-a-build-error">
+  ### Cómo resolver un error de build
+</div>
+
+1. **Abre los registros del build**
+   * En la pestaña **App Store**, abre el envío fallido y despliega el registro.
+   * Desplázate hasta ver el mensaje de error completo.
+2. **Copia el registro de errores completo**
+   * Incluye todas las líneas relacionadas con el fallo (no lo recortes).
+   * Cuanto más completo sea el registro, más rápido se podrá resolver el problema.
+3. **Pega el registro de errores en Rork**
+   * Proporciona el registro directamente a Rork y pídele que corrija el build.
+   * Rork usa la salida exacta del error para detectar configuraciones faltantes, valores inválidos o conflictos entre dependencias.
+4. **Aplica la corrección sugerida y vuelve a compilar**
+   * Ejecuta de nuevo el build una vez aplicada la corrección.
+   * Si el build vuelve a fallar, repite el proceso con la nueva salida de error.
+
+<div id="why-this-works">
+  ### Por qué funciona
+</div>
+
+Los errores de build son muy específicos del estado de tu proyecto. Al pasar la **salida exacta del build**, Rork puede analizar la misma información que usó la máquina de compilación, lo que agiliza la corrección y la hace más precisa.
+
+En la mayoría de los casos, repetir este ciclo resuelve el problema en una o dos iteraciones.
+
+<div id="common-causes-of-build-errors">
+  ### Causas comunes de errores de build
+</div>
+
+* Falta una clave de permisos de iOS en `Info.plist`, por lo que Apple rechaza la subida
+* Un paquete de Swift no se resuelve o dos paquetes requieren versiones distintas
+* Una capacidad del proyecto no está habilitada en tu cuenta de Apple Developer
+* El bundle identifier o la versión no coinciden con lo que espera App Store Connect
+
+<div id="tip">
+  ### Consejo:
+</div>
+
+Pega siempre los **registros completos**, no resúmenes. Los registros parciales pueden ocultar la causa raíz y retrasar la solución.
+
+<div id="testflight-bugs">
+  ## Errores en Testflight
+</div>
+
+Hay dos problemas frecuentes en Testflight:
+
+1. La app se cierra inesperadamente nada más abrirla
+2. Las funciones de IA no funcionan dentro de Rork.
+
+<div id="issue-1">
+  ### Problema n.º 1
+</div>
+
+Primero haz clic en compartir:
+
+<img alt="Image" />
+
+Copia los registros de cierres inesperados desde App Store Connect y pégalos en Rork, pidiéndole que lo solucione. Si eso no funciona, ve a XCode
+
+<img alt="Image" />
+
+Revisa los registros en Xcode o en VS Code después de ejecutar yarn start y pásalos por ChatGPT o Rork hasta resolver el problema.
+
+<CtaBanner />

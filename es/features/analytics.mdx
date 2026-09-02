@@ -1,0 +1,123 @@
+---
+title: "Analíticas e ingreso del proyecto"
+---
+
+La pestaña Analytics muestra cuánto has creado en un proyecto y, una vez que conectes RevenueCat, cuánto gana tu app: ingreso, MRR, suscripciones, pruebas gratuitas y conversión.
+
+Abre **More → Analytics** dentro de un proyecto. La pestaña se divide en dos partes: **actividad**, centrada en tu actividad de creación, y **ingreso**, centrada en el dinero que genera tu app.
+
+<Frame>
+  <img alt="La pestaña Analytics de Rork mostrando un mapa de calor de actividad con This week, Best streak, Best day y Daily avg, y una sección ingreso que ofrece conectar RevenueCat" />
+</Frame>
+
+<div id="activity">
+  ## Actividad
+</div>
+
+La actividad cuenta **los mensajes que enviaste en este proyecto** durante el último año y los muestra como un mapa de calor. Es un reflejo de tu propio trabajo, no del de tus usuarios.
+
+| Estadística         | Qué cuenta                                                    |
+| ------------------- | ------------------------------------------------------------- |
+| **Esta semana**     | Mensajes que enviaste en este proyecto esta semana             |
+| **Mejor racha**     | La serie más larga de días consecutivos en los que trabajaste |
+| **Mejor día**       | El día con más movimiento, en mensajes                        |
+| **Promedio diario** | Mensajes por día, promediados a lo largo del año              |
+
+El selector **Daily**, **Weekly**, **Monthly** y el rango de fechas de arriba, desde **Last 7 days** hasta **Last 12 months**, cambian la forma en que se agrupan los gráficos.
+
+<Tip>
+  **Share** convierte el gráfico en una imagen que puedes publicar. Elige qué incluir, pulsa **Generate** y Rork genera un PNG con tus totales, el mapa de calor y tu racha.
+</Tip>
+
+<div id="revenue">
+  ## Ingresos
+</div>
+
+Los ingresos provienen de **RevenueCat**, el servicio que gestiona las compras dentro de la app y las suscripciones. Hasta que lo conectes, esta sección solo muestra el botón de conexión.
+
+<Steps>
+  <Step title="Pulsa Connect RevenueCat">
+    Rork abre RevenueCat y solicita acceso a tu cuenta.
+  </Step>
+
+  <Step title="Elige el proyecto de RevenueCat">
+    Elige el proyecto que corresponde a esta app o pulsa **Create new project** si aún no tienes ninguno.
+  </Step>
+
+  <Step title="Consulta las cifras">
+    La sección se llena con los datos de ingresos de tu app.
+  </Step>
+</Steps>
+
+Una vez conectado, la pestaña muestra:
+
+* **Ingresos totales** y **MRR**, además de **ARR** y **ARPU**
+* **Suscripciones activas** y **Pruebas activas**
+* **Descargas**, del rango seleccionado y de todo el histórico
+* **Conversión**, y gráficas agrupadas en **Overview**, **Revenue Metrics**, **Subscriptions** y **Conversion**
+
+Si un rango no contiene datos, Rork lo indica en lugar de dibujar una gráfica vacía: «RevenueCat has no revenue points in the selected range».
+
+<Note>
+  Conectar RevenueCat aquí sirve para **consultar** las cifras. Para que tu app venda suscripciones, sigue [Cómo añadir un paywall con RevenueCat](/es/payment-guides/revenuecat-copied-1).
+</Note>
+
+<div id="ask-rork-about-your-numbers">
+  ## Pregúntale a Rork sobre tus números
+</div>
+
+**Evaluate metrics** envía al chat el resumen de tu actividad e ingresos y le pide al agente que lo analice. Recibirás una valoración escrita en el chat: qué destaca, qué flojea y qué probar a continuación. Es un mensaje normal, así que consume créditos como cualquier otro.
+
+<div id="what-analytics-does-not-include">
+  ## Qué no incluye la analítica
+</div>
+
+* **Los usuarios de tu app.** Aquí no encontrarás vistas de pantalla, sesiones ni retención. Si las necesitas, pídele a Rork que añada un SDK de analítica a tu app.
+* **Tráfico web.** El número de visitantes de una app Web publicada no aparece en esta pestaña.
+* **Créditos gastados.** Eso está en tu cuenta. Consulta [Créditos de build vs. créditos de Cloud](/es/billing/build-credits-vs-cloud-credits) o abre el menú **⋯** debajo de cualquier respuesta para ver el costo de ese mensaje en concreto.
+
+<div id="faq">
+  ## Preguntas frecuentes
+</div>
+
+<AccordionGroup>
+  <Accordion title="¿Por qué Actividad muestra 2 mensajes si llevo semanas desarrollando?">
+    Actividad solo cuenta los mensajes de **este proyecto**. Cada proyecto tiene su propio gráfico.
+  </Accordion>
+
+  <Accordion title="Conecté RevenueCat, pero no veo ingresos.">
+    Comprueba que hayas elegido el proyecto de RevenueCat correspondiente a esta app y que el rango seleccionado incluya ventas. Una app recién publicada y sin compras no tiene nada que mostrar.
+  </Accordion>
+
+  <Accordion title="¿Los colaboradores ven las cifras de ingresos?">
+    Cualquier persona con acceso al proyecto ve la pestaña. Invita con criterio. Consulta [Compartir un proyecto y trabajar en equipo](/es/collaborate/share-a-project).
+  </Accordion>
+
+  <Accordion title="¿Puedo hacer seguimiento de las descargas sin RevenueCat?">
+    En esta pestaña, no. Tanto App Store Connect como Play Console informan de las descargas por su cuenta.
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## Próximos pasos
+</div>
+
+<CardGroup>
+  <Card icon="credit-card" href="/es/payment-guides/revenuecat-copied-1" title="Añade un paywall">
+    Configura suscripciones con RevenueCat.
+  </Card>
+
+  <Card icon="megaphone" href="/es/rork-playbook/scale-to-50k-month" title="Escala a 50.000 $ al mes">
+    Qué hacer cuando las cifras empiezan a moverse.
+  </Card>
+
+  <Card icon="coins" href="/es/billing/build-credits-vs-cloud-credits" title="Créditos">
+    Lo que te cuesta desarrollar, frente a lo que gana tu app.
+  </Card>
+
+  <Card icon="sparkles" href="/es/features/agent-modes" title="Cómo funciona el agente">
+    Design mode, Plan mode y el desarrollo.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

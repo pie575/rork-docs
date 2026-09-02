@@ -1,0 +1,66 @@
+---
+title: "将 API 连接到 Rork"
+---
+
+API 非常好用，因为它们几乎能让你的 app 实现任何功能，而你无需自己动手去做。
+
+<div id="two-main-ways-to-connect-an-api-to-rork">
+  ## **将 API 连接到 Rork 的两种主要方式**
+</div>
+
+
+**环境变量：**
+环境变量是 Rork 对 API 的原生支持，无需连接 Supabase 这类 backend。用户只需填入自己的 API 密钥，就能立即调用该 API。
+
+<img alt="Image" />
+
+你只需点击添加变量，为密钥取一个能描述该 API 的名称，再填入值，也就是你的 API 密钥。
+
+之后，提示 Rork 使用该 edge function。
+
+<Tip>
+  提示：附上 API 提供方的文档，效果最佳
+</Tip>
+
+
+
+**Supaabase Edge Function：**
+
+连接 Supabase：
+向 Rork 输入提示词“将 Supabase 连接到这个 app”，并附上 Project URL 和 Public Anon key。
+
+然后进入 edge functions：
+
+<img alt="Image" />
+
+进入 edge function 后，点击 secret，为 secret 命名，并在 value 中填入你的 API 密钥。
+
+<img alt="Image" />
+
+然后把 secret 的名称复制粘贴到 Rork 或 ChatGPT 中，并配上提示词：“我想让我的 app 使用这个 API 完成 X 任务。这是我的 secret 名称 (填入名称) ，请为这个 API 写一段 edge function 代码”。
+
+接着，在 Supabase 中点击 Deploy New Function：
+
+<img alt="Image" />
+
+再点击 editor：
+
+<img alt="Image" />
+
+删除原有代码：
+
+<img alt="Image" />
+
+粘贴你从 ChatGPT 或 Rork 得到的代码，然后点击 deploy function。之后复制 endpoint URL，粘贴到 Rork 中并配上提示词“使用这个 Edge Function，通过发送或请求 X 数据来完成 X 任务：&lt;在此处插入 endpoint 链接&gt;”
+
+<img alt="Image" />
+
+
+**故障排查：**
+这种方法需要更多次反复尝试：
+
+* 数据没有被解析，就不断重新提示，直到成功。
+* edge function 一直失败；可能需要重写几次。
+* API 密钥无效：可能是密钥输错了，或者需要重新部署 edge function。
+
+<CtaBanner />

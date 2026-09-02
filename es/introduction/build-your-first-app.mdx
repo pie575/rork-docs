@@ -1,0 +1,67 @@
+---
+title: "Cómo crear tu primera app"
+---
+
+Da tus primeros pasos creando tu primera app.
+
+Crear apps en Rork es increíblemente fácil. Lo que antes le llevaba meses a un equipo de producción, ahora se hace en cuestión de minutos. Rork utiliza un sencillo sistema de generación mediante prompts para que expreses exactamente lo que quieres.
+
+***Esta guía te ayudará a dar tus primeros pasos y crear tu primera app en el editor de Rork.***
+
+<div id="step-1-create-an-account">
+  ### Paso 1: Crea una cuenta
+</div>
+
+Para usar Rork necesitas una cuenta, y crearla es gratis. Puedes iniciar sesión con Google o Apple. Una vez que inicies sesión, se te pedirá responder una breve encuesta antes de volver a la página de inicio.
+
+<div id="step-2-think-of-an-idea">
+  ### Paso 2: Piensa en una idea
+</div>
+
+Todo gran prompt nace de una idea. Para empezar, puedes partir de una idea de app ya existente, como «*Uber para comida de gatos*» o «*Juego móvil de disparos en primera persona con zombis*». Tenemos una pantalla de exploración donde puedes inspirarte con el trabajo de miles de desarrolladores de apps. En nuestro proceso de bienvenida, te animamos a empezar remezclando las apps de otros como punto de partida.
+
+<div id="step-3-choose-your-app-type">
+  ### Paso 3: Elige el tipo de app
+</div>
+
+Rork crea tres tipos de apps: dos apps móviles nativas y una app web. Elige la plataforma en el selector que hay junto al cuadro de prompt antes de enviar tu primer mensaje.
+
+| Tipo de app      | Qué crea Rork                       | Funciona en                                | Dónde se publica                      |
+| ---------------- | ----------------------------------- | ------------------------------------------ | ------------------------------------- |
+| **Para iPhone**  | App nativa de iPhone con SwiftUI    | iPhone, iPad, Apple Watch                  | App Store y TestFlight                |
+| **Para Android** | Android nativo con Kotlin + Compose | Teléfonos y tablets Android                | Google Play                           |
+| **Para web**     | Vite + React                        | Cualquier navegador, en escritorio y móvil | Tu propia dirección `tu-app.rork.app` |
+
+Elige **Para iPhone** cuando la app deba sentirse totalmente nativa en dispositivos Apple o cuando necesite funciones exclusivas de Apple: widgets en la pantalla de inicio, Live Activities, Apple Watch, HealthKit, ARKit o juegos de alto rendimiento. Lee [iPhone, Android o web: cuál es la diferencia](/es/swift-vs-react-native/whats-the-difference) para ver la comparación completa.
+
+Elige **Para Android** cuando quieras una app Android realmente nativa y no un contenedor multiplataforma.
+
+Elige **Para web** si buscas un producto pensado ante todo para el navegador: una landing page, un panel, una herramienta interna o una app tipo SaaS.
+
+<Info>
+  Elegir una opción no te ata a ella. Un mismo project de Rork puede contener una app de iPhone, una app de Android y una app web a la vez. Cada app tiene su propio código. Comparten el chat y el backend, si tienes uno. Puedes añadir la siguiente plataforma cuando quieras desde el selector de plataforma que hay encima de la vista previa, o desde **Project Settings → Add new app**. Consulta [Convierte tu app entre iOS, Android y web](/es/import/convert-between-platforms).
+</Info>
+
+<div id="step-4-prompt-it">
+  ### Paso 4: Escribe el prompt
+</div>
+
+En la página de inicio puedes crear un nuevo project con solo escribir en el cuadro de prompt. Para empezar, intenta centrar el prompt en una sola función principal. Cuanto más complejo sea el prompt inicial, más difícil te resultará iterar después. Es mejor ir de uno en uno. Explica las páginas y funciones que quieres, o sé breve y deja que nuestros agentes inteligentes se encarguen.
+
+<div id="step-5-test-it-live-iterate">
+  ### Paso 5: pruébala en vivo e itera
+</div>
+
+Al enviar tu prompt, irás al editor de Rork. Tu agente empezará a trabajar en tu app. En pocos minutos tendrás una app totalmente funcional que podrás probar. La forma de probarla depende del tipo de app:
+
+* **Para iPhone**: ejecuta la app en el simulador de iOS directamente en el sitio web. También puedes instalarla en tu propio iPhone: conecta el teléfono a tu Mac y descarga la app con un solo clic, o compílala y ejecútala dentro de la [app Rork Max para iPhone](/es/rork-max/rork-max-app). Consulta [pruebas con la app Companion](/es/rork-max-swift).
+* **Para Android**: ejecuta la app en el emulador de Android directamente en el sitio web.
+* **Para web**: la vista previa en vivo se abre en el propio editor y puedes abrirla en una pestaña del navegador cuando quieras.
+
+El simulador de iOS y el emulador de Android se ejecutan en máquinas alquiladas en la nube, por lo que consumen credits por minuto. Consulta [build credits frente a cloud credits](/es/billing/build-credits-vs-cloud-credits).
+
+Después de trastear con tu app, puedes enviar más mensajes en Rork para seguir iterando sobre ella. Puedes clonar tu project en cualquier momento para empezar desde un hilo nuevo, o crear un project totalmente nuevo escribiendo un prompt en la página de inicio.
+
+**¡Mucha suerte con tu primera app en Rork!**
+
+<CtaBanner />

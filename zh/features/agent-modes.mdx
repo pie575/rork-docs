@@ -1,0 +1,182 @@
+---
+title: "Design mode、Plan mode 与构建"
+---
+
+Rork 可以先设计应用再写代码，也可以先写好方案再改动文件，或者直接开始构建。本页介绍这三条路径、开关位置，以及各自的消耗。
+
+Rork 有三种方式来响应一条消息：先**设计**界面、先**规划**工作，或者直接**构建**改动。三条路径最终都通向同一个结果——一个可运行的应用，但它们的消耗不同，让你改变主意的时机也不同。
+
+| 路径              | Rork 产出           | 适用场景                |
+| --------------- | ----------------- | ------------------- |
+| **Design mode** | 各个界面的效果图，尚未构建任何内容 | 你要新建一个应用，并且在意它的外观   |
+| **Plan mode**   | 一份书面的工作方案，不改动任何文件 | 改动较大，或者涉及多个界面       |
+| **Build**       | 预览中可运行的代码         | 你清楚自己想要什么，且这是一次常规改动 |
+
+<div id="where-the-switches-are">
+  ## 开关在哪里
+</div>
+
+在 [rork.com](https://rork.com) 上，点击提示词输入框下方的 **+** 按钮，**Plan mode** 和 **Design mode** 就在这个菜单里。
+
+<Frame>
+  <img alt="打开加号菜单的 Rork 提示词输入框，显示上传图片、上传附件、Plan mode 和 Design mode 开关" />
+</Frame>
+
+这两个开关互斥：打开其中一个，另一个会自动关闭。
+
+<Note>
+  **Design mode** 开关仅对付费方案开放。在免费方案下，Rork 依然会先为你设计应用，但在设计稿上点击 **Build** 时，会提示你先选择一个方案。付费提示写得很直白：“免费 credits 只覆盖设计——构建应用需要订阅方案。”参见[方案与订阅](/zh/introduction/subscriptions)。
+</Note>
+
+在 project 内，输入框中对应的是 **Plan** 按钮，其提示文字为 **Enable plan mode**。project 内没有 Design 开关，因为 Design mode 属于应用创建的起始阶段。
+
+<Frame>
+  <img alt="输入了提示词并已打开 Plan 按钮的 Rork 聊天输入框" />
+</Frame>
+
+<div id="design-mode">
+  ## Design mode
+</div>
+
+Design mode 是确定应用外观最省成本的方式。Rork 负责绘制界面，在你确认之前不会构建任何东西。
+
+<Steps>
+  <Step title="回答几个关于外观的问题">
+    在动手绘制之前，Rork 会问几个简短的问题，通常一到三个，有时还会追问一次。大多数选项都配有一张小预览图，展示对应的风格，所以你只需挑选外观，而不用费口舌去描述。每个问题还提供 **Surprise me**，以及可以自己填写的 **Other...** 输入框。填好后按 **Submit**。
+  </Step>
+
+  <Step title="查看方案">
+    Rork 会给出三到四个界面，并在 **Design** 标签页中打开。这只是应用的效果图，还不是可运行的应用。
+  </Step>
+
+  <Step title="改主意，成本极低">
+    在聊天中提出换一个界面、换一套配色或换一种布局。改设计的成本远低于重做一个已经跑起来的应用。
+  </Step>
+
+  <Step title="按下 Build">
+    **Review Design** 卡片位于聊天底部。**View Design** 可重新打开这些界面，**Build** 则把它们变成可运行的应用。
+
+    <Frame>
+      <img alt="Rork 聊天中的 Review Design 卡片，列出三个界面，下方显示 View Design 和 Built" />
+    </Frame>
+  </Step>
+</Steps>
+
+**Build** 会替你发送一条消息：`Build a working app from the approved design.` 随后 Rork 会编写应用，并把设计决策保存到 `.rork/DESIGN.md`，这样后续的消息也会沿用同样的外观。你可以在 **More → Code** 中查看该文件。
+
+构建完成后，方案不会消失，你可以在 **More → Design** 中再次找到它。
+
+<Tip>
+  把外观写进第一条提示词，Rork 要问的问题就更少。“一个深色、烟熏质感的咖啡烘焙工坊网站，配大幅图片卡片”——这句话在 Rork 开口之前就回答了大部分问题。
+</Tip>
+
+<div id="plan-mode">
+  ## Plan mode
+</div>
+
+如果改动太大、不放心直接交给 AI 盲改，就用 Plan mode。Rork 会先写下它打算怎么做，在你确认之前不会改动任何文件。
+
+在输入框中开启 **Plan**，然后发送消息。Rork 会在 `.rork/plans/` 下生成一个规划文件，并在聊天中显示一张 **Review Plan** 卡片：
+
+* **View Plan**：在 **Plan** 标签页中打开该规划。
+* **Build**：开始执行。它会发送 `Build the plan.` 并关闭 Plan mode。
+
+当某个请求看起来工作量较大时，Rork 也会主动建议使用 Plan mode。卡片上会显示 **Switch to Plan Mode?**，并提供 **Approve** 和 **Decline** 两个选项。选择拒绝，则按常规方式继续构建。
+
+Plan mode 不单独计费，与其他消息一样消耗构建 credits。
+
+<div id="building">
+  ## 构建
+</div>
+
+构建是默认模式。两个开关都不打开，你描述想要的改动，Rork 就会去改代码。
+
+运行期间，聊天中会实时显示它在做什么：**已浏览 7 个文件**、**已执行 9 项操作**、**正在运行检查**、**正在构建应用**。每条完成的消息都会列出改动过的文件，并附上结果预览。
+
+遇到需要你参与的环节，Rork 会停下来询问：缺少某个密钥、某个问题有多个合理答案、某个设计决策它无从判断。这些都会以带按钮的卡片形式出现在聊天中，而不是大段文字。
+
+<div id="choose-the-ai-model">
+  ## 选择 AI 模型
+</div>
+
+输入框自带模型选择器，默认显示 **Auto**。
+
+<Frame>
+  <img alt="打开的 Rork 模型菜单，已选中 Auto，下方是各个模型的列表" />
+</Frame>
+
+**Auto** 会为每条消息自动选择模型和推理强度，因此大多数人根本用不上这个菜单。想使用某个特定模型时，再手动选择即可。高于你当前方案的模型会带有 **Pro** 或 **Max** 标记，选择后会打开方案选择器。完整列表见 [订阅方案](/zh/introduction/subscriptions)。
+
+<div id="talk-instead-of-typing">
+  ## 用说的，代替打字
+</div>
+
+麦克风按钮会把你的语音转成文字，写入输入框。先读一遍、改一改，再发送。Rork 不会把录音直接发给智能体，所以说错个把词也无妨。
+
+<div id="attach-what-you-already-have">
+  ## 上传你已有的素材
+</div>
+
+点击 **+ → Upload image**，或直接把文件拖到聊天框里。Rork 能读取截图、照片、PDF、视频、音频和 3D 模型。
+
+截图是描述设计最快的方式。截一张 Figma 画板，或是你喜欢的某款应用的界面，再说明你想从中借鉴什么。
+
+免费账户可上传最大 **10MB** 的文件，付费方案最高支持 **5GB**。
+
+<div id="queue-the-next-message">
+  ## 排队发送下一条消息
+</div>
+
+不必等智能体忙完。它工作时你可以继续发消息，Rork 会自动排入队列。队列标题会显示条数，例如 **2 Queued**，每一条在轮到它之前都可以编辑或删除。
+
+如果某一轮中断或失败，队列会自动标记为 **· Paused**，避免在出问题的任务上继续叠加。准备好后按 **Resume** 继续即可。
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<AccordionGroup>
+  <Accordion title="设计这一步会消耗 credits 吗？">
+    会，但消耗的是设计 credits，而不是 build credits。免费 plan 每月包含一定的设计额度。若要把确认后的设计变成可运行的应用，则需要付费方案。参见 [Build credits 与 Cloud credits 的区别](/zh/billing/build-credits-vs-cloud-credits)。
+  </Accordion>
+
+  <Accordion title="可以跳过 Design mode 吗？">
+    可以。在 **+** 菜单中关闭该开关，或者对第一版方案不提任何修改，直接点击 **Build**。
+  </Accordion>
+
+  <Accordion title="那条消息花了多少 credits？">
+    打开任意回答下方的 **⋯** 菜单，其中会显示运行的模型、消耗的 credits 以及上下文的大小。参见 [撤销更改并回退版本](/zh/features/undo-and-history)。
+  </Accordion>
+
+  <Accordion title="Rork 总是把同一个地方改坏，怎么办？">
+    别再继续追加消息了。先回退到最后一个正常版本，然后把改动描述得更小、更具体。参见 [如何跳出报错循环](/zh/introduction/introduction/agent-loops)。
+  </Accordion>
+
+  <Accordion title="方案和设计文件保存在哪里？">
+    方案保存在 `.rork/plans/`，设计约定保存在 `.rork/DESIGN.md`。两者都会随代码一起同步到 GitHub。参见 [如何将 project 与 GitHub 同步](/zh/tutorials/how-to-connect-github)。
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## 下一步
+</div>
+
+<CardGroup>
+  <Card icon="rotate-left" href="/zh/features/undo-and-history" title="撤销与版本历史">
+    撤回某次改动，或回退到更早的版本。
+  </Card>
+
+  <Card icon="wand-magic-sparkles" href="/zh/features/assets" title="图片、视频与 3D">
+    生成应用所需的图像和音效。
+  </Card>
+
+  <Card icon="message" href="/zh/introduction/introduction/prompting-strategy" title="如何写好提示词">
+    描述你想要的体验，而不是罗列功能清单。
+  </Card>
+
+  <Card icon="users" href="/zh/collaborate/share-a-project" title="分享项目">
+    邀请他人查看或编辑同一个应用。
+  </Card>
+</CardGroup>
+
+<CtaBanner />

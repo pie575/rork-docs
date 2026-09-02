@@ -1,0 +1,185 @@
+---
+title: "Как добавить вход через Apple/Google в приложение на Rork"
+---
+
+В этом руководстве рассказывается, как добавить вход через социальные сети (Apple/Google) в ваше приложение на Rork
+
+<iframe title="YouTube video player" />
+
+<div id="prerequisites">
+  ## Что понадобится
+</div>
+
+Вам потребуются:
+
+* **Проект Supabase**
+* **Project URL** и **Anon/Public key** вашего проекта Supabase (нужны для связки Rork ↔ Supabase)
+* Доступ к:
+  * **Google Cloud Console** (для получения Google OAuth Client ID и Secret)
+  * Учётной записи **Apple Developer** (для настройки входа через Apple)
+
+<div id="step-1-connect-rork-to-supabase">
+  ## Шаг 1 – Подключите Rork к Supabase
+</div>
+
+1. В Supabase скопируйте:
+   * **Project URL**
+   * **Public anon key**
+2. В Rork отправьте промпт вроде:
+   * **«Connect to Supabase»**
+   * Затем укажите Project URL и anon key, когда система их запросит
+
+Это первый обязательный шаг перед настройкой провайдеров.
+
+<div id="step-2-enable-google-sign-in-in-supabase">
+  ## Шаг 2 – Включите вход через Google в Supabase
+</div>
+
+1. Перейдите в **Supabase → Authentication → Sign-in / Providers**
+2. Найдите **Google** и включите его
+
+<div id="create-google-oauth-credentials-client-id-secret">
+  ### Создание учётных данных Google OAuth (Client ID + Secret)
+</div>
+
+1. Откройте **Google Cloud Console**
+2. Создайте **новый OAuth-клиент**
+3. Выберите «**Web application**»
+4. Создайте его и скопируйте:
+   * **Client ID**
+   * **Client Secret**
+
+<div id="paste-credentials-into-supabase-add-redirect-url">
+  ### Вставьте учётные данные в Supabase и добавьте URL перенаправления
+</div>
+
+1. Вставьте **Client ID** и **Client Secret** в настройки провайдера Google в Supabase
+2. Скопируйте **Callback/Redirect URL** из Supabase
+3. Вернитесь в Google Cloud Console (отредактируйте свой OAuth-клиент):
+   * Добавьте этот URL в **Authorized redirect URIs.** Шаг 3 — Добавьте экран входа в Rork (с колбэком Google)
+
+В Rork введите промпт:
+
+* «Добавь страницу входа до того, как пользователь получит доступ к приложению».
+* Затем укажите свой callback-URL с меткой вида:
+
+**Пример формата промпта:**
+
+* `Google: <SUPABASE_CALLBACK_URL>`
+
+Это поможет Rork правильно настроить вход.
+
+<div id="step-4-enable-apple-sign-in-in-supabase-apple-developer">
+  ## Шаг 4 — Включите вход через Apple в Supabase и Apple Developer
+</div>
+
+1. В **Supabase → Auth providers** включите **Apple**
+
+<div id="create-an-apple-key-sign-in-with-apple">
+  ### Создайте ключ Apple (вход через Apple)
+</div>
+
+В **Apple Developer**:
+
+1. Перейдите в раздел **Identifiers** (здесь вы работаете со своим приложением и функцией входа через Apple)
+2. Перейдите в раздел **Keys**
+3. Нажмите **Add Key**
+4. Включите/настройте **вход через Apple**
+5. Выберите своё приложение и нажмите «Сохранить»/«Продолжить»
+6. **Зарегистрируйте** ключ, затем **скачайте и сохраните его**
+
+<div id="ensure-your-app-id-has-sign-in-with-apple-enabled">
+  ### Убедитесь, что для вашего App ID включена функция «вход через Apple»
+</div>
+
+Всё там же, в Apple Developer:
+
+1. Перейдите в **Identifiers → ваш App ID**
+2. Включите **вход через Apple**
+3. Сохраните и подтвердите изменения возможностей (capabilities)
+
+<div id="add-bundle-id-to-supabase-apple-provider">
+  ### Добавьте Bundle ID в провайдер Apple в Supabase
+</div>
+
+1. В Apple Developer откройте информацию о приложении и скопируйте **Bundle ID**
+2. В **Supabase → провайдер Apple** вставьте Bundle ID в поле **Client ID**
+3. Сохраните
+
+Затем скопируйте оттуда же, из Supabase, **Apple callback URL**.
+
+<div id="step-5-final-rork-prompt-add-google-apple-oauth">
+  ## Шаг 5 — Финальный промпт для Rork: добавьте Google + Apple OAuth
+</div>
+
+Теперь, когда оба провайдера настроены в Supabase, попросите Rork добавить их.
+
+Используйте примерно такой промпт:
+
+* «Добавь Google и Apple OAuth через Supabase».
+* Укажите в промпте оба callback-URL (Google + Apple)
+
+<div id="step-6-test-fix-common-issues">
+  ## Шаг 6 — Тестирование и устранение типичных проблем
+</div>
+
+<div id="issue-a-google-opens-safari-and-fails-to-connect">
+  ### Проблема A: Google открывает Safari и не может подключиться
+</div>
+
+Если вы видите что-то вроде:
+
+* «Safari не может открыть страницу, так как не удаётся подключиться к серверу…»
+
+В руководстве это решалось так:
+
+* Включите **регистрацию новых пользователей** в настройках Supabase Auth
+
+После включения регистрации вход через Google должен проходить успешно и возвращать пользователя обратно в приложение.
+
+<div id="issue-b-apple-opens-safari-and-says-missing-oauth-secret">
+  ### Проблема B: Apple открывает Safari и выдаёт «missing OAuth secret»
+</div>
+
+Если вход через Apple выполняется в браузере и вы видите:
+
+* «missing OAuth secret»
+
+Как правило, это означает, что используется веб-версия OAuth вместо нативного входа через Apple.
+
+**Решение (рекомендуемое):** попросите Rork переделать вход через Apple на **только нативный** вариант.
+
+<div id="prompt-you-can-use">
+  ### Промпт, который можно использовать
+</div>
+
+> «Переделай вход через Apple на полностью нативный. Не используй веб-браузер для входа через Apple».
+
+После этого вход через Apple должен открываться в **нативном интерфейсе Apple** (а не в Safari).
+
+<div id="recommended-prompt-templates-copypaste">
+  ## Рекомендуемые шаблоны промптов (копируйте и вставляйте)
+</div>
+
+<div id="1-add-sign-in-screen-google">
+  ### 1) Добавьте экран входа + Google
+</div>
+
+> Добавь страницу входа, которую пользователь увидит перед тем, как попасть в приложение.
+> Google: `<SUPABASE_GOOGLE_CALLBACK_URL>`
+
+<div id="2-add-google-apple-oauth-using-supabase">
+  ### 2) Добавьте OAuth через Google и Apple с помощью Supabase
+</div>
+
+> Добавьте OAuth через Google и Apple с помощью Supabase.
+> Google: `<SUPABASE_GOOGLE_CALLBACK_URL>`
+> Apple: `<SUPABASE_APPLE_CALLBACK_URL>`
+
+<div id="3-fix-apple-to-be-native-only">
+  ### 3) Сделать вход через Apple только нативным
+</div>
+
+> Переделай вход через Apple так, чтобы он работал только нативно. Не открывай веб-браузер для входа через Apple.
+
+<CtaBanner />

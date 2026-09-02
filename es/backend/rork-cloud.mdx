@@ -1,0 +1,240 @@
+---
+title: "Qué es Rork Cloud"
+---
+
+Por qué usar el backend integrado de Rork en lugar de configurar uno propio, cuánto cuesta y qué esperar.
+
+<Note>
+  Rork Cloud está actualmente en **beta**. Su uso es gratuito durante la beta y tus datos nunca se eliminan, aunque tu suscripción termine.
+</Note>
+
+Rork Cloud es un backend que Rork crea y aloja para tu app, de modo que no tengas que crearlo ni configurarlo tú. Cuando tu app necesita almacenar datos, el agente muestra en el chat una confirmación de **«Crear Rork Cloud»**. Cuando confirmas, Rork aprovisiona el backend en segundo plano y lo conecta a tu app automáticamente.
+
+Esta es la tarjeta que verás en el chat:
+
+<div>
+  <div>
+    <div>
+      <svg>
+        <path />
+
+        <path />
+
+        <path />
+
+        <path />
+
+        <path />
+
+        <path />
+
+        <path />
+
+        <path />
+
+        <path />
+
+        <path />
+      </svg>
+    </div>
+
+    <div>
+      <div>¿Crear Rork Cloud?</div>
+      <div>Crea un backend alojado antes de añadir tablas de base de datos, políticas RLS o Edge Functions.</div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <div>
+        <svg>
+          <path />
+
+          <path />
+
+          <path />
+        </svg>
+
+        <span>Postgres</span>
+      </div>
+
+      <div>
+        <svg>
+          <path />
+
+          <path />
+        </svg>
+
+        <span>RLS</span>
+      </div>
+
+      <div>
+        <svg>
+          <path />
+        </svg>
+
+        <span>Edge Functions</span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <span>Cancelar</span>
+
+      <span>
+        <svg>
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+        </svg>
+
+        Conectar mi Supabase
+      </span>
+
+      <span>
+        <svg>
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+        </svg>
+
+        Crear Rork Cloud
+      </span>
+    </div>
+
+    <div>Conecta un proyecto de Supabase de tu propia organización y factura el cómputo directamente a Supabase.</div>
+  </div>
+</div>
+
+**Crear Rork Cloud** configura por ti el backend gestionado. **Conectar mi Supabase** es la opción de esa misma tarjeta para usar tu propio proyecto de Supabase.
+
+<div id="what-you-get">
+  ## Qué incluye
+</div>
+
+* **Sin registros adicionales.** Solo necesitas tu cuenta de Rork. Rork se encarga de todo y puedes pedirle al agente de Rork en el chat lo que necesites, cuando quieras.
+* Una **base de datos** para cuentas, datos compartidos y todo lo que deba sincronizarse entre dispositivos y usuarios.
+* **Reglas de acceso seguras** para que cada usuario solo pueda leer y escribir sus propios datos.
+* **Funciones del lado del servidor** para la lógica que no debe ejecutarse en el dispositivo del usuario, como claves de API privadas, pagos y webhooks.
+
+<div id="rork-cloud-or-your-own-supabase">
+  ## ¿Rork Cloud o tu propio Supabase?
+</div>
+
+Ambos funcionan igual con Rork, así que elige según lo que quieras controlar:
+
+* **¿Nunca has creado un backend?** Usa Rork Cloud. Rork lo crea y lo aloja por ti, y no hay nada que configurar ni pagar mientras esté en beta.
+* **¿Ya te manejas con Supabase?** Conecta tu propio proyecto de Supabase y hazlo todo ahí, bajo tu propia cuenta. Supabase te cobra directamente según [sus precios](https://supabase.com/pricing).
+
+Ninguna opción te ata: puedes empezar con Rork Cloud y [pasarte a tu propio Supabase más adelante](#transfer-to-your-own-supabase).
+
+<CardGroup>
+  <Card icon="database" href="/es/backend/supabase" title="Conectar Supabase">
+    Conecta tu propio proyecto de Supabase a tu app de Rork.
+  </Card>
+
+  <Card icon="database" href="/es/backend/firebase" title="Conectar Firebase">
+    Conecta tu propio proyecto de Firebase a tu app de Rork.
+  </Card>
+</CardGroup>
+
+<div id="how-to-add-it">
+  ## Cómo añadirlo
+</div>
+
+Hay dos formas de conseguir un backend:
+
+* **Solo pídelo en el chat.** Escribe *«Añade una base de datos a mi app»* o *«Añade un backend»* y Rork se encarga del resto.
+* **Desde el panel del proyecto.** Haz clic en **More** (el último icono de la barra de herramientas superior), abre **Database** y pulsa **Add a database**.
+
+<Frame>
+  <img alt="La sección Database dentro de More con el botón Add a database" />
+</Frame>
+
+<div id="see-what-your-app-is-storing">
+  ## Consulta lo que guarda tu app
+</div>
+
+Una vez que tu backend existe, la pestaña **Database**, dentro de **More**, muestra tus tablas y el número de filas, para que siempre puedas ver qué contienen.
+
+<Frame>
+  <img alt="La pestaña Database dentro de More mostrando las tablas de la app con el número de filas" />
+</Frame>
+
+Si prefieres una vista más amigable que las tablas sin formato, pídele a Rork en el chat que la cree; por ejemplo: «Créame un panel de administración web donde pueda explorar y editar los usuarios y pedidos de mi app».
+
+<div id="transfer-to-your-own-supabase">
+  ## Transferir a tu propio Supabase
+</div>
+
+Si más adelante quieres que el backend sea tuyo y lo gestiones tú, pulsa **Transfer to your Supabase** en la parte superior de la pestaña **Database**. Todo el backend pasa a tu organización de Supabase, junto con tus datos. La URL, los datos y las claves del proyecto no cambian, así que tu app publicada sigue funcionando sin ninguna modificación.
+
+<Frame>
+  <img alt="La tarjeta Managed by Rork en la pestaña Database con el botón Transfer to your Supabase" />
+</Frame>
+
+Dos cosas que debes tener en cuenta:
+
+* La transferencia es irreversible: Rork no puede recuperar el proyecto después.
+* La facturación pasa a tu cargo: a partir de ese momento le pagas directamente a Supabase por este proyecto, según [los precios de Supabase](https://supabase.com/pricing).
+
+<div id="what-it-costs">
+  ## Cuánto cuesta
+</div>
+
+**Rork Cloud es gratis mientras esté en beta.** La base de datos, las reglas de acceso y las funciones del lado del servidor no tienen ningún costo de ejecución por ahora.
+
+Hay dos costos relacionados que son independientes del backend en sí:
+
+* **Las funciones de IA dentro de tu app** (chat integrado, generación de imágenes, voz y similares) funcionan con **Cloud credits**, de pago por uso. Consulta [Build credits vs. Cloud credits](/es/billing/build-credits-vs-cloud-credits).
+* **Tras transferir el proyecto a tu propio Supabase**, Supabase te factura directamente por el proyecto.
+
+<div id="what-to-expect">
+  ## Qué esperar
+</div>
+
+* **Es un backend real y de producción.** Gestiona los datos en vivo de tu app para usuarios reales; no es un entorno de pruebas.
+* **Los cambios se aplican al instante.** No hay un paso previo de vista previa, así que ten cuidado con las acciones que borran o sobrescriben datos.
+* **Tu código es tuyo.** Con un plan de pago, eres dueño de todo el código generado y puedes exportarlo en cualquier momento mediante la integración con GitHub, con sincronización bidireccional. Consulta [Exportación de código](/es/faq/code-export).
+* **Puedes añadir cuentas e inicio de sesión con redes sociales.** Sigue [Cómo añadir el inicio de sesión con Apple/Google a tu app de Rork](/es/integrations/backend/how-to-set-up-oauth).
+
+<div id="if-you-cancel-or-stop-paying">
+  ## Si cancelas o dejas de pagar
+</div>
+
+* **Tus datos no se eliminan.** Rork no elimina los datos de tu app, aunque termine tu suscripción.
+* **Tu app sigue funcionando.** Si cancelas tu suscripción de Rork, tu app y su backend seguirán en funcionamiento.
+
+Ten en cuenta que Rork Cloud todavía está en fase beta, por lo que estos detalles pueden cambiar a medida que evolucione.
+
+<div id="when-you-may-not-need-it">
+  ## Cuándo puede que no lo necesites
+</div>
+
+* Los prototipos que solo guardan datos en un único dispositivo pueden usar almacenamiento local.
+* La lógica, los webhooks o las claves privadas pueden funcionar con funciones del lado del servidor sin necesidad de una base de datos completa.
+
+Si no tienes claro si tu app necesita un backend, lee [¿Necesitas un backend para tu app?](/es/backend/index).
+
+<CtaBanner />

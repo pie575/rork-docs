@@ -1,0 +1,242 @@
+---
+title: "你的应用需要 backend 吗？"
+---
+
+了解你的 Rork project 到底在什么情况下需要配置 backend，什么情况下完全可以跳过。本指南帮你避免搭建不必要的 backend。
+
+<div id="after-building-your-app-in-rork-use-this-documentation-to-decide-if-your-app-needs-a-backend-or-can-stay-local-only">
+  ### 在 Rork 中构建完应用后，可参考本文档判断你的应用是否需要 backend，还是只用本地运行就够了。
+</div>
+
+<div id="summary">
+  ## **概述**
+</div>
+
+Rork 构建的是应用的**前端**：也就是用户在 iPhone、Android 和网页上看得见、点得到的界面。而 **backend** 则是用户永远看不到的部分，它负责存储数据、管理账户、执行业务规则。并不是每个应用都需要 backend。
+
+读完本页，你就能判断自己的想法属于哪一类，以及下一步该怎么做。
+
+**你需要准备：**
+
+* 一个 Rork project
+* 对应用功能的大致设想
+
+***
+
+<div id="1-what-counts-as-no-backend">
+  ## **1. 什么算是“无 backend”**
+</div>
+
+<div id="local-only-apps-everything-stays-on-the-device">
+  ### 纯本地应用 (数据全部留在设备上)
+</div>
+
+这类应用会把所有数据都存在用户手机里。
+不需要同步，不需要登录，也没有分享功能。
+
+**示例：**
+
+* 待办清单
+* 笔记应用
+* 日记
+* 习惯打卡
+* 心情记录
+* 计算器
+* 计时器
+* 单位换算
+* 离线单词卡
+* 照片滤镜 / AI 生成
+* 实用小组件
+
+这些应用，Rork **完全不需要 backend** 就能构建出来并存储数据，只需借助设备自身的存储：手机上的本地存储，以及用于存放敏感信息的安全存储。
+
+只要数据始终不离开设备，本地存储就够用了。如果你的应用还没有保存数据，可以在聊天中这样提问：
+
+```
+确保数据保存在设备本地，并且在重启后依然存在
+```
+
+***
+
+<div id="tools-with-temporary-non-persistent-data">
+  ### 数据临时 / 不持久化的工具
+</div>
+
+这类应用根本不需要存储长期状态。
+
+**示例：**
+
+* 试玩类应用 (绘图、沙盒)
+* 本地小游戏
+* 不保存结果的一次性 AI 生成器
+* 能做出点东西、但不用记住的趣味工具
+
+如果应用关闭后没有任何内容需要保留，那就不需要 backend 来存储或处理数据。在 Rork 上构建的大多数简单应用，默认就是这种形态。
+
+***
+
+<div id="ai-apps-that-only-call-an-external-api">
+  ### 仅调用外部 API 的 AI 应用
+</div>
+
+如果你的应用只是把提示词发给 GPT 并返回结果：
+
+**你不需要 backend。**
+
+你只是在向 OpenAI 或其他 AI 服务商发起请求而已。
+
+只有在以下情况下，backend 才会成为可选项：
+
+* 你想保存用户历史记录
+* 你想做个性化
+* 你想做用量统计
+
+这同样适用于任何外部 API。只要不需要存储这些数据，你尽可以在没有 backend 的情况下调用任何 API。
+
+***
+
+<div id="2-apps-that-always-need-a-backend">
+  ## **2. 必须依赖后端的应用**
+</div>
+
+<div id="apps-with-accounts-or-login">
+  ### 带账户或登录功能的应用
+</div>
+
+如果用户&quot;拥有账户&quot;，你就需要：
+
+* 身份验证
+* 恢复用户数据
+* 跨设备同步
+
+**示例：**
+
+* 社交应用
+* 支持云同步的效率应用
+* 金融应用
+* 任何多设备工作流
+
+***
+
+<div id="apps-that-sync-across-devices">
+  ### 需要跨设备同步的应用
+</div>
+
+用户在手机上写下一条笔记，希望在笔记本电脑上也能看到。
+这就需要：
+
+* 数据库
+* 云同步
+* 持久化存储
+
+这类应用必须有 backend。
+
+***
+
+<div id="apps-with-sharing-collaboration-or-multiplayer">
+  ### 具备分享、协作或多人功能的应用
+</div>
+
+如果多个人可以查看、编辑或评论同一内容：
+
+* 即时通讯
+* 好友列表
+* 评论
+* 帖子
+* 社交动态
+* 实时协作
+* 交友应用式的配对匹配
+
+这些功能都需要 backend。
+
+***
+
+<div id="apps-that-store-files">
+  ### 存储文件的应用
+</div>
+
+如果你的应用需要处理：
+
+* 图片
+* 视频
+* PDF
+* 录音
+
+……而且这些文件需要在不同设备之间长期保存，那你就必须使用 backend。
+
+对于跨设备或需要分享的内容，本地存储是撑不住的。
+
+***
+
+<div id="apps-with-security-or-access-rules">
+  ### 带有安全或访问规则的应用
+</div>
+
+如果应用需要在用户之间强制执行任何规则：
+
+* 拉黑
+* 内容审核
+* 速率限制
+* 反垃圾信息
+
+纯客户端应用无法强制执行这些规则，必须要有 backend。
+
+***
+
+<div id="3-gray-zone-apps-optional-backend">
+  ## **3. 灰色地带应用 (backend 可选)&#x20;**
+</div>
+
+<div id="local-first-apps-with-optional-sync-later">
+  ### 本地优先、后续可选同步的应用
+</div>
+
+有些应用不用 backend 也能跑得很好，之后再补上云端功能。
+
+**示例：**
+
+* 日记应用 → 后续加上云端备份
+* 笔记应用 → 后续加上多设备同步
+* 离线照片编辑器 → 后续加上“分享到云端”。
+
+你完全可以先发布不带 backend 的 v1，等规模做起来后再加同步。
+
+***
+
+<div id="ai-apps-with-memory-or-personalization">
+  ### 具备记忆或个性化能力的 AI 应用
+</div>
+
+你可以选择：
+
+* **仅本地记忆** → 不需要 backend
+* **跨设备云端记忆** → 需要 backend
+* **个性化模型** → 需要 backend
+
+v1 版本用本地存储就够了；等积累了用户，再升级到更安全、更进阶的方案，比如云端记忆或个性化模型。
+
+<div id="decided-that-you-need-one">
+  ## 确定你需要一个后端？
+</div>
+
+有三条路可选。**Rork Cloud** 是最省事的一条，因为它就在 Rork 内部，不用另外管理一个账户。
+
+<CardGroup>
+  <Card icon="cloud" href="/zh/backend/rork-cloud" title="Rork Cloud">
+    Rork 内置的托管后端：Postgres、服务器函数和 AI 模型。无需单独注册账户。
+  </Card>
+
+  <Card icon="database" href="/zh/backend/supabase" title="Supabase">
+    ⏱️ *1 小时*
+
+    属于你自己的 Postgres 项目，自带身份验证和存储。如果你想完全掌控数据库，这是不错的选择。
+  </Card>
+
+  <Card icon="database" href="/zh/backend/firebase" title="Firebase">
+    ⏱️ *1 小时*
+
+    Google 的 NoSQL 方案，包含 Firestore、身份验证和存储。
+  </Card>
+</CardGroup>
+
+<CtaBanner />

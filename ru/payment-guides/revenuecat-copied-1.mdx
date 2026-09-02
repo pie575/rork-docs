@@ -1,0 +1,224 @@
+---
+title: "Как добавить пейволл в приложение на Rork с помощью RevenueCat"
+---
+
+Готовы подключить платежи в своём приложении? Следуйте этому руководству, чтобы связать Rork с пейволлом RevenueCat и выпустить приложение в продакшн с полноценной системой оплаты и доступом к функциям по подписке!
+
+<iframe title="YouTube video player" />
+
+<div id="step-by-step-tutorial-revenuecat-in-a-rork-app-end-to-end">
+  # Пошаговое руководство: RevenueCat в приложении Rork (от и до)
+</div>
+
+<div id="1-build-your-app-in-rork">
+  ## 1) Создайте приложение в Rork
+</div>
+
+1. Напишите промпт (пример из видео: «приложение для заметок и подсчёта калорий с ИИ-оценкой калорийности»).
+2. Отправьте промпт → Rork создаст приложение.
+3. Если по ходу сборки вы придумали дополнительные функции (например, «сканирование блюда»), добавьте их в **очередь**, чтобы Rork занялся ими после первого промпта.
+
+<div id="2-connect-revenuecat-inside-rork">
+  ## 2) Подключите RevenueCat в Rork
+</div>
+
+1. В Rork перейдите в раздел **Integrations**.
+2. Нажмите **Connect with RevenueCat**.
+3. Войдите в RevenueCat или зарегистрируйтесь.
+4. Разрешите Rork доступ к вашей учётной записи RevenueCat.
+5. Нажмите **Create new project** в RevenueCat.
+   * Назовите проект как угодно (например, «Calorie Tracker»).
+6. Вернитесь в **чат-бот** Rork и напишите:
+   **«Set up RevenueCat.»**
+7. Rork настроит:
+   * Offerings
+   * Products
+   * Entitlements
+   * Переменные окружения / API-ключи
+8. Когда Rork предложит задать переменные окружения → нажмите **Yes**.
+
+<div id="3-test-purchases-in-revenuecat-test-store-sandbox-inside-rc">
+  ## 3) Тестирование покупок в RevenueCat Test Store (песочница внутри RC)
+</div>
+
+1. В приложении Rork нажмите на подписку (например: **$40/год**).
+2. Появятся варианты вроде:
+   * Test a valid purchase
+   * Test failed purchase
+3. Нажмите **Test valid purchase**.
+4. В панели RevenueCat → **Overview** → включите **Sandbox data**.
+5. Если вы видите MRR в песочнице / саму подписку (например, $40/год), значит:
+   ✅ Rork и RevenueCat Test Store связаны.
+
+> Примечание: это ПОКА не настоящие подписки App Store.
+
+<img alt="Image" />
+
+<div id="4-push-the-app-to-testflight-required-for-real-apple-iap">
+  ## 4) Отправьте приложение в TestFlight (обязательно для реальных покупок Apple IAP)
+</div>
+
+1. В Rork перейдите в **Get users → Submit to TestFlight**.
+2. Нажмите **New submission**.
+3. (Необязательно, но рекомендуется) Сгенерируйте иконку приложения с помощью Rork.
+4. Заполните данные **Apple Developer**, когда появится соответствующий запрос.
+5. Отправьте заявку и дождитесь завершения сборки и загрузки.
+6. Перейдите в **App Store Connect**. Укажите необходимые сведения о соответствии требованиям, чтобы сборку можно было тестировать.
+
+<img alt="Image" />
+
+<div id="5-create-subscriptions-in-app-store-connect-real-products">
+  ## 5) Создайте подписки в App Store Connect (реальные продукты)
+</div>
+
+<div id="create-a-subscription-group">
+  ### Создайте группу подписок
+</div>
+
+1. App Store Connect → **Subscriptions**
+2. Создайте **Subscription Group**
+   * Задайте простое имя (например, «Subscriptions»)
+
+<img alt="Image" />
+
+<div id="create-monthly-subscription-repeat-for-yearly">
+  ### Создание месячной подписки (повторите для годовой)
+</div>
+
+1. Создайте **Subscription**
+2. Укажите:
+   * Reference name: «Monthly subscription.»
+   * Product ID: «monthly&#95;subscription» (или то же название)
+3. Заполните обязательные метаданные:
+   * Duration: **1 месяц**
+   * Availability: **Everywhere**
+   * Price: например **$4.99/месяц**
+4. Добавьте локализацию:
+   * Display name: «Monthly subscription.»
+5. Добавьте скриншот или изображение своего пейволла (нужен для готовности к отправке)
+6. Нажмите Submit / Save
+7. Повторите те же шаги для **годовой** подписки.
+
+✅ После этого продукты должны получить статус «Ready to submit» в App Store Connect.
+
+<img alt="Image" />
+
+<div id="6-connect-app-store-connect-to-revenuecat-so-products-sync">
+  ## 6) Подключите App Store Connect к RevenueCat (для синхронизации продуктов)
+</div>
+
+RevenueCat → **Apps → iOS app**
+
+<img alt="Image" />
+
+<div id="add-app-info">
+  ### Добавьте информацию о приложении
+</div>
+
+1. Скопируйте **Bundle ID** из App Store Connect в RevenueCat.
+
+<div id="add-in-app-purchase-key">
+  ### Добавьте ключ In-App Purchase
+</div>
+
+1. App Store Connect → **Users and Access → Integrations**
+2. В разделе **In-App Purchase** нажмите **+**
+3. Задайте имя (например: «RevenueCat Calorie Tracker»)
+4. Скачайте файл ключа
+5. Загрузите или перетащите его в RevenueCat
+6. Скопируйте **Issuer ID** (он указан над списком ключей интеграции) → вставьте в RevenueCat
+
+<img alt="Image" />
+
+<div id="add-app-store-connect-api-key">
+  ### Добавьте ключ App Store Connect API
+</div>
+
+1. Оставайтесь в разделе **Users and Access → Integrations**
+2. Создайте ключ **App Store Connect API**
+3. Скачайте его → загрузите в RevenueCat
+4. Снова укажите **Issuer ID**
+
+<img alt="Image" />
+
+<div id="add-vendor-number">
+  ### Добавьте Vendor Number
+</div>
+
+1. App Store Connect → **Reports** (раздел Business)
+2. В левом верхнем углу отображается **Vendor Number**
+3. Скопируйте его и вставьте в RevenueCat
+
+<div id="enable-server-to-server-notifications-recommended">
+  ### Включите уведомления server-to-server (рекомендуется)
+</div>
+
+* Переключатель: **Track new purchases from server-to-server notifications**
+
+<div id="add-app-specific-shared-secret">
+  ### Добавьте App-Specific Shared Secret
+</div>
+
+1. App Store Connect → **Apps → ваше приложение → App Information**
+2. Прокрутите до раздела **App-Specific Shared Secret**
+3. Нажмите **Manage → Generate**
+4. Скопируйте секрет → вставьте его в RevenueCat
+5. Нажмите **Save changes** в RevenueCat
+
+✅ Готово: Apple ↔ RevenueCat связаны.
+
+<div id="7-import-your-app-store-products-into-revenuecat">
+  ## 7) Импортируйте продукты App Store в RevenueCat
+</div>
+
+1. RevenueCat → **Product Catalog**
+2. Выберите **Default** (или свой активный каталог)
+3. Нажмите **Add new product → Import products**
+4. Выберите месячный и годовой продукты → **Import**
+5. Для каждого импортированного продукта:
+   * Привяжите **Entitlement** (обычно для обоих используется один и тот же entitlement)
+
+<img alt="Image" />
+
+<div id="8-attach-products-to-your-revenuecat-offering">
+  ## 8) Привяжите продукты к Offering в RevenueCat
+</div>
+
+1. RevenueCat → **Offerings → Default**
+2. Нажмите **Edit**
+3. Привяжите каждый продукт App Store к нужному пакету
+4. Нажмите **Save**
+
+<div id="9-final-test-testflight-purchase">
+  ## 9) Финальный тест: покупка через TestFlight
+</div>
+
+1. Установите приложение через **TestFlight**
+2. Откройте пейвол в приложении
+3. Теперь подписки должны быть доступны для покупки в TestFlight, а после релиза — и в продакшене.
+
+<div id="common-issues">
+  # Частые проблемы:
+</div>
+
+* Убедитесь, что все соглашения и банковские данные активны. (Подписки не будут работать, если это не настроено
+
+<img alt="Image" />
+
+* Неверно указан публичный API-ключ App Store.
+
+<img alt="Image" />
+
+* Просто передайте этот ключ Rork и напишите: «Убедись, что Apple и RevenueCat подключены».
+
+<div id="what-to-do-next">
+  ## Что делать дальше:
+</div>
+
+Даже после добавления пейволла App Store отклонит ваше приложение, если у вас нет политики конфиденциальности, пользовательского соглашения и доступного для просмотра EULA.
+
+Если вы закрываете приложение жёстким пейволлом, обязательно укажите в описании в App Store, что все функции доступны только по платной подписке. Иначе Apple отклонит приложение.
+
+[Как создать политики?](/ru/make-your-app-profitable/paywalls/how-to-set-up-your-policies)
+
+<CtaBanner />

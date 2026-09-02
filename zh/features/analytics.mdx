@@ -1,0 +1,123 @@
+---
+title: "项目分析与收入"
+---
+
+Analytics 标签页会显示你在某个项目中构建了多少内容；连接 RevenueCat 后，还会显示应用的赚钱情况：收入、MRR、订阅、试用和转化率。
+
+在项目中打开 **More → Analytics**。该标签页分为两部分：**活动** (反映你的构建情况) 和 **收入** (反映应用的收入情况) 。
+
+<Frame>
+  <img alt="Rork 的 Analytics 标签页，显示包含 This week、Best streak、Best day 和 Daily avg 的 活动 热力图，以及提示连接 RevenueCat 的 收入 板块" />
+</Frame>
+
+<div id="activity">
+  ## 活动
+</div>
+
+活动以热力图的形式统计**你在该 项目 中发送的消息**，时间跨度为过去一年。它反映的是你自己的工作情况，而非用户的使用情况。
+
+| 统计项        | 统计内容                  |
+| ---------- | --------------------- |
+| **本周**     | 本周你在该 项目 中发送的消息数 |
+| **最长连续天数** | 你连续工作的最长天数            |
+| **最活跃一天**  | 消息数最多的那一天             |
+| **日均**     | 全年平均每天的消息数            |
+
+上方的 **每日**、**每周**、**每月** 切换以及范围选择器 (从 **过去 7 天** 到 **过去 12 个月**) 可以改变图表的分组方式。
+
+<Tip>
+  **分享**会把图表生成一张可发布的图片。选好要包含的内容，点击**生成**，Rork 就会渲染出一张 PNG，其中包含你的总计数据、热力图和连续天数记录。
+</Tip>
+
+<div id="revenue">
+  ## 收入
+</div>
+
+收入数据来自 **RevenueCat**，也就是处理应用内购买和订阅的服务。在完成连接之前，本板块只显示一个连接按钮。
+
+<Steps>
+  <Step title="点击 Connect RevenueCat">
+    Rork 会打开 RevenueCat，并请求访问你的账户。
+  </Step>
+
+  <Step title="选择 RevenueCat 项目">
+    选择与该应用对应的项目；如果还没有，请点击 **Create new project**。
+  </Step>
+
+  <Step title="查看数据">
+    该板块随即会填入你应用的收入数据。
+  </Step>
+</Steps>
+
+连接完成后，该标签页会显示：
+
+* **总收入**和 **MRR**，以及 **ARR** 和 **ARPU**
+* **活跃订阅**和**活跃试用**
+* **下载量**，含所选时间范围和全部时间的数据
+* **转化率**，以及按**概览**、**收入指标**、**订阅**和**转化**分组的图表
+
+如果所选时间范围内没有数据，Rork 会直接给出提示，而不是画一张空图表：&quot;RevenueCat has no revenue points in the selected range.&quot;
+
+<Note>
+  在这里连接 RevenueCat，是为了**读取**数据。要让你的应用真正卖出订阅，请参阅[如何使用 RevenueCat 添加付费墙](/zh/payment-guides/revenuecat-copied-1)。
+</Note>
+
+<div id="ask-rork-about-your-numbers">
+  ## 向 Rork 咨询你的数据
+</div>
+
+**Evaluate metrics** (评估指标) 会把你的活跃度和收入快照发送到聊天中，并让智能体进行解读。你会在聊天里收到一份文字评估：哪些表现亮眼、哪些偏弱，以及下一步可以尝试什么。它就是一条普通消息，因此同样会消耗 credits。
+
+<div id="what-analytics-does-not-include">
+  ## 分析不包含哪些内容
+</div>
+
+* **你的应用用户数据。** 这里没有屏幕浏览量、会话和留存率。如需这些数据，可以让 Rork 为你的应用添加分析 SDK。
+* **Web 流量。** 已发布 Web 应用的访客数量不在此标签页中。
+* **credits 消耗。** 这部分在你的账户中查看。参见 [Build credits 与 Cloud credits](/zh/billing/build-credits-vs-cloud-credits)；或在任意回答下方打开 **⋯** 菜单，查看该条消息的单独花费。
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<AccordionGroup>
+  <Accordion title="我已经开发好几周了，为什么 活动 只显示 2 条消息？">
+    活动 只统计**当前 项目** 里的消息，每个 项目 都有各自独立的图表。
+  </Accordion>
+
+  <Accordion title="我连接了 RevenueCat，但看不到收入。">
+    请确认所选的 RevenueCat 项目与当前应用一致，并且所选时间范围内确实有销售记录。全新、尚未产生任何购买的应用自然没有数据可显示。
+  </Accordion>
+
+  <Accordion title="协作者能看到收入数据吗？">
+    只要有权访问该 项目，都能看到这个标签页。邀请时请慎重。参见[共享 项目 并协同工作](/zh/collaborate/share-a-project)。
+  </Accordion>
+
+  <Accordion title="不用 RevenueCat 能追踪下载量吗？">
+    在这个标签页里不行。App Store Connect 和 Play Console 各自都会提供下载量数据。
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## 下一步
+</div>
+
+<CardGroup>
+  <Card icon="credit-card" href="/zh/payment-guides/revenuecat-copied-1" title="添加付费墙">
+    使用 RevenueCat 设置订阅。
+  </Card>
+
+  <Card icon="megaphone" href="/zh/rork-playbook/scale-to-50k-month" title="做到月入 5 万美元">
+    数据开始起量后该做什么。
+  </Card>
+
+  <Card icon="coins" href="/zh/billing/build-credits-vs-cloud-credits" title="Credits">
+    构建要花多少钱，应用又能赚多少钱。
+  </Card>
+
+  <Card icon="sparkles" href="/zh/features/agent-modes" title="智能体如何工作">
+    Design mode、Plan mode 与构建。
+  </Card>
+</CardGroup>
+
+<CtaBanner />

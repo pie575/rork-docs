@@ -1,0 +1,284 @@
+---
+title: "用 Rork 构建原生 Android 应用"
+---
+
+Rork 使用 Kotlin 和 Jetpack Compose 编写原生 Android 应用，在聊天窗口旁的云端 Android 模拟器中运行，替你完成 App Bundle 签名，并把发布版本提交到 Google Play。
+
+<Frame>
+  <img alt="一个 Rork Android 项目，聊天中显示构建摘要，完成的植物养护应用正在模拟器中运行" />
+</Frame>
+
+Rork 中的 Android 应用是**真正的原生 Android 应用**。Rork 用 **Kotlin** 和 **Jetpack Compose** 编写，正是原生 Android 团队手写代码时所用的技术栈。它不是套壳网站，也不是在运行时转换而来的 iPhone 应用。
+
+你描述应用，Rork 负责构建，你可以在聊天窗口旁的云端 Android 模拟器中直接看到它运行。一切就绪后，Rork 会为 Android App Bundle 签名，并把发布版本提交到 Google Play。
+
+<div id="start-an-android-app">
+  ## 创建 Android 应用
+</div>
+
+在发送第一条消息之前，先选好平台。在 [rork.com](https://rork.com?utm_source=docs\&utm_medium=referral\&utm_campaign=docs-cta\&utm_content=android-start) 上打开提示框下方的平台选择器，选择 **For Android**。选择器中对该选项的说明是 **Native Android with Kotlin + Compose**。
+
+<Frame>
+  <img alt="打开的 Rork 平台选择器，包含 For iPhone、For Android 和 For web 选项，并提示你之后可以添加其他平台" />
+</Frame>
+
+选择器已经写得很明白：**你之后可以再添加其他平台**。同一个项目可以同时包含 Android 应用、iPhone 应用和 Web 应用。参见[在 iOS、Android 和 Web 之间转换应用](/zh/import/convert-between-platforms)。
+
+接下来，描述产品本身，而不是技术：
+
+```
+一款植物养护应用，提醒我给每株植物浇水，并记录每株植物的生长状况
+```
+
+<div id="answer-the-questions-about-the-look">
+  ## 回答关于外观的问题
+</div>
+
+Rork 不会一上来就写 Kotlin 代码，而是先问几个简短的问题，每个选项都是一张图，而不是一段文字。你也可以在 **Other** 中自己填写答案。
+
+<Frame>
+  <img alt="Rork 询问植物养护应用的首屏应该显示什么，并提供四个选项供选择" />
+</Frame>
+
+回答完后，点击 **Submit**。如果在第一条提示词里就写清外观要求，也可以跳过这一步。
+
+<div id="approve-the-design-then-build">
+  ## 确认设计，然后构建
+</div>
+
+接下来 Rork 会绘制各个界面，并在 **Design mode** 中呈现。此时尚未开始构建，所以这是改主意代价最小的时刻。你可以在对话中要求换一个界面，也可以点击 **Build**，把设计变成一个可运行的 Android 应用。
+
+<Frame>
+  <img alt="Design mode 中展示植物养护应用的四个候选界面，以及带有 View Design 和 Build 按钮的 Review design 卡片" />
+</Frame>
+
+<div id="run-the-app-on-an-android-emulator">
+  ## 在 Android 模拟器中运行应用
+</div>
+
+Rork 会在浏览器里的**云端 Android 模拟器**上运行你的 Kotlin 应用。它是跑在真实 Android 系统上的真实应用，而不是一张静态图，所以你可以一边构建一边上手点击。
+
+<div>
+  <div>
+    <video aria-label="植物养护应用在 Rork Android 模拟器中运行：勾选一次浇水记录、植物网格以及植物详情页" />
+  </div>
+</div>
+
+<p>使用录制按钮在模拟器中录制。</p>
+
+Android 系统自带的权限对话框会弹出来，这是应用确为原生应用最直接的证明：
+
+<div>
+  <img alt="模拟器中的植物养护应用显示 Android 系统询问是否允许通知的对话框" />
+</div>
+
+<p>首次启动时 Android 自带的权限对话框。</p>
+
+模拟器不会一直运行。它会停在**开启模拟器**按钮后面，并在运行时告诉你费用：
+
+<div>
+  <img alt="模拟器面板显示“开启模拟器”、运行时每分钟 0.1 个 build credits，以及本项目尚未使用模拟器额度" />
+</div>
+
+<p>模拟器会一直等到你启动它。</p>
+
+<Tip>
+  面板会显示**运行时每分钟 0.1 个 build credits**，所以测试告一段落后请按**停止模拟器**。它还会告诉你这个项目到目前为止用了多少模拟器时长。参见 [Build credits 与 cloud credits 的区别](/zh/billing/build-credits-vs-cloud-credits)。
+</Tip>
+
+模拟器上方的控件作用如下：
+
+<Frame>
+  <img alt="模拟器工具栏包含录制、截图、主页、设置和元素选择按钮，一个分享按钮，以及带重启和停止的 Live 指示器" />
+</Frame>
+
+| 控件        | 作用                                           |
+| --------- | -------------------------------------------- |
+| **录制**    | 录制预览画面并附加到聊天中。想让智能体看到只在动态过程中出现的 bug，就用它。 |
+| **截图**    | 把一张截图附加到聊天中。                                 |
+| **主页**    | 按下 Android 的主页按钮。                            |
+| **模拟器设置** | 在**浅色**与**深色**之间切换系统外观，并调整**文字大小**。          |
+| **选择元素**  | 指向屏幕上的某个部分，然后写明要对它做什么修改。智能体会准确定位到该元素。     |
+| **分享**    | 截图并套上手机外框，可直接发布。                             |
+| **重启**    | 重启模拟器，实例失效时就按它。                              |
+| **停止模拟器** | 关闭模拟器，停止按分钟计费。                               |
+
+<Frame>
+  <img alt="模拟器设置弹出框，包含浅色/深色外观切换和文字大小字段" />
+</Frame>
+
+发布之前记得用一下**模拟器设置**。深色模式和大号文字最容易让 Android 布局出问题，而这两项在这里都只需点一下。更改文字大小会重新加载当前屏幕。
+
+<Note>
+  模拟器实例不会长期存在。当它提示 “This instance no longer exists and can&#39;t be reconnected” 时，按**重启**即可。你的应用和项目都不受影响，消失的只是那台正在运行的机器。
+</Note>
+
+<div id="test-on-your-own-phone">
+  ## 在自己的手机上测试
+</div>
+
+模拟器已经能覆盖大部分测试场景。如果想把应用装到手机上亲自体验，Rork 会帮你构建好 APK，无需终端，也无需构建服务：
+
+1. 打开 **Publish**，然后进入 Google Play 部分。
+2. 点击 **Download APK**。
+3. 在 Android 手机上打开 `.apk` 文件并安装。首次安装时，Android 会要求你允许从浏览器或文件管理器安装应用。
+
+完整流程 (包括通过 Google Play 进行测试) 请参阅[如何在 Android 设备上测试 Android 应用](/zh/submitting-to-play-store/apk-file)。
+
+<div id="publish-to-google-play">
+  ## 发布到 Google Play
+</div>
+
+Rork 会为你构建并签名发布版本。但 Rork 无法代替你本人：开发者账号和商店条目都归属于你的 Google 账号。
+
+在项目中打开 **Publish**。Google Play 部分会说明其用途，并显示当前是否已有发布 build：
+
+<Frame>
+  <img alt="Publish 菜单中的 Google Play 部分，显示生成 Android App Bundle、暂无发布 build 状态，以及 Upload to Google Play 按钮" />
+</Frame>
+
+<Steps>
+  <Step title="创建你的 Google Play 开发者账号">
+    Google 会收取 **一次性 $25 注册费**，且身份审核需要几天时间，因此请尽早开始。参见[创建你的 Google Play 开发者账号](/zh/store-guides/google-play-developer-account)。
+  </Step>
+
+  <Step title="在 Play Console 中创建应用">
+    Google 的 API 无法替你创建第一条应用记录，因此必须先在 Play Console 中建好商店条目，Rork 才能发布。需要时，面板会显示 **Create Play Console app**：“创建应用条目，然后 Rork 可以重新检查访问权限。”点击 **Copy package name**，确保条目与你的 build 相匹配。
+  </Step>
+
+  <Step title="连接 Google Play">
+    点击 **Upload to Google Play**。对话框会指明本次构建针对哪个应用，每个 bundle 只对应一个应用：“此 AAB 仅包含该 Kotlin 应用。”同时也会显示用于发布的账号。在你连接账号之前，这里会显示 **Connect Google Play**：“连接管理该 Play Console 应用的 Google 账号。”
+
+    <Frame>
+      <img alt="Upload to Google Play 对话框，指明 Kotlin Android 目标，提示已准备好构建 Android App Bundle，显示已连接的 Google 账号，并提供 Build AAB for Play 选项" />
+    </Frame>
+  </Step>
+
+  <Step title="构建 bundle">
+    点击 **Build AAB for Play**。Rork 会构建发布版 Android App Bundle，并使用归属于你项目的长期上传密钥为其签名。对话框会显示“正在构建 Android App Bundle。这可能需要几分钟。你可以关闭此窗口。”
+  </Step>
+
+  <Step title="发送发布版本，或自行取用文件">
+    bundle 就绪后，按钮会变为 **Send to Google Play**，Rork 会将其上传到你的内部测试轨道。**Download AAB for Play Console** 会提供已签名的文件，供你手动上传。**Download APK** 则提供可直接装到自己手机上的文件。
+  </Step>
+</Steps>
+
+发布版本会先进入 **内部测试**，仅对你列出的测试人员可见。上传完成后，Rork 会明确提示：“版本 1 处于内部测试中。尚未公开。”
+
+<div id="ask-the-agent-to-promote-the-release">
+  ## 让智能体推进版本发布
+</div>
+
+Google Play 相关的操作不止这几个按钮。你可以直接在对话中让智能体来管理 Play 的各个发布轨道：
+
+```
+Promote this release to closed testing
+```
+
+```
+将此版本发布到正式版，面向 5% 的用户
+```
+
+它支持内部测试、封闭测试、开放测试、正式版，以及可以扩大、暂停、恢复或完成的分阶段发布。有两个限制需要了解：一是不支持回滚，出问题的版本只能暂停发布或用修正版本替换；二是暂不支持自定义测试轨道。
+
+内部测试**不**满足 Google 的&quot;12 名测试人员持续 14 天&quot;规则，这必须通过封闭测试完成。参见[创建你的 Google Play 开发者账号](/zh/store-guides/google-play-developer-account)。
+
+<Warning>
+  **不要让智能体向项目中添加签名密钥、密钥库或 SHA-1 指纹。** Google Play 会将你的应用与首次上传时使用的密钥绑定。Rork 会为你管理该密钥，改动签名文件可能导致 Google Play 拒绝后续的每一次上传。如果 Play Console 提示签名密钥不匹配，请联系支持团队并附上你的项目链接，不要自行重新生成任何内容。
+</Warning>
+
+要更新应用，请在 Rork 中完成修改并点击 **Rebuild AAB**，然后将新的 build 发送到 Google Play。
+
+含 Play Console 界面截图的分步说明，请参见[如何将你的 Rork 应用发布到 Google Play Store](/zh/submitting-to-play-store/creating-the-aab-file)。
+
+<div id="add-an-android-app-to-a-project-you-already-have">
+  ## 为已有的 项目 添加 Android 应用
+</div>
+
+任何项目都可以增加一个 Android 应用。点击预览上方的 **+**，然后选择 **Android (Kotlin)**：
+
+<Frame>
+  <img alt="预览上方的添加平台菜单，提供 Android (Kotlin) 原生 Android 应用和 Web 应用两个选项" />
+</Frame>
+
+你也可以通过 **Project Settings → Add new app** 添加，或者直接这样提问：
+
+```
+为这个项目添加一个原生 Android 应用
+```
+
+智能体会将你的界面、导航、数据流和设计重新构建为一个 Android 应用。此后两个应用共存于同一个项目中，但拥有**两套代码库**：iPhone 用 Swift，Android 用 Kotlin。它们共用同一个聊天和同一个 backend，并从同一个 **Publish** 菜单发布。
+
+<div id="what-a-rork-android-app-can-do">
+  ## Rork 开发的 Android 应用能做什么
+</div>
+
+Android 把设备直接交到应用手中，Rork 也是如此：
+
+* 用 Jetpack Compose 构建的界面：底部导航、列表、表单、Material 控件，以及系统风格的设置页
+* 手机上的硬件：相机、蓝牙、定位、本地存储和权限提示
+* 可在后台持续运行的任务
+* 账户、数据和推送通知，与你的其他应用共用同一个 backend，参见 [Backend](/zh/backend/index)
+* 一个可导出到 GitHub 的真正的 Android Studio 工程，参见[如何将项目同步到 GitHub](/zh/tutorials/how-to-connect-github)
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<AccordionGroup>
+  <Accordion title="这是套壳网页应用吗？">
+    不是。Rork 的 Android 应用是用 Jetpack Compose 编写的 Kotlin 代码库，既不是套了个壳的浏览器应用，也不是 iOS 应用。
+  </Accordion>
+
+  <Accordion title="我需要密钥库或签名密钥吗？">
+    不需要。Rork 会用该项目的长期上传密钥为应用包签名。没有 `.jks` 文件、没有密钥别名，也没有密钥库密码需要你保存、轮换，更不会弄丢。
+  </Accordion>
+
+  <Accordion title="哪个套餐可以构建 Android 应用？">
+    使用 Kotlin + Compose 的 Android 应用属于 **Rork Pro**。免费套餐可以设计 Android 应用，但不能构建。参见 [套餐与订阅](/zh/introduction/subscriptions)。
+  </Accordion>
+
+  <Accordion title="使用模拟器要花多少钱？">
+    **运行期间每分钟消耗 0.1 个 build credits**，关闭后不计费。面板中会显示该项目已用的量。参见 [build credits 与 cloud credits 的区别](/zh/billing/build-credits-vs-cloud-credits)。
+  </Accordion>
+
+  <Accordion title="我可以自己上传bundle吗？">
+    可以。点击 **Download AAB for Play Console** 即可获得已签名的文件，然后照常在 Play Console 中上传。
+  </Accordion>
+
+  <Accordion title="为什么我的新账号不能直接发布正式版？">
+    这是 Google 的规定。2023 年 11 月 13 日之后创建的个人开发者账号，需要先做一轮封闭测试，至少 12 名测试人员连续 14 天保持加入状态，才能获得正式版发布权限。参见 [创建 Google Play 开发者账号](/zh/store-guides/google-play-developer-account)。
+  </Accordion>
+
+  <Accordion title="同一个项目可以同时有 iPhone 应用吗？">
+    可以。Android 应用只面向 Android，但你可以在同一个项目中再加一个 iPhone 应用或 Web 应用，让它们共用同一个 backend。参见 [在 iOS、Android 和 Web 之间转换你的应用](/zh/import/convert-between-platforms)。
+  </Accordion>
+
+  <Accordion title="我有一个 Expo 项目，能变成原生 Android 应用吗？">
+    可以。在同一个项目中添加原生 Android 应用，智能体会用 Kotlin 重建你的界面，你的 Expo 应用则原样保留。参见 [Expo 后来怎么样了？](/zh/expo)。
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## 下一步
+</div>
+
+<CardGroup>
+  <Card icon="compass" href="/zh/swift-vs-react-native/whats-the-difference" title="iPhone、Android 还是 Web">
+    各平台分别擅长什么，以及如何选择。
+  </Card>
+
+  <Card icon="mobile" href="/zh/submitting-to-play-store/apk-file" title="在你的 Android 手机上测试">
+    抢在所有人之前先把应用装上试试。
+  </Card>
+
+  <Card icon="upload" href="/zh/store-guides/google-play-developer-account" title="Google Play 账号">
+    账号、审核检查以及 12 位测试者规则。
+  </Card>
+
+  <Card icon="database" href="/zh/backend/index" title="添加 backend">
+    账户、数据、文件和推送通知。
+  </Card>
+</CardGroup>
+
+<CtaBanner />

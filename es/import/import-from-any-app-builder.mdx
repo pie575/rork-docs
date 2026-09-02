@@ -1,0 +1,149 @@
+---
+title: "Lleva tu proyecto de cualquier creador de apps a Rork"
+---
+
+Migra un proyecto de Bolt, v0, Replit, FlutterFlow, Bubble, Glide, Softr o Base44 a Rork y consigue una app móvil nativa: exporta tu código a GitHub y luego impórtalo. Incluye los pasos de exportación de cada creador.
+
+¿Creaste algo en otro creador con IA o herramienta no-code y quieres convertirlo en una app móvil nativa de verdad? La fórmula es casi siempre la misma:
+
+1. **Lleva tu proyecto a un repositorio de GitHub** (todo creador serio ofrece una opción de exportación o sincronización).
+2. **Importa ese repositorio en Rork** con la [importación desde GitHub](/es/import/import-from-github).
+3. Rork lee tus archivos fuente reales y reconstruye el producto como una app nativa de iOS / Android.
+
+Si tu herramienta de origen no permite exportar código (algunas herramientas no-code no lo hacen), ve directo a [¿Sin exportación de código?](#no-code-export-import-it-anyway): igualmente puedes migrar.
+
+<div id="step-1-export-your-project-to-github">
+  ## Paso 1. Exporta tu proyecto a GitHub
+</div>
+
+Cómo obtener un repositorio en cada uno de los creadores más populares:
+
+<div id="lovable">
+  ### Lovable
+</div>
+
+Lovable ofrece sincronización nativa con GitHub, y Rork cuenta con una importación de un solo clic específica para ello. Consulta la guía dedicada: [Convierte tu app de Lovable en una app móvil](/es/import/lovable-to-mobile-app).
+
+<div id="bolt-boltnew">
+  ### Bolt (bolt.new)
+</div>
+
+Bolt puede subir tu project a GitHub: abre tu project → barra de herramientas → **Connect to GitHub** (o **Export → Download** en formato ZIP y súbelo tú mismo). Bolt genera projects web estándar y projects de React Native si pediste una app móvil. Rork importa cualquiera de los dos y lo reconstruye como una app nativa.
+
+<div id="v0-by-vercel">
+  ### v0 by Vercel
+</div>
+
+Los proyectos de v0 ya están en Git si los has subido: usa **Add to codebase / Download ZIP** o conecta tu proyecto de v0 a un repositorio Git de Vercel. Después, importa el repositorio resultante en Rork.
+
+<div id="replit">
+  ### Replit
+</div>
+
+En tu Repl: **Git pane → Connect to GitHub → Create repository** y luego haz push. Por debajo, las apps de Replit Agent son código fuente normal, así que se importan sin problemas.
+
+<div id="flutterflow">
+  ### FlutterFlow
+</div>
+
+**Settings → Integrations → GitHub → Connect** exporta el código Flutter generado (planes de pago); también puedes usar **Download Code**. Rork no compila apps de Flutter: en su lugar, el agente lee tus pantallas, la lógica y la estructura de datos del código Dart y vuelve a crear la app de forma nativa. Menciona en tu prompt que el origen es Flutter.
+
+<div id="softr-glide-bubble-no-code-export">
+  ### Softr / Glide / Bubble (sin exportación de código)
+</div>
+
+Estas plataformas no exportan código fuente utilizable. Consulta [¿Sin exportación de código?](#no-code-export-import-it-anyway) más abajo.
+
+<div id="base44-other-ai-builders">
+  ### Base44 / otros creadores con IA
+</div>
+
+La mayoría de los creadores basados en IA (Base44, Create, Databutton y similares) ofrecen sincronización con GitHub o descarga del código. Busca **GitHub / Exportar código** en la configuración de tu proyecto, obtén el repositorio e impórtalo.
+
+<Tip>
+  Si solo tienes un ZIP: crea un repositorio vacío en GitHub, descomprime el archivo en tu equipo y luego ejecuta los siguientes comandos dentro de la carpeta descomprimida. Sustituye la URL por la de tu propio repositorio. Con eso basta para que Rork lo importe.
+
+  ```
+  git init
+  git add .
+  git commit -m "Initial import"
+  git branch -M main
+  git remote add origin https://github.com/YOUR-NAME/YOUR-REPO.git
+  git push -u origin main
+  ```
+</Tip>
+
+<div id="step-2-import-the-repository-into-rork">
+  ## Paso 2. Importa el repositorio a Rork
+</div>
+
+1. Ve a [rork.com](https://rork.com) y haz clic en **GitHub to Mobile App**, debajo del cuadro de prompt.
+2. Pega la URL del repositorio.
+3. Haz clic en **Generate app now**, o en **I have extra requests** para describir qué quieres cambiar durante la migración (es el momento ideal para pedir una navegación nativa desde el principio o eliminar funciones que ya no necesitas).
+
+<Frame>
+  <img alt="El cuadro de diálogo de importación desde GitHub en rork.com" />
+</Frame>
+
+El agente configura la sincronización con GitHub, analiza tu código fuente (pantallas, rutas, modelos de datos, integraciones, variables de entorno) y reconstruye la app de forma nativa:
+
+<Frame>
+  <img alt="Rork procesando la importación: escaneando el código fuente y creando la estructura de la app nativa" />
+</Frame>
+
+<div id="step-3-reconnect-your-backend">
+  ## Paso 3. Vuelve a conectar tu backend
+</div>
+
+Tu capa de datos suele sobrevivir a la migración tal cual:
+
+* **Supabase / Firebase**: dale al agente la URL de tu project y tus claves públicas de cliente como variables de entorno, y la app móvil se comunicará con la misma base de datos y el mismo sistema de autenticación que antes. En Supabase usa la clave publicable (su nombre antiguo es `anon`) y mantén activado Row Level Security. En Firebase usa la configuración pública del cliente. Consulta [Supabase](/es/backend/supabase) y [Firebase](/es/backend/firebase).
+* **API personalizada**: el agente lee tus llamadas a la API en el código fuente importado y reutiliza los mismos endpoints.
+* **Aún no tienes backend**: pídele al agente que configure uno con [Rork Cloud](/es/backend/rork-cloud).
+
+<Warning>
+  Nunca incluyas en la app una clave secreta de Supabase (su nombre antiguo es `service_role`) ni ninguna clave de API privada. Cualquiera puede leer las claves que hay dentro de una app móvil publicada. Guarda las claves privadas del lado del servidor, en [Rork Cloud](/es/backend/rork-cloud) o en una Edge Function de Supabase.
+</Warning>
+
+<div id="no-code-export-import-it-anyway">
+  ## ¿Sin exportación de código? Impórtalo igual
+</div>
+
+Si tu herramienta actual (Softr, Glide, Bubble, Adalo y similares) no te deja acceder al código fuente, igual puedes migrar. Solo que empiezas desde el producto y no desde el código:
+
+1. Haz **capturas de pantalla de todas las pantallas** de tu app actual y adjúntalas a tu primer prompt en Rork.
+2. Agrega la **URL pública** de la app para que el agente pueda estudiar los flujos.
+3. Describe el modelo de datos en palabras sencillas (&quot;usuarios, pedidos, cada pedido tiene líneas de artículos...&quot;).
+4. Si tus datos están en Airtable / Google Sheets / Supabase, díselo al agente: puede conectarse a esa misma fuente de datos o importar los datos.
+
+Te sorprenderá lo cerca que queda la primera generación cuando parte de capturas de pantalla reales.
+
+<div id="why-not-just-wrap-my-existing-app-in-a-webview">
+  ## ¿Por qué no simplemente envolver mi app actual en un webview?
+</div>
+
+Los servicios de wrapper meten tu sitio web dentro de una carcasa nativa. Funciona… hasta que deja de funcionar: Apple rechaza con frecuencia los wrappers superficiales (Guideline 4.2, Minimum Functionality), las notificaciones push y el modo sin conexión no son fiables, y la app nunca llega a sentirse nativa. Rork reconstruye la interfaz de forma nativa y conserva tu producto y tus datos, que es justo lo que esperan las tiendas.
+
+<div id="faq">
+  ## Preguntas frecuentes
+</div>
+
+<div id="which-builders-does-rork-import-from-best">
+  ### ¿Desde qué creadores importa mejor Rork?
+</div>
+
+Cualquiera que exporte código fuente real: Lovable, Bolt, v0, Replit, proyectos de Cursor, apps escritas a mano. FlutterFlow funciona mediante la lectura del código. Softr/Glide/Bubble requieren el método de las capturas de pantalla.
+
+<div id="will-everything-be-migrated-11">
+  ### ¿Se migrará todo 1:1?
+</div>
+
+El agente conserva tu producto: pantallas, flujos, identidad de marca y modelo de datos. La paridad exacta al píxel no es el objetivo: los patrones nativos de móvil (barras de pestañas, gestos nativos, notificaciones push) suelen hacer que la app quede mejor que una copia literal.
+
+<div id="can-i-keep-the-old-web-app-running">
+  ### ¿Puedo seguir usando la app web anterior?
+</div>
+
+Sí. La importación no altera tu proyecto original. Muchos creadores mantienen en marcha la app web anterior y la nueva app móvil de Rork en paralelo, sobre el mismo backend, y las unifican más adelante.
+
+<CtaBanner />

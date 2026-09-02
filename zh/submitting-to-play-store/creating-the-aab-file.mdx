@@ -1,0 +1,94 @@
+---
+title: "如何将你的 Rork 应用发布到 Google Play 商店"
+---
+
+Google Play 要求使用 AAB(Android App Bundle)文件进行分发。本指南介绍如何获取 Rork 项目的 AAB 文件并上传到 Play Console,先从内部测试版本开始。
+
+**前提条件:**
+
+* 一个 Google Play 开发者账号。请在 [https://play.google.com/console/signup](https://play.google.com/console/signup) 注册
+* 一台台式机或笔记本电脑。此操作无法在手机上完成。
+
+Rork 会替你构建 AAB。Rork 中的 Android 应用属于**原生 Android(Kotlin)**应用,点击 **Publish** 按钮即可完成整个构建过程。想了解从第一条提示词到发布上线的完整流程,请参阅[使用 Rork 构建原生 Android 应用](/zh/android/rork-android)。
+
+<Note>
+  iPhone(Swift)应用无法发布到 Google Play。若要触达 Android 用户,请在同一个项目中添加一个 Android 应用,详见[在 iOS、Android 和 Web 之间转换你的应用](/zh/import/convert-between-platforms)。
+</Note>
+
+<div id="build-the-aab-in-rork">
+  ## 在 Rork 中构建 AAB
+</div>
+
+1. 打开你的 项目，点击页面顶部的 **Publish**，然后展开 Google Play 部分。
+2. 点击 **Connect Google Play**，使用管理该 Play Console 应用的 Google 账号登录。
+3. 点击 **Build AAB for Play**。Rork 会构建一个发布版 AAB，并使用你 项目 专属的持久上传密钥进行签名。
+4. 构建 完成后，选择交付方式：
+   * **Send to Google Play**：由 Rork 直接将 AAB 上传到你的内部测试轨道。只有在 Rork 确认你的 Google 账号有权管理该 Play Console 应用后，该选项才会出现。
+   * **Download AAB for Play Console**：下载已签名的 `.aab` 文件，供你手动上传。
+5. 如果你选择了下载文件，请继续参阅下方的[在 Play Console 中上传 AAB](#upload-the-aab-in-play-console)。
+
+<Note>
+  只有当 app 已存在于 Play Console 中时，Rork 才能发送 构建。如果 Rork 提示 **Create Play Console app**，请先创建应用条目，再让 Rork 重新检查访问权限。
+</Note>
+
+**不要让 Rork 智能体向 项目 中添加它自己的签名密钥、密钥库或 SHA1 指纹。** Google Play 会将你的 app 与首次上传所用的密钥永久绑定。该密钥由 Rork 代为管理，若在 项目 中改动签名文件，可能导致 Google Play 拒绝后续上传。如果 Play Console 提示签名密钥或 SHA1 不匹配，请不要自行重新生成，附上你的 项目 链接联系支持团队即可。
+
+更新 app 时，请在 Rork 中完成修改并点击 **Rebuild AAB**，然后将新的 构建 发送到 Google Play，或下载后在 Play Console 中作为新版本上传。
+
+<div id="upload-the-aab-in-play-console">
+  ## 在 Play Console 中上传 AAB
+</div>
+
+访问 [https://play.google.com/console/developers](https://play.google.com/console/developers) 登录 Play Console，然后点击右侧的 **Create App** 按钮。
+
+<img alt="13" />
+
+填写应用名称、默认语言，选择这是应用还是游戏，以及要设为免费还是付费。**非常重要：** 如果你打算做付费应用，请务必现在就标记为付费。付费应用之后可以改成免费，但免费应用在任何时候都无法改成付费。同意 Google 的开发者计划政策和出口法律条款，然后点击 Create App。
+
+<img alt="14" />
+
+接着在 internal testing (内部测试) 下点击 View Tasks。
+
+点击 Select Testers。
+
+<img alt="15" />
+
+向下滚动到 Testers 标签页，选择 Create email list。你将在这里创建一份邮箱列表，用于分发给你希望参与测试的人员。现阶段只需添加你自己的邮箱，方便自己测试应用。
+
+<img alt="16" />
+
+用你的邮箱地址创建一个列表，点击保存即可。
+
+<img alt="17" />
+
+向上滚动回去，点击 Create a new release
+
+<img alt="18" />
+
+上传你之前从 Rork 下载的 AAB 文件。
+
+<img alt="19" />
+
+输入应用名称，以及你想补充的版本说明。可以写上所上传的 Rork 版本，方便日后查看。
+
+<img alt="20" />
+
+点击屏幕底部的 next。
+
+<img alt="21" />
+
+页面会跳转到摘要界面。点击底部的 Save and Publish。
+
+<img alt="22" />
+
+如果弹出提示框，选择“Save and Publish”。
+
+<img alt="23" />
+
+完成后，返回内部测试页面，向下滚动到底部的 testers 标签页。复制那条提示测试人员可通过网页加入的链接。他们必须先在网页上加入，才能下载应用。
+
+<img alt="Google Play Console release page" />
+
+把链接发给自己并接受邀请。现在你就可以从 Google Play 商店安装应用并进行测试了。内部测试没有问题后，等你准备好正式发布时，就可以在 Play Console 中把该版本推进到更广的发布轨道。
+
+<CtaBanner />

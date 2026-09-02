@@ -1,0 +1,149 @@
+---
+title: "将项目从任意应用搭建工具迁移到 Rork"
+---
+
+把 Bolt、v0、Replit、FlutterFlow、Bubble、Glide、Softr 或 Base44 上的项目迁移到 Rork，获得原生移动应用：先把代码导出到 GitHub，再导入 Rork。文中包含各个搭建工具的导出步骤。
+
+已经在其他 AI 搭建工具或无代码工具里做出了成果，想把它变成真正的原生移动应用？做法基本都一样：
+
+1. **把项目上传到 GitHub 仓库** (正经的搭建工具都提供导出或同步功能) 。
+2. 通过 [GitHub 导入](/zh/import/import-from-github) **把该仓库导入 Rork**。
+3. Rork 会读取真实的源文件，并将产品重建为原生 iOS / Android 应用。
+
+如果你使用的工具完全不支持导出代码 (有些无代码工具确实不支持) ，请跳到[无法导出代码？](#no-code-export-import-it-anyway)，你依然可以完成迁移。
+
+<div id="step-1-export-your-project-to-github">
+  ## 第 1 步：将项目导出到 GitHub
+</div>
+
+以下是从各主流搭建工具中导出代码仓库的方法：
+
+<div id="lovable">
+  ### Lovable
+</div>
+
+Lovable 对 GitHub 同步的支持非常完善，Rork 也专门为它提供了一键导入功能。请参考专门的指南：[将你的 Lovable 应用转换为移动应用](/zh/import/lovable-to-mobile-app)。
+
+<div id="bolt-boltnew">
+  ### Bolt (bolt.new)
+</div>
+
+Bolt 可以把你的项目推送到 GitHub：打开项目 → 工具栏 → **Connect to GitHub** (或选择 **Export → Download** 下载 ZIP 后自行推送) 。Bolt 生成的是标准 Web 项目；如果你指定了移动端，则会生成 React Native 项目。两种项目 Rork 都能导入，并重新构建为原生应用。
+
+<div id="v0-by-vercel">
+  ### v0 by Vercel
+</div>
+
+如果你已经推送过，v0 项目就已经存放在 Git 中：使用 **Add to codebase / Download ZIP**，或将 v0 项目连接到 Vercel 的 Git 仓库，然后把得到的仓库导入 Rork。
+
+<div id="replit">
+  ### Replit
+</div>
+
+在你的 Repl 中：**Git pane → Connect to GitHub → Create repository**，然后推送即可。Replit Agent 生成的应用底层就是普通源代码，因此导入过程不会有问题。
+
+<div id="flutterflow">
+  ### FlutterFlow
+</div>
+
+依次点击 **Settings → Integrations → GitHub → Connect** 即可导出生成的 Flutter 代码 (需付费方案) ，也可以使用 **Download Code**。Rork 不会构建 Flutter 应用，而是由智能体从 Dart 代码中读取你的页面、逻辑和数据结构，再用原生方式重建应用。请在提示词中说明源代码来自 Flutter。
+
+<div id="softr-glide-bubble-no-code-export">
+  ### Softr / Glide / Bubble (无法导出代码)
+</div>
+
+这些平台无法导出可用的源代码，请参阅下方的[无法导出代码？](#no-code-export-import-it-anyway)。
+
+<div id="base44-other-ai-builders">
+  ### Base44 / 其他 AI 搭建工具
+</div>
+
+大多数 AI 优先的搭建工具 (Base44、Create、Databutton 等) 都支持 GitHub 同步或代码下载。在项目设置中找到 **GitHub / Export code**，拿到仓库后导入即可。
+
+<Tip>
+  如果你手上只有一个 ZIP 包：先在 GitHub 上创建一个空仓库，把 ZIP 解压到本地，然后在解压后的文件夹中运行以下命令，并将 URL 替换为你自己的仓库地址。这样 Rork 就可以导入了。
+
+  ```
+  git init
+  git add .
+  git commit -m "Initial import"
+  git branch -M main
+  git remote add origin https://github.com/YOUR-NAME/YOUR-REPO.git
+  git push -u origin main
+  ```
+</Tip>
+
+<div id="step-2-import-the-repository-into-rork">
+  ## 第 2 步：将仓库导入 Rork
+</div>
+
+1. 打开 [rork.com](https://rork.com)，点击提示框下方的 **GitHub to Mobile App**。
+2. 粘贴仓库 URL。
+3. 点击 **Generate app now**；也可以点击 **I have extra requests**，说明你希望在迁移过程中做哪些调整 (此时正适合提出原生优先的导航需求，或去掉不再需要的功能) 。
+
+<Frame>
+  <img alt="rork.com 上的 GitHub 导入对话框" />
+</Frame>
+
+智能体会配置 GitHub Sync，梳理你的源码 (页面、路由、数据模型、集成、环境变量) ，并以原生方式重建应用：
+
+<Frame>
+  <img alt="Rork 正在执行导入：扫描源码、搭建原生应用框架" />
+</Frame>
+
+<div id="step-3-reconnect-your-backend">
+  ## 第 3 步：重新连接 backend
+</div>
+
+数据层通常可以原样保留，不受迁移影响：
+
+* **Supabase / Firebase**：把 project URL 和公开的客户端密钥作为环境变量提供给智能体，移动应用即可像之前一样连接同一个数据库和认证服务。Supabase 请使用 publishable key (旧称 `anon`) ，并保持 Row Level Security 处于开启状态。Firebase 请使用公开的客户端配置。参见 [Supabase](/zh/backend/supabase) 和 [Firebase](/zh/backend/firebase)。
+* **自定义 API**：智能体会从导入的源码中读取你的 API 调用，并复用相同的端点。
+* **还没有 backend**：让智能体用 [Rork Cloud](/zh/backend/rork-cloud) 搭建一个。
+
+<Warning>
+  切勿把 Supabase 的 secret key (旧称 `service_role`) 或任何私有 API 密钥放进应用里。已发布的移动应用内的密钥，任何人都能读取。私有密钥请保存在服务端，放在 [Rork Cloud](/zh/backend/rork-cloud) 或 Supabase Edge Function 中。
+</Warning>
+
+<div id="no-code-export-import-it-anyway">
+  ## 无法导出代码？照样能导入
+</div>
+
+如果你当前使用的工具 (Softr、Glide、Bubble、Adalo 等) 不提供源代码，你依然可以迁移，只不过起点变成了产品本身，而不是代码：
+
+1. 把现有应用的**每个页面都截图**，并把这些截图附在你在 Rork 中的第一条提示词里。
+2. 附上应用的**公开网址**，让智能体研究其中的流程。
+3. 用大白话描述数据模型 (“用户、订单，每个订单包含若干条目……”) 。
+4. 如果你的数据存放在 Airtable / Google Sheets / Supabase 中，告诉智能体即可，它可以连接同一个数据源，或者把数据导入进来。
+
+有真实截图作参考时，第一次生成的结果会有多接近原版，一定会让你大吃一惊。
+
+<div id="why-not-just-wrap-my-existing-app-in-a-webview">
+  ## 为什么不直接给现有应用套一层 webview？
+</div>
+
+套壳服务只是把你的网站装进一个原生外壳里。一开始能用，但迟早会出问题：Apple 经常拒绝这类简单套壳应用 (准则 4.2，最低功能要求) ，推送通知和离线功能也不可靠，用起来始终没有原生应用的感觉。Rork 则会在保留你的产品和数据的前提下，用原生方式重建界面——这正是应用商店想要的。
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<div id="which-builders-does-rork-import-from-best">
+  ### Rork 最适合从哪些搭建工具导入？
+</div>
+
+任何能导出真实源代码的工具：Lovable、Bolt、v0、Replit、Cursor 项目，以及手写的应用。FlutterFlow 可以通过读取代码来导入。Softr/Glide/Bubble 则需要采用截图方式。
+
+<div id="will-everything-be-migrated-11">
+  ### 所有内容都会 1:1 迁移吗？
+</div>
+
+智能体会保留你的产品核心：页面、流程、品牌和数据模型。像素级还原并非目标：采用原生移动端的交互模式 (标签栏、原生手势、推送通知) ，通常能让应用比单纯照搬更好用。
+
+<div id="can-i-keep-the-old-web-app-running">
+  ### 我可以让旧的 Web 应用继续运行吗？
+</div>
+
+可以。导入不会改动你原来的 project。很多开发者会让旧的 Web 应用和新的 Rork 移动应用共用同一个 backend 并行运行，之后再逐步整合。
+
+<CtaBanner />
