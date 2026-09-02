@@ -1,0 +1,270 @@
+---
+title: "Rork Web: crea y publica una app web"
+---
+
+Rork crea apps web con Vite y React, las previsualiza junto al chat y las publica en tu propia dirección de rork.app. Úsalo para un sitio web, un panel de control, un portal de clientes o una herramienta de administración.
+
+<div>
+  <img alt="Un proyecto web de Rork: el chat a la izquierda y el sitio web terminado de Ember Roast en la vista previa en vivo a la derecha" />
+</div>
+
+<p>Un prompt, un proyecto: el chat a la izquierda, el sitio en funcionamiento a la derecha.</p>
+
+Una app web de Rork se ejecuta en el navegador. Rork la escribe con **Vite y React**, la previsualiza junto al chat y la publica en tu propia dirección de `rork.app`. No hay tienda de aplicaciones, ni revisión, ni instalación: compartes un enlace y la gente lo abre en un portátil o en el móvil.
+
+Web es la plataforma indicada para un sitio web, un panel de control, un portal de clientes, una herramienta de administración o un producto SaaS. También es la forma más rápida de poner algo en manos de la gente hoy mismo. Descubre todo lo que puede crear en la [página de Rork Web](https://rork.com/web).
+
+<div id="start-a-web-app">
+  ## Crea una app web
+</div>
+
+Elige la plataforma antes de enviar tu primer mensaje. En [rork.com](https://rork.com), abre el selector de plataforma que hay debajo del cuadro del prompt y elige **For web**. Después describe el producto, no la tecnología.
+
+<Frame>
+  <img alt="El cuadro del prompt de Rork con un prompt sobre una tostaduría de café escrito y la plataforma configurada en For web" />
+</Frame>
+
+El selector lo deja claro: **puedes añadir otra plataforma más adelante**. Un mismo proyecto puede contener una app para iPhone, una app para Android y una app web a la vez. Consulta [Convierte tu app entre iOS, Android y web](/es/import/convert-between-platforms).
+
+<div id="answer-the-questions-about-the-look">
+  ## Responde las preguntas sobre el aspecto
+</div>
+
+Rork no empieza a escribir código de inmediato. Primero hace unas preguntas breves sobre el aspecto, y cada respuesta es una imagen, no una palabra. También puedes escribir tu propia respuesta en **Otro**.
+
+<Frame>
+  <img alt="Rork preguntando qué aspecto general debe tener el sitio, con cuatro opciones de paleta para elegir" />
+</Frame>
+
+Responde las tres y luego pulsa **Enviar**. Puedes saltarte este paso si describes el aspecto que quieres en tu primer prompt.
+
+<div id="approve-the-design-then-build">
+  ## Aprueba el diseño y luego construye
+</div>
+
+A continuación, Rork dibuja las pantallas y las muestra en **Design mode**. Todavía no se ha construido nada, así que este es el momento más barato para cambiar de idea. Pide otra pantalla en el chat o pulsa **Build** para convertir el diseño en un sitio funcional.
+
+<Frame>
+  <img alt="Design mode con tres pantallas propuestas para Ember Roast y una tarjeta de revisión del diseño con los botones View Design y Build" />
+</Frame>
+
+<div id="work-in-the-project">
+  ## Trabaja en el proyecto
+</div>
+
+El proyecto tiene el chat a la izquierda y una vista previa en vivo a la derecha. La vista previa es la app real, no una imagen, así que puedes navegar por ella mientras la construyes.
+
+Los controles situados encima de la vista previa hacen lo siguiente:
+
+| Control                                    | Qué hace                                                                 |
+| ------------------------------------------ | ------------------------------------------------------------------------ |
+| **Cambiar plataforma de vista previa**     | Mueve la vista previa entre las apps del proyecto y añade una plataforma. |
+| **Cambiar tamaño de vista previa**         | Alterna la vista previa entre **Escritorio**, **Tablet** y **Teléfono**. |
+| **Ir al inicio**                           | Devuelve la vista previa a la primera página.                            |
+| **Recargar vista previa**                  | Vuelve a cargar la app después de un cambio.                             |
+| **Seleccionar un elemento para tu prompt** | Señala una parte de la página y escribe qué quieres cambiar en ella.     |
+| **Publicar**                               | Abre el panel de publicación.                                            |
+
+<Tip>
+  Usa **Seleccionar un elemento para tu prompt** en lugar de describir una posición con palabras. Señala el elemento y luego escribe «haz este botón más oscuro». El agente identifica el elemento exacto y modifica menos cosas a su alrededor.
+</Tip>
+
+<div id="check-the-phone-width">
+  ## Comprueba el ancho en el móvil
+</div>
+
+Una app web tiene que funcionar tanto en el navegador de un móvil como en un portátil. Pulsa **Switch preview size** hasta que ponga **Phone**. Rork muestra el sitio dentro de un marco de móvil, así que ves las mismas páginas con el ancho que verán tus visitantes.
+
+<Frame>
+  <img alt="El sitio de Ember Roast en el tamaño de vista previa Phone, mostrado dentro de un marco de móvil junto al chat" />
+</Frame>
+
+Después, pide los ajustes que necesites:
+
+```
+En anchos de teléfono, el texto del hero se superpone a la imagen. Colócalos apilados en su lugar.
+```
+
+<div id="publish-to-the-web">
+  ## Publicar en la web
+</div>
+
+Abre **Publish** y pulsa **Publish to web**. Rork compila la aplicación y la aloja en tu propia dirección dentro de `rork.app`.
+
+<Frame>
+  <img alt="El panel de publicación de Rork mostrando ember-roast-website.rork.app, el estado Site offline, la fila Add a custom domain deshabilitada y el botón Publish to web" />
+</Frame>
+
+Lo que muestra el panel:
+
+* **La dirección.** Rork elige una a partir del nombre del proyecto, como `ember-roast-website.rork.app`. Pulsa el lápiz para cambiar el subdominio.
+* **El estado.** Aparece como **Site offline** hasta que publiques por primera vez.
+* **Add a custom domain.** Esta fila permanece desactivada hasta la primera publicación, tal como indica el propio panel: «Publish the project first to add a custom domain».
+
+Publicar es un paso aparte de compilar. Tus cambios se quedan en la vista previa hasta que vuelvas a publicar, y el botón **Publish** se resalta cuando el sitio en vivo está por detrás de tu proyecto.
+
+Después de la primera publicación, el panel cambia: el estado pasa a **Live**, te indica cuándo se publicó la versión y **Unpublish** vuelve a retirar el sitio.
+
+<Frame>
+  <img alt="El panel de publicación mostrando la dirección rork.app con el estado Live, la fila Add a custom domain activa y los botones Published y Unpublish" />
+</Frame>
+
+<div id="domains">
+  ## Dominios
+</div>
+
+Una dirección `rork.app` sirve para hacer pruebas, pero un producto de verdad merece un nombre de verdad. Los dominios se gestionan en dos lugares, y conviene saber qué hace cada uno:
+
+* **Configuración de la cuenta → Dominios** es donde el dominio entra en Rork. Compras uno o traes el tuyo, una sola vez por dominio.
+* **El panel de publicación del proyecto** es donde diriges una dirección hacia una app. Esto se hace una vez por proyecto.
+
+<div id="the-domains-list">
+  ### La lista de dominios
+</div>
+
+Abre el menú de la cuenta y ve a **Account settings → Domains**. Aquí aparecen todos los dominios de tu cuenta, con cada una de sus direcciones justo debajo.
+
+<Frame>
+  <img alt="La pestaña Domains de la configuración de la cuenta de Rork, que muestra el panel Add a domain y un dominio conectado con dos direcciones marcadas como Live" />
+</Frame>
+
+Cada dirección tiene su propio estado. **Live** significa que ya sirve tu aplicación. Mientras Rork termina de configurar una, verás **Finishing, routing traffic to the app**. **Add more subdomains** añade otra dirección en el mismo dominio, y el icono de la papelera elimina el dominio entero.
+
+<div id="buy-a-new-domain-or-connect-one-you-own">
+  ### Compra un dominio nuevo o conecta uno que ya tengas
+</div>
+
+Pulsa **Add domain**. Rork delega este paso en **Entri**, su socio de dominios, que se encarga de la configuración técnica por ti. La primera pantalla es la bifurcación:
+
+<Frame>
+  <img alt="El cuadro de diálogo de Entri titulado Add a domain to Rork, con las opciones Buy a new domain y Connect a domain" />
+</Frame>
+
+| Ruta                 | Elígela cuando                                                   | Qué ocurre                                                                        |
+| -------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| **Buy a new domain** | Todavía no tienes dominio o quieres uno nuevo para este product. | Buscas un nombre y lo compras dentro del propio flujo. Llega ya apuntando a Rork. |
+| **Connect a domain** | Ya tienes el nombre registrado, en cualquier registrador.        | Indicas el dominio y Entri configura los registros DNS que lo apuntan a Rork.     |
+
+<Note>
+  La compra se hace a través de Entri, no con tus credits de Rork, y un dominio supone un coste anual, como cualquier otro registro.
+</Note>
+
+En ambos casos, el dominio aparece en la lista de arriba. Espera a que la dirección indique **Live** antes de apuntar un proyecto hacia ella.
+
+<div id="point-a-project-at-an-address">
+  ### Apuntar un proyecto a una dirección
+</div>
+
+El dominio ya está en la cuenta, pero todavía no hay ninguna app que responda en él. Ese vínculo se crea desde el proyecto.
+
+<Steps>
+  <Step title="Publica el proyecto una vez">
+    La fila del dominio personalizado permanece desactivada hasta que lo hagas. Antes de la primera publicación, el panel muestra el mensaje «Publish the project first to add a custom domain».
+  </Step>
+
+  <Step title="Abre Add a custom domain">
+    En el proyecto, abre **Publish** y pulsa **Add a custom domain**.
+
+    <Frame>
+      <img alt="El cuadro de diálogo Connect a domain con un selector de Domain, dos direcciones marcadas como Connected to another project, un botón Add a subdomain y los botones Cancel y Connect" />
+    </Frame>
+  </Step>
+
+  <Step title="Elige el dominio">
+    Selecciónalo en el campo **Domain**. La lista contiene los dominios de tu cuenta.
+  </Step>
+
+  <Step title="Marca las direcciones">
+    En **Put your app on these addresses**, marca dónde debe responder este proyecto: el dominio sin prefijo, la versión con `www` o ambas. Pulsa **Add a subdomain** para una dirección como `app.example.com`.
+  </Step>
+
+  <Step title="Pulsa Connect">
+    **Connect** permanece desactivado hasta que marques al menos una dirección.
+  </Step>
+</Steps>
+
+Cada dirección sirve a un solo proyecto. Una dirección que ya usa otro proyecto aparece marcada como **Connected to another project** y no se puede seleccionar. Cuando todas las direcciones de un dominio están ocupadas, el cuadro de diálogo te lo indica y te remite a un subdominio o a otro dominio en **Account Settings**.
+
+<div id="add-a-web-app-to-a-project-you-already-have">
+  ## Añade una app web a un proyecto que ya tengas
+</div>
+
+Cualquier proyecto móvil puede tener también una versión web. Abre **Project Settings → Add new app → Web**, usa el selector de plataforma que aparece encima de la vista previa o simplemente pídelo:
+
+```
+Añade una versión web de esta app
+```
+
+Cada app conserva su propio código. Comparten el chat y el backend, si tienes uno. Una división habitual es una app móvil para los clientes y una app web como panel de administración.
+
+<div id="what-a-web-app-cannot-do">
+  ## Qué no puede hacer una app web
+</div>
+
+Una app web se ejecuta dentro del navegador, así que las funciones más nativas quedan fuera de su alcance:
+
+* Sin distribución en la App Store ni en Google Play
+* Sin widgets en la pantalla de inicio ni en la pantalla de bloqueo, sin Live Activities y sin Dynamic Island
+* Sin app para Apple Watch ni integración con Apple Health
+* Sin seguimiento en segundo plano ni seguimiento avanzado de movimiento o corporal
+* Las notificaciones push son limitadas. En iPhone y iPad, el usuario debe añadir primero el sitio a la pantalla de inicio, con iOS 16.4 o posterior, y después conceder el permiso
+
+Si tu producto necesita alguna de estas funciones, crea la app nativa y mantén la app web junto a ella. Consulta [iPhone, Android o web: cuál es la diferencia](/es/swift-vs-react-native/whats-the-difference).
+
+<div id="faq">
+  ## Preguntas frecuentes
+</div>
+
+<AccordionGroup>
+  <Accordion title="¿Qué código escribe Rork para la web?">
+    Un proyecto real de Vite y React en TypeScript, con estilos de Tailwind. Puedes exportarlo a GitHub y ejecutarlo donde quieras. Consulta [Cómo conectar GitHub](/es/tutorials/how-to-connect-github).
+  </Accordion>
+
+  <Accordion title="¿Puedo saltarme las preguntas y el paso de diseño?">
+    Sí. Describe el aspecto que quieres en tu primer prompt y el agente tendrá menos que preguntarte. En **Design mode** también puedes pulsar **Build** directamente.
+  </Accordion>
+
+  <Accordion title="¿Una app web puede tener backend?">
+    Sí. Usa [Rork Cloud](/es/backend/rork-cloud) para tener un backend dentro de Rork, o conecta [Supabase](/es/backend/supabase) o [Firebase](/es/backend/firebase). Las apps de un mismo proyecto pueden compartir el mismo backend.
+  </Accordion>
+
+  <Accordion title="¿Puedo usar mi propio dominio?">
+    Sí, y puedes comprar uno dentro de Rork si aún no tienes ninguno. Publica primero en la dirección `rork.app` y luego consulta [Dominios](#domains).
+  </Accordion>
+
+  <Accordion title="¿Pueden dos proyectos compartir una misma dirección?">
+    No. Cada dirección pertenece a un solo proyecto. El cuadro de diálogo marca las direcciones ya ocupadas como **Connected to another project** y, en ese caso, eliges un subdominio.
+  </Accordion>
+
+  <Accordion title="Tengo un proyecto de Lovable. ¿Tengo que rehacerlo?">
+    No. Rork lo importa. Consulta [Lovable a app móvil](/es/import/lovable-to-mobile-app) y mantén la app web en el mismo proyecto.
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## Próximos pasos
+</div>
+
+<CardGroup>
+  <Card icon="compass" href="/es/swift-vs-react-native/whats-the-difference" title="iPhone, Android o web">
+    En qué destaca cada plataforma y cómo elegir.
+  </Card>
+
+  <Card icon="repeat" href="/es/import/convert-between-platforms" title="Añade otra plataforma">
+    Lleva tu proyecto a iOS y Android desde el mismo chat.
+  </Card>
+
+  <Card icon="database" href="/es/backend/rork-cloud" title="Añade un backend">
+    Cuentas, datos y archivos para tu app web.
+  </Card>
+
+  <Card icon="download" href="/es/import/website-to-mobile-app" title="De sitio web a app móvil">
+    Convierte un sitio existente en una app nativa.
+  </Card>
+
+  <Card icon="globe" href="https://rork.com/web" title="Rork Web">
+    La página de producto, con ejemplos de lo que Rork crea para el navegador.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

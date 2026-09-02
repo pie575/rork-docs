@@ -1,0 +1,137 @@
+---
+title: "Lee el código y lee los registros"
+---
+
+Cada proyecto de Rork es una base de código real que puedes abrir, leer y, con un plan de pago, editar a mano. El panel de registro que aparece debajo muestra lo que tu app imprimió mientras se ejecutaba.
+
+Rork no es una caja negra. Abre **Más → Código** y obtienes el proyecto tal cual: un árbol de archivos, el código fuente de cada archivo y un panel de registros de ejecución debajo.
+
+<Frame>
+  <img alt="El editor de código de Rork mostrando el árbol de archivos de un proyecto web y el contenido de src/App.tsx con resaltado de sintaxis" />
+</Frame>
+
+No hace falta que sepas leer código para usar Rork. Pero hay cuatro momentos en los que vale la pena abrirlo:
+
+1. Un error en el que quieres ver qué escribió realmente el agente.
+2. Un valor que quieres comprobar, como un precio o un texto.
+3. Entregar el proyecto a un desarrollador, para saber exactamente qué va a recibir.
+4. La curiosidad, que es como la mayoría de la gente acaba aprendiendo esto.
+
+<div id="read-the-tree">
+  ## Lee el árbol
+</div>
+
+El árbol muestra una carpeta por cada app del proyecto, así que un proyecto con una app para iPhone y una app web tiene dos. Dentro hay una base de código corriente: `src/`, `components/`, `pages/`, `package.json` y los archivos de configuración que cualquier desarrollador espera encontrar.
+
+Hay una carpeta que se oculta a propósito. Rork guarda su propia contabilidad interna en `.rork/`, y el árbol la deja fuera, salvo por `.rork/DESIGN.md`, con las decisiones de diseño del [Design mode](/es/features/agent-modes).
+
+**Copiar**, en la esquina superior, copia el archivo abierto entero: es la forma más rápida de pegar algo en otra herramienta.
+
+<div id="edit-by-hand">
+  ## Editar a mano
+</div>
+
+<Note>
+  Editar código requiere un plan de pago. En el plan gratuito, el editor muestra un aviso: «Solo lectura. Mejora a un plan de pago para editar código». Aun así, puedes leer todos los archivos.
+</Note>
+
+Con un plan de pago, el editor permite escribir. Cambia una línea y en la cabecera aparecerá **Unsaved Changes**, junto con **Save** y **Reset All**. `Cmd + S` en Mac o `Ctrl + S` en Windows también guardan.
+
+Dos reglas que conviene tener en cuenta:
+
+* No puedes guardar mientras el agente está trabajando. La cabecera muestra **Project updating...** hasta que termina el turno.
+* Rork ve tu edición. El siguiente mensaje parte del archivo guardado, no de lo que escribió antes.
+
+<Warning>
+  Las ediciones a mano son la única parte de Rork que no tiene deshacer propio. **Reset All** descarta los cambios sin guardar y, tras pulsar **Save**, tu edición pasa a formar parte del proyecto. Siempre que puedas, pídele el cambio al agente: así queda registrado como una versión que puedes revertir. Consulta [Deshacer un cambio y volver a una versión anterior](/es/features/undo-and-history).
+</Warning>
+
+Para cualquier cosa que vaya más allá de un arreglo de una línea, pídelo en el chat en lugar de escribirlo tú:
+
+```
+En src/pages/Index.tsx el umbral de envío gratuito es de $30. Cámbialo a $45 en todos los lugares donde aparezca.
+```
+
+El agente encuentra todos los sitios donde aparece, no solo el que detectaste.
+
+<div id="read-the-logs">
+  ## Lee los registros
+</div>
+
+El panel de la parte inferior de la sección código se titula **Registro** e incluye un contador. Muestra en tiempo real lo que tu app imprimió mientras se ejecutaba en la vista previa, etiquetado por nivel: `[log]`, `[info]`, `[warn]`, `[error]`, `[debug]`.
+
+Desplázate hacia arriba para ver las líneas más antiguas; el panel las va cargando sobre la marcha. La flecha de la derecha lo contrae cuando quieras dedicar toda la ventana al código.
+
+Los registros son la forma más rápida de resolver un error que el agente no puede ver. Cuando algo falla sin mostrar un diálogo de error, pide primero los registros:
+
+```
+Muestra en los logs los datos que devuelve la llamada a la API para poder ver por qué la lista está vacía
+```
+
+Luego reproduce el problema, revisa el panel y pega en el chat la línea que te interese.
+
+<Tip>
+  Si la vista previa muestra un error visible, no necesitas nada de esto. Pulsa **Fix with Rork** en el propio error. Consulta [Deshacer un cambio y volver a una versión anterior](/es/features/undo-and-history#fix-an-error-instead-of-undoing).
+</Tip>
+
+<div id="take-the-code-with-you">
+  ## Llévate el código contigo
+</div>
+
+El código de esta pestaña es tuyo. Conecta GitHub y lo tendrás como un repositorio normal, con un commit por cada turno del agente, que puedes clonar, ejecutar en local y abrir en Xcode o Android Studio.
+
+Consulta [Cómo sincronizar tu proyecto con GitHub](/es/tutorials/how-to-connect-github) y [Cómo probar y publicar tu app de Rork desde Xcode](/es/how-to-set-up-xcode/how-to-set-up-xcoe).
+
+<div id="faq">
+  ## Preguntas frecuentes
+</div>
+
+<AccordionGroup>
+  <Accordion title="¿Puedo editar código en el plan gratuito?">
+    No. Leer es gratis, pero editar requiere un plan de pago. Consulta [Planes y suscripciones](/es/introduction/subscriptions).
+  </Accordion>
+
+  <Accordion title="¿El agente sobrescribirá mis ediciones manuales?">
+    No sin avisar. Lee el archivo guardado antes de cambiar nada. Los conflictos surgen al editar las mismas líneas mientras hay un turno en curso, y por eso se bloquea el guardado durante un turno.
+  </Accordion>
+
+  <Accordion title="¿Dónde está la carpeta .rork?">
+    Está oculta en el árbol, porque es el registro interno de Rork. `.rork/DESIGN.md` sí permanece visible.
+  </Accordion>
+
+  <Accordion title="¿Hay búsqueda entre archivos?">
+    En esta pestaña, no. Pregúntale al agente: «¿qué archivo define el umbral de envío gratuito?».
+  </Accordion>
+
+  <Accordion title="El panel de registro está vacío.">
+    Dice «No logs yet. Registro from your app will appear here.». Interactúa con la vista previa y aparecerá todo lo que imprima tu app.
+  </Accordion>
+
+  <Accordion title="¿Puedo ejecutar el proyecto en mi propia máquina?">
+    Sí. Expórtalo a GitHub y ejecútalo como cualquier proyecto de Vite, Swift o Kotlin.
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## Próximos pasos
+</div>
+
+<CardGroup>
+  <Card icon="github" href="/es/tutorials/how-to-connect-github" title="Sincronizar con GitHub">
+    Lleva el código a tu propio repositorio.
+  </Card>
+
+  <Card icon="rotate-left" href="/es/features/undo-and-history" title="Deshacer e historial">
+    Revisa el diff de cualquier cambio que haya hecho el agente.
+  </Card>
+
+  <Card icon="triangle-alert" href="/es/introduction/introduction/agent-loops" title="Salir de un bucle de errores">
+    Usa los registros para romper un ciclo de correcciones fallidas.
+  </Card>
+
+  <Card icon="key" href="/es/features/secrets" title="Claves y secretos">
+    Por qué las claves no deben ir en el código que acabas de abrir.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

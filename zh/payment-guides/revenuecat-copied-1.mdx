@@ -1,0 +1,224 @@
+---
+title: "如何用 RevenueCat 为你的 Rork 应用添加付费墙"
+---
+
+准备好为你的应用接入支付了吗？按照本指南，将 Rork 与 RevenueCat 付费墙配置好，并把应用部署到生产环境，打造一套完整的功能解锁式支付系统！
+
+<iframe title="YouTube 视频播放器" />
+
+<div id="step-by-step-tutorial-revenuecat-in-a-rork-app-end-to-end">
+  # 分步教程：在 Rork 应用中集成 RevenueCat (端到端全流程)
+</div>
+
+<div id="1-build-your-app-in-rork">
+  ## 1) 在 Rork 中构建你的应用
+</div>
+
+1. 编写提示词 (视频中的示例：“带 AI 卡路里估算的笔记式卡路里追踪器”) 。
+2. 提交提示词 → Rork 开始构建应用。
+3. 如果在构建过程中又想到了新功能 (例如“扫描你的餐食”) ，可以把它们加入**队列**，这样 Rork 会在处理完第一个提示词后继续完成。
+
+<div id="2-connect-revenuecat-inside-rork">
+  ## 2) 在 Rork 中连接 RevenueCat
+</div>
+
+1. 在 Rork 中进入 **Integrations**。
+2. 点击 **Connect with RevenueCat**。
+3. 登录或注册 RevenueCat 账号。
+4. 授权 Rork 访问你的 RevenueCat 账号。
+5. 在 RevenueCat 中点击 **Create new project**。
+   * 名称可自行决定 (例如&quot;Calorie Tracker&quot;) 。
+6. 返回 Rork **聊天机器人**，输入：
+   **&quot;Set up RevenueCat.&quot;**
+7. Rork 会自动配置：
+   * Offerings
+   * 商品
+   * 权限
+   * 环境变量 / API 密钥
+8. 当 Rork 询问是否设置环境变量时 → 点击 **Yes**。
+
+<div id="3-test-purchases-in-revenuecat-test-store-sandbox-inside-rc">
+  ## 3) 在 RevenueCat Test Store 中测试购买 (RC 内置沙盒)
+</div>
+
+1. 在 Rork 应用中，点按订阅项 (例如：**$40/年**) 。
+2. 你会看到类似这样的选项：
+   * Test a valid purchase
+   * Test failed purchase
+3. 点按 **Test valid purchase**。
+4. 在 RevenueCat 控制台 → **Overview** → 打开 **Sandbox data** 开关。
+5. 如果能看到沙盒 MRR／该订阅 (例如：$40/年) ，说明：
+   ✅ Rork 与 RevenueCat Test Store 已成功连接。
+
+> 注意：这些还不是真实的 App Store 订阅。
+
+<img alt="Image" />
+
+<div id="4-push-the-app-to-testflight-required-for-real-apple-iap">
+  ## 4) 将应用推送到 TestFlight (测试真实 Apple 内购必需)
+</div>
+
+1. 在 Rork 中，前往 **Get users → Submit to TestFlight**。
+2. 点击 **New submission**。
+3. (可选，但建议) 使用 Rork 生成应用图标。
+4. 根据提示填写 **Apple Developer** 信息。
+5. 提交后等待 build 构建/上传完成。
+6. 前往 **App Store Connect**，补全必填的合规信息，使该 build 可用于测试。
+
+<img alt="Image" />
+
+<div id="5-create-subscriptions-in-app-store-connect-real-products">
+  ## 5) 在 App Store Connect 中创建订阅 (真实商品)
+</div>
+
+<div id="create-a-subscription-group">
+  ### 创建订阅群组
+</div>
+
+1. App Store Connect → **订阅**
+2. 创建**订阅群组**
+   * 取一个简单的名称 (例如：&quot;Subscriptions&quot;)
+
+<img alt="Image" />
+
+<div id="create-monthly-subscription-repeat-for-yearly">
+  ### 创建月度订阅 (年度订阅重复相同步骤)
+</div>
+
+1. 创建 **Subscription**
+2. 设置：
+   * 引用名称 (Reference name) ：&quot;Monthly subscription.&quot;
+   * 产品 ID (Product ID) ：&quot;monthly&#95;subscription&quot; (或使用相同名称)
+3. 配置必填元数据：
+   * 时长：**1 个月**
+   * 可用范围：**所有地区**
+   * 价格：例如 **$4.99/月**
+4. 添加本地化信息：
+   * 显示名称 (Display name) ：&quot;Monthly subscription.&quot;
+5. 上传一张付费墙的截图/图片 (提交审核前必需)
+6. 提交 / 保存
+7. 对 **年度订阅** 重复以上步骤。
+
+✅ 完成后，产品在 App Store Connect 中应显示为 &quot;Ready to submit&quot; (可提交) 。
+
+<img alt="Image" />
+
+<div id="6-connect-app-store-connect-to-revenuecat-so-products-sync">
+  ## 6) 将 App Store Connect 连接到 RevenueCat (以便同步 商品)
+</div>
+
+RevenueCat → **Apps → iOS app**
+
+<img alt="Image" />
+
+<div id="add-app-info">
+  ### 添加 App 信息
+</div>
+
+1. 从 App Store Connect 复制你的 **Bundle ID**，粘贴到 RevenueCat 中。
+
+<div id="add-in-app-purchase-key">
+  ### 添加 App 内购买密钥
+</div>
+
+1. App Store Connect → **用户和访问 → 集成**
+2. 在 **App 内购买** 下，点击 **+**
+3. 命名 (例如：&quot;RevenueCat Calorie Tracker&quot;)
+4. 下载密钥文件
+5. 上传或拖拽到 RevenueCat
+6. 复制 **Issuer ID** (在集成密钥列表上方) → 粘贴到 RevenueCat
+
+<img alt="Image" />
+
+<div id="add-app-store-connect-api-key">
+  ### 添加 App Store Connect API 密钥
+</div>
+
+1. 依然在 **Users and Access → Integrations** 页面
+2. 创建 **App Store Connect API** 密钥
+3. 下载密钥 → 上传到 RevenueCat
+4. 再次输入 **Issuer ID**
+
+<img alt="Image" />
+
+<div id="add-vendor-number">
+  ### 添加 Vendor Number (供应商编号)
+</div>
+
+1. App Store Connect → **Reports** (Business 板块)
+2. 左上角即为 **Vendor Number**
+3. 复制并粘贴到 RevenueCat 中
+
+<div id="enable-server-to-server-notifications-recommended">
+  ### 启用服务器到服务器通知 (推荐)
+</div>
+
+* 开启选项：**Track new purchases from server-to-server notifications**
+
+<div id="add-app-specific-shared-secret">
+  ### 添加 App 专用共享密钥
+</div>
+
+1. App Store Connect → **App → 你的 App → App 信息**
+2. 向下滚动至 **App 专用共享密钥**
+3. 点击 **管理 → 生成**
+4. 复制密钥 → 粘贴到 RevenueCat
+5. 在 RevenueCat 中点击 **保存更改**
+
+✅ 至此，Apple ↔ RevenueCat 已连接完成。
+
+<div id="7-import-your-app-store-products-into-revenuecat">
+  ## 7) 将 App Store 商品导入 RevenueCat
+</div>
+
+1. RevenueCat → **Product Catalog**
+2. 选择 **Default** (或你正在使用的目录)
+3. 点击 **Add new product → Import products**
+4. 勾选月度和年度商品 → **Import**
+5. 对导入的每个商品：
+   * 关联一个 **Entitlement** (两个商品通常关联同一个权限)
+
+<img alt="Image" />
+
+<div id="8-attach-products-to-your-revenuecat-offering">
+  ## 8) 将商品关联到 RevenueCat Offering
+</div>
+
+1. RevenueCat → **Offerings → Default**
+2. 点击 **Edit**
+3. 将每个 App Store 商品关联到对应的 package (套餐)
+4. 点击 **Save**
+
+<div id="9-final-test-testflight-purchase">
+  ## 9) 最终测试：TestFlight 购买
+</div>
+
+1. 通过 **TestFlight** 安装你的应用
+2. 在应用内打开付费墙
+3. 此时你的订阅应该可以在 TestFlight 中正常购买，应用发布后也能在生产环境中购买。
+
+<div id="common-issues">
+  # 常见问题：
+</div>
+
+* 确保你的所有协议/银行信息均处于生效状态。 (如果没有设置好，订阅功能将无法正常使用)
+
+<img alt="Image" />
+
+* App Store 公共 API 密钥未正确配置。
+
+<img alt="Image" />
+
+* 只需把这个密钥交给 Rork，并告诉它：“Make sure Apple and RevenueCat are connected”。
+
+<div id="what-to-do-next">
+  ## 接下来该做什么：
+</div>
+
+添加付费墙之后，如果缺少隐私政策、条款与条件以及可见的 EULA，App Store 仍会拒绝你的应用。
+
+如果你的应用采用硬性付费墙，请务必在 App Store 应用描述中说明所有功能均需付费订阅，否则 Apple 会驳回你的提交。
+
+[如何创建政策文件？](/zh/make-your-app-profitable/paywalls/how-to-set-up-your-policies)
+
+<CtaBanner />

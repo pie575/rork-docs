@@ -1,0 +1,67 @@
+---
+title: "如何构建你的第一个应用"
+---
+
+从构建你的第一个应用开始上手。
+
+在 Rork 上构建应用非常简单。过去需要一整个开发团队耗费数月才能完成的工作，现在几分钟就能搞定。Rork 采用简单的提示词生成机制，让你能够准确表达自己想要什么。
+
+***本指南将带你在 Rork 编辑器中构建第一个应用。***
+
+<div id="step-1-create-an-account">
+  ### 第 1 步：创建账户
+</div>
+
+使用 Rork 前，你需要先创建一个账户，注册完全免费。你可以通过 Google 或 Apple 账号登录。登录后，系统会请你填写一份简短的问卷，完成后即可返回首页。
+
+<div id="step-2-think-of-an-idea">
+  ### 第 2 步：想一个点子
+</div>
+
+每一个出色的提示词都始于一个点子。上手时，不妨从现有的应用创意上做延伸，比如&quot;*猫粮界的 Uber*&quot;或&quot;*第一人称射击僵尸手游*&quot;。我们提供了探索页面，你可以从成千上万其他应用开发者那里汲取灵感。在新手引导中，我们也建议你以改造他人的应用为起点。
+
+<div id="step-3-choose-your-app-type">
+  ### 第 3 步：选择应用类型
+</div>
+
+Rork 可以构建三类应用：两种原生移动应用和一个 Web 应用。发送第一条消息前，请在提示框旁的选择器中选好平台。
+
+| 应用类型            | Rork 构建的内容                         | 运行环境                    | 发布渠道                        |
+| --------------- | ---------------------------------- | ----------------------- | --------------------------- |
+| **For iPhone**  | 基于 SwiftUI 的原生 iPhone 应用           | iPhone、iPad、Apple Watch | App Store 和 TestFlight      |
+| **For Android** | 基于 Kotlin + Compose 的原生 Android 应用 | Android 手机和平板           | Google Play                 |
+| **For web**     | Vite + React                       | 任意浏览器，桌面端和移动端           | 你专属的 `your-app.rork.app` 地址 |
+
+如果希望应用在 Apple 设备上带来纯正的原生体验，或者需要 Apple 独有的功能——主屏幕小组件、实时活动、Apple Watch、HealthKit、ARKit 或高性能游戏——请选择 **For iPhone**。完整对比请阅读 [iPhone、Android 还是 Web：有什么区别](/zh/swift-vs-react-native/whats-the-difference)。
+
+如果你想要的是真正的原生 Android 应用，而不是跨平台套壳，请选择 **For Android**。
+
+如果要做浏览器优先的产品，比如落地页、仪表盘、内部工具或 SaaS 类应用，请选择 **For web**。
+
+<Info>
+  选定某一平台并不意味着从此锁死。同一个 Rork project 中可以并存一个 iPhone 应用、一个 Android 应用和一个 Web 应用。每个应用都有各自的代码，但共享同一份聊天记录；如果你配置了 backend，backend 也会共享。你可以随时通过预览上方的平台切换器，或在 **Project Settings → Add new app** 中新增下一个平台。参见 [在 iOS、Android 和 Web 之间转换你的应用](/zh/import/convert-between-platforms)。
+</Info>
+
+<div id="step-4-prompt-it">
+  ### 第 4 步：写提示词
+</div>
+
+在首页，只需在提示框中输入内容，就能创建一个新 project。刚开始时，尽量让提示词聚焦于一个主要功能。初始提示词越复杂，后续迭代就越吃力，所以最好一次只做一件事。你可以详细描述想要的页面和功能，也可以只写个大概，剩下的交给我们的智能体来完成。
+
+<div id="step-5-test-it-live-iterate">
+  ### 第 5 步：实时测试并迭代
+</div>
+
+提交提示词后，你会进入 Rork 编辑器，智能体随即开始构建你的应用。几分钟后，你就能拿到一个功能完整、可以直接测试的应用。测试方式取决于应用类型：
+
+* **For iPhone**：直接在网站上的 iOS 模拟器中运行应用。你也可以把它装到自己的 iPhone 上：将手机连接到 Mac，一键下载应用；或者在 [Rork Max iPhone 应用](/zh/rork-max/rork-max-app)中构建并运行。参见[使用配套应用进行测试](/zh/rork-max-swift)。
+* **For Android**：直接在网站上的 Android 模拟器中运行应用。
+* **For web**：实时预览会直接在编辑器中打开，你也可以随时在浏览器标签页中打开它。
+
+iOS 模拟器和 Android 模拟器运行在租用的云端机器上，因此会按分钟消耗 credits。参见 [build credits 与 cloud credits 的区别](/zh/billing/build-credits-vs-cloud-credits)。
+
+体验完应用后，你可以在 Rork 上继续发送消息，进一步迭代应用。你随时可以克隆 project，从新的对话开始；也可以在首页输入提示词，直接创建一个全新的 project。
+
+**祝你的第一个 Rork 应用一切顺利！**
+
+<CtaBanner />

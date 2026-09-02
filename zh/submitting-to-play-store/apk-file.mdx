@@ -1,0 +1,37 @@
+---
+title: "如何在你的 Android 设备上测试 Android 应用"
+---
+
+如何在真机 Android 手机上测试你的 Rork 应用，以及在需要时如何获取可安装的 APK 构建。
+
+Rork 中的 Android 应用是**原生 Android (Kotlin) **应用，并自带 Android 模拟器：Rork 会构建应用，并直接在浏览器中用模拟器运行，因此大多数测试无需任何额外设置。关于模拟器能做什么，请参阅[使用 Rork 构建原生 Android 应用](/zh/android/rork-android)。
+
+如果你想把应用装到自己的手机上，有两种方式：手动安装 APK，或通过 Google Play 测试。
+
+<Note>
+  iPhone (Swift) 应用仅支持 iOS，无法在 Android 上运行。要触达 Android 用户，请在同一个 项目 中添加一个 Android 应用，参阅[在 iOS、Android 和 web 之间转换你的应用](/zh/import/convert-between-platforms)。
+</Note>
+
+<div id="install-the-apk-on-your-own-phone">
+  ## 在自己的手机上安装 APK
+</div>
+
+Rork 会帮你构建好 APK，无需终端，也不需要任何构建服务：
+
+1. 打开你的项目，点击页面顶部的 **Publish**，然后进入 Google Play 部分。
+2. 点击 **Download APK**。如果还没有这个按钮，请先构建应用，并等待构建完成。
+3. 在 Android 手机上打开下载好的 `.apk` 文件并安装。首次安装时，Android 会要求你允许从浏览器或文件管理器安装应用。
+
+<div id="test-through-google-play-instead">
+  ## 改用 Google Play 测试
+</div>
+
+如果你希望测试人员从 Play 商店安装应用，或想在上线前检查 Play Console 的配置，可以使用 Google Play 内部测试：
+
+1. 按照 [Google Play 发布指南](/zh/submitting-to-play-store/creating-the-aab-file) 构建 AAB 文件，并发布到内部测试轨道。
+2. 把你自己的邮箱添加为测试人员，然后点击邀请链接接受邀请。
+3. 直接在手机上从 Play 商店安装应用。
+
+内部测试版本仅对你的测试人员可见。这与正式上线走的是同一套流程，因此这样测试还能顺带验证 Play Console 的配置是否正确。
+
+<CtaBanner />

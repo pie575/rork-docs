@@ -1,0 +1,37 @@
+---
+title: "Cómo probar apps de Android en tu dispositivo Android"
+---
+
+Cómo probar tu app de Rork en un teléfono Android real y cómo obtener un build APK instalable cuando lo necesites.
+
+Las apps de Android en Rork son apps **nativas de Android (Kotlin)**. Incluyen un emulador de Android integrado: Rork compila la app y la ejecuta en el emulador directamente en tu navegador, así que la mayoría de las pruebas no requieren ninguna configuración adicional. Consulta [Crea una app nativa de Android con Rork](/es/android/rork-android) para ver qué puede hacer el emulador.
+
+Cuando quieras tener la app en tu propio teléfono, tienes dos opciones: instalar el APK manualmente o probarla a través de Google Play.
+
+<Note>
+  Una app de iPhone (Swift) es solo para iOS y no funciona en Android. Para llegar a los usuarios de Android, añade una app de Android al mismo proyecto; consulta [Convierte tu app entre iOS, Android y web](/es/import/convert-between-platforms).
+</Note>
+
+<div id="install-the-apk-on-your-own-phone">
+  ## Instala el APK en tu propio teléfono
+</div>
+
+Rork compila el APK por ti, así que no necesitas una terminal ni ningún servicio de compilación:
+
+1. Abre tu proyecto y haz clic en **Publish** en la parte superior de la página; luego abre la sección de Google Play.
+2. Haz clic en **Download APK**. Si el botón aún no aparece, genera primero el build de la app y espera a que termine.
+3. Abre el archivo `.apk` descargado en tu teléfono Android e instálalo. La primera vez, Android te pedirá que permitas instalaciones desde tu navegador o gestor de archivos.
+
+<div id="test-through-google-play-instead">
+  ## Prueba a través de Google Play
+</div>
+
+Usa las pruebas internas de Google Play cuando quieras que los testers instalen la app desde la Play Store, o cuando quieras comprobar la configuración de tu Play Console antes del lanzamiento:
+
+1. Sigue la [guía de publicación en Google Play](/es/submitting-to-play-store/creating-the-aab-file) para generar el archivo AAB y enviarlo a un canal de pruebas internas.
+2. Agrega tu propio correo como tester y acepta el enlace de invitación.
+3. Instala la app en tu teléfono directamente desde la Play Store.
+
+Las versiones de pruebas internas solo son visibles para tus testers. Es el mismo proceso que seguirás para el lanzamiento real, así que probar de esta forma también te permite validar la configuración de tu Play Console.
+
+<CtaBanner />

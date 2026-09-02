@@ -1,0 +1,80 @@
+---
+title: "App Store 审核被拒的主要原因"
+---
+
+以下是 App Store 审核被拒最常见的几种原因
+
+(补充可行做法与禁忌)
+最常见的被拒原因：
+
+* `Info.plist` 中的权限问题
+* 订阅相关问题
+* iPad 截图
+
+<div id="infoplist-permission-issues">
+  ## Info.plist 权限问题
+</div>
+
+<img alt="Image" />
+
+当你的应用向用户手机请求权限，却没有说明具体用途时，就会出现这个问题。
+
+<img alt="Image" />
+
+<Warning>
+  上面的代码会被 Apple 拒绝。它没有充分说明每项权限的用途。
+</Warning>
+
+<img alt="Image" />
+
+<Check>
+  上面的代码详细说明了每项权限的必要性。
+</Check>
+
+<div id="how-do-i-fix-this-issue">
+  ## 我该如何解决这个问题？
+</div>
+
+通常情况下，Rork 已经说明了每项权限的用途。但如果出现此问题，请打开 iOS 应用文件夹中的 `Info.plist`，修正权限描述，或在聊天中让智能体重写这些描述。
+
+如需更多指导，可以咨询 Rork 智能体。
+
+<div id="subscription-issues">
+  ## 订阅相关问题
+</div>
+
+<img alt="Image" />
+
+在为应用添加付费墙或应用内购买时，你需要在 App Store 应用描述中和付费墙页面上同时提供隐私政策、条款与条件以及 EULA (最终用户许可协议)
+
+**如何创建这些政策？**
+
+如果你使用的是硬性付费墙，必须在 App Store 应用描述中说明所有功能均需付费才能解锁，否则 Apple 同样会拒绝你的应用。
+
+<img alt="Image" />
+
+<div id="ipad-screenshots">
+  ## iPad 截图
+</div>
+
+不能把 iPhone 截图直接拉伸到 iPad 尺寸后提交，Apple 会拒绝你的应用。
+
+<img alt="Image" />
+
+<Danger>
+  这样会被拒绝，因为它们不是真正的 iPad 截图，只是拉伸后的 iPhone 截图。
+</Danger>
+
+<img alt="Image" />
+
+<Check>
+  这样可以通过，因为这是真正的 iPad 截图
+</Check>
+
+<div id="what-if-i-dont-have-access-to-an-ipad">
+  ## 如果我没有 iPad 怎么办？
+</div>
+
+你可以打开 [Xcode](/zh/how-to-set-up-xcode/how-to-set-up-xcoe)，启动 iPad 模拟器，然后截图。
+
+<CtaBanner />

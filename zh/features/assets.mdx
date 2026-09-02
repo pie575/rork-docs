@@ -1,0 +1,192 @@
+---
+title: "图片、视频、音频和 3D 模型"
+---
+
+Rork 会生成你的应用所需的图片、视频、音频和 3D 模型，统一存放在 Assets 标签页中，并帮你写入代码。只需在聊天中提出需求即可。
+
+满是灰色占位方块的应用看起来就像半成品。Rork 会替你把这些方块填满：生成照片、视频、音频和 3D 模型，再接入代码。
+
+你只需在聊天中用大白话说出想要的素材，无需另外学习一个独立的生成器界面。
+
+```
+把占位图片替换成深度烘焙咖啡豆包装的真实产品图
+```
+
+<div id="where-your-media-lives">
+  ## 你的媒体文件存放在哪里
+</div>
+
+在 project 中打开 **More → Assets**。Rork 生成的所有内容，以及你在聊天中附加的所有文件，都会汇集在这里。
+
+<Frame>
+  <img alt="Rork 的 Assets 标签页，显示 Images、3D Models、Videos 和 Audio 筛选项以及五张生成的咖啡照片" />
+</Frame>
+
+筛选项包括 **Images**、**3D Models**、**Videos**、**Audio**，以及用于 PDF 等文件的 **Other**。每张卡片都提供：
+
+* **Use in Chat**：把该资源附加到你的下一条消息中
+* **Remove**：把它从 project 中删除
+* 卡片本身：点击可全尺寸查看该资源
+
+<Tip>
+  想说&quot;就是这个&quot;，用 **Use in Chat** 最快。先附加资源，再写上&quot;主视觉改用这张照片&quot;。
+</Tip>
+
+<div id="images">
+  ## 图片
+</div>
+
+在聊天中提出需求，Rork 就会生成图片、保存到 Assets，并放到你想要的那个页面上。
+
+<Frame>
+  <img alt="Rork 聊天界面，展示一排生成的咖啡照片，下方是一个生成的应用图标" />
+</Frame>
+
+Rork 可以生成三种比例：正方形、竖版和横版。只要说明图片的用途，它就会自动选择合适的比例：
+
+```
+生成一张横版主视觉照片：火光映照下的咖啡烘焙滚筒，暗调、烟雾弥漫
+```
+
+图片反过来用也一样。上传一张照片，让 Rork 围绕&quot;以这张图为基础进行生成&quot;做一个功能——照片滤镜应用、头像应用，以及各种&quot;把我的自拍变成 X&quot;的应用，都是这么做出来的。完整演示见 [NanoBanana 图像应用教程](/zh/quick-start-examples/nano-banana-image-app)。
+
+<div id="your-app-icon">
+  ## 你的应用图标
+</div>
+
+应用图标的生成方式也一样：
+
+```
+生成一个应用图标：深色背景上的一簇余烬，不要文字
+```
+
+Rork 会把它写入各平台对应的正确位置，因此 iPhone build、Android build 和 web app 都会自动使用该图标。你确认的图标，就是最终提交到 App Store 的图标。
+
+<div id="video">
+  ## 视频
+</div>
+
+只需提出需求，Rork 就会生成视频，并将其放入界面中：
+
+```
+添加一段循环播放的背景视频：咖啡豆落入烘焙机
+```
+
+视频生成的能力不止于一段提示词。Rork 可以从你的文字、一张静态图片或一段参考片段开始生成，也可以编辑它此前生成的视频。视频是生成成本最高的一类媒体，所以在提出需求前，先把你想要的镜头描述清楚。
+
+<div id="audio-and-voice">
+  ## 音频与语音
+</div>
+
+Rork 可生成四类声音：
+
+| 类型     | 适用场景            |
+| ------ | --------------- |
+| **音乐** | 游戏中的背景循环音乐、菜单音乐 |
+| **音效** | 点击、胜利、通知、滑动音    |
+| **语音** | 旁白、引导流程配音、音频导览  |
+| **对白** | 场景中两人或多人对话      |
+
+```
+在用户完成一次锻炼时添加一段简短的成功提示音
+```
+
+<div id="3d-models">
+  ## 3D 模型
+</div>
+
+Rork 可以为游戏、产品展示和趣味引导流程生成 3D 模型。在消耗 credits 之前，它会先征求你的确认，并用一张卡片列出它打算制作的内容以及所需费用：
+
+* **是的，制作这个 3D 模型**：立即开始
+* **不，告诉 Rork 换个做法**：先修改想法再动手
+
+如果你不理会这张卡片，约一分半钟后它会自动开始。生成的模型采用 iPhone、Android 和 web app 都能使用的格式，Rork 会帮你打包进应用里。
+
+```
+在产品页面上添加一个可旋转的 3D 咖啡袋，用户可以拖动来转动它
+```
+
+<div id="bring-your-own-files">
+  ## 使用你自己的文件
+</div>
+
+不必所有内容都靠生成。在输入框中点击 **+ → Upload image**，或直接把文件拖到聊天窗口。Rork 能读取照片、截图、PDF、视频、音频和 3D 模型，你上传的一切都会保存到 Assets 中。
+
+<Frame>
+  <img alt="Rork 附件菜单，显示 Upload image、Upload attachment、MCP Servers，以及 Payments、Device 和 AI 的集成入口" />
+</Frame>
+
+免费账户单个文件最大可上传 **10MB**，付费 plan 最高可达 **5GB**，足以满足视频的需求。
+
+一张截图往往胜过一整段描述。与其费力描述，不如直接把你想要的设计展示给 Rork。
+
+<div id="what-it-costs">
+  ## 费用说明
+</div>
+
+生成媒体会消耗 **build credits**，和普通消息共用同一份额度。媒体体量越大，花费越高：图片很便宜，3D 模型要几个 credits，视频则是其中最贵的。
+
+养成两个习惯，就能把开销控制在合理范围：
+
+1. 等布局定下来之后再生成。占位框怎么挪都不花钱。
+2. 用 **Use in Chat** 从 Assets 里复用已有素材，而不是重新生成一个几乎一样的。
+
+额度的具体机制见 [Build credits 与 Cloud credits 的区别](/zh/billing/build-credits-vs-cloud-credits)；在任意回答下方打开 **⋯** 菜单，就能看到这条消息实际花了多少。
+
+<Note>
+  本页讲的是你在构建过程中由 Rork 为你生成的媒体。如果你想让*你的用户*在做好的应用里生成图片或音频，那是 Rork Cloud 的功能，详见 [什么是 Rork Cloud](/zh/backend/rork-cloud)。
+</Note>
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<AccordionGroup>
+  <Accordion title="生成的图片可以商用吗？">
+    可以，它们属于你 app 的资源。但不要让它生成真实品牌的标志、真人面孔或受版权保护的作品，因为 App Store 正是会因为这类问题拒绝应用。参见 [App 审核指南](/zh/appstore-submission-checklist/app-review-guide)。
+  </Accordion>
+
+  <Accordion title="图片已经很接近了，能直接修改而不是重新生成吗？">
+    可以。用 **Use in Chat** 附上这张图，并描述要改的地方：&quot;同一张照片，但更亮一些，去掉左边的马克杯&quot;。
+  </Accordion>
+
+  <Accordion title="可以上传自己的品牌摄影素材吗？">
+    可以。把文件拖到聊天中，然后告诉 Rork 每个文件用在哪里。上传的文件会和生成的文件一起放在 Assets 中。
+  </Accordion>
+
+  <Accordion title="为什么我的 Assets 标签页是空的？">
+    因为还没有生成或添加任何文件。空状态提示已经写明：&quot;你在聊天中分享的文件会显示在这里。&quot;
+  </Accordion>
+
+  <Accordion title="克隆的 project 会保留资源吗？">
+    会。参见 [分享 project 并协作](/zh/collaborate/share-a-project)。
+  </Accordion>
+
+  <Accordion title="可以下载资源吗？">
+    可以，在 Assets 标签页中打开对应的卡片即可。如果你连接了 GitHub，所有内容也都会在你的仓库里。参见 [如何将 project 与 GitHub 同步](/zh/tutorials/how-to-connect-github)。
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## 后续步骤
+</div>
+
+<CardGroup>
+  <Card icon="image" href="/zh/quick-start-examples/nano-banana-image-app" title="构建 AI 图像应用">
+    完整演示如何在应用内实现图像生成。
+  </Card>
+
+  <Card icon="camera" href="/zh/appstore-screenshots/app-store-screenshots" title="App Store 截图">
+    把做好的应用变成商店展示素材。
+  </Card>
+
+  <Card icon="database" href="/zh/backend/rork-cloud" title="Rork Cloud">
+    让用户在你的应用内生成媒体内容。
+  </Card>
+
+  <Card icon="sparkles" href="/zh/features/agent-modes" title="智能体的工作方式">
+    Design mode、Plan mode 与构建流程。
+  </Card>
+</CardGroup>
+
+<CtaBanner />

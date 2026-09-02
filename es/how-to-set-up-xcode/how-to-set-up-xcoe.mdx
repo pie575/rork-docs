@@ -1,0 +1,99 @@
+---
+title: "Cómo probar y publicar tu app de Rork con Xcode"
+---
+
+Cómo abrir tu app de iPhone creada con Rork en Xcode en tu Mac, ejecutarla en el simulador o en tu dispositivo, leer los registros y archivar una compilación para TestFlight y la App Store.
+
+<Info>
+  No necesitas Xcode para publicar. Rork compila y envía tu app desde sus propias máquinas; consulta [Publica tu app en la Apple App Store](/es/store-guides/publish-app-store). Usa Xcode cuando quieras analizar los registros a fondo, depurar en tu propio dispositivo o archivar una compilación por tu cuenta.
+</Info>
+
+<div id="why-do-you-need-xcode">
+  ### ¿Por qué necesitas Xcode?
+</div>
+
+Xcode es una gran herramienta porque te permite hacer seguimiento de los registros y analizar en profundidad por qué tu app funciona o no. Además, permite enviarla a la App Store con un solo clic y resulta muy eficiente al tratarse de un producto de Apple.
+
+**Requisitos**
+
+* Una Mac
+* Xcode instalado
+* Tu proyecto conectado a GitHub
+* GitHub Desktop instalado (o `git` en la terminal)
+* Una cuenta de Apple Developer
+
+<div id="installing-xcode">
+  ### Instalación de Xcode
+</div>
+
+Descarga Xcode desde la App Store
+
+<img alt="Image" />
+
+Luego instala las herramientas de línea de comandos y acepta la licencia:
+
+```shellscript theme={null}
+xcode-select --install
+sudo xcodebuild -license accept
+```
+
+<div id="opening-your-rork-project-in-xcode">
+  ### Cómo abrir tu proyecto de Rork en Xcode
+</div>
+
+Las apps para iPhone de Rork son proyectos nativos de Swift, así que Xcode los abre directamente. No hay nada que generar antes.
+
+Conéctate a GitHub
+
+<img alt="Image" />
+
+Ve a GitHub
+
+<img alt="Image" />
+
+Abre con GitHub Desktop
+
+<img alt="Image" />
+
+Ahora abre una terminal en la carpeta del proyecto y ejecuta:
+
+```shellscript theme={null}
+xed .
+```
+
+Tu proyecto se abre en Xcode. Si tu proyecto contiene más de una app, ejecuta el comando dentro de la carpeta de la app de iOS.
+
+Xcode resuelve los paquetes de Swift que usa tu app la primera vez que lo abres. Espera a que ese proceso termine antes de compilar.
+
+<div id="run-the-app">
+  ### Ejecuta la app
+</div>
+
+* **Simulador:** elige un simulador en la barra de herramientas y pulsa el botón de reproducir.
+* **Tu propio iPhone:** conéctalo, selecciónalo en la barra de herramientas y pulsa reproducir. El dispositivo debe tener activado el Modo de desarrollador, en **Ajustes → Privacidad y seguridad → Modo de desarrollador**.
+
+Abre la consola de depuración en la parte inferior de la ventana para leer los registros mientras se ejecuta la app.
+
+<div id="publish-to-the-app-store-via-testflight">
+  ### Publica en la App Store (mediante TestFlight)
+</div>
+
+Ve a «Product» y haz clic en «Archive».
+
+<img alt="Image" />
+
+Cuando termine el archivado, se abrirá el Organizer. Elige **Distribute App** y luego **App Store Connect**: tu compilación aparecerá en TestFlight.
+
+<div id="troubleshooting">
+  ## Solución de problemas
+</div>
+
+**La compilación falla justo después de abrir el proyecto.** Puede que Xcode todavía esté resolviendo los paquetes de Swift. Espera a que termine y vuelve a compilar.
+
+**Un paquete de Swift no se resuelve.** En Xcode, ve a **File → Packages → Reset Package Caches** y vuelve a compilar.
+
+**Errores de compilación obsoletos que no tienen sentido.** Limpia la carpeta de compilación con **Product → Clean Build Folder** (Shift + Command + K) y vuelve a compilar.
+
+**Errores de firma.** Abre la configuración del proyecto, selecciona el target, ve a **Signing &amp; Capabilities** y elige tu equipo de Apple Developer.
+
+<CtaBanner />

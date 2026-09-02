@@ -1,0 +1,99 @@
+---
+title: "如何通过 Xcode 测试并发布你的 Rork 应用"
+---
+
+了解如何在 Mac 上用 Xcode 打开 Rork iPhone 应用、在模拟器或真机上运行、查看日志，以及为 TestFlight 和 App Store 归档构建。
+
+<Info>
+  发布应用并不需要 Xcode。Rork 会在自己的机器上完成构建并提交你的应用，详见[将应用发布到 Apple App Store](/zh/store-guides/publish-app-store)。只有当你想深入查看日志、在自己的设备上调试，或自行归档构建时，才需要用到 Xcode。
+</Info>
+
+<div id="why-do-you-need-xcode">
+  ### 为什么需要 Xcode？
+</div>
+
+Xcode 非常好用，它能帮你查看日志，更深入地排查应用为什么能或不能正常运行。它还支持一键提交到 App Store，而且作为 Apple 自家的产品，用起来非常高效。
+
+**前置条件**
+
+* 一台 Mac
+* 已安装 Xcode
+* 项目已连接到 GitHub
+* 已安装 GitHub Desktop (或在终端中使用 `git`)
+* 一个 Apple Developer 账号
+
+<div id="installing-xcode">
+  ### 安装 Xcode
+</div>
+
+从 App Store 下载 Xcode
+
+<img alt="Image" />
+
+然后安装命令行工具并接受许可协议：
+
+```shellscript theme={null}
+xcode-select --install
+sudo xcodebuild -license accept
+```
+
+<div id="opening-your-rork-project-in-xcode">
+  ### 在 Xcode 中打开你的 Rork 项目
+</div>
+
+Rork 的 iPhone 应用是原生 Swift 项目，Xcode 可以直接打开，无需事先生成任何内容。
+
+连接到 GitHub
+
+<img alt="Image" />
+
+前往 GitHub
+
+<img alt="Image" />
+
+使用 GitHub Desktop 打开
+
+<img alt="Image" />
+
+然后在项目文件夹中打开终端并运行：
+
+```shellscript theme={null}
+xed .
+```
+
+你的项目会在 Xcode 中打开。如果项目中包含多个应用，请在 iOS 应用文件夹内运行该命令。
+
+首次打开时，Xcode 会解析应用所依赖的 Swift 包。请等待解析完成后再进行构建。
+
+<div id="run-the-app">
+  ### 运行应用
+</div>
+
+* **模拟器：** 在工具栏中选择一个模拟器，然后点击运行按钮。
+* **你的 iPhone：** 用数据线连接设备，在工具栏中选中它，然后点击运行。设备需要开启开发者模式，路径为 **设置 → 隐私与安全性 → 开发者模式**。
+
+打开窗口底部的调试控制台，即可在应用运行时查看日志。
+
+<div id="publish-to-the-app-store-via-testflight">
+  ### 发布到 App Store (通过 TestFlight)
+</div>
+
+打开 “Product” 菜单，点击 “Archive”。
+
+<img alt="Image" />
+
+归档完成后，Organizer 会自动打开。依次选择 **Distribute App** 和 **App Store Connect**，随后你的构建就会出现在 TestFlight 中。
+
+<div id="troubleshooting">
+  ## 故障排查
+</div>
+
+**打开项目后构建立即失败。** Xcode 可能仍在解析 Swift 包。等它完成后再重新构建。
+
+**Swift 包解析失败。** 在 Xcode 中选择 **File → Packages → Reset Package Caches**，然后重新构建。
+
+**出现莫名其妙的陈旧构建报错。** 通过 **Product → Clean Build Folder** (Shift + Command + K) 清理构建文件夹，然后重新构建。
+
+**签名错误。** 打开项目设置，选中对应 target，进入 **Signing &amp; Capabilities**，选择你的 Apple Developer 团队。
+
+<CtaBanner />

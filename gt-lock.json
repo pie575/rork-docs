@@ -1,3 +1,1676 @@
 {
-  "locadexModifiedAt": 1788314379389
+  "version": 2,
+  "branchId": "brc_iyrpdiiw95krmea04fn2kch3",
+  "entries": [
+    {
+      "fileId": "6a7eca33fc848adf071eee33a7822bb2d4cd8237a0cf9bc4eb82a51b84d8eb82",
+      "versionId": "3f39b68b626772f0117333fa72a7fef80f43698f341c6ea0a5d72de4cbc5d35b",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.176Z",
+          "fileName": "ru/faq/collaboration.mdx",
+          "postProcessHash": "d758c62527ba93a3498311d671a226815ef0c987b97c884623c789f4edf128ac"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.177Z",
+          "fileName": "es/faq/collaboration.mdx",
+          "postProcessHash": "0c1d5e9245aff7ae875649616ac36b28ce8e74ce8b84c00bc2dfde422bbb5d02"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.177Z",
+          "fileName": "zh/faq/collaboration.mdx",
+          "postProcessHash": "2dcbb7473e26299873851b9d8ae4edfd40e461157aa70315276505c6d35c0db3"
+        }
+      },
+      "fileName": "faq/collaboration.mdx"
+    },
+    {
+      "fileId": "0c2dfa13126ad399b115ac5c821bcebe0f0fcfcf855a2445113b416bcc2f1e04",
+      "versionId": "f63714a09c30e4f60f1c2f81336a44f50c1d7e8dced0513ee441de269ac7fefd",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.177Z",
+          "fileName": "ru/faq/publishing.mdx",
+          "postProcessHash": "6a06dacf6d0f67928ea08512d3e6d1e7b49d6478d993013f235b3f47716faf67"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.178Z",
+          "fileName": "zh/faq/publishing.mdx",
+          "postProcessHash": "6d4a38fc7829c8c72d1d1da1abd37ec07b5cbb0ffc8ebd95efc40a29ec539ffb"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.233Z",
+          "fileName": "es/faq/publishing.mdx",
+          "postProcessHash": "b1b77102b1caf9c0c39396ecfbbf25c44845339c10f6f3a92f8d36328589207e"
+        }
+      },
+      "fileName": "faq/publishing.mdx"
+    },
+    {
+      "fileId": "3596ed9dd7cc7d8abe11803a126333e0e1f80212ec7e3f8bbeda1c59336621eb",
+      "versionId": "2de1d5440d3ebe5983528f47bde16fb27b065991d3315862bacd3f555579d82e",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.178Z",
+          "fileName": "zh/features/analytics.mdx",
+          "postProcessHash": "1bf1c462f87d9b59defe369b9387ea030ce04511409181920f163a164567811d"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.233Z",
+          "fileName": "es/features/analytics.mdx",
+          "postProcessHash": "6d0aca0c946d0dbb4396dcfeaf0e4f5bf8806dd2784c7a732e0519ae9e7381d0"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.255Z",
+          "fileName": "ru/features/analytics.mdx",
+          "postProcessHash": "62119e3a9d78978fc18259980f65bacc557dd87d3ec10bce5ad7a6089298c1e0"
+        }
+      },
+      "fileName": "features/analytics.mdx"
+    },
+    {
+      "fileId": "ae7d60650ecd0bb62febb1c267014c9cc0ba255492c8f3cccbb80651ebb378c1",
+      "versionId": "a36367e93946a8f364b44a0484ee7cb1f8b530cfe93afb0bfc4406f1fb0efc15",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.179Z",
+          "fileName": "ru/submitting-to-play-store/creating-the-aab-file.mdx",
+          "postProcessHash": "dde785219848065e32378c7fb8afd036bdfc2afeea12d70aee698862f022561d"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.179Z",
+          "fileName": "es/submitting-to-play-store/creating-the-aab-file.mdx",
+          "postProcessHash": "6d1d1adf66b05b18b748a723ddf051cfd453b7c5d1a6510f0e88fc9d558e9973"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.255Z",
+          "fileName": "zh/submitting-to-play-store/creating-the-aab-file.mdx",
+          "postProcessHash": "a919babf1ce2c73311f617cab77902438ad0f903657a16b805cf197130ce2021"
+        }
+      },
+      "fileName": "submitting-to-play-store/creating-the-aab-file.mdx"
+    },
+    {
+      "fileId": "37a551b46b29ec4afb63bfe3b7a25b096868592db2688dcc758373378e197917",
+      "versionId": "e34344895c4cb84e59b67e5dba5d1b451b44d0b2c18aa544f680b1b18c24612d",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.179Z",
+          "fileName": "es/store-guides/testflight-beta-testers.mdx",
+          "postProcessHash": "47be0d511ed2b35ae134728201f02965cf986e6bf371758980b0b38e1e9a587c"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.233Z",
+          "fileName": "zh/store-guides/testflight-beta-testers.mdx",
+          "postProcessHash": "7b6981cd365825916972c87555a789c581ecadd201ff46ef23720121fd90d798"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.233Z",
+          "fileName": "ru/store-guides/testflight-beta-testers.mdx",
+          "postProcessHash": "dccc0f8f73cf99d8811c5de5890331f7fd3545815f16a2f82bc3bd62c0fba55a"
+        }
+      },
+      "fileName": "store-guides/testflight-beta-testers.mdx"
+    },
+    {
+      "fileId": "06fc06bb2b05862c524a8635f211a6b39f2d6f502705f13044a73d60cc8743f8",
+      "versionId": "562336653b72c268457ecd8910b256f1511be6ec2e3107e91695f2923ef2945a",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.180Z",
+          "fileName": "ru/submitting-to-app-store/apple/submission-errors.mdx",
+          "postProcessHash": "4cec9cbfa354a1bc9a8c03b0f1991445c80ca1481a0281c5b0b44bdb3da8541d"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.233Z",
+          "fileName": "zh/submitting-to-app-store/apple/submission-errors.mdx",
+          "postProcessHash": "15ffa83e3663e11fbabcc37da7fed74762906bced82c6d730c1c43a9fb78d309"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.234Z",
+          "fileName": "es/submitting-to-app-store/apple/submission-errors.mdx",
+          "postProcessHash": "48953706eb399671ebddb1d8019214546f5febc6f4c7536ebd013083d612b3c1"
+        }
+      },
+      "fileName": "submitting-to-app-store/apple/submission-errors.mdx"
+    },
+    {
+      "fileId": "dc178a4a446d1ac0f116bf6614a4b06a036203a29ace990f24d175bc8187fa22",
+      "versionId": "bb66ea4d3dd4d5530115e72855b0a54813ebe3dd183859357be9888d4f7c1db4",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.180Z",
+          "fileName": "ru/faq/general.mdx",
+          "postProcessHash": "97a5a40aaafc73947d9f9bdcb318c7d1f21c3846465001b5056d4ebca56312ec"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.181Z",
+          "fileName": "es/faq/general.mdx",
+          "postProcessHash": "1ede1eb615f5d5046c5e14f92f7646bafa577d72474aba2c061add0b046b4175"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.234Z",
+          "fileName": "zh/faq/general.mdx",
+          "postProcessHash": "7a8bd4f1ca41cc572eb39d680d458510928e8b50991b13528263cc96e3c89f8e"
+        }
+      },
+      "fileName": "faq/general.mdx"
+    },
+    {
+      "fileId": "b7b4169fa5b2e02aa17d40553a73c5d9520086753c501eeb926c63b162bb6d9e",
+      "versionId": "c7137b268025de0a3f98d364a285a829274584ace36bf1ea84a46f5762c29aca",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.186Z",
+          "fileName": "docs.json"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.194Z",
+          "fileName": "docs.json"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.197Z",
+          "fileName": "docs.json",
+          "postProcessHash": "4092c3de06a238886d727bdb2b6f59394a993c676f6bf81b67d8f66bbc21ec73"
+        }
+      },
+      "fileName": "docs.json"
+    },
+    {
+      "fileId": "b70ce02cb660f781a6525d396ba37601c5ce1c2cb520b4881b7445082cc8c951",
+      "versionId": "306501601bbbad9749bebdea24f751521f8a24770ee869b9504073f0886c7eab",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.198Z",
+          "fileName": "ru/store-guides/screenshot-studio.mdx",
+          "postProcessHash": "aa1fed84f0c4ab9b50c2c70509047f1d08dc56200a8759fd189b84b9ccdf1a46"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.235Z",
+          "fileName": "zh/store-guides/screenshot-studio.mdx",
+          "postProcessHash": "89db2067dcf0389fc433456e3c70cd0699829a3b03fcdeaad51375b53decbad7"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.236Z",
+          "fileName": "es/store-guides/screenshot-studio.mdx",
+          "postProcessHash": "a2de1dd76a946dcc3b9c060c215737afd82fb1130eca03721fe256834f848745"
+        }
+      },
+      "fileName": "store-guides/screenshot-studio.mdx"
+    },
+    {
+      "fileId": "e7b0b1ca00e516ad2533e6c481753322ecb97c5f8ceca145a5b3e5ed0121bdca",
+      "versionId": "469e229e9324cdd92c584986ec066a844c5134b2e695f12736aa37af7cc3b1c5",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.198Z",
+          "fileName": "ru/appstore-screenshots/app-store-screenshots.mdx",
+          "postProcessHash": "f71633b22d1450057b29ae6061573ccdaaca6e2b61b36714df5386df8472208c"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.236Z",
+          "fileName": "zh/appstore-screenshots/app-store-screenshots.mdx",
+          "postProcessHash": "fd1003842f0d15814dee1f198253bdaca2fde80f34290158e9b08c43a2ca5dc8"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.236Z",
+          "fileName": "es/appstore-screenshots/app-store-screenshots.mdx",
+          "postProcessHash": "021c00dd2e5415ca9d43b69f560b69c8edfc449bcd6b5eb8156dcaad0e2b174f"
+        }
+      },
+      "fileName": "appstore-screenshots/app-store-screenshots.mdx"
+    },
+    {
+      "fileId": "befd52dc4b51adee7ad53ec29b950e3cbbbddab3e60e652f637551d547bb3451",
+      "versionId": "16e31b3638bfcccaab0efdbb781bf62173fed30852d1be29788925eb0d329b62",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.198Z",
+          "fileName": "zh/how-to-set-up-xcode/how-to-set-up-xcoe.mdx",
+          "postProcessHash": "f83d83794a494db4e310e47fcfed8f12b40d30b5052f2a4bc2f4a59605bc7100"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.237Z",
+          "fileName": "es/how-to-set-up-xcode/how-to-set-up-xcoe.mdx",
+          "postProcessHash": "55a63c03a4e04988010e73baad720b5325a2b88b02bf2e081e512f50cbdc0dc5"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.237Z",
+          "fileName": "ru/how-to-set-up-xcode/how-to-set-up-xcoe.mdx",
+          "postProcessHash": "4bd6cb34262901c85f1164b62ee12b123d8d3386e419e98d6ff22deae7be9569"
+        }
+      },
+      "fileName": "how-to-set-up-xcode/how-to-set-up-xcoe.mdx"
+    },
+    {
+      "fileId": "9e8d85b31244704220934d883cc7ec98aa28f8b9416534d8e54f866e38dc89b4",
+      "versionId": "447737ec039beec7a6655d6bd8bbe9dbbf3c41cd834732dc8f8f2d523debfb66",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.199Z",
+          "fileName": "ru/submitting-to-play-store/apk-file.mdx",
+          "postProcessHash": "a4d524c1e0c8f04c1c6486a871a33479b9b83b1cd9afd9cc1d4fde42a2aeacf1"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.199Z",
+          "fileName": "zh/submitting-to-play-store/apk-file.mdx",
+          "postProcessHash": "f46cbd6c21732e2d5d1a55e9b36b4015d3431158c22f944b6c1a0c42636419b7"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.237Z",
+          "fileName": "es/submitting-to-play-store/apk-file.mdx",
+          "postProcessHash": "fbe99623aad25aeee9b85698b2d89ca3474b1ae1335eb3f65ca237c7d7905f9e"
+        }
+      },
+      "fileName": "submitting-to-play-store/apk-file.mdx"
+    },
+    {
+      "fileId": "a90fb3aaab8110276f14e515d701a5eebd80ab1faf40d15194a9581818e92b28",
+      "versionId": "89c86e7993b27197c9f5cd1a2611c3717b2e637dbcf37ecbddf4976703a45776",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.200Z",
+          "fileName": "zh/faq/code-export.mdx",
+          "postProcessHash": "ef4ceae2de3e7840c5a0dbee311f700258e3a09bc316707b15822f8141e143f0"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.200Z",
+          "fileName": "ru/faq/code-export.mdx",
+          "postProcessHash": "b6fe15ed63e289f66536ec67d1a8db10ad5a3425d9276199d54eab13684fd995"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.237Z",
+          "fileName": "es/faq/code-export.mdx",
+          "postProcessHash": "2f1d7e77d787b83e9071fd7a7c85e193daeb96b1f007203901e7e5fc6fa0758c"
+        }
+      },
+      "fileName": "faq/code-export.mdx"
+    },
+    {
+      "fileId": "cbb89137ae96ed927342073fde2eadba68f44938363ce6ca515d5a698ad64e73",
+      "versionId": "c1a0492e18aa4f299ac4a04f7f2fec7e9f67e4364ccb639030bf4ad804f0b460",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.201Z",
+          "fileName": "ru/swift-vs-react-native/whats-the-difference.mdx",
+          "postProcessHash": "8085b5f41f91613d42f4d1407000c9bb9a36f556d7c03158f0aa2a390b15cfbb"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.238Z",
+          "fileName": "zh/swift-vs-react-native/whats-the-difference.mdx",
+          "postProcessHash": "2f0d952d7a1f42b0a3d1a343fd6d0f3b235c5c1391b8041a7822ab11c2ae93e7"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.238Z",
+          "fileName": "es/swift-vs-react-native/whats-the-difference.mdx",
+          "postProcessHash": "ea4f1b792f06e221e39ea5d31012117c7cbfea6ac90918ceffbe9e82d49f767f"
+        }
+      },
+      "fileName": "swift-vs-react-native/whats-the-difference.mdx"
+    },
+    {
+      "fileId": "7f6bf97f067f95b4b8c95cffeb5df5d9a0fa4b067c38a4c4f9b88981d5e3252d",
+      "versionId": "60121c07089f69d69c01ce0d5b4736fafd1ab687f7068676546dba7c0cdbd796",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.201Z",
+          "fileName": "es/appstore-submission-checklist/app-review-guide.mdx",
+          "postProcessHash": "8a329f801c0fbb88fc57a56c0f6ae9272a257a2a2647c9eb36237601f3857dcd"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.201Z",
+          "fileName": "zh/appstore-submission-checklist/app-review-guide.mdx",
+          "postProcessHash": "8c92cecd079558b5fb4f73fb535638568ddab1796a2bfe384d0801f41cfec369"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.202Z",
+          "fileName": "ru/appstore-submission-checklist/app-review-guide.mdx",
+          "postProcessHash": "6d5ca030a4e2f8f74113312bae955525fe68d7a25468e199ecaa802a8a5b72e9"
+        }
+      },
+      "fileName": "appstore-submission-checklist/app-review-guide.mdx"
+    },
+    {
+      "fileId": "907dd92f8de9f0121b0d938bff8c26f5b6a0ea98775ff8777d36940f9d18c222",
+      "versionId": "fa2437d41b0b0834418811becd7bc36b2496738ad6093b0a690e55980fbe2a14",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.202Z",
+          "fileName": "ru/payment-guides/revenuecat-copied-1.mdx",
+          "postProcessHash": "653330017d877b0ea4a04c4b74c66e37325662eae7c9012fb7d132613c830cf7"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.203Z",
+          "fileName": "es/payment-guides/revenuecat-copied-1.mdx",
+          "postProcessHash": "d3788bbe8e4f8138ea177b3852ba1de456f6dbbd7e64726e19a3e8bc145d1218"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.238Z",
+          "fileName": "zh/payment-guides/revenuecat-copied-1.mdx",
+          "postProcessHash": "bd9a0dba9c6974b02205916e193774b50f8b3ee5656d80476e677a151d377228"
+        }
+      },
+      "fileName": "payment-guides/revenuecat-copied-1.mdx"
+    },
+    {
+      "fileId": "79c934839c49ade9aa09ec0ca380b3cf7834d4b0ea04cca1d43ce0e9f4894c52",
+      "versionId": "dc268f5cac8a2555478846a4c6c736951c1b6cd0cf9ff6203cf4adbefe381498",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.203Z",
+          "fileName": "es/quick-start-examples/share-and-clone.mdx",
+          "postProcessHash": "677fb2917952dcfb4f92e8a06dbbc7ae0d1cee602c95d5cce4cd7e40550080ca"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.239Z",
+          "fileName": "ru/quick-start-examples/share-and-clone.mdx",
+          "postProcessHash": "f430e6272f9c765331aca5829d674ef0f7832f80c5990eae1a30963d48d90b6a"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.239Z",
+          "fileName": "zh/quick-start-examples/share-and-clone.mdx",
+          "postProcessHash": "9c2dfc0d84befa567818110f30169e2cb8d522bae4ce009e0df2a1eac10cf770"
+        }
+      },
+      "fileName": "quick-start-examples/share-and-clone.mdx"
+    },
+    {
+      "fileId": "7753bfdf12657449a4aae039f65f16916b8d1183d4dd32e59f5bdcac6b0879fa",
+      "versionId": "e8aab4046f69ebb263f34cdb38028428a9814c9cc2fd58b08af9341ef773a54d",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.203Z",
+          "fileName": "es/integrations/backend/how-to-set-up-oauth.mdx",
+          "postProcessHash": "8843a1f92da77864d9919a029e5d38a8ce8531b5cfa8cd51f538e4bb412dca24"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.240Z",
+          "fileName": "ru/integrations/backend/how-to-set-up-oauth.mdx",
+          "postProcessHash": "cddc6df17fcf1b30608c0b58cf7822e6c2b4f1d639b84c4b83cdbb4c3ef42ffd"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.241Z",
+          "fileName": "zh/integrations/backend/how-to-set-up-oauth.mdx",
+          "postProcessHash": "e0b54d892fa54ef8a73341d9f78d40d5504d1fba695710719751e3b3be17e443"
+        }
+      },
+      "fileName": "integrations/backend/how-to-set-up-oauth.mdx"
+    },
+    {
+      "fileId": "84ccc754d0563c6a6d6a18a99ccf121174bf34629b8f6cb882c5cbdf4967c280",
+      "versionId": "b25c4cd5a6946f53910e601d5295ebbf115461b36be47abec2157c91895c8e4d",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.203Z",
+          "fileName": "ru/faq/support.mdx",
+          "postProcessHash": "34732c2006d593692c9a06464ce454da96188e97178c34e9b520d97407faf37e"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.204Z",
+          "fileName": "zh/faq/support.mdx",
+          "postProcessHash": "9188905ef59295e5ae1a04413aed9cda58604900f370112c90843299876f3618"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.241Z",
+          "fileName": "es/faq/support.mdx",
+          "postProcessHash": "e8c816ff80608adeb505515b0a4834b438cf59c2c58573d3d548c0a9ed315750"
+        }
+      },
+      "fileName": "faq/support.mdx"
+    },
+    {
+      "fileId": "3204c4978724ddafe720a463aca63163c33fb34449233e822f2498aa33a1bfd8",
+      "versionId": "24d3e9094c65eca11804648542ec6c6f86a90b468ac4f59770f8db5a52ea82f2",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.204Z",
+          "fileName": "es/backend/supabase.mdx",
+          "postProcessHash": "1617e55408bb73716b1cd0b50030f1c10aebdfaabce6e09c8503c84bd36b29a5"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.241Z",
+          "fileName": "ru/backend/supabase.mdx",
+          "postProcessHash": "64df09fb06510c1b95c9e164b8fdaa753de9138fac512e2216f9cebcdeb23473"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.242Z",
+          "fileName": "zh/backend/supabase.mdx",
+          "postProcessHash": "1dea8290a311754211984de8c8d6160367035d5ae23b92ec8bc9f23f52047da0"
+        }
+      },
+      "fileName": "backend/supabase.mdx"
+    },
+    {
+      "fileId": "8f64e04b0330e3436a930f51a56a042c43165e62b8e8625b2dfb1106400a2097",
+      "versionId": "8233398ffe437a06657e50a2ecf93f9588f85d443283b01deb54b7281b9ac596",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.205Z",
+          "fileName": "zh/faq/index.mdx",
+          "postProcessHash": "b5b1c78c2575bf9aab69f197636ca70a2cff231182773a64a13357e5561d73e9"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.205Z",
+          "fileName": "es/faq/index.mdx",
+          "postProcessHash": "6dd1e77e2590615a3b17a18d81fbc99b964b4b82606a218eae14635b89e34100"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.242Z",
+          "fileName": "ru/faq/index.mdx",
+          "postProcessHash": "4766136aa8ccda0d8fe6a9bb8252a66334dcf7da4f317406befa57da691371e7"
+        }
+      },
+      "fileName": "faq/index.mdx"
+    },
+    {
+      "fileId": "08242979db325176567930820d7aa07f9bf8ddf8b63f44b5624ffc3f97ab5084",
+      "versionId": "3fcb6887ba0e84a566039b86b829b5c71753bb40c2106f4612db49e6c0da78da",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.205Z",
+          "fileName": "zh/features/imagegeneration.mdx",
+          "postProcessHash": "2d0a420e72204869460a31670f0de9e3a5cc1c4e3a3a63b57aa940ced30558f6"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.206Z",
+          "fileName": "ru/features/imagegeneration.mdx",
+          "postProcessHash": "f244e109c1f7b110d40bf27d54e284bc98d16e25f3db55aba7ad47ffb08b553e"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.207Z",
+          "fileName": "es/features/imagegeneration.mdx",
+          "postProcessHash": "630abb8d4e68eecfec4676cda1042e7f173cc6953592939da71a9e2cd9faf38f"
+        }
+      },
+      "fileName": "features/imagegeneration.mdx"
+    },
+    {
+      "fileId": "c50a77451746517fe63d5d661bddbc033dc96a8dffe6208b47c8123144d09696",
+      "versionId": "ad67a049fb9068f5a69c6b51c0e6a14593686efda60974e3a0b733ce573eb777",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.207Z",
+          "fileName": "zh/backend/rork-cloud.mdx",
+          "postProcessHash": "b366f9f3b64397d16fc34859b2148fa51c4dc0efcc2cdaecc2c128e98fe971cf"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.242Z",
+          "fileName": "ru/backend/rork-cloud.mdx",
+          "postProcessHash": "1214acad8590ba6905455db20a326f7f4f44b65043bf359fdf555fbd63afa50c"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.243Z",
+          "fileName": "es/backend/rork-cloud.mdx",
+          "postProcessHash": "4acd7faabafe2cc681e80104dc4b2fcb9999f860f5e58b98670050ade5166a03"
+        }
+      },
+      "fileName": "backend/rork-cloud.mdx"
+    },
+    {
+      "fileId": "1afbfe454bd7661182edaeea9829cd6372c654dec0a72478051e3ebce092f681",
+      "versionId": "51cbcff3c5637564706fef4618751b1d2924c81fe77f596848aa62bca4daaee3",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.207Z",
+          "fileName": "zh/billing/build-credits-vs-cloud-credits.mdx",
+          "postProcessHash": "8013f2ab7b4e09e7b2b8f1bf97094835d4c772f82e965d96f393fcd9b2b079e8"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.243Z",
+          "fileName": "es/billing/build-credits-vs-cloud-credits.mdx",
+          "postProcessHash": "82688b37dbdc230ad665fadea556dba806b4e8fd8a6f1891e487b953099e01a2"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.243Z",
+          "fileName": "ru/billing/build-credits-vs-cloud-credits.mdx",
+          "postProcessHash": "c3a3da22983a0d61127d46e831c0438438b877e853896b46020e9d060cbfaae4"
+        }
+      },
+      "fileName": "billing/build-credits-vs-cloud-credits.mdx"
+    },
+    {
+      "fileId": "4e54be8572e63948cfa86113375d8f0c5e384017065d2e4989ebf239c5a4fda5",
+      "versionId": "2a8f9bdda6a449f5e266f5b56f08e5cc71be5630d1a8e7fd1cea156c151820c7",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.207Z",
+          "fileName": "es/store-guides/google-play-developer-account.mdx",
+          "postProcessHash": "3dbf09fd30209996d2fcaac6f6342316889b6898abf54805db26a5015cfd4113"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.243Z",
+          "fileName": "ru/store-guides/google-play-developer-account.mdx",
+          "postProcessHash": "4e35d1fccaef2b20a5b198f76c3c503cbbac979e983d445b00c33c9442945c14"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.260Z",
+          "fileName": "zh/store-guides/google-play-developer-account.mdx",
+          "postProcessHash": "a1a28f7405709b23a57f8bc78745f03b1920743f84139095d4bbfd30db701781"
+        }
+      },
+      "fileName": "store-guides/google-play-developer-account.mdx"
+    },
+    {
+      "fileId": "7fb583b7a469518dd9154838c43585c391c1cdd424bfe1d3d1404ea938878322",
+      "versionId": "e54a0fa7cfdf3b0ff7bf6338fbe547f4c4b8c8ec4e5a0e9e563e6c31f9f7a573",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.208Z",
+          "fileName": "ru/store-guides/publish-app-store.mdx",
+          "postProcessHash": "5b70b0db8a5f6ced6a7f6098dbde5e32da0ad0be63320ba9386c201c692fdd70"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.243Z",
+          "fileName": "zh/store-guides/publish-app-store.mdx",
+          "postProcessHash": "d2428bc4030998da7463e7023047f92f9efe52da76ec576bb271a9ef26794df5"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.244Z",
+          "fileName": "es/store-guides/publish-app-store.mdx",
+          "postProcessHash": "6aa9c507daa1b3e8a9e1d6863e09161be3595e2f50703a979c601232cb2f01bb"
+        }
+      },
+      "fileName": "store-guides/publish-app-store.mdx"
+    },
+    {
+      "fileId": "fed65d68b4b052318f16c88091b2dbf5e745c8dfb20955944764b500b4f59282",
+      "versionId": "a9c75c22a5a5560f41e6393a0b2dce51109f29bb5e208f52dbd5e0666d3da7b2",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.208Z",
+          "fileName": "es/faq/billing.mdx",
+          "postProcessHash": "1f576e960e4a69ffc37b80b19a9fb293fcd74898cdb9171ed1a2fc2e87024fe7"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.209Z",
+          "fileName": "ru/faq/billing.mdx",
+          "postProcessHash": "7f72f08a457f31b890e10b2951c3e56d5c9e6b5524e792b0e9549b30cff3459d"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.210Z",
+          "fileName": "zh/faq/billing.mdx",
+          "postProcessHash": "86a0a7991a5a111321cb4e6f2e43105e23e5c8d91aae7f6a23562ce8f4529ffa"
+        }
+      },
+      "fileName": "faq/billing.mdx"
+    },
+    {
+      "fileId": "8d14290b6f813630c9e712e8931b2a9081fc5be7a7df941b1f55f0da6b37752f",
+      "versionId": "71de5f754ed557ca3ae3267d5f4732b42f68081a3cb304717004501f376468d3",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.210Z",
+          "fileName": "es/rork-playbook/untitled-page-3.mdx",
+          "postProcessHash": "52d89f2c687dc86f92ac6944011de076cd34295d30b625eefc5bf286a86eb2fd"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.244Z",
+          "fileName": "ru/rork-playbook/untitled-page-3.mdx",
+          "postProcessHash": "8b4ebe5487698afdbb2b21a05a6407489ac449831dae917340373792211674b0"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.244Z",
+          "fileName": "zh/rork-playbook/untitled-page-3.mdx",
+          "postProcessHash": "3d4a46100fd68214fdce77184e182895c60c55ca3f2be704f981f02a29aab616"
+        }
+      },
+      "fileName": "rork-playbook/untitled-page-3.mdx"
+    },
+    {
+      "fileId": "deb6d0ad86edc5163aedefd3ae1268d3d84a872116c4278268d23bc78158b13c",
+      "versionId": "409afafa7b1a99a48522c5baa214c2debe8d4f7042f3e5e9d0f057af20294e74",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.211Z",
+          "fileName": "zh/introduction/introduction/prompting-strategy.mdx",
+          "postProcessHash": "ffa4f9e6c449d44456e8cd8c71d8662afa4977f7ec1cba3833b11712d545c6cd"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.212Z",
+          "fileName": "es/introduction/introduction/prompting-strategy.mdx",
+          "postProcessHash": "8f8902abcfd2ac5e999b351231686a85dd3ad5ef62096d18d69da03319e3337d"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.245Z",
+          "fileName": "ru/introduction/introduction/prompting-strategy.mdx",
+          "postProcessHash": "90c8392ec00f4b0921ddbefca3ad289046ff9698b43f98647c44800cff1612e7"
+        }
+      },
+      "fileName": "introduction/introduction/prompting-strategy.mdx"
+    },
+    {
+      "fileId": "014a122a4baf68b9a4fe4e09b9cbb3e074d0a2a3d96021cbf48b82c7bbfc9267",
+      "versionId": "9e7ebf8ce1e8d8b9f759e6bb2a691eb09c765c0a6dec25c969c1833c89dcc794",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.212Z",
+          "fileName": "es/features-apis/apis/how-to-connect-an-api-to-your-project.mdx",
+          "postProcessHash": "8aedf54e070559a112898fb52f6d653d4c644927d7ab70919005165105b23a46"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.245Z",
+          "fileName": "zh/features-apis/apis/how-to-connect-an-api-to-your-project.mdx",
+          "postProcessHash": "005495707ba268cbc201b64d18d96736d63ff2780ceb6ee9cff37e7b11efacca"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.245Z",
+          "fileName": "ru/features-apis/apis/how-to-connect-an-api-to-your-project.mdx",
+          "postProcessHash": "27ab7561c4f445ba0dd4c096b198908d5b362f15a7a84574567082f116199d1e"
+        }
+      },
+      "fileName": "features-apis/apis/how-to-connect-an-api-to-your-project.mdx"
+    },
+    {
+      "fileId": "5a21ec0a2a04226b1809bf4afeb3c76e4a881444d11197968b71fa4d56584f3b",
+      "versionId": "fd7fd01e0adc2bc7a9df053aa5456051e143070c3298054e923542e306f01677",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.212Z",
+          "fileName": "es/introduction/deploy-your-app.mdx",
+          "postProcessHash": "b2f7b1b81d9e4f67edcb11033ce366ab09bb46911ec53dedab3ea6d5690496b4"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.246Z",
+          "fileName": "ru/introduction/deploy-your-app.mdx",
+          "postProcessHash": "50d877ae996a17000d250accc1e69fb7078d182059b82d5992d88f73c9597911"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.246Z",
+          "fileName": "zh/introduction/deploy-your-app.mdx",
+          "postProcessHash": "b102d8093106f4f1622500991fd1e35115805f350680af13ee80fe02d9195ed5"
+        }
+      },
+      "fileName": "introduction/deploy-your-app.mdx"
+    },
+    {
+      "fileId": "e3052290243becc67b31e74a593f9f1a0c9f9cf5e74e3426a4ecba3a7ef85722",
+      "versionId": "a948a5d61852390f1d7d372629ff5d5fdda7768c25fd89bc05bdd0d379b7ff69",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.212Z",
+          "fileName": "es/rork-playbook/untitled-page-1.mdx",
+          "postProcessHash": "d62481ccc3c976a4cde81f5ad1f807f3d1a1520deb2751bed771fb15ebc04cc4"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.247Z",
+          "fileName": "zh/rork-playbook/untitled-page-1.mdx",
+          "postProcessHash": "863612392dd22f78a359c11267e9b76573fc4daecb31bf1236b288b5d3d54509"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.260Z",
+          "fileName": "ru/rork-playbook/untitled-page-1.mdx",
+          "postProcessHash": "da294ea99d6424323f1f4f94d4ee1e8030b5e00f8e04acf618c8791f077f1bcf"
+        }
+      },
+      "fileName": "rork-playbook/untitled-page-1.mdx"
+    },
+    {
+      "fileId": "0cdd081fd914ef41042cec10a19458681e260d72a7ef318ec33a19ca8d4c3856",
+      "versionId": "e104811333ed41fd7dbafc7a34b94266572d58cae292ee941f4af570e9eb1265",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.213Z",
+          "fileName": "zh/rork-playbook/untitled-page.mdx",
+          "postProcessHash": "4a4b6b5351d27480070f961b3024ca7ef6a3e155fb82a0f84bb5f2ce32cca4a6"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.213Z",
+          "fileName": "es/rork-playbook/untitled-page.mdx",
+          "postProcessHash": "7e12dfcdd17406f8236740d81574a25e0361dae5dac88ed3e1188b4d99581202"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.247Z",
+          "fileName": "ru/rork-playbook/untitled-page.mdx",
+          "postProcessHash": "9a5bffd605aeead94fce48dc33f8d13760b94832b58c7f719e71d3ff0842e029"
+        }
+      },
+      "fileName": "rork-playbook/untitled-page.mdx"
+    },
+    {
+      "fileId": "2308615ee2278ea6a11fc5396b3d5ee942f17db33b6f0e7139236eeeaca2e162",
+      "versionId": "e4aa31d347144e8723262c74eda459133b2802d3de1ab7a342a6fc0a0fd2e2cf",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.213Z",
+          "fileName": "es/index.mdx",
+          "postProcessHash": "3a4606435de617a9b08c8ae1a4a14894b99f0445631a381a1b243535bef61d59"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.214Z",
+          "fileName": "zh/index.mdx",
+          "postProcessHash": "3f12aa70171f586611772e9823063d2c8aaf99531ee4073255958f00b0ec48db"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.247Z",
+          "fileName": "ru/index.mdx",
+          "postProcessHash": "76d8babc6af520dffc12beefb1b510b66b574a90aac753cfa8c390881e8d6b32"
+        }
+      },
+      "fileName": "index.mdx"
+    },
+    {
+      "fileId": "dcebd32402a6c510c1138e3587c3a3542633820399731a5fc7bf13f087a8d88e",
+      "versionId": "e8d87472116449c6ee5bc2aafefcab4638236e3b789fc6568eb0752f16ee31ee",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.214Z",
+          "fileName": "zh/make-your-app-profitable/paywalls/how-to-set-up-your-policies.mdx",
+          "postProcessHash": "8e35a87296b59083f65538a85ae2b1d6abf1ecdf9db235e28260674ab6362e5b"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.214Z",
+          "fileName": "es/make-your-app-profitable/paywalls/how-to-set-up-your-policies.mdx",
+          "postProcessHash": "03a1c03b0cd614e630e7d38f0b455020f7ddfef3c2cf23b5f6e1aa79cc42156b"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.215Z",
+          "fileName": "ru/make-your-app-profitable/paywalls/how-to-set-up-your-policies.mdx",
+          "postProcessHash": "ed0de2198ef9fef7b751356149b9238b44484246bef6e21ba96b907085831fd3"
+        }
+      },
+      "fileName": "make-your-app-profitable/paywalls/how-to-set-up-your-policies.mdx"
+    },
+    {
+      "fileId": "03f61d442d9c8e49ed167c4a8a07e7894b18309e71f0becba4d753992a6f1b0e",
+      "versionId": "05acd6f6c139dd366f58ad063fae85369b3f33a2fae1dfa5b4015bdeaf6b1898",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.215Z",
+          "fileName": "es/backend/firebase.mdx",
+          "postProcessHash": "d1937d0c674d8c3db1c13ea3fb25aa6d779041236739e91ce78a34ac11b8f2d7"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.248Z",
+          "fileName": "zh/backend/firebase.mdx",
+          "postProcessHash": "410c3f5c7ac2a61196cae236a0bfe2073ce8e98b7a4c4a4d05c7c2b216148bb5"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.248Z",
+          "fileName": "ru/backend/firebase.mdx",
+          "postProcessHash": "02860934eb637eaa3f83d57acb3fd48b31fbaebab1561932332d21a1f5b650d2"
+        }
+      },
+      "fileName": "backend/firebase.mdx"
+    },
+    {
+      "fileId": "cbb1625d5dc3a7145191f9d7884a359fea9791d0712948e58fc109f25404019e",
+      "versionId": "685cdd80ab981dcc589715dce05a98e75f314a8b7f8f70a6bf23328962838331",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.216Z",
+          "fileName": "zh/submitting-to-app-store/apple/app-store-checklist.mdx",
+          "postProcessHash": "e89d3f5f91738142e61a9771a9894e954d10b182e63fd3e43ab1d5e95d542f4a"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.216Z",
+          "fileName": "ru/submitting-to-app-store/apple/app-store-checklist.mdx",
+          "postProcessHash": "126d1074da4f69aefe4a57eb03289756b64b194cff595faf6b8b9681128516c7"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.217Z",
+          "fileName": "es/submitting-to-app-store/apple/app-store-checklist.mdx",
+          "postProcessHash": "56547580aac1b7bf2b16f26ac7c0bc9b5bf390290bd08fa4c614ca134fcbd232"
+        }
+      },
+      "fileName": "submitting-to-app-store/apple/app-store-checklist.mdx"
+    },
+    {
+      "fileId": "34abe8136205c5787a833c802e1d666670c1e9b577439736565f939ade9c8770",
+      "versionId": "7eea2fd7a1a11bf71b00bd683b1f89cc36b50eae1b17fde7ab2aa3a0134e2a08",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.217Z",
+          "fileName": "ru/publishing.mdx",
+          "postProcessHash": "482ec67f17ae8bd9c2f1d9b72ecc15c974400e83c9e2f562d9d2823eb97f4c69"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.217Z",
+          "fileName": "es/publishing.mdx",
+          "postProcessHash": "6fba2aff099897da81791201df9455fba6fc00104f2f926f3a4345aefe1e52f5"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.218Z",
+          "fileName": "zh/publishing.mdx",
+          "postProcessHash": "a0430d0521a2a666c805ac06555631c96ee3c54956a4581db07407be9d83ed73"
+        }
+      },
+      "fileName": "publishing.mdx"
+    },
+    {
+      "fileId": "fe8958c38b0c098522fa92fac2dfd9f31dcc326045f331c7a02e8e4e3904bbdc",
+      "versionId": "bfc33d3d8370cdcc74d85c8e233288c1805cdbc65bfb2f5abeb509eaa1ee861f",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.218Z",
+          "fileName": "es/appstore-submission-checklist/whats-next-after-the-apps-finished.mdx",
+          "postProcessHash": "3752b16c495185988e25bc0513e1e17ecb0c2ba84bcdaeaa820ef31c3a237157"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.218Z",
+          "fileName": "ru/appstore-submission-checklist/whats-next-after-the-apps-finished.mdx",
+          "postProcessHash": "3010da5e7376ce4f39598a85221d3d8150a8b046d86d383dd65d3c888ec4d7e4"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.219Z",
+          "fileName": "zh/appstore-submission-checklist/whats-next-after-the-apps-finished.mdx",
+          "postProcessHash": "8aa6a5d975d78d51c964cb3ce404f41560b12ba07762d093c5c66eca5800571f"
+        }
+      },
+      "fileName": "appstore-submission-checklist/whats-next-after-the-apps-finished.mdx"
+    },
+    {
+      "fileId": "ddaea293a7c1fbb15ec7119b7af720a1b13caea0a62679283f84ea08fd7f9f1b",
+      "versionId": "ae633c5eb4f266da0bd544fa1e021fae0fe4fe41f2f1d700dd261e3da3d12b87",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.219Z",
+          "fileName": "zh/rork-playbook/playbook.mdx",
+          "postProcessHash": "5d985eab993fac0bf404119d839c7d46a7e5f384ee248e9fae1972da9beb9fdc"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.224Z",
+          "fileName": "ru/rork-playbook/playbook.mdx",
+          "postProcessHash": "fe47f57a0a365a41203d123318e6211c92a3a4cf7d857a5f563084eee770ec0a"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.249Z",
+          "fileName": "es/rork-playbook/playbook.mdx",
+          "postProcessHash": "b27a7be72f94fb7dab340f5ea20211f8c611047f2b597cfddb6e4627cc467917"
+        }
+      },
+      "fileName": "rork-playbook/playbook.mdx"
+    },
+    {
+      "fileId": "b809a96b3139038fd116b603f152670096dade7ab448af3b923c2f91e19fd8f6",
+      "versionId": "68d5f62099387af7b481aff53dc1c1f1978d0aaa8c48d9bd72b1d791ae1debd2",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.224Z",
+          "fileName": "ru/tutorials/how-to-connect-github.mdx",
+          "postProcessHash": "672fdc10f60120a7466eea5232e94a36b41eaef15740c706385123b13adc776b"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.224Z",
+          "fileName": "es/tutorials/how-to-connect-github.mdx",
+          "postProcessHash": "8dfe38beda73c405849fa447153fa085a7a5a44c3c32641f093f5dbd6ef68fae"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.225Z",
+          "fileName": "zh/tutorials/how-to-connect-github.mdx",
+          "postProcessHash": "bbcf79ddbfaf13c1a2e8cd2adab8dfbf777849a778225139b15e438ba928c302"
+        }
+      },
+      "fileName": "tutorials/how-to-connect-github.mdx"
+    },
+    {
+      "fileId": "e55a574bdc1eb27d0ca095461b81f7ec9777699c905716062a52027b3a566894",
+      "versionId": "06aa3584e303ebfc812d553f1428186ac4a9cdf950cd8f11a025dfc9ad85a577",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.225Z",
+          "fileName": "zh/quick-start-examples/nano-banana-image-app.mdx",
+          "postProcessHash": "2f1b7d9fa308bfd41e0e9cddfe754e3d782925eb399350af67ea3203b131031a"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.225Z",
+          "fileName": "es/quick-start-examples/nano-banana-image-app.mdx",
+          "postProcessHash": "82f42f1c3e03b5848164fa4f41e14a133195153cf04931d31c04859bb4603603"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.262Z",
+          "fileName": "ru/quick-start-examples/nano-banana-image-app.mdx",
+          "postProcessHash": "06f879c7a00979eea4b35353315a0668c7640656b768e8df315d9471dd92cb38"
+        }
+      },
+      "fileName": "quick-start-examples/nano-banana-image-app.mdx"
+    },
+    {
+      "fileId": "50ab3af7bf273df8097d5e04b696ea486f888c831cf684a1b563b710ae4e07eb",
+      "versionId": "a1514f06054defa0db260f22658082934455a4f299739670b1ed1218a2581f5d",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.225Z",
+          "fileName": "es/rork-max-swift.mdx",
+          "postProcessHash": "9fc3f6cefbad6fc460790f1dfc03117803d4eac1d8c924bd9f2995bc22c24721"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.249Z",
+          "fileName": "ru/rork-max-swift.mdx",
+          "postProcessHash": "ece9381e3d29315f6a3eb5c59e307b28172fbbbed090e48035f85df58c39459a"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.250Z",
+          "fileName": "zh/rork-max-swift.mdx",
+          "postProcessHash": "0a0f83432513837d68a82931f6c7cd12c1589c51de052264bdcc2a090d6c2d9a"
+        }
+      },
+      "fileName": "rork-max-swift.mdx"
+    },
+    {
+      "fileId": "5fb0ebc988d746f4c7271360656769d846d81181b7082ed51c0f39fbecbf2993",
+      "versionId": "2e950c9d9c4f5cf2c9845f3b59e599a6ef6cf95015510feb6c0d4349ba01138c",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.225Z",
+          "fileName": "es/introduction/build-your-first-app.mdx",
+          "postProcessHash": "3907ea9df0db05c816efb80d4398d992ed1330716675e8738c34901e93cd2dd5"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.226Z",
+          "fileName": "zh/introduction/build-your-first-app.mdx",
+          "postProcessHash": "f07feee97a1c26b8979393b910d51c5b3fff6f92ff090d3e243581e9e071d0e5"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.226Z",
+          "fileName": "ru/introduction/build-your-first-app.mdx",
+          "postProcessHash": "28455577a54de9b883af3a9c2cb4660b0edd6b0447bccfc9aff0e1cce4b3cbeb"
+        }
+      },
+      "fileName": "introduction/build-your-first-app.mdx"
+    },
+    {
+      "fileId": "ee46a572ece56a2642d264c913c181c798938d74caf86c7ce9f16655c08df687",
+      "versionId": "9197f30f605bc3c2e3b35ce670cf1df594f08b4f8c499b1b54799617ea480b99",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.226Z",
+          "fileName": "ru/backend/index.mdx",
+          "postProcessHash": "061c6d613a6404da0ab866cc16039cfc789026cec6117bcb294c69c95a95b841"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.226Z",
+          "fileName": "es/backend/index.mdx",
+          "postProcessHash": "e0605b7973c13f31b061354fedeb8fd502fcdfe673244488652309d1df9224c2"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.250Z",
+          "fileName": "zh/backend/index.mdx",
+          "postProcessHash": "5124890236d67cf1aa52b2767fa429e5060bb8519d3229bc3b18baba0fdc1803"
+        }
+      },
+      "fileName": "backend/index.mdx"
+    },
+    {
+      "fileId": "c5251a979afc7d0b3e04aa76f485f5712b93d5680cd1338c00ff2ef051a97ef2",
+      "versionId": "25b8a4994d1e82c3f71821da9f3e4bf6fada47d3bb7135d012f3eba869cf6ef0",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.227Z",
+          "fileName": "es/expo.mdx",
+          "postProcessHash": "48af30012dfc386b99b075d705539448e85f9962f3d0a0038ac19fdd8e0d58b6"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.251Z",
+          "fileName": "ru/expo.mdx",
+          "postProcessHash": "8b2fb067409f5ff67dbe4b8a7d78d62c705cbc616c6c5539bf9980ebbd97908d"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.251Z",
+          "fileName": "zh/expo.mdx",
+          "postProcessHash": "886112bf9f1069e1dd3a1dc26f9c91f5627bbfdde303fcf4a9ca0a37f3c6e4b2"
+        }
+      },
+      "fileName": "expo.mdx"
+    },
+    {
+      "fileId": "f45c3c5de7f01c4af33e055722adda244a90e71080faba19b5d9968ae6adf231",
+      "versionId": "797defb8633a6be656f168e93ae2c1e2bec6e958ceab43065a7d2a928710e622",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.227Z",
+          "fileName": "ru/make-your-app-profitable/paywalls/how-to-add-a-free-trial.mdx",
+          "postProcessHash": "919d918cf798a466eb937334385ac022316e12701abd3f8de652d88133966b86"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.252Z",
+          "fileName": "zh/make-your-app-profitable/paywalls/how-to-add-a-free-trial.mdx",
+          "postProcessHash": "e0a35db932ac89073da24f18deace5be88e3c7da776e6aeb2ba4a9e5628f401c"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.252Z",
+          "fileName": "es/make-your-app-profitable/paywalls/how-to-add-a-free-trial.mdx",
+          "postProcessHash": "40e21fba73b9b04167c31d90f3b3c68dd739bcfb52be95f546c305ac6030aae3"
+        }
+      },
+      "fileName": "make-your-app-profitable/paywalls/how-to-add-a-free-trial.mdx"
+    },
+    {
+      "fileId": "a3bc0a305124484851a8bd85a29074b54a4cc7851aed738d94e69d9c04c1c436",
+      "versionId": "ae323ff6bc2fc6a622dd57cc3ba3645e09013761fb5816307fdf69066724a9ac",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.227Z",
+          "fileName": "es/store-guides/apple-developer-account.mdx",
+          "postProcessHash": "071ff899175d45ec61833fc3b7c268fc41a46906b78004b9d52de98e05bfdd72"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.227Z",
+          "fileName": "zh/store-guides/apple-developer-account.mdx",
+          "postProcessHash": "fdb132fbeb9dd7657de81e1d98ed73cd9a41487174ed6a4e000592148dd2646d"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.253Z",
+          "fileName": "ru/store-guides/apple-developer-account.mdx",
+          "postProcessHash": "441430c7bfe429d25cb1bdcf81227c8b6ba795070232bf268852a34abc38d729"
+        }
+      },
+      "fileName": "store-guides/apple-developer-account.mdx"
+    },
+    {
+      "fileId": "cd758b6e8a133a792f98ab61c8c81e281af88c4c83227507ef34571ef1211d92",
+      "versionId": "257aff6dbc8551ac95068d139e9f0065eae9969b121b8751ea61978d37802956",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.227Z",
+          "fileName": "ru/rork-playbook/untitled-page-4.mdx",
+          "postProcessHash": "e96929cd1abfe08a56b82a22726963343b537943fada79019ad9a5c521455f81"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.228Z",
+          "fileName": "zh/rork-playbook/untitled-page-4.mdx",
+          "postProcessHash": "7023a5914b9d74b19878fd41ac5f1028611e27b5cb6f04549c0436121936415f"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.228Z",
+          "fileName": "es/rork-playbook/untitled-page-4.mdx",
+          "postProcessHash": "6694f10c83f7a155bf15fff6ed221eafb8e2901afcfd688b1a3126368b04f5b1"
+        }
+      },
+      "fileName": "rork-playbook/untitled-page-4.mdx"
+    },
+    {
+      "fileId": "202049b94ecadcd55b7c364bcb594d77c38f54c68cd428be5614b9bff269a7f7",
+      "versionId": "7a454535a31800b0207fe731a73ff8e635a8c5d2c411c96e5fe885c47ce00b02",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.228Z",
+          "fileName": "es/introduction/introduction/agent-loops.mdx",
+          "postProcessHash": "870ccd436be41a906a7273a4ac91c47353c881b0670a0536415ac9268e0019a6"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.228Z",
+          "fileName": "zh/introduction/introduction/agent-loops.mdx",
+          "postProcessHash": "a9ce450182be90d47bf1be4fe2e50b5edee537979c997dc05c5976c491d3d737"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.253Z",
+          "fileName": "ru/introduction/introduction/agent-loops.mdx",
+          "postProcessHash": "54d3c2c5aa4fa54176c4fd6e51fde96fef68106d3d568618c385bd1614d5b26a"
+        }
+      },
+      "fileName": "introduction/introduction/agent-loops.mdx"
+    },
+    {
+      "fileId": "342be204c50475a4e65fb685a37de285c18dee914b822a40856f78d7663e588c",
+      "versionId": "5348a988173c52e08b93c0ec26ecff6bff152725d9a1954a33f4aa029eb0dc5f",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.229Z",
+          "fileName": "es/import/convert-between-platforms.mdx",
+          "postProcessHash": "3f0aef23fefd2554c798ebc64effc5dcfaeb014db1378a16667c8d2bbd92de98"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.253Z",
+          "fileName": "zh/import/convert-between-platforms.mdx",
+          "postProcessHash": "5bbf6f7dce4ae81c6d2b8c766decbafffad16876fe5ad6c5d56564bb177eb4bd"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.253Z",
+          "fileName": "ru/import/convert-between-platforms.mdx",
+          "postProcessHash": "ef16c6e5888d3720c92abccab81d0177bb7de811218d5321cd476d963169e181"
+        }
+      },
+      "fileName": "import/convert-between-platforms.mdx"
+    },
+    {
+      "fileId": "328949bb5bc4bc51e7d975c2fbd64ab96e1fea952ca03db50e057a7a1050a15f",
+      "versionId": "7f823c4c497fb92fcf6e3df8f7a0afc3c457e45702742ce871ce7276286bfa61",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.229Z",
+          "fileName": "es/elements-of-a-good-idea/how-to-tell-if-your-idea-is-good.mdx",
+          "postProcessHash": "3a7c361922edbeec24efb02820b10df9071ec0c3bbe9e9181ba6a72967e104c8"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.254Z",
+          "fileName": "zh/elements-of-a-good-idea/how-to-tell-if-your-idea-is-good.mdx",
+          "postProcessHash": "0577607819f0fcd43b8bd959147baa276451607f599ea14d7f701a7e06240e0f"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.254Z",
+          "fileName": "ru/elements-of-a-good-idea/how-to-tell-if-your-idea-is-good.mdx",
+          "postProcessHash": "afda87ae0ea795a63c1d1baf6ae093a76873f1949c8521528e55cf589f54b08e"
+        }
+      },
+      "fileName": "elements-of-a-good-idea/how-to-tell-if-your-idea-is-good.mdx"
+    },
+    {
+      "fileId": "e29662395242f5ef897dd71b251f34888cbe6c761885e37b90716e08f9024416",
+      "versionId": "240b834cc43d5f493df48bffda97934e5a05258aadb5c95a522258d2279296aa",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.229Z",
+          "fileName": "ru/faq/technical.mdx",
+          "postProcessHash": "c625cc9421cfc8faf6c55b7ca33f7fb79fa1f244c616f81adfeb2b594a98e33d"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.230Z",
+          "fileName": "es/faq/technical.mdx",
+          "postProcessHash": "2db249254e4bd6c4512eb14b09265bdd3f9cf73764936e645d1f0165a49f81a1"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.255Z",
+          "fileName": "zh/faq/technical.mdx",
+          "postProcessHash": "54fff287f25947a39114bff942e4426b28342058ebe227b765b1122bb7b8f097"
+        }
+      },
+      "fileName": "faq/technical.mdx"
+    },
+    {
+      "fileId": "f25688d89938f49ac4b94ab0cf5100a19e7852bebf1cefb410f770e1d3d5c84b",
+      "versionId": "0b0ca06ab20e08711070a518ee5d2216b6e30884759c33f377e3052012fdcc0f",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.230Z",
+          "fileName": "zh/request-documentation.mdx",
+          "postProcessHash": "9645a35bc5d2bc3792de857bc43a62d5c5122041cff52a441afe7c9e9df75265"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.230Z",
+          "fileName": "ru/request-documentation.mdx",
+          "postProcessHash": "e42a87951501726a21bc2fb7e25d822ba0f8a39dda19f4a477446944937bafe5"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.230Z",
+          "fileName": "es/request-documentation.mdx",
+          "postProcessHash": "1eea01b7a4d05170fcc775a88e54ea888a0908ee149b502304bdbe04ec076915"
+        }
+      },
+      "fileName": "request-documentation.mdx"
+    },
+    {
+      "fileId": "8e24abf2f15a0f3d7215c91dd89d1d4ad90ab988d82a40be4496ab50fe314cd2",
+      "versionId": "005f5ccac1113be8bfd78fc0c9b242334b8ed6954a56ed1a2444c6ff51214c41",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.231Z",
+          "fileName": "ru/development.mdx",
+          "postProcessHash": "1940b176e1c87a68e8b68d187f88124e15e80659859b261f40e8cba1395c791c"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.231Z",
+          "fileName": "es/development.mdx",
+          "postProcessHash": "4e2f3006ae957081ac9e3557a3bf3c8b0301ca599b0e3cfd03c0a831b93b27db"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.231Z",
+          "fileName": "zh/development.mdx",
+          "postProcessHash": "1b47140a82889c2f76c321b51bade3c04e31cbb677f1cfcae7a53d7fa04d6147"
+        }
+      },
+      "fileName": "development.mdx"
+    },
+    {
+      "fileId": "4d0b78de17ee2a5c5d8af8c65224b2f46cef1f59564ccacd87ac1ad1d41b1904",
+      "versionId": "4edd179f027e79837bc3ea312d176c75fc13888aa844b39072d894bf87b92062",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.231Z",
+          "fileName": "ru/import/import-from-any-app-builder.mdx",
+          "postProcessHash": "da4f93fa084d12633c991641338270e2d41a1c90657908e922774141a7199a66"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.232Z",
+          "fileName": "zh/import/import-from-any-app-builder.mdx",
+          "postProcessHash": "0defbcd09ba12744e04b25366242f9bdf76ad941b98cd814a90cdecd8c1fc286"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.232Z",
+          "fileName": "es/import/import-from-any-app-builder.mdx",
+          "postProcessHash": "b96e16a790b648fd04cf7af232f66b292c1b418a949c03583ff29bbfdd771ad6"
+        }
+      },
+      "fileName": "import/import-from-any-app-builder.mdx"
+    },
+    {
+      "fileId": "790fdf3857c3edfc155edf78a0131a2488e1ed429e3698713b4d2d50e8ee4b2c",
+      "versionId": "6bab1b52352e867da942c7def626ecd09c3e9d9c741e9a3dbdac6a7d2ed29b30",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.232Z",
+          "fileName": "es/collaborate/share-a-project.mdx",
+          "postProcessHash": "ecc06ea14af8f2ab74397bbf54ebed94f521a2487dd98600bb62cee7bac0ecc2"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.232Z",
+          "fileName": "ru/collaborate/share-a-project.mdx",
+          "postProcessHash": "0a1cacc9be54a44eaedbdd3a2bc9174c7559baf6a9c4ad9c054731ff869d25c1"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.255Z",
+          "fileName": "zh/collaborate/share-a-project.mdx",
+          "postProcessHash": "8c90cfc798a12bf16d854a69dd2870668aec8afa3d461897d39330e29c0f1118"
+        }
+      },
+      "fileName": "collaborate/share-a-project.mdx"
+    },
+    {
+      "fileId": "00c99a09a9fd5789a846ffa21f3b6c828b4312f2560d76a330c8d5e138967bf4",
+      "versionId": "5776de920b96efb291250c8ab5b39a8bd5f43e98bc8e7d5e1c386620da0fcbe7",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.234Z",
+          "fileName": "ru/features/agent-modes.mdx",
+          "postProcessHash": "926a182730a6f5f45eda37621b25036ce5217a0131e1e0969e9c762b609ba34e"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.234Z",
+          "fileName": "es/features/agent-modes.mdx",
+          "postProcessHash": "398e68dedb667fd4147a79c9c70a5a690e5bf3aa255f8fcf01766ddf3322b135"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.235Z",
+          "fileName": "zh/features/agent-modes.mdx",
+          "postProcessHash": "fd5542e5fb310a601e6f08558f7bcd262a06c88e009b26f4f6fe01517c27b187"
+        }
+      },
+      "fileName": "features/agent-modes.mdx"
+    },
+    {
+      "fileId": "4dfb092292f32c1b102f388a1ce7b41b4113e78f079fecf8964f8c533c5444d1",
+      "versionId": "89aca8f948d86727d8791bbb98468fdc66d69d941f8bbab41e54c51b88f7088e",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.235Z",
+          "fileName": "zh/rork-playbook/untitled-page-2.mdx",
+          "postProcessHash": "01fdd5fd2e17206c1cb3524a133afe38cd521669eafe16ac9007cac6dec1a39e"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.235Z",
+          "fileName": "es/rork-playbook/untitled-page-2.mdx",
+          "postProcessHash": "c7cefe2bd907517ed2372490ed69eb528f672305235957b453712a5b5c494cc7"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.256Z",
+          "fileName": "ru/rork-playbook/untitled-page-2.mdx",
+          "postProcessHash": "78fb6cad282d4d9de351ee5c219a55bc932235145f4febd61f0f85ea267a92d6"
+        }
+      },
+      "fileName": "rork-playbook/untitled-page-2.mdx"
+    },
+    {
+      "fileId": "faf36084aa5f0d004149a6cc14197e1918d1d1e52a113a85e07eefbba6258883",
+      "versionId": "b63be74686e1d322c0ebf0afdb63bcb82111e957e33baafd8d87f24b3f6ed566",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.237Z",
+          "fileName": "zh/features/code-and-logs.mdx",
+          "postProcessHash": "45bae588e9cca5576443ed9571d4f29f2f849bd3635d08491c4e57e1ee99c273"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.257Z",
+          "fileName": "es/features/code-and-logs.mdx",
+          "postProcessHash": "4d367973e4c9433a99f709d6321888ef59ec7b881a6a765fa49051fcde5d61bf"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.257Z",
+          "fileName": "ru/features/code-and-logs.mdx",
+          "postProcessHash": "5e43c01d308358d6fb9dca69a7fdf00eb0cf772928bce6f669568eeeb158b17b"
+        }
+      },
+      "fileName": "features/code-and-logs.mdx"
+    },
+    {
+      "fileId": "36ba81b75e36e4989efa64edae9de027db14fb77404009256a21bdcf6543d477",
+      "versionId": "736b5fc16ced8d93c8e84a64b30d3a212adcdd937df761f0cf4c69e86006f559",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.238Z",
+          "fileName": "es/faq/integrations.mdx",
+          "postProcessHash": "42e0eb02b8120a6977f6c8c01e1a6b4c4cbb0a863ae7b8b85a870ce770f41e26"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.239Z",
+          "fileName": "zh/faq/integrations.mdx",
+          "postProcessHash": "2bd50dee8e8571922a60d8ef908a64bffef8c33911f0bde4c103161f1c341c97"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.239Z",
+          "fileName": "ru/faq/integrations.mdx",
+          "postProcessHash": "78e054a1da5a0fb1a38a67cc2f0aac6dc6c1ce960fe1516ad1d6fcf810cd6e85"
+        }
+      },
+      "fileName": "faq/integrations.mdx"
+    },
+    {
+      "fileId": "1a5ea94eb978e8abe1cd19dfcd1f3a0d53c104751cb68313afc20b3946795b1c",
+      "versionId": "e87490130f09fcbe51568a47dfa8257a0c2726822eb4dea040f12e759217d7c1",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.240Z",
+          "fileName": "zh/features/assets.mdx",
+          "postProcessHash": "8538d525a74a8ee1543f996eeb774882b75816c3b504bbedbc3205a7d9ba73db"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.240Z",
+          "fileName": "es/features/assets.mdx",
+          "postProcessHash": "aab0bf47d3a0dc4afc8c8122cb399cd7ad76f980dc393ee5865579cb6f843292"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.258Z",
+          "fileName": "ru/features/assets.mdx",
+          "postProcessHash": "0573da31a1c16837172e5b6a5d1779029a7502069f2e793b59c1c2881ed6ff41"
+        }
+      },
+      "fileName": "features/assets.mdx"
+    },
+    {
+      "fileId": "fba64ce65986c1848195c165b4ed539eb1bcf3939dfb01d8201222af6e502c7c",
+      "versionId": "9bbf756ceca426cf9a4a3ff45207dfe49573ccef5f234eed55cf9f2eddfda911",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.241Z",
+          "fileName": "zh/import/import-from-github.mdx",
+          "postProcessHash": "147a08ff19df3926daa3afab2e1babda95bc3a4b550b970f27c7144c0c457b69"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.241Z",
+          "fileName": "ru/import/import-from-github.mdx",
+          "postProcessHash": "f9f5ec6d8cb55b4fe8bef682c256d2626c5510c32c4483b49e25193ee40adbbf"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.258Z",
+          "fileName": "es/import/import-from-github.mdx",
+          "postProcessHash": "54fd50e9e5a5933ce073605cf747f32d67bb48432fc813a66847624dafc5499a"
+        }
+      },
+      "fileName": "import/import-from-github.mdx"
+    },
+    {
+      "fileId": "f1b797b0e23df870b1e952d3785fe91a82c2e043f059f44c3ce657e09aea26cc",
+      "versionId": "1b9d71323fb883e92a2482f46621ff55f55ee8a89d9945008c77741a5e1f7404",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.242Z",
+          "fileName": "zh/web/rork-web.mdx",
+          "postProcessHash": "32d867cf53461c60e4b5d558bd65670178da864c10906b0494605d6a3ef6e247"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.258Z",
+          "fileName": "es/web/rork-web.mdx",
+          "postProcessHash": "1fc9735933e37df98f7cee1cb6704747084c3065dc409d98fa58da61b18a0f79"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.258Z",
+          "fileName": "ru/web/rork-web.mdx",
+          "postProcessHash": "3345f184c43e3031a1b9cda2ac7d86f66428262baa18b046ef90ff1fcd331e5d"
+        }
+      },
+      "fileName": "web/rork-web.mdx"
+    },
+    {
+      "fileId": "7abfe4cfe1bba1c65a3f8f04ebdf063c9c5cbcb325fe4c3e352b7e8d7911bf3f",
+      "versionId": "2e822f5f43c0391ea4ce905035a9b260aa4a0c0e7fb782a30d9dabe66b8ea022",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.244Z",
+          "fileName": "ru/features/undo-and-history.mdx",
+          "postProcessHash": "f65eeb739dd3c334508e50108886e00e2304f9c20b3c5f669f50b08753eff4b8"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.244Z",
+          "fileName": "zh/features/undo-and-history.mdx",
+          "postProcessHash": "b90f0ead6a4f48a0995dbb02542d08b5d63b02616441a0774cce8e82fe39681b"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.260Z",
+          "fileName": "es/features/undo-and-history.mdx",
+          "postProcessHash": "fcebbbebb75088efb4e7999b6795ffdf68f14b80fb755aed9740cc54ba0bd851"
+        }
+      },
+      "fileName": "features/undo-and-history.mdx"
+    },
+    {
+      "fileId": "0cd9a5884675fc564076fd83ae467de3f5e0f04175013c0f69e1ef911d6c008d",
+      "versionId": "355256875adbdb65a577521da9ab3c1f0661901da12d7f4a2eb13beb8c66b4f4",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.246Z",
+          "fileName": "ru/introduction/subscriptions.mdx",
+          "postProcessHash": "a34229fe6b4c922d71486215d4bfbee7e05ffae5fabfc7bb217df44be9ff6c9d"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.246Z",
+          "fileName": "es/introduction/subscriptions.mdx",
+          "postProcessHash": "b37aaf07e1241d3b92602294a4eb9a7534d59ea72bfa136e7e54bf5ed9b3df03"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.260Z",
+          "fileName": "zh/introduction/subscriptions.mdx",
+          "postProcessHash": "45af2e2427654d8ebd1d41e85559d9beebbf8cdccf52407e102ed813f96b6c07"
+        }
+      },
+      "fileName": "introduction/subscriptions.mdx"
+    },
+    {
+      "fileId": "82ade00000765e05a90523656431f1a1bafe66b095f6a5d7a7f0b415d85299eb",
+      "versionId": "b9f67f6b2cf3a70666ac6a63ec18417da71ca7ec8951ec72ba3777f6731682b7",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.247Z",
+          "fileName": "es/rork-playbook/seven-ways-to-scale-your-app.mdx",
+          "postProcessHash": "3abd1550493b0ee50b8222f02f97e7cf68e01823c66943ae2b66036199df8ea3"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.248Z",
+          "fileName": "ru/rork-playbook/seven-ways-to-scale-your-app.mdx",
+          "postProcessHash": "b2109a929b3902db015ab0e93dfc155bffe296c0605f1483fee24c7fe8be32f8"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.248Z",
+          "fileName": "zh/rork-playbook/seven-ways-to-scale-your-app.mdx",
+          "postProcessHash": "27f0d4040ce604e1b69773e229765a5ebdff36ada4c4334a2d9da0c34d7e1583"
+        }
+      },
+      "fileName": "rork-playbook/seven-ways-to-scale-your-app.mdx"
+    },
+    {
+      "fileId": "625943541cf454180fa29eb4e6bf5fec9736a91d4693015aca8308a0bc9ff618",
+      "versionId": "2c4124b5bf303a53154fdbd7e560db0653cf0eddac6ee58fd37c95fbddc22ea3",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.249Z",
+          "fileName": "ru/features/secrets.mdx",
+          "postProcessHash": "12af9df8b60d766cf9237c3ad465f02985c7bf72f5ce04a60a1c4be6eccdfaa7"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.261Z",
+          "fileName": "es/features/secrets.mdx",
+          "postProcessHash": "f61f64bd4435e7faa2a1555342e821ee532efab6644d8f7ac312752aab829894"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.261Z",
+          "fileName": "zh/features/secrets.mdx",
+          "postProcessHash": "636a9d941c35f229105c3bcb9e11e4bd3cb9415a6514673fe6af88b92bebf54e"
+        }
+      },
+      "fileName": "features/secrets.mdx"
+    },
+    {
+      "fileId": "d0ac0c1b9f406c56c289e21aa1a639d4388a5eb04b8974f8d34f61027248d3d1",
+      "versionId": "ea3574cc9081cbfa7e76c250668f1871dbacd460d0adc39e0da99d7b6d681b96",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.249Z",
+          "fileName": "ru/import/lovable-to-mobile-app.mdx",
+          "postProcessHash": "ef1aa1b002b95c71fc739c8ca11485bf5d4bfeb808f1d95bed429b9a1081d639"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.262Z",
+          "fileName": "es/import/lovable-to-mobile-app.mdx",
+          "postProcessHash": "247e90e0b2b2d0a9dafac83ff62d30904f1aa90901c56c08b6d7726bdb1bb344"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.262Z",
+          "fileName": "zh/import/lovable-to-mobile-app.mdx",
+          "postProcessHash": "286cfe4907dd484784b7d6ab4899fd9ab23e1e790e88a3c35be70558a04e54cd"
+        }
+      },
+      "fileName": "import/lovable-to-mobile-app.mdx"
+    },
+    {
+      "fileId": "fd25bc70cfd94c913fbaa0dffa44558a0db41fc6cf732d8441d058f38d2c252f",
+      "versionId": "4596dd6d6169982ea9830dc9661c5c631136f292505766d05ffa16f82037aa3d",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.250Z",
+          "fileName": "ru/ai-app-store-reviewer.mdx",
+          "postProcessHash": "1ee038986766dc82ae387094e37e0b24d989363a32a0ed4a1ca8e517b10785a6"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.250Z",
+          "fileName": "es/ai-app-store-reviewer.mdx",
+          "postProcessHash": "0f94c1bb6402d952a978dac50f2b107dcd8d538fb4d87604cc02e6f38379d115"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.250Z",
+          "fileName": "zh/ai-app-store-reviewer.mdx",
+          "postProcessHash": "ea5c5565afa855b65af347d31ae52271d5ed58898f72cd9863194902cb47dfc3"
+        }
+      },
+      "fileName": "ai-app-store-reviewer.mdx"
+    },
+    {
+      "fileId": "2ca4fcda32ba24f45d888a8e4fd7ac520af1e83419228dbfa3dcc9080bc08ee4",
+      "versionId": "79981b1eed19f1d926e19af75bfd87c8336e80b83b8ebbf5d569ca760ab4bc44",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.251Z",
+          "fileName": "zh/building-complex-apps/backend/what-is-rork-toolkit.mdx",
+          "postProcessHash": "3673b599ea29563b3ea10dee5cf1e71bca19bed633141f0163e189bd9f7f9b85"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.251Z",
+          "fileName": "es/building-complex-apps/backend/what-is-rork-toolkit.mdx",
+          "postProcessHash": "fe7f1e274347a995d474917368eb48b587f307b53661374829d3e77b9184c8df"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.251Z",
+          "fileName": "ru/building-complex-apps/backend/what-is-rork-toolkit.mdx",
+          "postProcessHash": "116ce8449f2c0677fa11fa323513a9b9b358dd710ee5dcde44f17b07b5586d59"
+        }
+      },
+      "fileName": "building-complex-apps/backend/what-is-rork-toolkit.mdx"
+    },
+    {
+      "fileId": "cdb4a4a592e0a5ec9fc5599ae2b1c451efe258e41fb1782136c664e59b58df19",
+      "versionId": "fc39ed52a40b364557f7e2c8c56ec4dd7f15c93c8587c906eb9632fb666e5e56",
+      "translations": {
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.252Z",
+          "fileName": "zh/import/website-to-mobile-app.mdx",
+          "postProcessHash": "286e124d5a560993c428ad158c3c3e9112e3f6e87c970c25d299eaaf764e350f"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.252Z",
+          "fileName": "ru/import/website-to-mobile-app.mdx",
+          "postProcessHash": "e148fcc85d4b397ca2425ef60e35127f8b4d829f0a13c0e1100ac59119f65798"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.253Z",
+          "fileName": "es/import/website-to-mobile-app.mdx",
+          "postProcessHash": "b6087b12109645fe9121dd576d9b62374bf2093a40ded9439a094b306389f2fd"
+        }
+      },
+      "fileName": "import/website-to-mobile-app.mdx"
+    },
+    {
+      "fileId": "1fbd6318039c120d7f1d6c26896ecff83d5a32db3ad56e36d2e8a801ff6886f1",
+      "versionId": "ed5dfe826dddfaeb97e736ec771c15c09187e90b36bd6c4fdbf5454626541f48",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.254Z",
+          "fileName": "es/features/index.mdx",
+          "postProcessHash": "5eeb215fc18d6acee1196d22021804ee08069dd889d6f3029adf65e6715d04e2"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.254Z",
+          "fileName": "ru/features/index.mdx",
+          "postProcessHash": "e58ca2e79a5845bd05d5cbc572899860b9d94a42b1a70c8dd697629b83023e56"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.254Z",
+          "fileName": "zh/features/index.mdx",
+          "postProcessHash": "9b1d888fa704838b3bb9379c620c8cd8d43ced5d5cabceacf08505e1cbd82645"
+        }
+      },
+      "fileName": "features/index.mdx"
+    },
+    {
+      "fileId": "82c307b3a1a7a0b1639635dbb8b48276a31935f7896c8580234074c0226f6dc3",
+      "versionId": "fa8df0818d8182bd543ee5f6e87d844c46549832c98ee03e429184fb657f4f88",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.256Z",
+          "fileName": "ru/android/rork-android.mdx",
+          "postProcessHash": "2ed93b24ce040f41fde2779945d09fe000a48e63799ff6885c004bc1944a93e6"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.256Z",
+          "fileName": "es/android/rork-android.mdx",
+          "postProcessHash": "451e069a24a53712a15d49f9461b0b21a7c84257ae212af69f180eaf704d318f"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.257Z",
+          "fileName": "zh/android/rork-android.mdx",
+          "postProcessHash": "b2762756d81666b7ad9c9f426644ecc50329787bd536f727deb0a70241a9d37a"
+        }
+      },
+      "fileName": "android/rork-android.mdx"
+    },
+    {
+      "fileId": "6921fdb4ff8864f2bb8b0de62d2c7e6eb7037928b973d98eadc7c3ce797fddc2",
+      "versionId": "d52737bc8204ba18b731559117bb41b2698fd286865f33a2e9ba9228d8d946f9",
+      "translations": {
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.259Z",
+          "fileName": "ru/rork-max/rork-max-app.mdx",
+          "postProcessHash": "50231f1421e25721ce3ddd64ee42d63dd5afbdbeea30e52bf6d245c51788af71"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.259Z",
+          "fileName": "zh/rork-max/rork-max-app.mdx",
+          "postProcessHash": "4ab6248971f15d4dabf281a582a49048cced0b97a52255637bb1f259ab6def13"
+        },
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.259Z",
+          "fileName": "es/rork-max/rork-max-app.mdx",
+          "postProcessHash": "b7b68baa3c5638bef3fd2ccf4908a5bb532648f4c89f7c71cc5758816e6bd7a1"
+        }
+      },
+      "fileName": "rork-max/rork-max-app.mdx"
+    },
+    {
+      "fileId": "76641b83705a2c541ba8dbbd18adf5caa3c6d95f1f6c867027d41419ef693867",
+      "versionId": "b52339c7b4e9f080e3cecea71bb2fd2c792b0d9e30e54b3bcbe4036c5da3d67e",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-09-02T02:05:50.261Z",
+          "fileName": "es/rork-playbook/scale-to-50k-month.mdx",
+          "postProcessHash": "7738db1c2e9cfc7368c387c7f287f52e9fb58a2e022577eea5c3d0cd4b769f19"
+        },
+        "zh": {
+          "updatedAt": "2026-09-02T02:05:50.261Z",
+          "fileName": "zh/rork-playbook/scale-to-50k-month.mdx",
+          "postProcessHash": "a161dd40092361531dfab4ae141c48c54fabc2a839b069fa30c4eb77e62ef335"
+        },
+        "ru": {
+          "updatedAt": "2026-09-02T02:05:50.261Z",
+          "fileName": "ru/rork-playbook/scale-to-50k-month.mdx",
+          "postProcessHash": "1ecf70cd0bf61d3731cb0aff0b70fb1bfe9718935ef013acd7323cd9d5701533"
+        }
+      },
+      "fileName": "rork-playbook/scale-to-50k-month.mdx"
+    }
+  ]
 }

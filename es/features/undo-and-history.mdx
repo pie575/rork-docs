@@ -1,0 +1,166 @@
+---
+title: "Deshacer un cambio y volver a una versión anterior"
+---
+
+Cada mensaje de Rork es una versión a la que puedes volver. Deshaz el último cambio, revierte a cualquier respuesta anterior, revisa exactamente qué archivos cambiaron y detén un mensaje que va por mal camino.
+
+Nada de lo que haces en Rork es definitivo. Cada respuesta del agente es una versión guardada de todo tu proyecto, así que siempre puedes volver a la última que funcionaba.
+
+Volver atrás no consume créditos.
+
+<div id="undo-the-last-change">
+  ## Deshacer el último cambio
+</div>
+
+La última respuesta del chat tiene debajo un botón **deshacer**. Púlsalo y Rork revertirá los archivos y eliminará ese intercambio del chat. No aparece ningún cuadro de diálogo, porque no hay nada que perder: la versión a la que vuelves es la que tenías hace un minuto.
+
+<Frame>
+  <img alt="Una respuesta del chat de Rork con una lista de archivos y una fila de acciones debajo que muestra deshacer, un botón de copiar y un menú de tres puntos" />
+</Frame>
+
+Usa **deshacer** cuando el último cambio haya empeorado las cosas y quieras recuperar el estado anterior de inmediato.
+
+<div id="go-back-several-versions">
+  ## Retroceder varias versiones
+</div>
+
+Las respuestas anteriores muestran **Revertir** en lugar de **Deshacer**. Devuelve tu proyecto al estado en el que quedó justo después de esa respuesta.
+
+<Frame>
+  <img alt="La fila de acciones bajo una respuesta anterior de Rork, con el control Revertir junto a los botones de copiar y de tres puntos" />
+</Frame>
+
+Revertir pide confirmación, porque puedes perder trabajo posterior:
+
+<Frame>
+  <img alt="Un cuadro de diálogo titulado Revertir a la versión anterior que advierte que se perderán los cambios sin guardar, con los botones Cancelar y Revertir" />
+</Frame>
+
+Cuando confirmas, Rork restaura los archivos y recorta el chat: los mensajes hasta esa respuesta se conservan y todo lo posterior desaparece. Un aviso muestra el avance: primero **Restaurando proyecto...** y luego **Versión restaurada**.
+
+<Warning>
+  Revertir no se puede deshacer. Las versiones posteriores a la que elijas dejan de estar al principio del historial. Antes de hacer una reversión grande, pregúntate si solo necesitas deshacer el último cambio.
+</Warning>
+
+No puedes revertir mientras el agente está trabajando. El botón explica por qué: «Espera un momento, el agente sigue trabajando. Detén el mensaje para revertir aquí».
+
+<div id="edit-a-message-and-try-again">
+  ## Edita un mensaje e inténtalo de nuevo
+</div>
+
+A veces la respuesta era correcta y lo que estaba mal era la pregunta. Pasa el cursor sobre uno de tus mensajes anteriores y pulsa **Edit message**. Corrige el texto y pulsa **Send**.
+
+Rork devuelve el proyecto al estado en que estaba antes de ese mensaje, descarta todo lo que vino después y responde a tu nueva formulación. Es revertir y reintentar en un solo paso, y es la forma más limpia de salir de una conversación que se ha torcido.
+
+<div id="see-exactly-what-changed">
+  ## Consulta exactamente qué cambió
+</div>
+
+Cada respuesta puede mostrar su propio diff. Abre el menú **⋯** debajo de la respuesta y elige **Review changes**.
+
+<Frame>
+  <img alt="El menú de detalles del mensaje en Rork que muestra Review changes, Auto to Opus 5 High, 78,5 créditos y 121,4k context tokens" />
+</Frame>
+
+Ese mismo menú responde a la pregunta «¿cuánto costó?». Indica el modelo que realmente se ejecutó, los créditos que consumió el mensaje y cuánto contexto arrastraba el agente.
+
+**Review changes** abre un diff a pantalla completa de todos los archivos que modificó la respuesta, comparados con la versión anterior. El encabezado indica cuántos archivos son y **ESC** lo cierra.
+
+<Frame>
+  <img alt="La vista de diff de Rork que muestra rork.json y gitignore con las líneas añadidas resaltadas en verde, y 88 archivos modificados en el encabezado" />
+</Frame>
+
+Revisa el diff antes de publicar y después de cualquier cambio que no hayas entendido del todo.
+
+<div id="stop-a-message-that-is-going-wrong">
+  ## Detener un mensaje que va por mal camino
+</div>
+
+Mientras el agente trabaja, el botón de enviar se convierte en un botón de detener. Púlsalo y Rork terminará el paso en el que está, guardará lo que ya hizo y se detendrá.
+
+Detener es seguro y barato:
+
+* El trabajo parcial se queda en el chat, marcado como **Detenido — progreso guardado**.
+* Tu prompt vuelve al campo de escritura, así que puedes reformularlo y enviarlo de nuevo.
+* Un build que nunca se completó no se cobra.
+
+Detén cuanto antes. Un turno largo que va en la dirección equivocada cuesta más que detenerlo y escribir un prompt mejor.
+
+<div id="fix-an-error-instead-of-undoing">
+  ## Corregir un error en lugar de deshacer
+</div>
+
+Si la vista previa da un error, Rork lo muestra y te ofrece corregirlo. El cuadro de diálogo se titula **Runtime error** y el botón dice **Fix with Rork**. Si hay varios errores, verás **Fix all with Rork**, o un contador, y **Dismiss**.
+
+De forma predeterminada, al pulsar ese botón la solicitud de corrección se envía de inmediato. Puedes cambiarlo en **Account settings → Preferences**:
+
+<Frame>
+  <img alt="El panel Preferences en la configuración de la cuenta de Rork con la opción Auto-send error fixes activada" />
+</Frame>
+
+Hay otros dos sitios que ofrecen la misma ayuda: una respuesta con problemas de TypeScript incluye un botón **Fix errors**, y el panel **Logs**, en **More → Code**, muestra lo que tu app imprimió en tiempo de ejecución, que es justo lo que conviene pegar en el chat cuando un error no es evidente.
+
+<div id="what-a-version-actually-is">
+  ## Qué es realmente una versión
+</div>
+
+Una respuesta del agente equivale a una versión guardada del proyecto. Rork hace commit de tus archivos al final de cada turno, junto con el historial del chat, de modo que el chat y el código nunca se desincronizan.
+
+Esto tiene dos consecuencias útiles:
+
+* La lista de versiones es el chat. No hay ningún panel de historial aparte que tengas que aprender a usar.
+* El historial de tu proyecto viaja con tu código. Conecta GitHub y tendrás esos mismos commits en tu propio repositorio. Consulta [Cómo sincronizar tu proyecto con GitHub](/es/tutorials/how-to-connect-github).
+
+<div id="faq">
+  ## Preguntas frecuentes
+</div>
+
+<AccordionGroup>
+  <Accordion title="¿Deshacer o revertir consume créditos?">
+    No. Volver a una versión anterior es gratis. Solo pagas por los mensajes que hacen trabajo.
+  </Accordion>
+
+  <Accordion title="¿Hasta dónde puedo retroceder?">
+    Hasta cualquier respuesta del chat. Desplázate hacia arriba y los mensajes más antiguos se irán cargando.
+  </Accordion>
+
+  <Accordion title="¿Puedo deshacer una reversión?">
+    No. Cancela el cuadro de diálogo si tienes dudas y usa mejor **Deshacer** cuando solo necesites recuperar el último cambio.
+  </Accordion>
+
+  <Accordion title="¿Revertir también deshace una publicación?">
+    No. Tu app web en producción o la build que enviaste se mantienen igual hasta que vuelvas a publicar. Consulta [Rork Web](/es/web/rork-web).
+  </Accordion>
+
+  <Accordion title="¿Revertir recupera los secretos eliminados?">
+    Las variables de entorno no forman parte de la versión del código. Revisa **Más → Secretos** después de revertir. Consulta [Claves de API y variables de entorno](/es/features/secrets).
+  </Accordion>
+
+  <Accordion title="El agente está atrapado en un bucle de correcciones fallidas.">
+    Primero revierte a la última versión que funcionaba y luego acota la petición. En [Cómo salir de un bucle de errores](/es/introduction/introduction/agent-loops) te lo explicamos paso a paso.
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## Próximos pasos
+</div>
+
+<CardGroup>
+  <Card icon="sparkles" href="/es/features/agent-modes" title="Cómo funciona el agente">
+    Design mode, Plan mode y la construcción de la app.
+  </Card>
+
+  <Card icon="triangle-alert" href="/es/introduction/introduction/agent-loops" title="Salir de un bucle de errores">
+    Qué hacer cuando la misma solución falla una y otra vez.
+  </Card>
+
+  <Card icon="github" href="/es/tutorials/how-to-connect-github" title="Sincronizar con GitHub">
+    Mantén el mismo historial en tu propio repositorio.
+  </Card>
+
+  <Card icon="users" href="/es/collaborate/share-a-project" title="Compartir el proyecto">
+    Quién puede revertir y quién solo puede ver.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

@@ -1,0 +1,270 @@
+---
+title: "Rork Web：构建并发布 Web 应用"
+---
+
+Rork 使用 Vite 和 React 构建 Web 应用，在聊天窗口旁实时预览，并发布到你在 rork.app 上的专属地址。你可以用它来做网站、仪表盘、客户门户或管理后台。
+
+<div>
+  <img alt="一个 Rork Web 项目：左侧是聊天，右侧的实时预览中是做好的 Ember Roast 网站" />
+</div>
+
+<p>一条提示词，一个项目：左边是聊天，右边是运行中的网站。</p>
+
+Rork Web 应用在浏览器中运行。Rork 用 **Vite 和 React** 生成代码，在聊天窗口旁实时预览，并发布到你在 `rork.app` 上的专属地址。没有应用商店，无需审核，也无需安装。你只要分享一个链接，别人就能在电脑或手机上打开。
+
+无论是网站、仪表盘、客户门户、管理后台还是 SaaS 产品，Web 都是合适的平台。它也是今天就把成果摆到用户面前的最快方式。想看看它能构建出什么，请访问 [Rork Web 页面](https://rork.com/web)。
+
+<div id="start-a-web-app">
+  ## 创建 Web 应用
+</div>
+
+在发送第一条消息之前，先选好平台。在 [rork.com](https://rork.com) 上，打开提示框下方的平台选择器，选择 **For web**。然后描述你要做的产品，而不是技术细节。
+
+<Frame>
+  <img alt="Rork 提示框中输入了咖啡烘焙店的提示词，平台已设置为 For web" />
+</Frame>
+
+选择器上写得很清楚：**你之后可以再添加其他平台**。同一个 project 可以同时包含 iPhone 应用、Android 应用和 Web 应用。参见[在 iOS、Android 和 Web 之间转换你的应用](/zh/import/convert-between-platforms)。
+
+<div id="answer-the-questions-about-the-look">
+  ## 回答关于外观的问题
+</div>
+
+Rork 不会马上开始写代码，而是先就外观提几个简短的问题，每个选项都是一张图片，而不是文字。你也可以在 **Other** 中填写自己的答案。
+
+<Frame>
+  <img alt="Rork asking what overall look the site should have, with four palette options to choose from" />
+</Frame>
+
+三个问题都回答完后，点击 **Submit**。如果想跳过这一步，也可以直接在第一条提示词里写明想要的外观。
+
+<div id="approve-the-design-then-build">
+  ## 确认设计，然后构建
+</div>
+
+接下来 Rork 会绘制各个页面，并在 **Design mode** 中展示出来。此时还未真正开始构建，因此这是改主意成本最低的时刻。你可以在聊天中提出换一个页面，或者点击 **Build**，把设计变成可运行的网站。
+
+<Frame>
+  <img alt="Design mode 中展示 Ember Roast 的三个建议页面，以及带有 View Design 和 Build 按钮的 Review design 卡片" />
+</Frame>
+
+<div id="work-in-the-project">
+  ## 在项目中工作
+</div>
+
+项目界面左侧是聊天窗口，右侧是实时预览。预览的是真实运行的应用，而不是静态图片，因此你可以边构建边点击体验。
+
+预览上方各控件的作用如下：
+
+| 控件           | 作用                                |
+| ------------ | --------------------------------- |
+| **切换预览平台**   | 在项目内的各个应用之间切换预览，也可添加平台。           |
+| **切换预览尺寸**   | 在 **桌面端**、**平板** 和 **手机** 之间循环切换。 |
+| **回到首页**     | 让预览返回第一个页面。                       |
+| **重新加载预览**   | 修改后重新加载应用。                        |
+| **为提示词选择元素** | 指向页面中的某个部分，然后写明要如何修改它。            |
+| **发布**       | 打开发布面板。                           |
+
+<Tip>
+  与其用文字描述位置，不如使用 **为提示词选择元素**。指向该元素，然后说“把这个按钮调暗一点”。这样 agent 能准确定位到该元素，也更少改动周围的内容。
+</Tip>
+
+<div id="check-the-phone-width">
+  ## 检查手机宽度
+</div>
+
+Web 应用不仅要能在笔记本上使用，也要能在手机浏览器里正常显示。反复点击 **Switch preview size**，直到显示 **Phone**。Rork 会把站点放进手机外框中呈现，这样你看到的页面宽度就和访客看到的一致。
+
+<Frame>
+  <img alt="Ember Roast 站点在 Phone 预览尺寸下的效果，显示在聊天窗口旁的手机外框中" />
+</Frame>
+
+然后提出你需要的修改：
+
+```
+在手机宽度下，主视觉文字和图片重叠了。改成上下堆叠排列。
+```
+
+<div id="publish-to-the-web">
+  ## 发布到 Web
+</div>
+
+打开 **Publish**，然后点击 **Publish to web**。Rork 会构建应用，并将其托管在你专属的 `rork.app` 地址上。
+
+<Frame>
+  <img alt="Rork 发布面板显示 ember-roast-website.rork.app、Site offline 状态、禁用的 Add a custom domain 行以及 Publish to web 按钮" />
+</Frame>
+
+面板中显示的内容：
+
+* **地址。** Rork 会根据 project 名称生成一个地址，例如 `ember-roast-website.rork.app`。点击铅笔图标可修改子域名。
+* **状态。** 首次发布之前，这里显示为 **Site offline**。
+* **Add a custom domain。** 首次发布前，此行不可用。面板中也会提示：&quot;Publish the project first to add a custom domain.&quot;
+
+发布和构建是两个独立的步骤。你的改动只会体现在预览中，直到你再次发布；当线上站点落后于 project 的当前状态时，**Publish** 按钮上会出现标记。
+
+首次发布后，面板会发生变化：状态变为 **Live**，并显示该版本的发布时间，点击 **Unpublish** 则可将站点重新下线。
+
+<Frame>
+  <img alt="发布面板显示 rork.app 地址、Live 状态、已启用的 Add a custom domain 行以及 Published 和 Unpublish 按钮" />
+</Frame>
+
+<div id="domains">
+  ## 域名
+</div>
+
+用 `rork.app` 地址做测试没问题,但正式的产品需要一个正式的名字。域名涉及两个地方,搞清楚各自的作用会很有帮助:
+
+* **账户设置 → 域名** 是域名接入 Rork 的入口。你可以在这里购买域名,或绑定自己已有的域名,每个域名只需操作一次。
+* **项目的发布面板** 则是把某个地址指向某个应用的地方,每个项目只需操作一次。
+
+<div id="the-domains-list">
+  ### 域名列表
+</div>
+
+打开账户菜单，然后进入 **Account settings → Domains**。账户下的所有域名都会列在这里，每个域名下方显示其对应的各个地址。
+
+<Frame>
+  <img alt="Rork 账户设置中的 Domains 标签页，显示 Add a domain 面板以及一个已连接的域名和两个标记为 Live 的地址" />
+</Frame>
+
+每个地址都有各自的状态。**Live** 表示该地址已在为你的应用提供服务；如果 Rork 还在配置中，则会显示 **Finishing, routing traffic to the app**。点击 **Add more subdomains** 可在同一域名下再添加一个地址，点击垃圾桶图标则会删除整个域名。
+
+<div id="buy-a-new-domain-or-connect-one-you-own">
+  ### 购买新域名，或连接你已有的域名
+</div>
+
+点击 **Add domain**。Rork 会把这一步交给域名合作伙伴 **Entri**，由它替你完成技术配置。第一个界面就是分岔口：
+
+<Frame>
+  <img alt="标题为 Add a domain to Rork 的 Entri 对话框，提供 Buy a new domain 和 Connect a domain 两个选项" />
+</Frame>
+
+| 路径                   | 何时选择                           | 会发生什么                             |
+| -------------------- | ------------------------------ | --------------------------------- |
+| **Buy a new domain** | 你还没有域名，或者想为这个 product 用一个全新域名。 | 你在流程中搜索名称并直接购买。域名到手时就已经指向 Rork。   |
+| **Connect a domain** | 你已在某个注册商处拥有该域名。                | 你提供域名，Entri 会配置好指向 Rork 的 DNS 记录。 |
+
+<Note>
+  购买通过 Entri 完成，不消耗你的 Rork credits；和其他域名注册一样，域名是一项按年支付的费用。
+</Note>
+
+无论选哪条路径，域名都会出现在上方的列表中。请等到该地址显示为 **Live**，再把某个 project 指向它。
+
+<div id="point-a-project-at-an-address">
+  ### 将项目指向某个地址
+</div>
+
+域名已添加到账户中，但还没有应用在该地址上响应。这层关联需要在项目中建立。
+
+<Steps>
+  <Step title="先发布一次项目">
+    在发布之前，自定义域名一栏始终不可用。首次发布前，面板会显示“Publish the project first to add a custom domain.”
+  </Step>
+
+  <Step title="打开“添加自定义域名”">
+    在项目中打开 **Publish**，然后点击 **Add a custom domain**。
+
+    <Frame>
+      <img alt="连接域名对话框，包含域名选择器、两个标记为“已连接到其他项目”的地址、一个“添加子域名”按钮，以及取消和连接按钮" />
+    </Frame>
+  </Step>
+
+  <Step title="选择域名">
+    在 **Domain** 字段中选择域名，列表中列出的是你账户下的所有域名。
+  </Step>
+
+  <Step title="勾选地址">
+    在 **Put your app on these addresses** 下，勾选该项目要响应的地址：裸域名、`www` 版本，或两者都选。如需 `app.example.com` 这类地址，请点击 **Add a subdomain**。
+  </Step>
+
+  <Step title="点击 Connect">
+    至少勾选一个地址后，**Connect** 才会变为可用。
+  </Step>
+</Steps>
+
+一个地址只能服务于一个项目。已被其他项目占用的地址会标记为 **Connected to another project**，无法勾选。当某个域名下的地址全部被占用时，对话框会给出提示，并引导你改用子域名，或到 **Account Settings** 中选择另一个域名。
+
+<div id="add-a-web-app-to-a-project-you-already-have">
+  ## 为已有 project 添加 Web 应用
+</div>
+
+任何移动端 project 都可以衍生出 Web 版本。你可以打开 **Project Settings → Add new app → Web**，使用预览上方的平台切换器，或者直接这样提问：
+
+```
+为这个应用添加一个 Web 版本
+```
+
+每个应用各自保留独立的代码，但共用同一个对话；如果你有 backend，backend 也会共用。常见的拆分方式是：移动应用面向客户，Web 应用作为管理后台。
+
+<div id="what-a-web-app-cannot-do">
+  ## Web 应用做不到的事
+</div>
+
+Web 应用运行在浏览器里，因此那些深度原生的能力都用不了：
+
+* 无法通过 App Store 或 Google Play 分发
+* 没有主屏幕或锁屏小组件，没有实时活动，也没有灵动岛
+* 没有 Apple Watch 应用，也无法接入 Apple Health
+* 没有后台追踪，也没有高级的运动或身体追踪
+* 推送通知受限。在 iPhone 和 iPad 上，需要 iOS 16.4 或更高版本，用户还得先把网站添加到主屏幕，再授予权限
+
+如果你的产品需要其中任何一项，那就做一个原生应用，同时保留 Web 应用。参见 [iPhone、Android 还是 web：有什么区别](/zh/swift-vs-react-native/whats-the-difference)。
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<AccordionGroup>
+  <Accordion title="Rork 为 Web 编写什么代码？">
+    一个真正的 Vite + React 项目，使用 TypeScript 编写，并用 Tailwind 设置样式。你可以将它导出到 GitHub，然后在任何地方运行。参见[如何连接 GitHub](/zh/tutorials/how-to-connect-github)。
+  </Accordion>
+
+  <Accordion title="我可以跳过提问和设计步骤吗？">
+    可以。把你想要的外观写进第一条提示词里，智能体要问的问题自然就少了。在 **Design mode** 中，你也可以直接点击 **Build**。
+  </Accordion>
+
+  <Accordion title="Web 应用可以有 backend 吗？">
+    可以。使用 [Rork Cloud](/zh/backend/rork-cloud) 在 Rork 内部搭建 backend，也可以连接 [Supabase](/zh/backend/supabase) 或 [Firebase](/zh/backend/firebase)。同一个 project 中的多个应用可以共用同一个 backend。
+  </Accordion>
+
+  <Accordion title="我可以使用自己的域名吗？">
+    可以，如果你还没有域名，也能直接在 Rork 内购买。先发布到 `rork.app` 地址，然后参见[域名](#domains)。
+  </Accordion>
+
+  <Accordion title="两个 project 可以共用一个地址吗？">
+    不可以。一个地址只能属于一个 project。如果某个地址已被占用，对话框会将其标记为 **Connected to another project**，这时你需要改选一个子域名。
+  </Accordion>
+
+  <Accordion title="我有一个 Lovable 项目，必须重做吗？">
+    不必。Rork 可以直接导入。参见 [Lovable 转移动应用](/zh/import/lovable-to-mobile-app)，并把 Web 应用保留在同一个 project 中。
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## 下一步
+</div>
+
+<CardGroup>
+  <Card icon="compass" href="/zh/swift-vs-react-native/whats-the-difference" title="iPhone、Android 还是 Web">
+    各平台分别擅长什么，以及该如何选择。
+  </Card>
+
+  <Card icon="repeat" href="/zh/import/convert-between-platforms" title="添加另一个平台">
+    在同一个对话中，把项目扩展到 iOS 和 Android。
+  </Card>
+
+  <Card icon="database" href="/zh/backend/rork-cloud" title="添加 backend">
+    为你的 Web 应用添加账户、数据和文件功能。
+  </Card>
+
+  <Card icon="download" href="/zh/import/website-to-mobile-app" title="网站转移动应用">
+    把现有网站变成原生应用。
+  </Card>
+
+  <Card icon="globe" href="https://rork.com/web" title="Rork Web">
+    产品页面，附有 Rork 为浏览器构建的应用示例。
+  </Card>
+</CardGroup>
+
+<CtaBanner />

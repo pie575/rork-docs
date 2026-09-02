@@ -1,0 +1,240 @@
+---
+title: "什么是 Rork Cloud"
+---
+
+为什么要用 Rork 内置的 backend，而不是自己搭一套？它的费用如何，又能带来什么？
+
+<Note>
+  Rork Cloud 目前处于 **beta** 阶段。beta 期间可免费使用，而且即使订阅到期，你的数据也不会被删除。
+</Note>
+
+Rork Cloud 是 Rork 为你的应用创建并托管的 backend，你无需自己搭建或配置。当应用需要存储数据时，agent 会在聊天中弹出 **“Create Rork Cloud”** 确认卡片。确认后，Rork 会在后台完成 backend 的开通，并自动将其接入你的应用。
+
+你在聊天中看到的卡片是这样的：
+
+<div>
+  <div>
+    <div>
+      <svg>
+        <path />
+
+        <path />
+
+        <path />
+
+        <path />
+
+        <path />
+
+        <path />
+
+        <path />
+
+        <path />
+
+        <path />
+
+        <path />
+      </svg>
+    </div>
+
+    <div>
+      <div>创建 Rork Cloud？</div>
+      <div>在添加数据库表、RLS 策略或 Edge Functions 之前，先创建一个托管的 backend。</div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <div>
+        <svg>
+          <path />
+
+          <path />
+
+          <path />
+        </svg>
+
+        <span>Postgres</span>
+      </div>
+
+      <div>
+        <svg>
+          <path />
+
+          <path />
+        </svg>
+
+        <span>RLS</span>
+      </div>
+
+      <div>
+        <svg>
+          <path />
+        </svg>
+
+        <span>Edge Functions</span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <span>取消</span>
+
+      <span>
+        <svg>
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+        </svg>
+
+        连接我的 Supabase
+      </span>
+
+      <span>
+        <svg>
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+
+          <path />
+        </svg>
+
+        创建 Rork Cloud
+      </span>
+    </div>
+
+    <div>连接你自己组织下的 Supabase project，计算费用直接由 Supabase 结算。</div>
+  </div>
+</div>
+
+**创建 Rork Cloud** 会为你搭建好托管 backend；**连接我的 Supabase** 则是同一张卡片上的另一条路径，改用你自己的 Supabase project。
+
+<div id="what-you-get">
+  ## 你将获得什么
+</div>
+
+* **无需额外注册。** 只要有 Rork 账户就够了。Rork 会替你打理一切，你随时都能在聊天中告诉 Rork agent 你的需求。
+* 一个**数据库**，用于存放账户、共享数据，以及所有需要在多设备、多用户之间同步的内容。
+* **安全访问规则**，确保每个用户只能读写自己的数据。
+* **服务端函数**，用于承载不适合在用户设备上运行的逻辑，例如私有 API 密钥、支付和 webhook。
+
+<div id="rork-cloud-or-your-own-supabase">
+  ## 用 Rork Cloud 还是自己的 Supabase？
+</div>
+
+两者与 Rork 的配合方式完全一样，所以关键看你想把哪部分掌握在自己手里：
+
+* **从没搭建过 backend？** 用 Rork Cloud。Rork 会帮你创建并托管，beta 期间无需任何配置，也不用付费。
+* **已经用惯了 Supabase？** 连接你自己的 Supabase project，所有操作都在你自己的账号下完成。Supabase 会按[其定价](https://supabase.com/pricing)直接向你收费。
+
+两种方式都不会把你锁死：你可以先用 Rork Cloud，[之后再迁移到自己的 Supabase](#transfer-to-your-own-supabase)。
+
+<CardGroup>
+  <Card icon="database" href="/zh/backend/supabase" title="连接 Supabase">
+    将你自己的 Supabase project 连接到 Rork 应用。
+  </Card>
+
+  <Card icon="database" href="/zh/backend/firebase" title="连接 Firebase">
+    将你自己的 Firebase project 连接到 Rork 应用。
+  </Card>
+</CardGroup>
+
+<div id="how-to-add-it">
+  ## 如何添加
+</div>
+
+获取 backend 有两种方式：
+
+* **直接在聊天中提出。** 输入 *“给我的应用添加一个数据库”* 或 *“添加一个 backend”*，剩下的交给 Rork 处理。
+* **从 project 面板添加。** 点击 **More** (顶部工具栏的最后一个图标) ，打开 **Database**，然后点击 **Add a database**。
+
+<Frame>
+  <img alt="More 菜单下的 Database 部分及 Add a database 按钮" />
+</Frame>
+
+<div id="see-what-your-app-is-storing">
+  ## 查看应用存储了哪些数据
+</div>
+
+backend 创建完成后，**More** 下的 **Database** 选项卡会列出你的数据表及行数，方便你随时查看里面存了什么。
+
+<Frame>
+  <img alt="More 下的 Database 选项卡，显示应用的数据表及行数" />
+</Frame>
+
+如果你觉得原始数据表不够直观，可以在聊天中让 Rork 帮你做一个更好用的界面，例如：*“帮我做一个网页管理后台，让我可以浏览和编辑应用中的用户和订单。”*
+
+<div id="transfer-to-your-own-supabase">
+  ## 迁移到你自己的 Supabase
+</div>
+
+如果你之后希望 backend 归你所有、由你自行管理，可点击 **Database** 标签页顶部的 **迁移到你的 Supabase**。整个 backend 会连同数据一起迁入你的 Supabase 组织。project 的 URL、数据和密钥都保持不变，因此已发布的应用无需任何改动即可照常运行。
+
+<Frame>
+  <img alt="Database 标签页中的 Managed by Rork 卡片，以及 迁移到你的 Supabase 按钮" />
+</Frame>
+
+有两点需要注意：
+
+* 迁移是单向的：之后 Rork 无法再收回该 project。
+* 账单随之转移：从此以后，该 project 的费用需按 [Supabase 的定价](https://supabase.com/pricing)由你直接支付给 Supabase。
+
+<div id="what-it-costs">
+  ## 费用说明
+</div>
+
+**Rork Cloud 在 beta 期间免费使用。** 目前运行数据库、访问规则和服务端函数都不收取任何费用。
+
+另有两项相关费用不包含在 backend 本身之内：
+
+* **应用内的 AI 功能** (应用内聊天、图像生成、语音等) 消耗 **Cloud credits**，按用量付费。参见 [Build credits 与 Cloud credits 的区别](/zh/billing/build-credits-vs-cloud-credits)。
+* **迁移到你自己的 Supabase 之后**，Supabase 会就该 project 直接向你收费。
+
+<div id="what-to-expect">
+  ## 你需要了解的事项
+</div>
+
+* **这是真实的生产环境 backend。** 它承载着你的应用面向真实用户的线上数据，而非沙盒环境。
+* **改动即时生效。** 没有单独的预览环节，因此执行删除或覆盖数据的操作时务必谨慎。
+* **代码归你所有。** 付费方案下，所有生成的代码都归你所有，可随时通过 GitHub 集成导出，并支持双向同步。参见[代码导出](/zh/faq/code-export)。
+* **你可以添加账号体系和社交登录。** 请参照[如何为你的 Rork 应用添加 Apple/Google 登录](/zh/integrations/backend/how-to-set-up-oauth)。
+
+<div id="if-you-cancel-or-stop-paying">
+  ## 如果你取消订阅或停止付费
+</div>
+
+* **你的数据不会被删除。** 即使订阅到期，Rork 也不会删除你应用的数据。
+* **你的应用会继续运行。** 取消 Rork 订阅后，你的应用及其 backend 仍会正常运行。
+
+请注意，Rork Cloud 目前仍处于 beta，随着产品逐步成熟，这些细节可能会有所调整。
+
+<div id="when-you-may-not-need-it">
+  ## 什么情况下可能不需要
+</div>
+
+* 仅在单台设备上存储数据的原型，用本地存储即可。
+* 逻辑、Webhook 或私钥可以交给服务端函数处理，不需要完整的数据库。
+
+如果你不确定自己的应用到底需不需要 backend，可以阅读[你的应用需要 Backend 吗？](/zh/backend/index)。
+
+<CtaBanner />

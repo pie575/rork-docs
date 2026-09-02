@@ -1,0 +1,94 @@
+---
+title: "Cómo publicar tu app de Rork en Google Play Store"
+---
+
+Google Play requiere un archivo AAB (Android App Bundle) para la distribución. Esta guía te muestra cómo obtener el AAB de tu project de Rork y subirlo a Play Console, empezando por una versión de pruebas internas.
+
+**Requisitos previos:**
+
+* Una cuenta de Google Play Developer. Regístrate en [https://play.google.com/console/signup](https://play.google.com/console/signup)
+* Un ordenador de escritorio o portátil. No puedes hacerlo desde el teléfono.
+
+Rork compila el AAB por ti. Las apps de Android en Rork son apps **nativas de Android (Kotlin)**, y el botón **Publish** se encarga de todo el build. Para ver el panorama completo, desde el primer prompt hasta la publicación, consulta [Crear una app nativa de Android con Rork](/es/android/rork-android).
+
+<Note>
+  Una app de iPhone (Swift) no puede publicarse en Google Play. Para llegar a los usuarios de Android, añade una app de Android al mismo project; consulta [Convierte tu app entre iOS, Android y web](/es/import/convert-between-platforms).
+</Note>
+
+<div id="build-the-aab-in-rork">
+  ## Compila el AAB en Rork
+</div>
+
+1. Abre tu project y haz clic en **Publish** en la parte superior de la página; luego abre la sección de Google Play.
+2. Haz clic en **Connect Google Play** e inicia sesión con la cuenta de Google que administra esta app en Play Console.
+3. Haz clic en **Build AAB for Play**. Rork compila un AAB de producción firmado con una clave de carga persistente y exclusiva de tu project.
+4. Cuando termine el build, elige cómo entregarlo:
+   * **Send to Google Play** sube el AAB a tu canal de pruebas internas por ti. Esta opción aparece cuando Rork verifica que tu cuenta de Google puede administrar la app en Play Console.
+   * **Download AAB for Play Console** descarga el archivo `.aab` firmado para que lo subas manualmente.
+5. Si descargaste el archivo, continúa con [Subir el AAB en Play Console](#upload-the-aab-in-play-console) más abajo.
+
+<Note>
+  Rork necesita que la app ya exista en Play Console para poder enviar un build. Si Rork muestra **Create Play Console app**, crea primero la ficha de la app y deja que Rork vuelva a comprobar el acceso.
+</Note>
+
+**No le pidas al agente de Rork que agregue sus propias claves de firma, keystores o huellas SHA1 al project.** Google Play asocia tu app de forma permanente con la clave usada en la primera carga. Rork gestiona esa clave por ti, y modificar los archivos de firma del project puede provocar que Google Play rechace cargas futuras. Si Play Console informa de una discrepancia en la clave de firma o en el SHA1, escribe a soporte con el enlace de tu project en lugar de regenerar nada.
+
+Para actualizar la app, haz tus cambios en Rork y haz clic en **Rebuild AAB**. Después envía el nuevo build a Google Play, o descárgalo y súbelo como una nueva versión en Play Console.
+
+<div id="upload-the-aab-in-play-console">
+  ## Sube el AAB en Play Console
+</div>
+
+Inicia sesión en Play Console en [https://play.google.com/console/developers](https://play.google.com/console/developers) y haz clic en el botón **Crear aplicación** que aparece a la derecha.
+
+<img alt="13" />
+
+Completa el nombre de la aplicación, el idioma predeterminado, si se trata de una aplicación o un juego, y si quieres que sea gratuita o de pago. **MUY IMPORTANTE:** Si tu intención es que sea una aplicación de pago, asegúrate de marcarla como tal ahora. Más adelante podrás convertir una aplicación de pago en gratuita, pero nunca al revés. Acepta la política del programa para desarrolladores de Google y las leyes de exportación. Pulsa Crear aplicación.
+
+<img alt="14" />
+
+Ahora selecciona Ver tareas en la sección de pruebas internas.
+
+Haz clic en Seleccionar verificadores.
+
+<img alt="15" />
+
+Desplázate hacia abajo hasta la pestaña Verificadores y selecciona Crear lista de correos electrónicos. Aquí crearás una lista de distribución con los correos de las personas que quieres que prueben tu aplicación. Por ahora, añade solo tu propio correo para que puedas probar la aplicación tú mismo.
+
+<img alt="16" />
+
+Crea una lista con tu dirección de correo electrónico y pulsa guardar.
+
+<img alt="17" />
+
+Vuelve a desplazarte hacia arriba y haz clic en Crear una nueva versión
+
+<img alt="18" />
+
+Sube el archivo AAB que descargaste antes desde Rork.
+
+<img alt="19" />
+
+Introduce el nombre de tu aplicación y las notas de la versión que quieras añadir. Por ejemplo, la versión de Rork que subiste, para tenerlo presente.
+
+<img alt="20" />
+
+Haz clic en siguiente en la parte inferior de la pantalla.
+
+<img alt="21" />
+
+Esto te lleva a una pantalla de resumen. Haz clic en Guardar y publicar, abajo del todo.
+
+<img alt="22" />
+
+Si aparece una ventana emergente, selecciona «Guardar y publicar».
+
+<img alt="23" />
+
+Una vez completado, vuelve a la página de pruebas internas y desplázate hasta el final, en la pestaña de verificadores. Copia el enlace que indica que los verificadores pueden unirse en la web. Deben unirse primero en la web antes de intentar descargar la aplicación.
+
+<img alt="Página de versiones de Google Play Console" />
+
+Envíate el enlace a ti mismo y acepta la invitación. Ya puedes instalar la aplicación desde Google Play Store y probarla. Cuando las pruebas internas vayan bien y estés listo para el lanzamiento, promociona la versión a un canal más amplio en Play Console.
+
+<CtaBanner />

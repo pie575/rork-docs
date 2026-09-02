@@ -1,0 +1,140 @@
+---
+title: "iPhone, Android o web: cuál es la diferencia"
+---
+
+Rork crea apps nativas para iPhone con Swift, apps nativas para Android con Kotlin y apps web con React. Esta página explica para qué es mejor cada una, para que elijas la más adecuada para tu producto.
+
+Rork crea tres tipos de apps:
+
+| Tipo de app      | Lenguaje y framework | Funciona en                                | Dónde se publica                      |
+| ---------------- | -------------------- | ------------------------------------------ | ------------------------------------- |
+| **Para iPhone**  | SwiftUI              | iPhone, iPad, Apple Watch                  | App Store y TestFlight                |
+| **Para Android** | Kotlin + Compose     | Teléfonos y tablets Android                | Google Play                           |
+| **Para web**     | Vite + React         | Cualquier navegador, en escritorio y móvil | Tu propia dirección `tu-app.rork.app` |
+
+Las tres son código real. Rork escribe el mismo tipo de proyecto que un estudio de desarrollo móvil escribiría a mano, y puedes exportar cualquiera de ellas a GitHub.
+
+<div id="what-is-swift">
+  ## ¿Qué es Swift?
+</div>
+
+Swift es el lenguaje de programación de Apple para crear aplicaciones que se ejecutan **de forma nativa en iPhones y otros dispositivos Apple**. Las apps en Swift se desarrollan igual que las propias apps de Apple: con Xcode, SwiftUI y el SDK de iOS.
+
+Con Swift, las apps pueden aprovechar capacidades nativas de iOS como widgets en la pantalla de inicio, Live Activities, seguimiento avanzado de movimiento y del cuerpo, realidad aumentada, mejor rendimiento en juegos y un acceso más preciso a los sensores del dispositivo. Son justamente las funciones que hacen que una app se sienta pulida, fluida y realmente «de calidad Apple».
+
+Por qué esto es importante para ti como usuario de Rork es simple:
+Swift te da acceso a las mismas herramientas que usan las apps de iOS más exitosas. Hace que las apps se sientan más rápidas, se vean más limpias y aprovechen las nuevas funciones de Apple en cuanto se lanzan. Si estás creando una app pensada primero para iOS o te importa ofrecer la mejor experiencia posible en dispositivos Apple, Swift es la opción con mayor techo.
+
+En resumen, Swift se trata de crear apps tal como Apple lo concibe: más control, más rendimiento y un resultado más premium.
+
+<div id="what-is-kotlin">
+  ## ¿Qué es Kotlin?
+</div>
+
+Kotlin es el lenguaje de Google para **apps nativas de Android**, y Compose es la forma moderna de crear sus pantallas. Una app en Kotlin se comunica directamente con Android, igual que las apps que publica el propio Google.
+
+Rork escribe un proyecto real de Android Studio en Kotlin. Eso le da a tu app rendimiento, navegación y gestos nativos, temas de Material You y acceso directo a las capacidades de Android: widgets en la pantalla de inicio, tareas en segundo plano, notificaciones, la cámara y los sensores del dispositivo.
+
+Por qué esto te importa como usuario de Rork:
+Android es la plataforma con más dispositivos en la mayor parte del mundo. Una app nativa de Android les resulta natural a esos usuarios, pasa la revisión de Google Play como cualquier app de Android y puede aprovechar las nuevas funciones de Android en cuanto salen.
+
+Consulta [Crear una app nativa de Android con Rork](/es/android/rork-android) para ver la guía completa, desde el primer prompt hasta el lanzamiento en Google Play.
+
+<div id="what-is-a-web-app">
+  ## ¿Qué es una app web?
+</div>
+
+Una app web se ejecuta en el navegador. Rork la crea con React y Vite y la publica en tu propia dirección dentro de `rork.app`. No hay tienda de aplicaciones, ni revisión, ni instalación: compartes un enlace y la gente lo abre, desde un portátil o desde el móvil.
+
+Web es la forma más rápida de poner un producto en manos de la gente. Es la opción natural para una landing page, un dashboard, un panel de administración, una herramienta interna o un producto tipo SaaS. Lo que no puede ofrecer son las funciones puramente nativas: widgets, Live Activities, seguimiento en segundo plano, Apple Watch o distribución en tiendas.
+
+Consulta [Rork Web](https://rork.com/web) para ver ejemplos y [Rork Web: crear y publicar una app web](/es/web/rork-web) para la guía completa.
+
+<div id="things-a-native-iphone-app-can-do-that-a-web-app-cant">
+  ## Cosas que una app nativa de iPhone puede hacer y una app web no:
+</div>
+
+<div id="system-home-screen-features">
+  ### Funciones del sistema y de la pantalla de inicio
+</div>
+
+* Widgets en la pantalla de inicio y en la pantalla de bloqueo
+* Live Activities en la pantalla de bloqueo y en la Dynamic Island
+* Apps que siguen funcionando en segundo plano (dentro de las normas de Apple)
+* Integración con la búsqueda del sistema del iPhone (buscar contenido dentro de tu app)
+
+<div id="motion-fitness-body-tracking">
+  ### Movimiento, fitness y seguimiento corporal
+</div>
+
+* Seguimiento avanzado del movimiento y de todo el cuerpo
+* Seguimiento de movimientos reales como flexiones, golpes, sentadillas, postura y técnica
+* Acceso más preciso y en tiempo real a los sensores de movimiento
+* Análisis en el propio dispositivo que funciona sin conexión
+
+<div id="augmented-reality-games">
+  ### Realidad aumentada y juegos
+</div>
+
+* Funciones de realidad aumentada y experiencias inmersivas de RA
+* Juegos basados en RA y entornos interactivos
+* Juegos más fluidos, con mayor rendimiento y mejor capacidad de respuesta
+
+<div id="focus-control-productivity">
+  ### Concentración, control y productividad
+</div>
+
+* Bloqueo de pantalla y controles tipo modo Concentración para apps de productividad
+* Acciones a nivel del sistema activadas por voz, búsqueda o automatizaciones
+
+<div id="apple-watch-health-ecosystem">
+  ### Apple Watch y ecosistema de salud
+</div>
+
+* Integración profunda con Apple Watch mediante apps complementarias para el reloj
+* Sesiones de entrenamiento nativas con seguimiento de la frecuencia cardíaca y del movimiento en segundo plano
+* Complicaciones de Apple Watch que muestran datos en tiempo real en la esfera del reloj
+* Integración total con el ecosistema Salud de Apple (datos de salud, entrenamientos, rutas, permisos)
+
+<div id="voice-messaging-extensions">
+  ### Voz, mensajería y extensiones
+</div>
+
+* Control por voz con Siri y automatización con Atajos de Apple
+* Apps de iMessage, paquetes de stickers y experiencias dentro de los mensajes
+* Extensiones para compartir y extensiones del sistema que funcionan fuera de la app principal
+
+<div id="audio-camera-car-integration">
+  ### Integración de audio, cámara y automóvil
+</div>
+
+* Audio de baja latencia para voz en tiempo real, efectos de sonido y procesamiento de audio
+* Funciones avanzadas de cámara, como video a alta tasa de fotogramas, detección de profundidad, LiDAR y análisis en tiempo real
+* Compatibilidad con CarPlay para apps de conducción, audio, fitness o navegación
+
+<div id="how-to-choose">
+  ## Cómo elegir:
+</div>
+
+**Elige For iPhone** si estás creando una app centrada en iOS o exclusiva de Apple y quieres aprovechar al máximo todo lo que pueden hacer los dispositivos Apple. Es la opción indicada si tu app depende del seguimiento de movimiento o del cuerpo, datos de fitness o entrenamientos, realidad aumentada, juegos, widgets, Live Activities, integraciones con Apple Watch o Salud, o funciones avanzadas a nivel de sistema.
+
+**Elige For Android** si tus usuarios están en Android, o si necesitas una app nativa de Android de verdad para Google Play: rendimiento nativo, widgets, notificaciones y trabajo en segundo plano según las reglas de Android.
+
+**Elige For web** si la experiencia principal es un sitio web: una landing page, un dashboard, una herramienta interna o un producto SaaS que quieres que la gente pueda abrir hoy mismo desde un enlace.
+
+**En pocas palabras:**
+Si el producto está muy ligado al iPhone en sí, créalo para iPhone.
+Si tu audiencia está en Android, créalo para Android.
+Si basta con que la gente abra un enlace, créalo para web.
+
+<div id="do-i-have-to-pick-only-one">
+  ## ¿Tengo que elegir solo una?
+</div>
+
+No. Un mismo project de Rork puede contener una app para iPhone, una app para Android y una app web al mismo tiempo. Cada app tiene su propio código. Comparten el chat y el backend, si tienes uno. Empieza por la plataforma que más te importe y luego añade la siguiente desde el selector de plataformas que está encima de la vista previa, o desde **Project Settings → Add new app**. Consulta [Convierte tu app entre iOS, Android y web](/es/import/convert-between-platforms).
+
+<Info>
+  **¿Y React Native y Expo?** React Native es un enfoque multiplataforma: una sola base de código en JavaScript que renderiza interfaces nativas tanto en iOS como en Android. Antes Rork creaba las apps así, pero ya no lo hace en los projects nuevos. Lee [¿Qué pasó con Expo?](/es/expo) para conocer la historia completa, incluido qué ocurre con los projects que ya tienes.
+</Info>
+
+<CtaBanner />

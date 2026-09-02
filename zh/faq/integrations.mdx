@@ -1,0 +1,75 @@
+---
+title: "Integrations"
+---
+
+关于 Rork Integrations 的常见问题
+
+<div id="can-i-integrate-rork-with-a-database-like-supabase-or-firebase">
+  ### 我可以将 Rork 与 Supabase 或 Firebase 这类数据库集成吗？
+</div>
+
+可以。在对话中告诉 Rork，它就会帮你接好 backend。
+详见[如何为 Rork 添加 Supabase backend](/zh/backend/supabase) 和[如何为 Rork 添加 Firebase backend](/zh/backend/firebase)。如果你不想自己维护 backend，可以直接使用 [Rork Cloud](/zh/backend/rork-cloud)。
+
+<div id="what-is-rork-cloud-does-it-have-a-database">
+  ### 什么是 Rork Cloud？它自带数据库吗？
+</div>
+
+自带。**Rork Cloud** 是 Rork 内置的托管 backend，提供 Postgres 数据库、服务端函数和托管 AI 模型。
+你可以直接在 project 中查看自己的数据表，之后也可以迁移到你自己的 Supabase project。
+参见 [什么是 Rork Cloud](/zh/backend/rork-cloud)。
+
+<div id="how-can-i-build-apps-that-use-ai-features-like-chat-voice-or-image-generation">
+  ### 我该如何构建带有聊天、语音或图像生成等 AI 功能的 app？
+</div>
+
+Rork Cloud 直接为你的 app 提供 AI 模型，无需自备服务商密钥，因此付费用户不用注册和管理 OpenAI 账户就能上线 AI 功能。
+你也可以使用自己的密钥，将其存储为服务端密钥。参见 [API 密钥与环境变量](/zh/features/secrets)。
+
+<div id="can-i-integrate-rork-with-business-tools-like-google-sheets-airtable-notion-or-my-own-api">
+  ### 我可以将 Rork 与 Google Sheets、Airtable、Notion 或我自己的 API 等业务工具集成吗？
+</div>
+
+可以。只需告诉 Rork 你想集成哪项服务即可。
+它会向你索要 API 密钥，为确保准确性，可能还需要相关的 API 文档。
+
+<div id="can-i-import-figma-files-into-rork">
+  ### 我可以把 Figma 文件导入 Rork 吗？
+</div>
+
+把 Figma 页面复制成图片粘贴到 Rork 聊天框中，或者批量拖入导出的 Figma 图片。
+Rork 会识别图片中的设计并据此生成应用。目前暂不支持与 Figma 直接对接。
+
+<div id="how-can-i-add-payments-with-stripe-revenuecat-superwall-or-adapty">
+  ### 如何使用 Stripe、RevenueCat、Superwall 或 Adapty 添加支付功能？
+</div>
+
+在 Rork 中集成支付最简单的方式就是接入 RevenueCat。
+对于应用内购买和订阅，Rork 推荐使用 **RevenueCat**。在 Monetization (变现) 面板中完成连接后，智能体会自动将 SDK 添加到你的 app 中。
+👉 [如何使用 RevenueCat 添加付费墙](/zh/payment-guides/revenuecat-copied-1)
+
+<div id="how-can-i-add-authentication-to-my-app">
+  ### 如何为我的 app 添加身份验证？
+</div>
+
+对大多数 app 来说，本地数据存储就够用了。
+如果确实需要身份验证，可以用 **Supabase Auth** 实现邮箱/密码登录或魔法链接登录。
+如果要接入社交登录 (Google、Apple 等) ，可以让智能体帮你完成设置，并参考 [OAuth 指南](/zh/integrations/backend/how-to-set-up-oauth)。
+
+<div id="how-can-i-add-push-notifications-to-my-app">
+  ### 如何为我的 app 添加推送通知？
+</div>
+
+只需向智能体提出通知需求，它就会把通知功能接入你的原生 app。
+在 Android 上，推送通知走的是 **Firebase Cloud Messaging (FCM)**；在 iPhone 上则使用 Apple Push Notification service。Rork Cloud 也提供推送能力，详见 [Rork Cloud](/zh/backend/rork-cloud)。
+
+***
+
+<div id="need-more-help">
+  ## 需要更多帮助？
+</div>
+
+还有疑问？
+📩 [联系支持团队](mailto:support@rork.com)
+
+<CtaBanner />

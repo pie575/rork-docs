@@ -1,0 +1,242 @@
+---
+title: "¿Tu app necesita un backend?"
+---
+
+Descubre exactamente cuándo tu proyecto de Rork necesita configurar un backend y cuándo puedes prescindir de él por completo. Esta guía te ayuda a no crear un backend sin necesidad.
+
+<div id="after-building-your-app-in-rork-use-this-documentation-to-decide-if-your-app-needs-a-backend-or-can-stay-local-only">
+  ### Después de crear tu app en Rork, usa esta documentación para decidir si necesita un backend o si puede funcionar solo en local.
+</div>
+
+<div id="summary">
+  ## **Resumen**
+</div>
+
+Rork construye el **frontend** de tu app: las pantallas que la gente ve y toca, en iPhone, en Android y en la web. El **backend** es la parte que nunca ven. Almacena datos, gestiona las cuentas y aplica las reglas. No todas las apps necesitan uno.
+
+Al terminar esta página sabrás en qué categoría encaja tu idea y qué hacer a continuación.
+
+**Necesitas:**
+
+* Un project de Rork
+* Una idea general de lo que hace tu app
+
+***
+
+<div id="1-what-counts-as-no-backend">
+  ## **1. Qué se considera “sin backend”**
+</div>
+
+<div id="local-only-apps-everything-stays-on-the-device">
+  ### Aplicaciones solo locales (todo se queda en el dispositivo)
+</div>
+
+Son aplicaciones que guardan todos sus datos en el teléfono del usuario.
+Sin sincronización. Sin inicios de sesión. Sin opciones para compartir.
+
+**Ejemplos:**
+
+* Listas de tareas
+* Aplicaciones de notas
+* Diarios
+* Seguimiento de hábitos
+* Registros de estado de ánimo
+* Calculadoras
+* Temporizadores
+* Convertidores de unidades
+* Tarjetas de estudio sin conexión
+* Filtros de fotos/generación con IA
+* Widgets de utilidades
+
+Rork puede crear todas ellas y almacenar sus datos **sin ningún backend**, usando el propio almacenamiento del dispositivo: el almacén local del teléfono y un almacén seguro para la información sensible.
+
+Mientras los datos nunca salgan del dispositivo, basta con el almacenamiento local. Si tu aplicación aún no guarda datos, pídelo en el chat:
+
+```
+Asegúrate de que los datos se guarden en el dispositivo y se conserven tras reiniciar
+```
+
+***
+
+<div id="tools-with-temporary-non-persistent-data">
+  ### Herramientas con datos temporales o no persistentes
+</div>
+
+Estas aplicaciones no necesitan guardar ningún estado a largo plazo.
+
+**Ejemplos:**
+
+* Aplicaciones de experimentación (dibujo, entornos de prueba)
+* Minijuegos locales
+* Generadores de IA puntuales que no conservan el resultado
+* Herramientas divertidas que crean algo, pero no necesitan recordarlo
+
+Si no hace falta conservar nada después de cerrar la aplicación, tampoco hace falta un backend para almacenar ni manipular nada. La mayoría de las aplicaciones sencillas creadas en Rork funcionan así de forma predeterminada.
+
+***
+
+<div id="ai-apps-that-only-call-an-external-api">
+  ### Apps de IA que solo llaman a una API externa
+</div>
+
+Si tu app únicamente envía un prompt a GPT y devuelve la respuesta:
+
+**No necesitas un backend.**
+
+Solo estás haciendo peticiones a OpenAI o a otro proveedor de IA.
+
+El backend solo se vuelve necesario cuando:
+
+* Quieres guardar el historial del usuario
+* Quieres personalización
+* Quieres hacer seguimiento del uso
+
+Esto vale para cualquier API externa. Mientras no necesites almacenar esos datos, puedes usar cualquier API sin backend.
+
+***
+
+<div id="2-apps-that-always-need-a-backend">
+  ## **2. Apps que siempre necesitan un backend**
+</div>
+
+<div id="apps-with-accounts-or-login">
+  ### Apps con cuentas o inicio de sesión
+</div>
+
+Si el usuario «tiene una cuenta», necesitas:
+
+* Autenticación
+* Restauración de los datos del usuario
+* Sincronización entre dispositivos
+
+**Ejemplos:**
+
+* Apps sociales
+* Apps de productividad con sincronización en la nube
+* Apps de finanzas
+* Cualquier flujo de trabajo multidispositivo
+
+***
+
+<div id="apps-that-sync-across-devices">
+  ### Apps que se sincronizan entre dispositivos
+</div>
+
+Un usuario escribe una nota en el móvil y espera encontrarla en su portátil.
+Para eso hace falta:
+
+* Base de datos
+* Sincronización en la nube
+* Almacenamiento persistente
+
+Se necesita un backend.
+
+***
+
+<div id="apps-with-sharing-collaboration-or-multiplayer">
+  ### Apps con funciones para compartir, colaborar o multijugador
+</div>
+
+Si más de una persona puede ver, editar o comentar lo mismo:
+
+* Mensajería
+* Listas de amigos
+* Comentarios
+* Publicaciones
+* Feeds sociales
+* Colaboración en tiempo real
+* Emparejamiento, como en las apps de citas
+
+Todo esto necesita un backend.
+
+***
+
+<div id="apps-that-store-files">
+  ### Aplicaciones que almacenan archivos
+</div>
+
+Si tu aplicación gestiona:
+
+* Imágenes
+* Videos
+* PDF
+* Grabaciones de audio
+
+…y esos archivos deben conservarse entre distintos dispositivos, necesitas un backend.
+
+El almacenamiento local no basta para contenido compartible o que deba estar disponible en varios dispositivos.
+
+***
+
+<div id="apps-with-security-or-access-rules">
+  ### Aplicaciones con reglas de seguridad o acceso
+</div>
+
+Si la aplicación impone alguna regla entre usuarios:
+
+* Bloqueos
+* Moderación
+* Límites de frecuencia
+* Antispam
+
+Las aplicaciones que solo funcionan en el cliente no pueden imponer reglas. Se necesitaría un backend.
+
+***
+
+<div id="3-gray-zone-apps-optional-backend">
+  ## **3. Aplicaciones de zona gris (backend opcional)**
+</div>
+
+<div id="local-first-apps-with-optional-sync-later">
+  ### Apps local-first con sincronización opcional más adelante
+</div>
+
+Algunas apps funcionan de maravilla sin backend y más adelante suman funciones en la nube.
+
+**Ejemplos:**
+
+* Diario → añade copia de seguridad en la nube
+* App de notas → añade sincronización entre dispositivos
+* Editor de fotos sin conexión → añade “compartir en la nube”.
+
+Puedes lanzar la v1 sin backend y añadir la sincronización cuando crezcas.
+
+***
+
+<div id="ai-apps-with-memory-or-personalization">
+  ### Apps de IA con memoria o personalización
+</div>
+
+Puedes elegir entre:
+
+* **Memoria solo local** → sin backend
+* **Memoria en la nube entre dispositivos** → con backend
+* **Modelos personalizados** → con backend
+
+Tu v1 puede ser sencilla, con almacenamiento local; cuando ya tengas usuarios, podrás pasar a un sistema más seguro y avanzado, como la nube o los modelos personalizados.
+
+<div id="decided-that-you-need-one">
+  ## ¿Decidiste que necesitas uno?
+</div>
+
+Tienes tres opciones. **Rork Cloud** es la más rápida, porque está integrado en Rork y no hay una segunda cuenta que administrar.
+
+<CardGroup>
+  <Card icon="cloud" href="/es/backend/rork-cloud" title="Rork Cloud">
+    Un backend gestionado dentro de Rork: Postgres, funciones de servidor y modelos de IA. Sin cuenta aparte.
+  </Card>
+
+  <Card icon="database" href="/es/backend/supabase" title="Supabase">
+    ⏱️ *1 hora*
+
+    Tu propio proyecto de Postgres, con autenticación y almacenamiento. Ideal si quieres ser dueño de la base de datos.
+  </Card>
+
+  <Card icon="database" href="/es/backend/firebase" title="Firebase">
+    ⏱️ *1 hora*
+
+    La opción NoSQL de Google, con Firestore, autenticación y almacenamiento.
+  </Card>
+</CardGroup>
+
+<CtaBanner />

@@ -1,0 +1,68 @@
+---
+title: "¿Qué pasó con Expo?"
+---
+
+Antes Rork creaba apps con Expo (React Native). Nuestras pruebas internas mostraron que el agente escribe mejores apps en Swift, así que hicimos el cambio. Los projects de Expo ya existentes siguen funcionando.
+
+<Warning>
+  Ya no puedes crear projects de Expo (React Native) en Rork. Las nuevas apps son **nativas de iPhone (Swift)**, **nativas de Android (Kotlin)** o **web**. Si ya tienes un project de Expo, seguirá funcionando: puedes hacer su build, publicarlo y exportar el código a GitHub como siempre.
+</Warning>
+
+<div id="why-we-switched">
+  ## Por qué hicimos el cambio
+</div>
+
+En nuestros benchmarks internos, el agente creaba mejores apps en Swift que en React Native. Por eso hicimos el cambio.
+
+Las nuevas apps para iPhone se desarrollan en **Swift**. Las nuevas apps de Android, en **Kotlin**. Las nuevas apps web, en **React**. Expo sigue siendo un stack nativo real, y muchas apps en producción se publican así.
+
+<div id="two-native-apps-one-project">
+  ## Dos apps nativas, un solo project
+</div>
+
+React Native comparte una única base de código JavaScript entre iOS y Android. Esa es una ventaja real desde el punto de vista de la ingeniería.
+
+Rork no sigue ese modelo. Una app de iPhone y una app de Android son dos apps nativas independientes. Lo que sí se comparte es el producto que las envuelve.
+
+Desarrolla primero para una plataforma y luego añade la siguiente. Haz clic en **+** encima de la vista previa y elige la plataforma:
+
+<Frame>
+  <img alt="El menú + encima de la vista previa: añadir Android (Kotlin) o Web a una app de iPhone" />
+</Frame>
+
+El agente recrea tus pantallas, la navegación, los flujos de datos y el diseño en la nueva app. A partir de ahí, ambas apps conviven en **un solo project**, con:
+
+* **Dos bases de código.** Swift para iPhone, Kotlin para Android. No son un mismo archivo compartido.
+* **Un backend alojado.** Si el project tiene Rork Cloud o Supabase, ambas apps se conectan a la misma base de datos.
+* **Un chat y un contexto.** El agente conoce todo tu producto, así que «añade modo oscuro tanto en iOS como en Android» puede actualizar cada app.
+* **Un solo lugar desde el que publicar.** App Store, Google Play y la web, desde el mismo menú **Publish**.
+
+<video />
+
+Aun así, las dos apps pueden desincronizarse. Un cambio en Swift no ocurre en el mismo archivo que un cambio en Kotlin. El agente es lo que te permite mantenerlas alineadas. Eso es distinto de tener una única base de código compartida de React Native.
+
+<div id="i-already-have-an-expo-project">
+  ## Ya tengo un project de Expo
+</div>
+
+Sigue funcionando: puedes compilarlo, publicarlo y sincronizarlo con GitHub como siempre.
+
+Te recomendamos encarecidamente migrarlo a Swift. Abre tu project de Expo y fíjate en el panel que hay junto a la vista previa: Rork te propone reconstruir la app en SwiftUI:
+
+<Frame>
+  <img alt="La tarjeta &#x22;Make this app native iOS&#x22; junto a la vista previa, con el botón Add iOS app" />
+</Frame>
+
+Haz clic en **Add iOS app** y el agente recreará tus pantallas, la navegación, los flujos de datos y el diseño como una app nativa de iPhone en Swift. Tu app de Expo se mantiene intacta en el mismo project, así que no pierdes nada si quieres compararlas.
+
+Para Android, añade la app nativa del mismo modo: haz clic en **+** encima de la vista previa y elige **Android (Kotlin)**, o pídelo en el chat:
+
+```
+Añade una app nativa de Android a este proyecto
+```
+
+Ambas apps nuevas conviven en el mismo project que tu app de Expo y comparten el backend y el chat, así que puedes migrar una plataforma a la vez.
+
+¿No sabes con qué plataforma empezar? Consulta [iPhone, Android o web: cuál es la diferencia](/es/swift-vs-react-native/whats-the-difference) y [Convierte tu app entre iOS, Android y web](/es/import/convert-between-platforms) para conocer todos los caminos entre plataformas.
+
+<CtaBanner />

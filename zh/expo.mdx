@@ -1,0 +1,68 @@
+---
+title: "Expo 怎么了？"
+---
+
+Rork 过去构建的是 Expo (React Native) 应用。内部基准测试表明，智能体编写的 Swift 应用质量更好，因此我们做了切换。已有的 Expo 项目不受影响，仍可正常使用。
+
+<Warning>
+  你已无法在 Rork 中创建 Expo (React Native) 项目。新建应用只能是 **原生 iPhone (Swift)&#x20;**、**原生 Android (Kotlin)&#x20;**&#x20;或 **web**。如果你已有 Expo 项目，它仍可正常使用：你可以像以前一样进行 build、发布，并将代码导出到 GitHub。
+</Warning>
+
+<div id="why-we-switched">
+  ## 我们为什么要切换
+</div>
+
+在我们的内部基准测试中，智能体写出的 Swift 应用质量优于 React Native 应用。这正是我们切换的原因。
+
+新建的 iPhone 应用使用 **Swift**，新建的 Android 应用使用 **Kotlin**，新建的 web app 使用 **React**。Expo 依然是货真价实的原生技术栈，也有许多生产级应用是基于它发布的。
+
+<div id="two-native-apps-one-project">
+  ## 两个原生应用，一个项目
+</div>
+
+React Native 让 iOS 和 Android 共用一套 JavaScript 代码库，这确实是工程上的一大优势。
+
+Rork 没有沿用这一模式。iPhone 应用和 Android 应用是两个独立的原生应用，共享的是围绕它们的产品本身。
+
+先做一个平台，再添加下一个。点击预览上方的 **+**，选择平台：
+
+<Frame>
+  <img alt="预览上方的 + 菜单：为 iPhone 应用添加 Android (Kotlin) 或 Web" />
+</Frame>
+
+智能体会在新应用中重建你的界面、导航、数据流和设计。两个应用随后共存于**同一个项目**中：
+
+* **两套代码库。** iPhone 用 Swift，Android 用 Kotlin，并非同一份共享文件。
+* **一个托管后端。** 如果项目接入了 Rork Cloud 或 Supabase，两个应用连接的是同一个数据库。
+* **一个对话、一份上下文。** 智能体了解你的整个产品，所以一句&quot;给 iOS 和 Android 都加上深色模式&quot;就能同时更新两个应用。
+* **一处发布入口。** App Store、Google Play 和网页端，都在同一个**发布**菜单中完成。
+
+<video />
+
+两个应用仍可能逐渐走偏。改 Swift 和改 Kotlin 毕竟不是同一份文件，要靠智能体来保持二者同步——这一点和 React Native 那套共享代码库并不相同。
+
+<div id="i-already-have-an-expo-project">
+  ## 我已经有一个 Expo 项目
+</div>
+
+它会照常运行：你仍可以像以前一样构建、发布，并同步到 GitHub。
+
+我们强烈建议将其迁移到 Swift。打开你的 Expo 项目，看一下预览旁边的面板，Rork 会提示你用 SwiftUI 重建这个应用：
+
+<Frame>
+  <img alt="预览旁边的“将此应用变为原生 iOS”卡片，带有“添加 iOS 应用”按钮" />
+</Frame>
+
+点击 **Add iOS app**，智能体就会用 Swift 把你的页面、导航、数据流和设计重新构建为原生 iPhone 应用。你的 Expo 应用仍原封不动地保留在同一个项目中，想对比两者时随时可以查看，不会丢失任何内容。
+
+Android 也一样：点击预览上方的 **+**，选择 **Android (Kotlin)**，或者直接在聊天中提出需求：
+
+```
+为这个项目添加一个原生 Android 应用
+```
+
+两个新应用与你的 Expo 应用位于同一个 project 中，共享后端和聊天记录，因此你可以逐个平台迁移。
+
+不确定从哪个平台入手？可查看 [iPhone、Android 还是 web：有什么区别](/zh/swift-vs-react-native/whats-the-difference)，以及 [在 iOS、Android 和 web 之间转换你的应用](/zh/import/convert-between-platforms)，了解平台之间的各种转换路径。
+
+<CtaBanner />

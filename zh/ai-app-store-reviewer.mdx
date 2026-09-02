@@ -1,0 +1,200 @@
+---
+title: "AI App Store 审核助手"
+---
+
+赶在 Apple 审核之前，Rork 会先对照《App Store 审核指南》检查你的 iOS build，逐项列出可能被拒的风险，并给出对应的条款编号、判定依据和修复建议。
+
+<div>
+  <video aria-label="在 Rork project 中依次打开 More、App Store、App Review，运行 AI App Store 审核助手直至报告生成" />
+</div>
+
+<p>整个流程：打开 More → App Store → App Review，点击 Run，然后查看报告。</p>
+
+Apple 的审核要等上好几天，一旦被拒，又得多耗一个来回。**AI App Store 审核助手**会读取你即将提交的 build，抢在提交之前告诉你审核人员可能会挑出哪些问题。
+
+它会同时检查五个方面，与《App Store 审核指南》的五个章节一一对应：
+
+<div>
+  <div>
+    <span>安全</span>
+    <span>指南 1.x</span>
+  </div>
+
+  <div>
+    <span>性能</span>
+    <span>指南 2.x</span>
+  </div>
+
+  <div>
+    <span>商业</span>
+    <span>指南 3.x</span>
+  </div>
+
+  <div>
+    <span>设计</span>
+    <span>指南 4.x</span>
+  </div>
+
+  <div>
+    <span>法律</span>
+    <span>指南 5.x</span>
+  </div>
+</div>
+
+<Info>
+  审核助手的结果仅供参考。它不会阻止你提交，也不保证一定过审。最终决定权在 Apple，而 Apple 自己的审核依然需要数天时间。
+</Info>
+
+<div id="what-you-need">
+  ## 你需要准备什么
+</div>
+
+* 任意等级的 Rork 付费订阅。这里 credits 无法替代订阅。
+* 该 project 的 Editor 权限。查看者可以打开面板、查看历史报告，但无法发起审核。
+* project 中需有一个 iOS 应用：Swift 应用或较早的 Expo 项目。Android 和 Web 应用不在审核范围内。
+
+<div id="run-a-review">
+  ## 运行一次审核
+</div>
+
+<Steps>
+  <Step title="打开 More，再进入 App Store">
+    在你的 project 中，打开 **More → App Store**，并停留在 **App Review** 标签页，它是第一个标签页。审核工具并不在发布菜单里。
+  </Step>
+
+  <Step title="在面板标题处确认 build">
+    标题下方会显示应用名称和正在审核的 build，例如 `Current build src_62bb`。首次运行前，面板会列出它所覆盖的五个方面。
+
+    <Frame>
+      <img alt="AI App Store Reviewer 面板，显示 Check this build for App Review risks，包含 Safety、Performance、Business、Design 和 Legal" />
+    </Frame>
+  </Step>
+
+  <Step title="点击 Run">
+    五个方面会同时进行检查。**Run** 会变为 **Stop**，用于取消审核。检查过程中你可以离开该标签页，稍后再回来。
+
+    <Frame>
+      <img alt="审核运行中，Safety、Performance、Business、Design 和 Legal 旁显示加载指示器" />
+    </Frame>
+  </Step>
+
+  <Step title="等待报告">
+    运行结束后，标题会变为所检查的 build，例如 `Reviewed build src_62bb`，并显示审核完成于多久之前。
+
+    <Frame>
+      <img alt="报告显示未发现拒绝风险，零拒绝、零警告，五个方面全部通过" />
+    </Frame>
+  </Step>
+</Steps>
+
+<div id="read-the-report">
+  ## 查看报告
+</div>
+
+报告按审核类别逐行列出，而不是每条规则一行。每行的最终状态为 **Passed**、警告、拒绝或 **Fixed**。
+
+各行上方会显示统计数量和一行状态说明：
+
+| 状态行                          | 含义               |
+| ---------------------------- | ---------------- |
+| **Rejection risks found**    | 至少有一项发现可能导致应用被拒。 |
+| **Warnings need review**     | 没有被拒风险，但有内容值得检查。 |
+| **No rejection risks found** | 没有任何问题被标记。       |
+
+点击某一行即可展开。其中会显示指南条款编号、发现的问题、相应证据、有时还包括问题所在的文件，以及建议的修复方式。
+
+报告保存后，面板还会显示一个预估结果：**Likely to pass**、**Likely rejection** 或 **Outcome uncertain**。旁边会注明&quot;Apple makes the final decision.&quot;
+
+<Warning>
+  这个预估只是对你的 build 的预判，而非最终裁定。报告没有问题并不保证一定通过，存在被拒风险也不会妨碍你提交。
+</Warning>
+
+<div id="fix-what-the-review-found">
+  ## 修复审核发现的问题
+</div>
+
+审核发现的问题不会自动修复。请在聊天中让 Rork 逐条修复，并指明对应的指南：
+
+> App Review 报告标记了指南 5.1.1：应用没有提供删除账户的方式。请添加应用内的账户删除流程。
+
+你也可以在聊天中让 Rork 帮你运行审核。从聊天发起的审核在发现问题时会询问你如何处理：**取消**；有警告时可选择**修复警告**；没有警告时则显示**完成**。选择**修复警告**后，Rork 会在同一轮对话中修改应用并重新检查。该审核等待你回复期间，App Store 面板会显示“此审核正在聊天中运行 — 请在那里回复。”
+
+通过 **Run** 按钮发起的审核只报告结果，然后停止，既不会改动代码，也不会向你提问。
+
+Rork 修改应用之后，请再次运行审核，确保报告与你即将提交的代码一致。
+
+<div id="previous-reviews-and-new-builds">
+  ## 历史审核与新 build
+</div>
+
+Rork 会保留最近四份报告。最新的一份直接显示在面板中，较早的几份则收录在下方的 **Previous reviews** 中。每条记录都会显示所审核的 build、各项计数以及运行时间。点开任意一条即可再次查看当时发现的问题。
+
+如果审核之后代码有改动，面板会在 build id 旁显示 **New build available** 标记。这说明已保存的报告对应的是较早的 build，请在提交前重新运行一次审核。
+
+<div id="limits">
+  ## 限制
+</div>
+
+* 每天最多 40 次审核，按为该 project 付费的账户统一计算。
+* 每轮对话最多运行六次审核。超出后，智能体会提示你先完成剩余的修复，再从 App Store 面板重新发起一次审核。
+* 仅审核 iOS 应用。如果 project 中只有 Android 或 Web 应用，面板会提示你先添加一个应用，而不会显示报告。
+* 审查工具会读取你的 project 源代码；如果应用已连接 App Store Connect，还会读取你的 App Store Connect 就绪数据。若未建立连接，则仅基于源代码进行审核。
+* 审查工具不会替你提交应用，提交仍是一个独立的步骤。
+
+<div id="troubleshooting">
+  ## 疑难排查
+</div>
+
+<AccordionGroup>
+  <Accordion title="找不到 App Review 标签页">
+    该标签页在 **More → App Store** 中，而不在发布菜单里。
+  </Accordion>
+
+  <Accordion title="点击 Run 后弹出付费墙">
+    提示信息为“App Store reviews require a paid Rork subscription” (App Store 审核需要付费的 Rork 订阅) 。任意订阅等级均可，但必须是为该 project 付费的账号。购买 credits 无法解锁此功能。
+  </Accordion>
+
+  <Accordion title="点击 Run 没有反应，并提示 Could not start the App Store review">
+    最常见的原因是权限：你需要该 project 的 editor 权限，而不是 viewer。请让 project 所有者更改你的角色，然后重试。
+  </Accordion>
+
+  <Accordion title="Run 按钮是灰色的">
+    面板加载中、审核运行中，以及 project 尚无可审核的 build 时，该按钮都会处于禁用状态。请稍候片刻，重新加载页面后再试。
+  </Accordion>
+
+  <Accordion title="面板提示我添加一个 app">
+    “Add an Expo or Swift app to this project before running an App Store review” (运行 App Store 审核前，请为该 project 添加 Expo 或 Swift 应用) 表示该 project 尚无 iOS 应用。请添加一个 Swift 应用：已有的 Expo 应用同样可以接受审核，但新应用已不再提供 Expo，详见 [Expo 怎么了？](/zh/expo)。
+  </Accordion>
+
+  <Accordion title="审核似乎卡住了">
+    先点击 **Stop**，然后再次点击 **Run**。如果运行异常结束，面板会在报告上方显示“Review could not complete” (审核无法完成) 以及具体原因。如果一直失败，请联系支持团队，并提供 project 链接和运行时间。
+  </Accordion>
+
+  <Accordion title="达到了每日上限">
+    提示信息为“Daily App Store preflight review limit reached.” (已达到每日 App Store 预检审核上限。) 该次数每天重置。
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## 后续步骤
+</div>
+
+<CardGroup>
+  <Card icon="list-check" href="/zh/submitting-to-app-store/apple/app-store-checklist" title="App Store 检查清单">
+    提交前还需准备的其他事项。
+  </Card>
+
+  <Card icon="apple" href="/zh/appstore-submission-checklist/app-review-guide" title="Apple 审核是如何进行的">
+    审核时长、哪些因素会拖慢审核，以及加急审核。
+  </Card>
+
+  <Card icon="image" href="/zh/appstore-screenshots/app-store-screenshots" title="App Store 截图">
+    生成商店页面所需的截图。
+  </Card>
+
+  <Card icon="rocket" href="/zh/publishing" title="发布你的应用">
+    将通过审核的 build 提交到 App Store Connect。
+  </Card>
+</CardGroup>
+
+<CtaBanner />

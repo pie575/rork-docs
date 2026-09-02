@@ -1,0 +1,44 @@
+---
+title: "Aspectos técnicos"
+---
+
+Preguntas frecuentes sobre el desarrollo técnico de apps con Rork
+
+<div id="are-rork-apps-actually-native-iosandroid-apps-or-is-it-just-web-apps">
+  ## ¿Las apps de Rork son realmente apps nativas de iOS/Android? ¿O son solo apps web?
+</div>
+
+Son apps nativas de verdad. Rork escribe **SwiftUI** para iPhone y **Kotlin + Compose** para Android: los mismos lenguajes que Apple y Google usan en sus propias apps. Los proyectos nuevos son de Swift, Kotlin o web. No se trata de un sitio web metido dentro de una vista web.
+
+El código nativo está pensado para ofrecer rendimiento, precisión y buen acabado. Aporta animaciones fluidas, interfaces que responden al instante y acceso inmediato a las funciones más recientes de cada plataforma, desde los widgets y las Live Activities en iOS hasta los temas de Material You y el trabajo en segundo plano en Android.
+
+Rork también crea **apps web** en React cuando el producto encaja mejor en un navegador. Esas son apps web por diseño, y se publican en tu propia dirección en lugar de en una tienda de aplicaciones. Consulta [iPhone, Android o web: cuál es la diferencia](/es/swift-vs-react-native/whats-the-difference).
+
+<div id="can-i-use-rork-to-build-production-ready-apps">
+  ### ¿Puedo usar Rork para crear aplicaciones listas para producción?
+</div>
+
+Sí. Rork admite aplicaciones desde 0 hasta 100.000 usuarios.
+
+<div id="does-it-work-on-ios-and-android">
+  ### ¿Funciona en iOS y Android?
+</div>
+
+Sí. Una app para iPhone y una app para Android son dos apps nativas distintas, y un mismo project de Rork puede contener las dos. Pide la segunda plataforma cuando quieras y el agente reconstruirá en ella tus pantallas y flujos. Consulta [Convierte tu app entre iOS, Android y web](/es/import/convert-between-platforms).
+
+<div id="i-have-an-older-expo-react-native-project-does-it-still-work">
+  ### Tengo un project antiguo de Expo (React Native). ¿Sigue funcionando?
+</div>
+
+Sí. Rork ya no crea projects de Expo, pero los que ya tienes siguen funcionando: puedes compilarlos, publicarlos y exportar el código a GitHub. Si prefieres Swift o Kotlin, pídele al agente que añada una app nativa de iPhone o Android al project. Consulta [¿Qué pasó con Expo?](/es/expo).
+
+***
+
+<div id="need-more-help">
+  ## ¿Necesitas más ayuda?
+</div>
+
+¿Aún tienes dudas?
+📩 [Contactar con soporte](mailto:support@rork.com)
+
+<CtaBanner />

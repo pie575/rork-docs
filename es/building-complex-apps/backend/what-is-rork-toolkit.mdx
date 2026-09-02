@@ -1,0 +1,80 @@
+---
+title: "¿Cuáles son las capacidades de backend de Rork?"
+---
+
+Rork ofrece una infraestructura de backend opcional para aplicaciones que requieren funcionalidad del lado del servidor. Actualmente está en fase beta, así que si tienes algún problema, ponte en contacto con Soporte.
+
+<div id="overview">
+  ### **Descripción general**
+</div>
+
+El backend permite a los desarrolladores implementar lógica de servidor personalizada, endpoints de API y operaciones de base de datos dentro de sus aplicaciones de Rork.
+
+<div id="capabilities">
+  ### **Capacidades**
+</div>
+
+* **Endpoints de API** — Define rutas personalizadas para la comunicación entre cliente y servidor
+* **Lógica del lado del servidor** — Ejecuta operaciones seguras fuera de la aplicación cliente
+* **Integración con bases de datos** — Almacenamiento y recuperación persistente de datos
+* **Rutas protegidas** — Compatibilidad con autenticación y autorización
+
+<div id="technical-stack">
+  ### **Stack técnico**
+</div>
+
+| **Componente**         | **Tecnología** |
+| :--------------------- | :------------- |
+| Framework del servidor | Hono           |
+| Capa de API            | tRPC           |
+
+<div id="when-to-use">
+  ### **Cuándo usarlo**
+</div>
+
+Se recomienda usar un backend para:
+
+* Aplicaciones sociales con interacciones entre usuarios
+* Funciones multijugador o de colaboración en tiempo real
+* Aplicaciones que necesitan almacenamiento de datos compartido o centralizado
+
+**No hace falta un backend para:**
+
+* Aplicaciones de un solo usuario
+* Casos de uso con almacenamiento local de datos
+* Aplicaciones que solo usan funciones de IA integradas
+
+<div id="ai-capabilities">
+  ### **Capacidades de IA**
+</div>
+
+Para añadir capacidades de IA a tu aplicación, usa el **Rork Toolkit**. El Toolkit ofrece funciones de IA listas para usar, como generación de texto, creación de imágenes, voz a texto y asistentes inteligentes, sin necesidad de configurar ningún backend.
+
+<div id="whats-inside-the-rork-toolkit">
+  ## ¿Qué incluye el Rork Toolkit?
+</div>
+
+| **Función**                               | **Modelo**             | **Proveedor** |
+| :---------------------------------------- | :--------------------- | :------------ |
+| **Asistente de IA (Chat/Agente)**         | Claude Sonnet 4.5      | Anthropic     |
+| **Generación de texto**                   | GPT-5 Chat             | OpenAI        |
+| **Extracción de datos (generateObject)**  | GPT-4.1                | OpenAI        |
+| **Generación de imágenes**                | GPT-Image-1.5 (DALL-E) | OpenAI        |
+| **Edición de imágenes**                   | Gemini 2.5 Flash Image | Google        |
+| **Voz a texto**                           | Whisper-1              | OpenAI        |
+| **Resumen de resultados de herramientas** | Gemini 2.5 Flash       | Google        |
+
+Puedes acceder a los modelos a través de estas funciones del SDK del toolkit:
+
+* Usa Anthropic Claude Sonnet 4.5 para chat y flujos de trabajo con agentes
+* Usa OpenAI GPT-5 para generar texto
+* Usa OpenAI GPT-4.1 para extraer datos estructurados
+* La generación de imágenes usa OpenAI DALL-E
+* La edición de imágenes usa Gemini 2.5 Flash Image
+* La conversión de voz a texto usa OpenAI Whisper-1
+
+**Qué puedes crear con el Rork Toolkit**
+
+El Rork Toolkit te permite crear apps completas con IA: agentes de chat, generadores de contenido, extractores de datos, funciones de imagen y voz, y flujos de trabajo multimodales, todo desde un mismo toolkit. Tienes todo lo necesario para crear experiencias de IA inteligentes y listas para producción sin tener que gestionar varios modelos o proveedores.
+
+<CtaBanner />

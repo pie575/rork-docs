@@ -1,0 +1,170 @@
+---
+title: "共享项目并协作"
+---
+
+邀请他人查看或编辑你的 Rork 项目、互相留言、查看谁在线，还可以把项目克隆成一份可以随意修改的全新副本。
+
+一个 Rork 项目可以容纳多人。邀请联合创始人、设计师或客户加入后，他们打开的就是和你完全相同的聊天与实时预览。
+
+让别人加入有两种方式，二者并不相同：
+
+* **邀请**他人进入你的项目。同一个项目、同一个聊天，所有人编辑同一个应用。
+* **克隆**项目。他们会拿到属于自己的副本，而你这边的版本照常运作，不受影响。
+
+<div id="invite-someone-to-your-project">
+  ## 邀请他人加入你的项目
+</div>
+
+在项目顶部栏中点击 **Publish** 旁边的邀请按钮。
+
+<Frame>
+  <img alt="Rork 邀请协作者对话框，包含邮箱输入框、编辑者角色选择器、邀请按钮以及创建邀请链接一行" />
+</Frame>
+
+有两种方式：
+
+* **通过邮箱。** 输入邮箱地址，选择角色，点击 **Invite**。Rork 会向对方发送一封标题为“You&#39;re invited to collaborate on a Rork project”的邮件，其中包含邀请链接。该邀请将在 7 天后失效。
+* **通过链接。** 在 **Create invite link** 下点击 **Create**。任何人只要打开该链接就能加入，因此请像对待密码一样妥善保管。链接有效期为一年。
+
+接受邀请的人需要先登录 Rork，登录后即可直接进入该项目。
+
+<div id="editor-or-viewer">
+  ## 编辑者或查看者
+</div>
+
+Rork 只有两种角色。
+
+<Frame>
+  <img alt="Rork 邀请对话框中的角色选择器，显示“编辑者，可编辑该 项目”和“查看者，可查看该 项目”" />
+</Frame>
+
+|            | 编辑者 | 查看者 |
+| ---------- | --- | --- |
+| 查看聊天和预览    | 是   | 是   |
+| 向智能体发送消息   | 是   | 否   |
+| 编辑代码和机密信息    | 是   | 否   |
+| 发布并提交到应用商店 | 是   | 否   |
+| 邀请他人       | 是   | 否   |
+| 发表评论       | 是   | 是   |
+| 克隆 项目 | 是   | 是   |
+
+查看者在输入框中看到的不是发送按钮，而是一条提示：“你对该 项目 仅有查看权限”。客户和利益相关方请给**查看者**权限，团队成员则给**编辑者**权限。
+
+若之后想调整某人的权限，打开邀请对话框，在对应的一行中选择：**设为编辑者**、**设为查看者**或**移除**。如果你是被邀请方，想退出协作，同一菜单里也提供**离开 项目**。
+
+<Warning>
+  协作者消耗的是 项目 所有者的 credits。对话框中也写明了这一点：“协作者将使用 项目 所有者工作区中的 credits”。编辑者每发送一条消息，都会从你的余额中扣除，因此邀请编辑者时请慎重。参见 [Build credits 与 Cloud credits 的区别](/zh/billing/build-credits-vs-cloud-credits)。
+</Warning>
+
+<div id="see-who-is-in-the-project">
+  ## 查看谁在项目中
+</div>
+
+项目顶部栏会显示一排头像：所有者在最前，其后是协作者。头像带绿色圆环表示该成员此刻正在项目中，头像变暗则表示对方暂时离开。将鼠标悬停在头像上，即可查看对方是谁，以及其身份是所有者还是协作者。
+
+两个人可以同时在同一个项目中协作。但同一时间只能运行一条消息，因此在双方开始输入前，请先商定由谁来主导。
+
+<div id="leave-notes-for-each-other">
+  ## 互相留言
+</div>
+
+当 项目 有了协作者后，顶部会出现 **Comments** 按钮。面板标题为 **Comments**，下方有一行说明“Leave notes for your collaborators”。
+
+评论适合记录那些不是发给智能体的指令的内容，比如“定价卡片上的价格不对”“客户已确认首屏设计”。评论保存在 项目 旁边，而不在聊天里，因此不会干扰智能体。
+
+<Note>
+  评论不会发送邮件或推送通知。请告诉队友去哪里查看，或者在打开 项目 时留意该面板。
+</Note>
+
+<div id="clone-a-project">
+  ## 克隆项目
+</div>
+
+克隆会生成一份独立的副本。想尝试有风险的方向、在一个不错的基础上开启第二个应用，或者把一个可以随意折腾的版本交给别人时，都可以用它。
+
+在项目顶部栏中打开 **⋯** 菜单，选择 **Clone project**。
+
+<Frame>
+  <img alt="Rork 中的克隆项目对话框，项目名称字段已预填为 Ember Roast Website Clone，下方是取消和克隆项目按钮" />
+</Frame>
+
+副本包含的内容：
+
+* 全部代码，以及生成这些代码的聊天记录
+* Assets：生成的图片、视频、音频和 3D 模型
+* 你的环境变量，但由 Rork 自行管理的密钥除外，这些密钥会重新生成
+
+副本不会共享的内容：
+
+* 你在副本中的任何操作都不会影响原项目，原项目中的改动也不会同步到副本
+* 已发布的网页地址仍归原项目所有。副本需要单独发布，才能拥有自己的地址
+
+任何有权访问项目的人都可以克隆它，查看者也不例外。克隆出的项目始终归创建者所有。
+
+<div id="find-projects-other-people-shared-with-you">
+  ## 查找他人共享给你的项目
+</div>
+
+在 [rork.com](https://rork.com) 上打开侧边栏，点击 **Shared with you** (他人共享) 。其中会列出你受邀加入的项目，与 **My Projects** (我的项目) 分开显示。
+
+<div id="are-my-projects-private">
+  ## 我的 项目 是私密的吗？
+</div>
+
+是的。每个 Rork 项目 都是私密的。项目 地址只有所有者和受邀成员才能打开，陌生人即使拿到 URL 也什么都看不到。
+
+发布则是另一回事。已发布的 web app 是有意公开的，但它不会暴露你的聊天、代码或机密信息。参见 [Rork Web](/zh/web/rork-web)。
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<AccordionGroup>
+  <Accordion title="协作者需要自己购买付费 plan 吗？">
+    不需要。他们只需有一个 Rork 账户。所有操作消耗的都是 项目 所有者的 credits。
+  </Accordion>
+
+  <Accordion title="可以分享 项目 但不让别人改动吗？">
+    可以，把对方邀请为 **查看者**。如果你想展示的是应用本身而不是 项目，可以把它发布到 Web，然后把网址发给对方。
+  </Accordion>
+
+  <Accordion title="如何取消某人的访问权限？">
+    打开邀请对话框，在对应的那一行点击 **Remove**。不再需要的邀请链接也可以用同样的方式删除。
+  </Accordion>
+
+  <Accordion title="协作者会回退我的工作吗？">
+    编辑者可以做到。每个版本都会保留在聊天记录中，因此可以问对方回退到了哪条回复。参见[撤销更改并回退到某个版本](/zh/features/undo-and-history)。
+  </Accordion>
+
+  <Accordion title="两个人可以同时开发不同的功能吗？">
+    在同一个 项目 中不行。一个智能体一次只能处理一条消息。可以把工作拆分到两个 项目 中，或者轮流操作，把另一个人设为 查看者。
+  </Accordion>
+
+  <Accordion title="可以把 项目 转交给别人吗？">
+    目前比较现实的做法是克隆：对方克隆该 项目，副本便归他们所有。如需真正的所有权转移，请写信至 [team@rorkai.com](mailto:team@rorkai.com)。
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## 后续步骤
+</div>
+
+<CardGroup>
+  <Card icon="rotate-left" href="/zh/features/undo-and-history" title="撤销与历史记录">
+    回退到 项目 的任意历史版本。
+  </Card>
+
+  <Card icon="key" href="/zh/features/secrets" title="密钥与机密信息">
+    谁能看到你的 API 密钥，谁看不到。
+  </Card>
+
+  <Card icon="github" href="/zh/tutorials/how-to-connect-github" title="与 GitHub 同步">
+    以普通代码仓库的形式把代码交给开发者。
+  </Card>
+
+  <Card icon="credit-card" href="/zh/billing/build-credits-vs-cloud-credits" title="Credits">
+    协作者发送的消息从谁的余额中扣除。
+  </Card>
+</CardGroup>
+
+<CtaBanner />

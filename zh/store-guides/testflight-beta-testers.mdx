@@ -1,0 +1,149 @@
+---
+title: "TestFlight：把你的应用装到真机上"
+---
+
+Rork 会把你的 iPhone 构建版本上传到 TestFlight，并提供一个链接，供你邀请测试者。本页介绍提交步骤、Beta 链接，以及测试者具体需要做哪些操作。
+
+TestFlight 是 Apple 提供的方案，可以在应用上架 App Store 之前先把它装到真机上。你可以用它在真机上验证应用，也可以在审核前让其他人试用。
+
+Rork 会替你上传构建版本，你不需要 Xcode，也不需要 Mac。
+
+<div id="get-a-build-onto-testflight">
+  ## 将构建版本上传到 TestFlight
+</div>
+
+<Steps>
+  <Step title="打开 Publish，然后选择 Submit to App Store">
+    在 project 顶部栏中点击 **Publish**，并选择你的 iPhone 应用。
+  </Step>
+
+  <Step title="核对应用信息">
+    Rork 会显示应用在商店中展示的名称和详细信息，确认无误后点击 **Continue**。
+  </Step>
+
+  <Step title="登录 Apple 账号">
+    Rork 需要使用你的 Apple Developer 账号。会员费为**每年 $99**，具体金额可能因国家/地区而异。如果你还没有账号，请参阅[创建你的 Apple Developer 账号](/zh/store-guides/apple-developer-account)。
+  </Step>
+
+  <Step title="启动提交流程">
+    Rork 会依次下载 project、准备构建版本、构建应用，并将其上传到 App Store Connect。聊天中会显示各个阶段的进度，你可以先去忙别的，稍后再回来查看。
+  </Step>
+
+  <Step title="等待提示已可在 TestFlight 上使用">
+    上传完成后，Rork 会提示该构建版本已可在 TestFlight 上使用，并给出构建版本编号。
+  </Step>
+</Steps>
+
+上传完成后，Apple 还需要几分钟处理该构建版本。处理完成之前，TestFlight 中可能暂时看不到它。
+
+<div id="invite-testers-with-a-link">
+  ## 用链接邀请测试者
+</div>
+
+构建版本成功后，Rork 会提供 **Share Beta Link** (分享 Beta 链接) 选项。它会生成一个类似 `rork.com/beta/…` 的地址，引导测试者一步步完成安装。
+
+在弹出的对话框中，你可以 **Copy invite link** (复制邀请链接) ；链接一旦泄露，可以 **Regenerate** (重新生成) ；测试结束后，则可以 **Revoke** (撤销) 。
+
+<Note>
+  只有 project 所有者和编辑者可以分享 Beta 链接，查看者看不到该按钮。参见[分享 project 并协作](/zh/collaborate/share-a-project)。
+</Note>
+
+<div id="what-your-tester-does">
+  ## 测试者需要做什么
+</div>
+
+把链接发给他们，他们会看到&quot;您已受邀参与测试&quot;以及你的应用名称，接着是五个简短步骤：
+
+<Steps>
+  <Step title="安装 TestFlight">
+    从 App Store 下载 Apple 的 TestFlight 应用。对于尚未安装的用户，页面上会显示 **Get TestFlight**。
+  </Step>
+
+  <Step title="输入邮箱地址">
+    必须是他们 **Apple ID** 绑定的邮箱，否则邀请会石沉大海。
+  </Step>
+
+  <Step title="接受 App Store Connect 团队邀请">
+    点击 **Request Team Invitation**，然后接受 Apple 发来的邮件邀请。如果没收到，可以点 **Resend** 重发。
+  </Step>
+
+  <Step title="加入 TestFlight 群组">
+    点击 **Join TestFlight**，然后在 TestFlight 应用中确认加入。点 **Refresh Status** 可刷新页面状态。
+  </Step>
+
+  <Step title="打开应用">
+    页面会提示应用已安装，他们就能像打开其他应用一样，从主屏幕启动它。
+  </Step>
+</Steps>
+
+提醒测试者使用 Apple ID 绑定的邮箱，并告知他们需要接受两次邀请：一次在邮件里，一次在 TestFlight 中。绝大多数困惑都出在这两点上。
+
+<div id="how-big-a-beta-this-suits">
+  ## 适合多大规模的 Beta 测试
+</div>
+
+Rork 的链接是通过你的 **App Store Connect 团队**来添加测试者的。这种方式快捷，无需额外的 Apple 审核，但 Apple 对人数设有上限，因此更适合由朋友、同事和早期用户组成的小规模测试群体。
+
+如果要做大规模的公开 Beta 测试，请自行在 App Store Connect 中添加外部测试者。构建版本在发放给外部测试群组之前需经 Apple 审核，这会额外增加一段等待时间。
+
+<div id="after-the-beta">
+  ## 测试结束之后
+</div>
+
+TestFlight 不是 App Store。TestFlight 上的构建版本既不对外销售，也不对公众开放。
+
+应用经受住测试者的考验后，就可以提交审核了。请参阅[将你的应用发布到 Apple App Store](/zh/store-guides/publish-app-store)，先运行 [AI App Store Reviewer](/zh/ai-app-store-reviewer)，并阅读 [App Store 主要拒审原因](/zh/appstore-submission-checklist/whats-next-after-the-apps-finished)，这样审核时才不会措手不及。
+
+<div id="faq">
+  ## 常见问题
+</div>
+
+<AccordionGroup>
+  <Accordion title="我需要 Mac 或 Xcode 吗？">
+    不需要。Rork 在云端完成构建和上传。Xcode 是可选的，只适合想在本地调试的人。参见[如何通过 Xcode 测试并发布你的 Rork 应用](/zh/how-to-set-up-xcode/how-to-set-up-xcoe)。
+  </Accordion>
+
+  <Accordion title="只是用一下 TestFlight，也要买 99 美元的 Apple 开发者会员吗？">
+    是的。TestFlight 分发要通过 App Store Connect 进行，而这需要付费的 Apple Developer 账号。
+  </Accordion>
+
+  <Accordion title="不用 TestFlight，可以直接在自己的 iPhone 上测试吗？">
+    可以，用 Companion 应用通过 USB 从 Rork 直接安装，或者使用 Rork Max 应用。参见 [iPhone 版 Rork Max 应用](/zh/rork-max/rork-max-app)。
+  </Accordion>
+
+  <Accordion title="测试者说点了链接没反应。">
+    确认他们用的是自己 Apple ID 对应的邮箱，并且两份邀请都已接受。如果链接本身失效了，**重新生成**一个并把新链接发给他们。
+  </Accordion>
+
+  <Accordion title="构建版本一直没出现在 TestFlight 里。">
+    上传有时看起来已经完成，实际却失败了，通常是签名问题或漏填了某项信息。参见[提交错误](/zh/submitting-to-app-store/apple/submission-errors)。
+  </Accordion>
+
+  <Accordion title="新的构建版本会自动推送给测试者吗？">
+    已在该群组中的测试者会收到你上传的下一个构建版本，无需再次接受邀请。
+  </Accordion>
+</AccordionGroup>
+
+<div id="next-steps">
+  ## 后续步骤
+</div>
+
+<CardGroup>
+  <Card icon="upload" href="/zh/store-guides/publish-app-store" title="发布到 App Store">
+    把测试过的构建版本提交审核。
+  </Card>
+
+  <Card icon="shield-check" href="/zh/ai-app-store-reviewer" title="AI App Store 审核助手">
+    抢在 Apple 之前发现审核指南问题。
+  </Card>
+
+  <Card icon="triangle-alert" href="/zh/submitting-to-app-store/apple/submission-errors" title="提交错误">
+    构建版本失败或迟迟不出现时怎么办。
+  </Card>
+
+  <Card icon="apple" href="/zh/store-guides/apple-developer-account" title="Apple Developer 账号">
+    使用 TestFlight 必备的会员资格。
+  </Card>
+</CardGroup>
+
+<CtaBanner />
