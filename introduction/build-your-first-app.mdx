@@ -1,57 +1,47 @@
 ---
-title: "How to build your first app"
+title: "Build Your First App with Rork"
+sidebarTitle: "Build Your First App"
+description: "Create an account, pick your platform, describe your app idea, and iterate. A step-by-step walkthrough for your first Rork project."
 ---
 
-Get started by building your first app.
+Building apps on Rork is incredibly easy. What used to take months for a production team to put together can now be done in minutes. Rork uses a simple prompt generation system so you can express exactly what you want. This guide will get you from zero to a working app.
 
-Building apps on Rork is incredibly easy. What used to take months for a production team to put together can now be done in minutes. Rork uses a simple prompt generation system so you can express exactly what you want.
+<Steps>
+  <Step title="Create an Account">
+    To use Rork, you need to create an account. Creating an account is free. You can sign in with Google or Apple. Once you sign in, you will be asked to answer a short survey before being sent back to the home page.
+  </Step>
+  <Step title="Think of an Idea">
+    Every great prompt starts with an idea. To get started, feel free to branch off an existing app idea, like "Uber for Cat Food" or "First Person Shooter Zombies Mobile Game". Rork has an Explore screen so you can get inspired by thousands of other app developers. In onboarding, you are encouraged to remix others' apps as a baseline.
+  </Step>
+  <Step title="Choose Your App Type">
+    Rork builds three kinds of apps: two native mobile apps and a web app. Pick the platform in the picker next to the prompt box before you send your first message.
 
-**_This guide will help you get started building your first app in the Rork editor._**
+    | App type | What Rork builds | Runs on | Where it ships |
+    | --- | --- | --- | --- |
+    | **For iPhone** | Native iPhone app with SwiftUI | iPhone, iPad, Apple Watch | App Store and TestFlight |
+    | **For Android** | Native Android with Kotlin + Compose | Android phones and tablets | Google Play |
+    | **For web** | Vite + React | Any browser, desktop and mobile | Your own `your-app.rork.app` address |
 
-### Step 1: Create an Account
+    Choose **For iPhone** when the app should feel deeply native on Apple devices, or when it needs Apple-only features: home screen widgets, Live Activities, Apple Watch, HealthKit, ARKit, or high-performance games. Read [iPhone, Android, or web: what's the difference](/swift-vs-react-native/whats-the-difference) for the full comparison.
 
-To use Rork, you need to create an account. Creating an account is free. You can sign in with Google or Apple. Once you sign in, you will be asked to answer a short survey before being sent back to the home page.
+    <Info>
+      One choice does not lock you in. A single Rork project can hold an iPhone app, an Android app, and a web app side by side. Each app has its own code. They share the chat and the backend if you have one. You can add the next platform at any time from the platform switcher above the preview, or from **Project Settings → Add new app**. See [Convert your app between iOS, Android, and web](/import/convert-between-platforms).
+    </Info>
+  </Step>
+  <Step title="Prompt It">
+    On the home page, start a new project by typing in the prompt box. Try to focus on one main function for your prompt to begin. The more complex you make the initial prompt, the harder it will be to iterate after that point. It is better to start simple. Explain the pages and functions that you want, or make it brief and let the intelligent agents handle the job.
+  </Step>
+  <Step title="Test Live and Iterate">
+    You will be sent to the Rork editor when you submit your prompt. Your agent will begin working on your app. In a few minutes, you will have a fully functional app that you can test. How you test it depends on the app type:
 
-### Step 2: Think of an Idea
+    - **For iPhone**: run the app in the iOS simulator directly on the website. You can also install it on your own iPhone using the [Rork Max app for iPhone](/rork-max/rork-max-app).
+    - **For Android**: run the app in the Android emulator directly on the website.
+    - **For web**: the live preview opens right in the editor, and you can open it in a browser tab at any time.
 
-Every great prompt starts with an idea. To get started, feel free to branch off an existing app idea, like "_Uber for Cat Food_" or "_First Person Shooter Zombies Mobile Game_". We have an explore screen so you can get inspired by thousands of other app developers. In our onboarding, we encourage you to get started by remixing others' apps as a baseline.
+    The iOS simulator and the Android emulator run on rented cloud machines, so they spend credits per minute. See [build credits vs cloud credits](/billing/build-credits-vs-cloud-credits).
 
-### Step 3: Choose Your App Type
+    After playing around with your app, send more messages to continue iterating. You can clone your project at any point to start from a new thread, or start a new project entirely by prompting on the home page.
+  </Step>
+</Steps>
 
-Rork builds three kinds of apps: two native mobile apps and a web app. Pick the platform in the picker next to the prompt box before you send your first message.
-
-| App type        | What Rork builds                     | Runs on                         | Where it ships                       |
-| --------------- | ------------------------------------ | ------------------------------- | ------------------------------------ |
-| **For iPhone**  | Native iPhone app with SwiftUI       | iPhone, iPad, Apple Watch       | App Store and TestFlight             |
-| **For Android** | Native Android with Kotlin + Compose | Android phones and tablets      | Google Play                          |
-| **For web**     | Vite + React                         | Any browser, desktop and mobile | Your own `your-app.rork.app` address |
-
-Choose **For iPhone** when the app should feel deeply native on Apple devices, or when it needs Apple-only features: home screen widgets, Live Activities, Apple Watch, HealthKit, ARKit, or high-performance games. Read [iPhone, Android, or web: what's the difference](/swift-vs-react-native/whats-the-difference) for the full comparison.
-
-Choose **For Android** when you want a real native Android app instead of a cross-platform wrapper.
-
-Choose **For web** for a browser-first product: a landing page, a dashboard, an internal tool, or a SaaS-style app.
-
-<Info>
-  One choice does not lock you in. A single Rork project can hold an iPhone app, an Android app, and a web app side by side. Each app has its own code. They share the chat, and the backend if you have one. You can add the next platform at any time from the platform switcher above the preview, or from **Project Settings → Add new app**. See [Convert your app between iOS, Android, and web](/import/convert-between-platforms).
-</Info>
-
-### Step 4: Prompt It
-
-On the home page, you can start a new project by just typing in the prompt box. Try to focus on one main function for your prompt to begin. The more complex you make the initial prompt, the harder it's going to be for you to iterate after that point. It's better to start one at a time. Explain the pages and functions that you want, or make it brief and let our intelligent agents handle the job.
-
-### Step 5: Test it Live & Iterate
-
-You will be sent to the Rork editor when you submit your prompt. Your agent will begin working on your app. In a few minutes, you'll have a fully functional app that you can test. How you test it depends on the app type:
-
-- **For iPhone**: run the app in the iOS simulator directly on the website. You can also install it on your own iPhone: plug the phone into your Mac and download the app in one click, or build and run it inside the [Rork Max app for iPhone](/rork-max/rork-max-app). See [testing with the Companion app](/rork-max-swift).
-- **For Android**: run the app in the Android emulator directly on the website.
-- **For web**: the live preview opens right in the editor, and you can open it in a browser tab at any time.
-
-The iOS simulator and the Android emulator run on rented cloud machines, so they spend credits per minute. See [build credits vs cloud credits](/billing/build-credits-vs-cloud-credits).
-
-After playing around with your app, you can send more messages on Rork to continue iterating on our app. You can clone your project at any point to start from a new thread, or you can start a new project entirely by prompting on the home page.
-
-**Good luck with your first app on Rork!**
-
-<CtaBanner />
+Good luck with your first app on Rork!
