@@ -1,6 +1,6 @@
-# Rork Docs (Local Mintlify Clone)
+# Rork Docs Demo
 
-A locally-built Mintlify recreation of the docs.rork.com structure and content coverage, written from scratch (not copy-pasted from the source site).
+This is a demo app showing how to use General Translation on Rork.
 
 ## Run locally
 
