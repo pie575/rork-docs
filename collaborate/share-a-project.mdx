@@ -1,105 +1,78 @@
 ---
-title: "Share a project and work together"
+title: "Share a Project and Collaborate in Rork"
+sidebarTitle: "Share a Project"
+description: "Invite co-founders, designers, or clients to your Rork project as Editor or Viewer. Leave comments, work together live, and clone projects for a fresh copy."
 ---
-
-Invite people to view or edit your Rork project, leave comments for each other, see who is online, and clone a project into a fresh copy you can change freely.
 
 A Rork project can hold more than one person. You invite a co-founder, a designer, or a client, and they open the same chat and the same live preview that you see.
 
-There are two ways to bring somebody in, and they are not the same thing:
+There are two ways to bring somebody in:
 
 - **Invite** them into your project. One project, one chat, everyone edits the same app.
 - **Clone** the project. They get their own copy, and your version keeps working exactly as it did.
 
 ## Invite someone to your project
 
-Press the invite button in the project header, next to **Publish**.
+Press the invite button in the project header, next to **Publish**. You have two routes:
 
-<Frame>
-  <img alt="The Rork Invite collaborators dialog with an email field, an Editor role picker, an Invite button, and a Create invite link row" />
-</Frame>
-
-You have two routes:
-
-- **By email.** Type the address, choose the role, press **Invite**. Rork emails them a link titled "You're invited to collaborate on a Rork project." That invite expires after 7 days.
-- **By link.** Press **Create** under **Create invite link**. Anyone who opens that link can join, so treat it like a password. Links last a year.
+- **By email:** Type the address, choose the role, and press **Invite**. Rork emails them a link. That invite expires after 7 days.
+- **By link:** Press **Create** under **Create invite link**. Anyone who opens that link can join, so treat it like a password. Links last a year.
 
 Whoever accepts has to sign in to Rork first. After that they land straight in the project.
 
 ## Editor or Viewer
 
-Rork has exactly two roles.
+Rork has exactly two roles:
 
-<Frame>
-  <img alt="The role picker in the Rork invite dialog showing Editor, can edit the project, and Viewer, can view the project" />
-</Frame>
+|  | Editor | Viewer |
+| --- | --- | --- |
+| Read the chat and the preview | Yes | Yes |
+| Send messages to the agent | Yes | No |
+| Edit code and secrets | Yes | No |
+| Publish and submit to the stores | Yes | No |
+| Invite other people | Yes | No |
+| Leave comments | Yes | Yes |
+| Clone the project | Yes | Yes |
 
-|                                  | Editor | Viewer |
-| -------------------------------- | ------ | ------ |
-| Read the chat and the preview    | Yes    | Yes    |
-| Send messages to the agent       | Yes    | No     |
-| Edit code and secrets            | Yes    | No     |
-| Publish and submit to the stores | Yes    | No     |
-| Invite other people              | Yes    | No     |
-| Leave comments                   | Yes    | Yes    |
-| Clone the project                | Yes    | Yes    |
+Give clients and stakeholders **Viewer**, and give teammates **Editor**.
 
-A viewer sees a note in the composer instead of a send button: "You have view-only access to this project". Give clients and stakeholders **Viewer**, and give teammates **Editor**.
-
-To change somebody later, open the invite dialog and use their row: **Set as Editor**, **Set as Viewer**, or **Remove**. If you were invited and want out, the same menu offers **Leave project**.
+To change somebody's role, open the invite dialog and use their row: **Set as Editor**, **Set as Viewer**, or **Remove**.
 
 <Warning>
-  Collaborators spend the project owner's credits. The dialog says so: "Collaborators will use credits from the project owner's workspace". Every message an editor sends comes out of your balance, so invite editors deliberately. See [Build credits vs Cloud credits](/billing/build-credits-vs-cloud-credits).
+  Collaborators spend the project owner's credits. Every message an editor sends comes out of your balance, so invite editors deliberately. See [Build credits vs Cloud credits](/billing/build-credits-vs-cloud-credits).
 </Warning>
 
 ## See who is in the project
 
-The project header shows a row of avatars: the owner first, then the collaborators. A green ring means that person is in the project right now, and a dimmed avatar means they are away. Hover an avatar to see who it is and whether they are the owner or a collaborator.
-
-Two people can work in the same project at the same time. Only one message runs at a time, so agree who is driving before you both start typing.
+The project header shows a row of avatars. A green ring means that person is in the project right now. Two people can work in the same project at the same time, but only one message runs at a time, so agree who is driving before you both start typing.
 
 ## Leave notes for each other
 
-Once a project has collaborators, the header gains a **Comments** button. The panel is titled **Comments**, with the line "Leave notes for your collaborators".
-
-Use comments for the things that are not instructions to the agent: "the price on the pricing card is wrong", "client approved the hero". Comments live beside the project, not inside the chat, so they do not confuse the agent.
+Once a project has collaborators, the header gains a **Comments** button. Use comments for things that are not instructions to the agent: "the price on the pricing card is wrong", "client approved the hero". Comments live beside the project, not inside the chat, so they do not confuse the agent.
 
 <Note>
-  Comments do not send an email or a push notification. Tell your teammate where to look, or check the panel when you open the project.
+  Comments do not send an email or push notification. Tell your teammate where to look, or check the panel when you open the project.
 </Note>
 
 ## Clone a project
 
 Cloning makes an independent copy. Use it to try a risky direction, to start a second app from a good base, or to hand someone a version they can break.
 
-Open the **⋯** menu in the project header and choose **Clone project**.
-
-<Frame>
-  <img alt="The Clone project dialog in Rork with a Project Name field prefilled as Ember Roast Website Clone, and Cancel and Clone Project buttons" />
-</Frame>
+Open the **...** menu in the project header and choose **Clone project**.
 
 What the copy contains:
 
-- All the code, and the chat history behind it
-- The assets: generated images, video, audio, and 3D models
-- Your environment variables, except the keys Rork manages itself, which it mints fresh
+- All the code and the chat history behind it
+- Assets: generated images, video, audio, and 3D models
+- Your environment variables (except keys Rork manages itself, which it mints fresh)
 
-What the copy does not share:
-
-- Nothing you do in the copy touches the original, and nothing in the original reaches the copy
-- A published web address stays with the original project. Publish the copy separately to give it one
+What the copy does not share: nothing you do in the copy touches the original, and vice versa. A published web address stays with the original project.
 
 Anyone with access to a project can clone it, viewers included. A clone always belongs to the person who made it.
 
-## Find projects other people shared with you
+## Find projects shared with you
 
 Open the sidebar on [rork.com](https://rork.com) and use **Shared with you**. It lists the projects you were invited to, separately from **My Projects**.
-
-## Are my projects private?
-
-Yes. Every Rork project is private. The project address only opens for the owner and the people invited, and a stranger with the URL gets nothing.
-
-Publishing is a separate decision. A published web app is public on purpose, and it does not expose your chat, your code, or your secrets. See [Rork Web](/web/rork-web).
 
 ## FAQ
 
@@ -116,12 +89,8 @@ Publishing is a separate decision. A published web app is public on purpose, and
     Open the invite dialog and press **Remove** on their row. An invite link you no longer want can be deleted the same way.
   </Accordion>
 
-  <Accordion title="Can a collaborator revert my work?">
-    An editor can, yes. Every version stays in the chat, so ask them which answer they reverted to. See [Undo a change and go back a version](/features/undo-and-history).
-  </Accordion>
-
   <Accordion title="Can two people build different features at once?">
-    Not in one project. One agent runs one message at a time. Split the work into two projects, or take turns and keep the other person on Viewer.
+    Not in one project. One agent runs one message at a time. Split the work into two projects, or take turns.
   </Accordion>
 
   <Accordion title="Can I hand a project over to someone else?">
@@ -132,21 +101,15 @@ Publishing is a separate decision. A published web app is public on purpose, and
 ## Next steps
 
 <CardGroup>
-  <Card icon="rotate-left" href="/features/undo-and-history" title="Undo and history">
+  <Card title="Undo and History" icon="rotate-left" href="/features/undo-and-history">
     Go back to any earlier version of the project.
   </Card>
 
-  <Card icon="key" href="/features/secrets" title="Keys and secrets">
-    Who can see your API keys, and who cannot.
+  <Card title="Secrets" icon="key" href="/features/secrets">
+    Who can see your API keys and who cannot.
   </Card>
 
-  <Card icon="github" href="/tutorials/how-to-connect-github" title="Sync with GitHub">
-    Give a developer the code in a normal repository.
-  </Card>
-
-  <Card icon="credit-card" href="/billing/build-credits-vs-cloud-credits" title="Credits">
+  <Card title="Credits" icon="credit-card" href="/billing/build-credits-vs-cloud-credits">
     Whose balance pays for a collaborator's messages.
   </Card>
 </CardGroup>
-
-<CtaBanner />

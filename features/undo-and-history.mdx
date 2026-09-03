@@ -1,20 +1,14 @@
 ---
-title: "Undo a change and go back a version"
+title: "Undo Changes and Restore Earlier Versions in Rork"
+sidebarTitle: "Undo & History"
+description: "Every Rork agent answer is a saved version. Undo the last change, revert to any earlier state, edit a past message, or stop a run going the wrong way."
 ---
 
-Every Rork message is a version you can return to. Undo the last change, revert to any earlier answer, review the exact files that changed, and stop a message that is going the wrong way.
-
-Nothing you do in Rork is final. Each answer from the agent is a saved version of your whole project, so you can always go back to the last one that worked.
-
-Going back costs no credits.
+Nothing you do in Rork is final. Each answer from the agent is a saved version of your whole project, so you can always go back to the last one that worked. Going back costs no credits.
 
 ## Undo the last change
 
-The last answer in the chat has an **Undo** button under it. Press it and Rork rolls the files back, then removes that exchange from the chat. There is no dialog, because there is nothing to lose: the version you land on is the one you had a minute ago.
-
-<Frame>
-  <img alt="A Rork chat answer with a file list and an action row underneath showing Undo, a copy button, and a three dot menu" />
-</Frame>
+The last answer in the chat has an **Undo** button under it. Press it and Rork rolls the files back, then removes that exchange from the chat. There is no dialog, because there is nothing to lose.
 
 Use **Undo** when the last change made things worse and you want the previous state back immediately.
 
@@ -22,80 +16,43 @@ Use **Undo** when the last change made things worse and you want the previous st
 
 Earlier answers show **Revert** instead of **Undo**. It puts your project back to how it looked right after that answer.
 
-<Frame>
-  <img alt="The action row under an earlier Rork answer, showing a Revert control next to the copy and three dot buttons" />
-</Frame>
-
-Revert asks first, because you may lose work that came later:
-
-<Frame>
-  <img alt="A dialog titled Revert to Previous Version warning that unsaved changes will be lost, with Cancel and Revert buttons" />
-</Frame>
-
-After you confirm, Rork restores the files and trims the chat: the messages up to that answer stay, and everything after it goes. A toast tracks the work, first **Restoring project...** and then **Version restored**.
+Revert asks first, because you may lose work that came later. After you confirm, Rork restores the files and trims the chat: the messages up to that answer stay, and everything after it goes.
 
 <Warning>
-  Revert is not reversible. The versions after your target are no longer at the top of the history. Before a big revert, ask yourself whether you only need the last change undone.
+  Revert is not reversible. The versions after your target are no longer in the history. Before a big revert, ask yourself whether you only need the last change undone.
 </Warning>
 
-You cannot revert while the agent is working. The button explains why: "Hang tight, the agent's still working. Stop the message to revert here."
+You cannot revert while the agent is working. Stop the current message first.
 
 ## Edit a message and try again
 
 Sometimes the answer was fine and the question was wrong. Hover an earlier message of yours and press **Edit message**. Fix the wording and press **Send**.
 
-Rork puts the project back to the state before that message, drops everything that followed it, and answers your new wording. It is a revert and a retry in one step, and it is the cleanest way out of a conversation that went sideways.
+Rork puts the project back to the state before that message, drops everything that followed it, and answers your new wording. It is a revert and a retry in one step.
 
 ## See exactly what changed
 
-Every answer can show its own diff. Open the **⋯** menu under the answer and choose **Review changes**.
-
-<Frame>
-  <img alt="The message details menu in Rork showing Review changes, Auto to Opus 5 High, 78.5 credits, and 121.4k context tokens" />
-</Frame>
+Open the **⋯** menu under any answer and choose **Review changes**. This opens a full-screen diff of every file the answer touched, compared with the version before it.
 
 The same menu answers "what did that cost?". It names the model that actually ran, the credits the message used, and how much context the agent carried.
-
-**Review changes** opens a full-screen diff of every file the answer touched, compared with the version before it. The header counts the files, and **ESC** closes it.
-
-<Frame>
-  <img alt="The Rork diff view showing rork.json and gitignore with added lines highlighted in green, and 88 files changed in the header" />
-</Frame>
-
-Read the diff before you publish, and after any change you did not fully understand.
 
 ## Stop a message that is going wrong
 
 While the agent works, the send button becomes a stop button. Press it and Rork finishes the step it is on, saves what it already did, and stops.
 
-Stopping is safe and cheap:
-
-- The partial work stays in the chat, marked **Stopped — progress saved**.
-- Your prompt comes back into the composer, so you can reword it and send it again.
-- A build that never finished is not charged.
-
-Stop early. A long turn heading in the wrong direction costs more than a stop and a better prompt.
+Stopping is safe and cheap. The partial work stays in the chat, marked **Stopped, progress saved**, and your prompt comes back into the composer so you can reword it.
 
 ## Fix an error instead of undoing
 
-If the preview throws an error, Rork shows it and offers to fix it. The dialog is titled **Runtime error** and the button says **Fix with Rork**. With several errors you get **Fix all with Rork**, or a count, and **Dismiss**.
+If the preview throws an error, Rork shows it and offers to fix it. The dialog is titled **Runtime error** and the button says **Fix with Rork**.
 
-By default, pressing that button sends the fix request straight away. You can change that in **Account settings → Preferences**:
-
-<Frame>
-  <img alt="The Preferences panel in Rork account settings showing the Auto-send error fixes toggle switched on" />
-</Frame>
-
-Two more places offer the same help. An answer with TypeScript problems gets a **Fix errors** button, and the **Logs** panel in **More → Code** shows what your app printed at runtime, which is what you paste into chat when an error is not obvious.
+You can set error fixes to send automatically in **Account settings → Preferences**.
 
 ## What a version actually is
 
 One answer from the agent equals one saved version of the project. Rork commits your files at the end of each turn, together with the chat history, so the chat and the code can never drift apart.
 
-That has two useful consequences:
-
-- The list of versions is the chat. There is no separate history panel to learn.
-- Your project history travels with your code. Connect GitHub and you get the same commits in your own repository. See [How to sync your project with GitHub](/tutorials/how-to-connect-github).
+Connect GitHub and you get the same commits in your own repository.
 
 ## FAQ
 
@@ -113,36 +70,26 @@ That has two useful consequences:
   </Accordion>
 
   <Accordion title="Does Revert also undo a publish?">
-    No. Your live web app or your submitted build stays as it is until you publish again. See [Rork Web](/web/rork-web).
-  </Accordion>
-
-  <Accordion title="Does Revert bring back deleted secrets?">
-    Environment variables are not part of the code version. Check **More → Secrets** after a revert. See [API keys and environment variables](/features/secrets).
+    No. Your live web app or your submitted build stays as it is until you publish again.
   </Accordion>
 
   <Accordion title="The agent is stuck in a loop of failed fixes.">
-    Revert to the last good version first, then narrow the request. [How to get out of an error loop](/introduction/introduction/agent-loops) walks through it.
+    Revert to the last good version first, then narrow the request. See [How to get out of an error loop](/introduction/introduction/agent-loops).
   </Accordion>
 </AccordionGroup>
 
 ## Next steps
 
 <CardGroup>
-  <Card icon="sparkles" href="/features/agent-modes" title="How the agent works">
+  <Card title="How the Agent Works" icon="sparkles" href="/features/agent-modes">
     Design mode, Plan mode, and building.
   </Card>
 
-  <Card icon="triangle-alert" href="/introduction/introduction/agent-loops" title="Get out of an error loop">
+  <Card title="Get Out of an Error Loop" icon="triangle-alert" href="/introduction/introduction/agent-loops">
     What to do when the same fix keeps failing.
   </Card>
 
-  <Card icon="github" href="/tutorials/how-to-connect-github" title="Sync with GitHub">
-    Keep the same history in your own repository.
-  </Card>
-
-  <Card icon="users" href="/collaborate/share-a-project" title="Share the project">
+  <Card title="Share the Project" icon="users" href="/collaborate/share-a-project">
     Who can revert, and who can only look.
   </Card>
 </CardGroup>
-
-<CtaBanner />

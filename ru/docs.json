@@ -1,143 +1,118 @@
 {
-  "groups": [
+  "tabs": [
     {
-      "group": "Начало работы",
-      "pages": [
-        "ru/index",
-        "ru/elements-of-a-good-idea/how-to-tell-if-your-idea-is-good",
-        "ru/introduction/build-your-first-app",
-        "ru/introduction/introduction/prompting-strategy"
-      ]
-    },
-    {
-      "group": "Выбор платформы",
-      "pages": [
-        "ru/swift-vs-react-native/whats-the-difference",
-        "ru/android/rork-android",
-        "ru/web/rork-web",
-        "ru/expo"
-      ]
-    },
-    {
-      "group": "Импорт и перенос проекта",
-      "pages": [
-        "ru/import/lovable-to-mobile-app",
-        "ru/import/import-from-github",
-        "ru/import/import-from-any-app-builder",
-        "ru/import/website-to-mobile-app",
-        "ru/import/convert-between-platforms"
-      ]
-    },
-    {
-      "group": "Устранение неполадок и функции",
-      "pages": [
-        "ru/introduction/introduction/agent-loops",
-        "ru/features/agent-modes",
-        "ru/features/analytics",
-        "ru/features/assets",
-        "ru/features/code-and-logs",
-        "ru/features/index",
-        "ru/features-apis/apis/how-to-connect-an-api-to-your-project",
-        "ru/features/imagegeneration",
-        "ru/features/secrets",
-        "ru/features/undo-and-history",
-        "ru/quick-start-examples/nano-banana-image-app",
-        "ru/tutorials/how-to-connect-github"
-      ]
-    },
-    {
-      "group": "Настройка backend",
-      "pages": [
-        "ru/backend/index",
-        "ru/backend/rork-cloud",
-        "ru/integrations/backend/how-to-set-up-oauth",
-        "ru/building-complex-apps/backend/what-is-rork-toolkit",
-        "ru/backend/supabase",
-        "ru/backend/firebase"
-      ]
-    },
-    {
-      "group": "Тестирование и публикация",
-      "pages": [
-        "ru/rork-max-swift",
-        "ru/rork-max/rork-max-app",
-        "ru/how-to-set-up-xcode/how-to-set-up-xcoe",
-        "ru/introduction/deploy-your-app"
-      ]
-    },
-    {
-      "group": "Apple App Store",
-      "pages": [
-        "ru/store-guides/apple-developer-account",
-        "ru/store-guides/publish-app-store",
-        "ru/publishing",
-        "ru/submitting-to-app-store/apple/submission-errors",
-        "ru/submitting-to-app-store/apple/app-store-checklist",
-        "ru/appstore-screenshots/app-store-screenshots",
-        "ru/store-guides/screenshot-studio",
-        "ru/store-guides/testflight-beta-testers",
-        "ru/ai-app-store-reviewer",
-        "ru/appstore-submission-checklist/app-review-guide",
-        "ru/appstore-submission-checklist/whats-next-after-the-apps-finished"
-      ]
-    },
-    {
-      "group": "Google Play Store",
-      "pages": [
-        "ru/store-guides/google-play-developer-account",
-        "ru/submitting-to-play-store/apk-file",
-        "ru/submitting-to-play-store/creating-the-aab-file"
-      ]
-    },
-    {
-      "group": "Монетизация",
-      "pages": [
-        "ru/payment-guides/revenuecat-copied-1",
-        "ru/make-your-app-profitable/paywalls/how-to-add-a-free-trial",
-        "ru/make-your-app-profitable/paywalls/how-to-set-up-your-policies"
-      ]
-    },
-    {
-      "group": "Руководство Rork",
-      "pages": [
-        "ru/rork-playbook/playbook",
-        "ru/rork-playbook/untitled-page",
-        "ru/rork-playbook/untitled-page-1",
-        "ru/rork-playbook/untitled-page-2",
-        "ru/rork-playbook/untitled-page-3",
-        "ru/rork-playbook/untitled-page-4",
-        "ru/rork-playbook/scale-to-50k-month",
-        "ru/rork-playbook/seven-ways-to-scale-your-app"
-      ]
-    },
-    {
-      "group": "Биллинг и тарифы",
-      "pages": [
-        "ru/introduction/subscriptions",
-        "ru/billing/build-credits-vs-cloud-credits"
-      ]
-    },
-    {
-      "group": "FAQ",
-      "pages": [
-        "ru/faq/index",
-        "ru/faq/general",
-        "ru/faq/technical",
-        "ru/faq/integrations",
-        "ru/faq/publishing",
-        "ru/faq/code-export",
-        "ru/faq/collaboration",
-        "ru/faq/billing",
-        "ru/faq/support"
-      ]
-    },
-    {
-      "group": "Ещё",
-      "pages": [
-        "ru/request-documentation",
-        "ru/development",
-        "ru/quick-start-examples/share-and-clone",
-        "ru/collaborate/share-a-project"
+      "tab": "Документация",
+      "groups": [
+        {
+          "group": "Начало работы",
+          "icon": "rocket",
+          "pages": [
+            "ru/index",
+            "ru/introduction/build-your-first-app",
+            "ru/elements-of-a-good-idea/how-to-tell-if-your-idea-is-good",
+            "ru/introduction/subscriptions"
+          ]
+        },
+        {
+          "group": "Создание приложения",
+          "icon": "hammer",
+          "pages": [
+            "ru/swift-vs-react-native/whats-the-difference",
+            "ru/android/rork-android",
+            "ru/web/rork-web",
+            "ru/features/agent-modes",
+            "ru/features/assets",
+            "ru/features/imagegeneration",
+            "ru/features/secrets",
+            "ru/features/undo-and-history",
+            "ru/features/code-and-logs"
+          ]
+        },
+        {
+          "group": "Бэкенд и интеграции",
+          "icon": "database",
+          "pages": [
+            "ru/backend/index",
+            "ru/backend/rork-cloud",
+            "ru/backend/supabase",
+            "ru/backend/firebase",
+            "ru/features-apis/apis/how-to-connect-an-api-to-your-project",
+            "ru/integrations/backend/how-to-set-up-oauth"
+          ]
+        },
+        {
+          "group": "Импорт и миграция",
+          "icon": "arrow-right-to-bracket",
+          "pages": [
+            "ru/import/lovable-to-mobile-app",
+            "ru/import/import-from-github",
+            "ru/import/website-to-mobile-app",
+            "ru/import/import-from-any-app-builder",
+            "ru/import/convert-between-platforms",
+            "ru/tutorials/how-to-connect-github"
+          ]
+        },
+        {
+          "group": "Публикация",
+          "icon": "cloud-arrow-up",
+          "pages": [
+            "ru/store-guides/apple-developer-account",
+            "ru/store-guides/publish-app-store",
+            "ru/store-guides/testflight-beta-testers",
+            "ru/submitting-to-app-store/apple/submission-errors",
+            "ru/submitting-to-app-store/apple/app-store-checklist",
+            "ru/appstore-screenshots/app-store-screenshots",
+            "ru/store-guides/screenshot-studio",
+            "ru/ai-app-store-reviewer",
+            "ru/store-guides/google-play-developer-account",
+            "ru/submitting-to-play-store/apk-file",
+            "ru/submitting-to-play-store/creating-the-aab-file"
+          ]
+        },
+        {
+          "group": "Rork Max",
+          "icon": "bolt",
+          "pages": [
+            "ru/rork-max/rork-max-app",
+            "ru/rork-max-swift",
+            "ru/how-to-set-up-xcode/how-to-set-up-xcoe"
+          ]
+        },
+        {
+          "group": "Монетизация",
+          "icon": "circle-dollar-sign",
+          "pages": [
+            "ru/payment-guides/revenuecat-copied-1",
+            "ru/make-your-app-profitable/paywalls/how-to-add-a-free-trial",
+            "ru/make-your-app-profitable/paywalls/how-to-set-up-your-policies"
+          ]
+        },
+        {
+          "group": "Рост приложения",
+          "icon": "chart-line",
+          "pages": [
+            "ru/features/analytics",
+            "ru/collaborate/share-a-project",
+            "ru/rork-playbook/playbook",
+            "ru/rork-playbook/scale-to-50k-month",
+            "ru/rork-playbook/seven-ways-to-scale-your-app"
+          ]
+        },
+        {
+          "group": "FAQ",
+          "icon": "circle-question",
+          "pages": [
+            "ru/faq/index",
+            "ru/faq/general",
+            "ru/faq/technical",
+            "ru/faq/publishing",
+            "ru/faq/billing",
+            "ru/faq/integrations",
+            "ru/faq/collaboration",
+            "ru/faq/code-export",
+            "ru/faq/support"
+          ]
+        }
       ]
     }
   ]

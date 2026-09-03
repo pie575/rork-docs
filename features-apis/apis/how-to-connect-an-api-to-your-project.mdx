@@ -1,64 +1,83 @@
 ---
-title: "Connecting an API to Rork"
+title: "Connect a Third-Party API to Your Rork App"
+sidebarTitle: "Connect an API"
+description: "Find the right external API, get credentials, and integrate it into your Rork app. Two methods: environment variables for simple cases, Edge Functions for private keys."
 ---
 
-API's are great because they essentially allow your apps to do anything without you needing to do it.
-
-## **Two main ways to connect an API to Rork**
-
-\
-**Environment Variables:**\
-Environment Variables are Rorks native support for API's without needing to connect to a backend like Supabase. It allows the users to just enter in thier api keys and get instant access to the api.
-
-<img alt="Image" />
-
-All you have to do is click add variable, enter a name for the key describing your api, then add a value, which is your api key.\
-\
-After that prompt Rork to use the edge function.
+APIs let your app do almost anything without you having to build the feature yourself: weather data, SMS, email, AI models, payments, maps, and more. Rork supports two main ways to connect an API.
 
 <Tip>
-  Tip: attach documentation from the api provider for the best results
+  Attach the API's documentation to your chat message for the best results. Rork reads the docs and writes the integration code correctly the first time.
 </Tip>
 
-\
-\
-**Supaabase Edge Function:**\
-\
-Connect Supabase:\
-Provide Rork with the prompt saying connect "Supabase to the app" and including the Project URL and Public Anon key.
+## Method 1: Environment variables (simplest)
 
-Then navigate to edge functions:
+Use this when the API only needs an API key and does not require a server-side function. This works for many AI APIs, weather APIs, and similar.
 
-<img alt="Image" />
+<Steps>
+  <Step title="Get your API key">
+    Sign up at the API provider and copy your API key.
+  </Step>
+  <Step title="Add it to Rork Secrets">
+    Open **More → Secrets** in your project. Click **Add Variable**, enter a name like `OPENAI_API_KEY`, and paste the value. Press **Save**.
+  </Step>
+  <Step title="Tell Rork to use it">
+    Send a prompt like:
 
-Once in the edge function, click secret. Then name your secret and add your api key in the value.
+    ```text
+    Use the OPENAI_API_KEY environment variable to call the OpenAI API and [describe what you want it to do]
+    ```
+  </Step>
+</Steps>
 
-<img alt="Image" />
+## Method 2: Supabase Edge Functions (for private keys)
 
-Then copy and paste the name of your secret into Rork or ChatGPT with the prompt: "I want my app to achieve X task using this API. This is the name of my secret (insert name), make me an edge function code for this API". \
-\
-Then, in Supabase, click Deploy New Function:
+Use this when the API key must stay private (payment APIs, SMS, email with secrets). An Edge Function runs on the server, so the key never reaches the user's device.
 
-<img alt="Image" />
+<Steps>
+  <Step title="Connect Supabase to your project">
+    If you have not done so already, see [Connect a Supabase backend](/backend/supabase).
+  </Step>
+  <Step title="Add your API key as a Supabase secret">
+    In your Supabase project, go to **Edge Functions** → **Secrets**. Add a new secret with a name like `RESEND_API_KEY` and paste the value.
+  </Step>
+  <Step title="Ask Rork to write the Edge Function">
+    In your Rork project, send:
 
-Then click editor:
+    ```text
+    I want my app to achieve [task] using [API name]. The secret name is [SECRET_NAME].
+    Create a Supabase Edge Function for this.
+    ```
+  </Step>
+  <Step title="Deploy the function in Supabase">
+    In Supabase, go to **Edge Functions** → **Deploy New Function** → **Editor**. Paste the code Rork wrote, then deploy.
+  </Step>
+  <Step title="Tell Rork to use the endpoint">
+    Copy the deployed function's endpoint URL from Supabase and send it to Rork:
 
-<img alt="Image" />
+    ```text
+    Use this Edge Function to achieve [task] by sending or requesting [data]:
+    <endpoint URL here>
+    ```
+  </Step>
+</Steps>
 
-Then delete the previous code:
+## Troubleshooting
 
-<img alt="Image" />
+Edge Function integrations often need a few iterations:
 
-Paste in your code from ChatGPT or Rork, then hit the deploy function. After that, copy your endpoint URL and paste it into Rork with the prompt "Use this Edge Function to achieve X task by sending or requesting X data: \<insert endpoint link here>"
+- **Data is not being parsed correctly.** Keep prompting until the format is right.
+- **Edge function keeps failing.** You may need to rewrite it a few times. Paste the error from the Supabase logs.
+- **Invalid API key.** Double-check the key was entered correctly, or redeploy the edge function after updating the secret.
 
-<img alt="Image" />
+## Related
 
-\
-**Troubleshooting:**\
-This method requires a lot more trial and error:
+<CardGroup>
+  <Card title="Secrets" icon="lock" href="/features/secrets">
+    Store API keys securely in your project.
+  </Card>
 
-- Data is not being parsed, keep reprompting till it works.
-- Edge function keeps failing; you may need to rewrite it a few times.
-- Invalid api key, you mistyped the api key, or you need to redeploy your edge function.
-
-<CtaBanner />
+  <Card title="Supabase" icon="database" href="/backend/supabase">
+    Set up Supabase to unlock Edge Functions.
+  </Card>
+</CardGroup>

@@ -1,90 +1,74 @@
 ---
-title: "How to publish your Rork app to Google Play Store"
+title: "Publish Your Android App to Google Play"
+sidebarTitle: "Publish to Google Play"
+description: "Build an Android App Bundle in Rork, connect your Google Play account, and upload the release to internal testing. Step-by-step with Play Console walkthrough."
 ---
 
-Google Play requires an AAB (Android App Bundle) file for distribution. This guide shows how to get the AAB for your Rork project and upload it to the Play Console, starting with an internal testing release.
+Google Play requires an AAB (Android App Bundle) file for distribution. Rork builds the AAB for you and can upload it directly to your Play Console.
 
 **Prerequisites:**
 
-- A Google Play Developer account. Sign up at [https://play.google.com/console/signup](https://play.google.com/console/signup)
-- A desktop or laptop. You cannot do this from a phone.
-
-Rork builds the AAB for you. Android apps in Rork are **native Android (Kotlin)** apps, and the **Publish** button does the whole build. For the whole picture, from the first prompt to the release, see [Build a native Android app with Rork](/android/rork-android).
+- A [Google Play Developer account](/store-guides/google-play-developer-account)
+- A desktop or laptop (you cannot do this from a phone)
 
 <Note>
-  An iPhone (Swift) app cannot go to Google Play. To reach Android users, add an Android app to the same project, see [Convert your app between iOS, Android, and web](/import/convert-between-platforms).
+  An iPhone (Swift) app cannot go to Google Play. To reach Android users, add an Android app to the same project. See [Convert your app between platforms](/import/convert-between-platforms).
 </Note>
 
 ## Build the AAB in Rork
 
-1. Open your project and click **Publish** at the top of the page, then open the Google Play section.
-2. Click **Connect Google Play** and sign in with the Google account that manages this Play Console app.
-3. Click **Build AAB for Play**. Rork builds a release AAB signed with a persistent upload key that is unique to your project.
-4. When the build finishes, choose how to deliver it:
-   - **Send to Google Play** uploads the AAB to your internal testing track for you. This appears once Rork verifies that your Google account can manage the Play Console app.
-   - **Download AAB for Play Console** downloads the signed `.aab` file so you can upload it by hand.
-5. If you downloaded the file, continue with [Upload the AAB in Play Console](#upload-the-aab-in-play-console) below.
+<Steps>
+  <Step title="Open Publish, then Google Play">
+    In your project, click **Publish** at the top of the page, then open the Google Play section.
+  </Step>
+  <Step title="Connect Google Play">
+    Click **Connect Google Play** and sign in with the Google account that manages this Play Console app.
+  </Step>
+  <Step title="Build AAB for Play">
+    Click **Build AAB for Play**. Rork builds a release AAB signed with a persistent upload key unique to your project.
+  </Step>
+  <Step title="Send or download the AAB">
+    When the build finishes, choose how to deliver it:
 
-<Note>
-  Rork needs the app to already exist in Play Console before it can send a build. If Rork says **Create Play Console app**, create the app listing first, then let Rork check access again.
-</Note>
+    - **Send to Google Play**: uploads the AAB to your internal testing track automatically. This appears once Rork verifies that your Google account can manage the Play Console app.
+    - **Download AAB for Play Console**: downloads the signed `.aab` file so you can upload it by hand.
+  </Step>
+</Steps>
 
-**Do not ask the Rork agent to add its own signing keys, keystores, or SHA1 fingerprints to the project.** Google Play permanently associates your app with the key used for the first upload. Rork manages this key for you, and changing signing files in the project can make Google Play reject future uploads. If Play Console reports a signing key or SHA1 mismatch, contact support with your project link instead of regenerating anything.
+<Warning>
+  Do not ask Rork to add its own signing keys, keystores, or SHA1 fingerprints to the project. Google Play permanently associates your app with the key used for the first upload. Rork manages this key for you. If Play Console reports a signing key or SHA1 mismatch, contact support with your project link instead of regenerating anything.
+</Warning>
 
-For app updates, make your changes in Rork and click **Rebuild AAB**. Then send the new build to Google Play, or download it and upload it as a new release in Play Console.
+## Upload the AAB in Play Console manually
 
-## Upload the AAB in Play Console
+If you downloaded the file, follow these steps:
 
-Log in to the Play Console at [https://play.google.com/console/developers](https://play.google.com/console/developers) and click the **Create App** button on the right side.
+<Steps>
+  <Step title="Create the app in Play Console">
+    Log in to [Play Console](https://play.google.com/console/developers) and click **Create App**. Fill in the app name, default language, whether it is an app or game, and whether it is free or paid.
 
-<img alt="13" />
+    **Important:** If you intend for this to be a paid app, mark it as paid now. You can make a paid app free later, but you cannot make a free app paid.
+  </Step>
+  <Step title="Go to Internal Testing">
+    Select **View Tasks** under internal testing.
+  </Step>
+  <Step title="Add testers">
+    Click **Select Testers**, scroll to the Testers tab, and click **Create email list**. Add your own email first so you can test the app yourself.
+  </Step>
+  <Step title="Create a new release">
+    Click **Create a new release**, then upload the AAB file you downloaded from Rork.
+  </Step>
+  <Step title="Fill in release details">
+    Enter the release name and any release notes (such as the Rork version number you uploaded for reference), then click **Next**.
+  </Step>
+  <Step title="Save and publish">
+    On the summary screen, click **Save and Publish**.
+  </Step>
+  <Step title="Accept the invite link">
+    Go back to the Internal Testing page and scroll down to the Testers tab. Copy the link that says **testers can join you on the web**. Send the link to yourself, accept the invitation, and install the app from the Play Store.
+  </Step>
+</Steps>
 
-Fill out the app name, the default language, whether or not this is an app or a game, and if you want to make it free or paid. **VERY IMPORTANT:** If you intend for this to be a paid app, make sure that it's marked paid now. You can make a paid app free later, but you can't make a free app paid at any point. Agree to the developer program policy of Google and the export laws. Press Create App.
+Once internal testing looks good, promote the release to a broader track in Play Console when you are ready to launch.
 
-<img alt="14" />
-
-Now select View Tasks under internal testing.
-
-Click on Select Testers.
-
-<img alt="15" />
-
-Scroll down to the Testers tab and select Create email list. This is where you'll create a distribution list of emails for people you want testing your app. For now, just add your own email so you can test the app yourself.
-
-<img alt="16" />
-
-Just create a list with your email address and hit save.
-
-<img alt="17" />
-
-Scroll back up and click on Create a new release
-
-<img alt="18" />
-
-Upload the AAB file you downloaded from Rork earlier.
-
-<img alt="19" />
-
-Enter the name of your app and any release notes that you may want to add. Perhaps the version from Rork that you uploaded so that you can remember.
-
-<img alt="20" />
-
-Click next at the bottom of the screen.
-
-<img alt="21" />
-
-This brings you to a summary screen. Click Save and Publish at the bottom.
-
-<img alt="22" />
-
-If you get a pop-up, select "Save and Publish."
-
-<img alt="23" />
-
-Once that is completed, go back to the internal testing page and scroll down to the bottom under the testers tab. Copy the link that says testers can join you on the web. They must join on the web first before they try to download the app.
-
-<img alt="Google Play Console release page" />
-
-Send the link to yourself and accept the invitation. Now you can install the app from the Google Play Store and test it. Once internal testing looks good, promote the release to a broader track in Play Console when you are ready to launch.
-
-<CtaBanner />
+For app updates, make your changes in Rork and click **Rebuild AAB**, then send the new build to Google Play or download and upload it as a new release in Play Console.

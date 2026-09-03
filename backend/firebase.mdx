@@ -1,164 +1,119 @@
 ---
-title: "How to add a Firebase backend to Rork"
+title: "Connect Firebase to Your Rork App"
+sidebarTitle: "Firebase"
+description: "Set up Firebase Authentication and Firestore for your Rork app: create a project, collect config, enable auth, define your schema, and build all backend functions."
 ---
 
-This guide will help you create a backend with Firebase for your Rork project. This includes authentication for users and also custom database schemas for functionalities in your app.
+This guide helps you create a backend with Firebase for your Rork project, including user authentication and custom database schemas.
 
 <Warning>
-  **Most apps do not need a backend.** This is complex work, and it can break a working project. Read [Do you need a backend for your app?](/backend/index) first. If you do need one and would rather not run it yourself, [Rork Cloud](/backend/rork-cloud) gives you a database and server functions inside Rork, with no second account.
+  **Most apps do not need a backend.** This is complex work and it can break a working project. Read [Do you need a backend?](/backend/index) first. If you do need one and would rather not run it yourself, [Rork Cloud](/backend/rork-cloud) gives you a database and server functions inside Rork with no second account.
 </Warning>
 
-This guide will help you use Firebase to build your backend. By the end of this guide, you will be able to sign users in with their email, establish all the backend databases for your app to fully function, and build out any functions needed to make your app personalized for the users.
+## Create a Firebase account
 
-### **Create a Firebase account**
+1. Go to [Firebase](https://console.firebase.google.com/) and log in with your Google account.
+2. Create a new Firebase project. You can skip the Gemini AI assistance and Analytics parts for now.
+3. After you have a Firebase project, register your app within that project.
 
-- Go to [Firebase](https://console.firebase.google.com/) and log in with your Google account. You may have to answer a few questions before you can create your first project. This takes just a few minutes.
-- **Create a new Firebase project (choose a name).**\
-  Feel free to skip the Gemini AI assistance and Analytics part for now. You can always add those in later.
+**Registering your app:** Look for the **Add App** button and choose the platform that matches your app: **iOS** for an iPhone app, **Android** for an Android app, **Web** for a web app. Firebase then gives you a config:
 
-  <Frame>
-    <img alt="The Firebase console asking for a project name when you create a new project" />
-  </Frame>
+- iOS: a `GoogleService-Info.plist` file
+- Android: a `google-services.json` file
+- Web: a `firebaseConfig` object
 
-- **Register your app.**\
-  After you have a Firebase project, you can register your app within that project.
-  - You should see an "**Add App**" button followed by a set of Platforms. Choose the platform that matches your app: **iOS** for an iPhone (Swift) app, **Android** for an Android (Kotlin) app, **Web** for a web app. Firebase then gives you a config: a `GoogleService-Info.plist` file for iOS, a `google-services.json` file for Android, or a `firebaseConfig` object for web. Hand that config to the agent in chat and it wires the SDK into your app. The screenshots below follow the **Web** option.
+## Collect your config
 
-    <img alt="The Add App row in Firebase, with the iOS, Android, and Web platform buttons" />
+After registering your app, Firebase shows you its SDK setup screen with the `firebaseConfig` object. Copy the entire second code block, then go to the Rork editor and type:
 
-  - Enter your app's nickname. This is internal and won't be seen by the public.
-
-    <img alt="The Register app step in Firebase, asking for an app nickname" />
-
-  - Click the Register app.
-  - You will be shown your config. Please check the next steps in **Collect Your Config** on what to do.
-
-### Collect Your Config
-
-On that same page, after registering your app, you will see the config and SDK instructions. We are basically going to tell our Rork project editor to add these in.
-
-<img alt="The Firebase SDK setup screen showing the firebaseConfig object to copy" />
-
-Please copy the second window that has the firebaseConfig item in it and then return to the Rork editor.
-
-**In the Rork editor, please type the following:**
-
-```
+```text
 Please install firebase package and setup the init config.
 Please also setup Firebase Auth and Firebase Database:
 {PASTE YOUR ACTUAL COPIED CONFIG FROM ABOVE HERE}
 ```
 
-<img alt="The Rork chat with the Firebase config pasted into the prompt" />
+## Create the backend data schema
 
-<Note>
-  The rest of this guide builds **VibeVoice**, a voice-only social app. In the screenshots the agent calls the same project SPEEK, which was its earlier name. Your own project keeps your name.
-</Note>
+You need to figure out the data schema for your application. Firebase uses NoSQL (Firestore) instead of tables, which means:
 
-## Creating the Backend Data Schema
+- You create **collections** (like tables)
+- Each user or post is a **document**
+- A document contains **fields**
+- You can have **subcollections** nested inside documents
 
-This is probably going to be the most challenging part of this whole process if you have never done this, but you can also use AI (inside Rork) to help you out. You need to figure out the data schema needed for your application to work, and the functions that it should be able to do as well.
+Ask Rork to help you design it:
 
-Just like with SQL, you still need to define which objects your app needs, but Firebase uses NoSQL instead of tables. This means:
-
-- You will create collections (like tables)
-- Each user or post will be a document
-- A document contains fields
-- You can also have subcollections nested inside documents
-
-**You can ask Rork the following:**
-
-> Please list out all of the data schema collections required for our application to work. I will be using this list to create my Firestore collections and security rules.
-
-<Frame>
-  <img alt="Rork answering with a list of Firestore collections and their fields" />
-</Frame>
-
-### Create Your First Database
-
-We need to enable the Firestore Database in order to be able to store information on the cloud. Click on **Firestore Database** on the left-hand panel inside your Firebase project.
-
-Create a database and pick a region closest to your users. You cannot change this later, and this does affect the speed of your backend.
-
-**Once in, add the security rules Rork told you to add. Go to the Rules tab and paste them in.**
-
-<Frame>
-  <img alt="The Rules tab of Firestore Database, where the security rules are pasted" />
-</Frame>
-
-Now that you know what your objects and security rules are, we can build our Firestore collections.
-
-Unlike Supabase, Firebase does **not** require SQL or table creation ahead of time. Firestore builds collections “just-in-time” when your app writes to them. So, we can ask Rork to do all the work for us now. Before we get to that, though, we must set up our Auth so users can sign up and have a user id attached to them.
-
-### Set up authentication in the Firebase dashboard (e.g., email/password, OAuth providers)
-
-Before we connect your data schema to Firestore, we need to make sure users can actually sign up and sign in. Firebase Authentication is the simplest part of this whole backend setup and requires no databases or SQL.
-
-### **Enable Email + Password Authentication**
-
-1. In your Firebase dashboard, go to **Authentication** and press **Get Started**.
-2. Click the **Sign-in method** tab.
-3. Enable **Email/Password**.
-4. (Optional) Turn off email verification to make development easier.
-5. (Optional) Enable Google, Apple, or phone number if you want those later. These are highly popular asks from most users to add in.
-
-Firebase saves these settings automatically, so now we can just ask Rork to enable it.
-
-### Integrating Auth into Rork
-
-Now that authentication is enabled, Rork can generate all the login and signup logic directly inside your project.
-
-In your Rork editor, ask:
-
-```
-Please integrate Firebase Authentication into this project.
-I want email+password sign up, sign in, sign out, and proper session handling.
-Use:
-- createUserWithEmailAndPassword
-- signInWithEmailAndPassword
-- onAuthStateChanged for sessions
-After sign up, please also create a user document in Firestore inside the "users" collection.
+```text
+Please list out all of the data schema collections required for our application to work.
+I will be using this list to create my Firestore collections and security rules.
 ```
 
-Rork will generate:
+### Create your Firestore database
 
-- a signup function
-- a login function
-- an auth state listener
-- The code to create the initial user document in Firestore
-- navigation updates for logged-in vs logged-out users
+1. In your Firebase project, click **Firestore Database** in the left panel.
+2. Create a database and pick a region closest to your users. You cannot change this later.
+3. Go to the **Rules** tab and paste in the security rules Rork gave you.
 
-This gives your app a fully working authentication system.
+Unlike Supabase, Firestore builds collections automatically when your app writes to them, so there is no need to create them manually first.
 
-## Ask Rork to Apply Your Schema and Build Your Functions
+## Set up authentication
 
-Now that authentication is working and your Firebase Security Rules are in place, the final step is to give Rork your app’s schema so it can generate all of the backend functionality your project needs.
+<Steps>
+  <Step title="Enable email and password auth">
+    In your Firebase dashboard, go to **Authentication** → **Get Started** → **Sign-in method** → enable **Email/Password**.
+  </Step>
+  <Step title="Optionally add OAuth providers">
+    Enable Google, Apple, or phone number sign-in if you want them. These are the most popular auth methods for consumer apps.
+  </Step>
+  <Step title="Integrate auth into Rork">
+    In your Rork editor, ask:
 
-This step is where your backend becomes _real_. Rork will build:
+    ```text
+    Please integrate Firebase Authentication into this project.
+    I want email+password sign up, sign in, sign out, and proper session handling.
+    Use:
+    - createUserWithEmailAndPassword
+    - signInWithEmailAndPassword
+    - onAuthStateChanged for sessions
+    After sign up, please also create a user document in Firestore inside the "users" collection.
+    ```
 
-- Firestore collection/document structures
-- create/read/update/delete functions
-- queries (feed, user posts, lists, etc.)
-- any subcollection logic (comments, likes, followers, etc.)
-- Firebase Storage upload helpers (if your schema includes images/audio/video)
-- fully typed helper functions your app can call
+    Rork generates a signup function, a login function, an auth state listener, the code to create the initial user document, and navigation updates for logged-in vs logged-out users.
+  </Step>
+</Steps>
 
-To do this, open the Rork editor and send the following message:
+## Ask Rork to apply your schema and build your functions
 
-```
+Now that authentication is working and your security rules are in place, give Rork your app's schema so it can generate all the backend functionality your project needs.
+
+```text
 I have added the Firebase Security Rules.
 Please apply the schema from before that you stated to the project and generate all
 helper functions required for it, including create, read, update,
 delete, queries, and any subcollection or media upload functionality needed.
 ```
 
-Rork will read your schema and build out everything needed for your backend to function.\
-If it misses a relationship or a field, simply update your schema and re-run the request.
+Rork will build:
 
-Once this step is complete, your app is fully wired up to Firebase. The authentication, Firestore, and all your app’s backend functions will now work end-to-end!
+- Firestore collection/document structures
+- Create, read, update, and delete functions
+- Queries (feed, user posts, lists, etc.)
+- Subcollection logic (comments, likes, followers, etc.)
+- Firebase Storage upload helpers for images, audio, and video
+- Fully typed helper functions your app can call
 
-### Test and make sure your database updates with functions in your app
+If it misses a relationship or a field, update your schema and re-run the request.
 
-Now that you have everything connected, you should see your updates change the database tables and also persist! Congrats on building a backend!
+## Test your database
 
-<CtaBanner />
+Once everything is connected, test your app and confirm that actions update the Firestore collections. Changes should persist when you restart the app. Congratulations on building a backend!
+
+<CardGroup>
+  <Card title="Rork Cloud" icon="cloud" href="/backend/rork-cloud">
+    Prefer no separate account? Rork Cloud is built in.
+  </Card>
+
+  <Card title="Supabase" icon="database" href="/backend/supabase">
+    Looking for SQL and Postgres? Connect Supabase instead.
+  </Card>
+</CardGroup>

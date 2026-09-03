@@ -1,149 +1,126 @@
 ---
-title: "How to add sign in with Apple/Google to your Rork app"
+title: "Add Sign In with Apple or Google to Your Rork App"
+sidebarTitle: "OAuth / Social Login"
+description: "Set up OAuth social login in your Rork app using Supabase Auth. Covers Sign in with Apple and Google with step-by-step instructions for the Rork editor."
 ---
 
-This guide walks you through how to add social sign-in (Apple/Google) to your Rork app
-
-<iframe title="YouTube video player" />
+This guide walks you through adding social sign-in (Apple and Google) to your Rork app using Supabase Auth.
 
 ## Prerequisites
 
-You’ll need:
+You need:
 
 - A **Supabase project**
-- Your **Supabase Project URL** + **Anon/Public key** (used to connect Rork ↔ Supabase)
-- Access to:
-  - **Google Cloud Console** (for Google OAuth Client ID + Secret)
-  - **Apple Developer** account (for Sign in with Apple setup)
+- Your **Supabase Project URL** and **Anon/Public key**
+- Access to **Google Cloud Console** (for Google OAuth Client ID and Secret)
+- An **Apple Developer account** (for Sign in with Apple)
 
-## Step 1 – Connect Rork to Supabase
+## Step 1: Connect Rork to Supabase
 
-1. In Supabase, copy:
-   - **Project URL**
-   - **Public anon key**
-2. In Rork, prompt something like:
-   - **“Connect to Supabase”**
-   - Then provide the Project URL + anon key when asked
+1. In Supabase, copy your **Project URL** and **Public anon key**.
+2. In Rork, send this prompt:
 
-This is the first required step before you configure providers.
+```text
+Connect to Supabase. Here is my Project URL: [paste] and anon key: [paste]
+```
 
-## Step 2 – Enable Google Sign-In in Supabase
+This is required before you configure any OAuth providers.
 
-1. Go to **Supabase → Authentication → Sign-in / Providers**
-2. Find **Google** and enable it
+## Step 2: Enable Google sign-in in Supabase
 
-### Create Google OAuth credentials (Client ID + Secret)
+1. Go to **Supabase → Authentication → Sign-in / Providers** and enable **Google**.
 
-1. Go to **Google Cloud Console**
-2. Create a **new OAuth client**
-3. Choose "**Web application."**
-4. Create it, then copy:
-   - **Client ID**
-   - **Client Secret**
+### Create Google OAuth credentials
 
-### Paste credentials into Supabase + add redirect URL
+1. Go to **Google Cloud Console** and create a new OAuth client.
+2. Choose **Web application**.
+3. Copy the **Client ID** and **Client Secret**.
 
-1. Paste **Client ID** + **Client Secret** into the Google provider settings in Supabase
-2. Copy the **Callback/Redirect URL** from Supabase
-3. Back in Google Cloud Console (edit your OAuth client):
-   - Add that URL to **Authorized redirect URIs.** Step 3 — Add the Sign-In Screen in Rork (with Google callback)
+### Configure Supabase and get the callback URL
+
+1. Paste the **Client ID** and **Client Secret** into the Google provider settings in Supabase.
+2. Copy the **Callback/Redirect URL** from Supabase.
+3. Back in Google Cloud Console, add that URL to **Authorized redirect URIs**.
+
+## Step 3: Add a sign-in screen in Rork
 
 In Rork, prompt:
 
-- “Add a sign-in page before the user accesses the app.”
-- Then include your callback URL under a label like:
+```text
+Add a sign-in page before the user accesses the app.
+Google: <SUPABASE_CALLBACK_URL>
+```
 
-**Example prompt format:**
+## Step 4: Enable Apple sign-in
 
-- `Google: <SUPABASE_CALLBACK_URL>`
+1. In **Supabase → Authentication → Sign-in Providers**, enable **Apple**.
 
-This helps Rork wire the sign-in correctly.
-
-## Step 4 — Enable Apple Sign-In in Supabase + Apple Developer
-
-1. In **Supabase → Auth providers**, enable **Apple**
-
-### Create an Apple Key (Sign in with Apple)
+### Create an Apple key
 
 In **Apple Developer**:
 
-1. Go to **Identifiers** (you’ll be working around your app + Sign in with Apple capability)
-2. Go to **Keys**
-3. **Add Key**
-4. Enable/configure **Sign in with Apple**
-5. Select your app, save/continue
-6. **Register** the key, then **download it and save it**
+1. Go to **Keys** and click **Add Key**.
+2. Enable **Sign in with Apple**, select your app, and continue.
+3. Register the key, then download and save it.
 
-### Ensure your App ID has “Sign in with Apple” enabled
+### Enable Sign in with Apple on your App ID
 
-Still in Apple Developer:
+1. In Apple Developer, go to **Identifiers → your App ID**.
+2. Enable **Sign in with Apple** and save.
 
-1. Go to **Identifiers → your App ID**
-2. Enable **Sign in with Apple**
-3. Save and confirm capability changes
+### Add your Bundle ID to Supabase
 
-### Add Bundle ID to Supabase Apple Provider
+1. Copy your **Bundle ID** from Apple Developer.
+2. In **Supabase → Apple provider**, paste the Bundle ID as the **Client ID** and save.
+3. Copy the **Apple callback URL** from Supabase.
 
-1. In Apple Developer, go to your app info and copy your **Bundle ID**
-2. In **Supabase → Apple provider**, paste the Bundle ID as the **Client ID**
-3. Save
+## Step 5: Add Google and Apple OAuth in Rork
 
-Then copy the **Apple callback URL** from Supabase as well.
+Now that both providers are configured in Supabase, prompt Rork to add them:
 
-## Step 5 — Final Rork Prompt: Add Google + Apple OAuth
+```text
+Add Google and Apple OAuth using Supabase.
+Google: <SUPABASE_GOOGLE_CALLBACK_URL>
+Apple: <SUPABASE_APPLE_CALLBACK_URL>
+```
 
-Now that both providers are configured in Supabase, prompt Rork to add them.
+## Step 6: Test and fix common issues
 
-Use a prompt like:
+### Issue: Google opens Safari and fails to connect
 
-- “Add Google and Apple OAuth using Supabase.”
-- Include both callback URLs in the prompt (Google + Apple)
+If you see "Safari can't open the page because it cannot connect to the server", enable **new users to sign up** in the Supabase Auth settings. After enabling signups, Google sign-in should complete and bring the user back into the app.
 
-## Step 6 — Test + Fix Common Issues
+### Issue: Apple opens Safari and says "missing OAuth secret"
 
-### Issue A: Google opens Safari and fails to connect
+This happens when the flow is using a web-based OAuth path instead of native Sign in with Apple.
 
-If you see something like:
+Fix:
 
-- “Safari can’t open the page because it cannot connect to the server…”
+```text
+Redo Apple sign-in as native only. Do not use a web browser for Apple sign-in.
+```
 
-The fix in the tutorial was:
+After this, Apple sign-in should appear in the native Apple UI, not Safari.
 
-- Enable **new users to sign up** in the Supabase Auth settings
+## Prompt templates
 
-After enabling signups, Google sign-in should complete and drop the user back into the app.
+**Add sign-in screen with Google:**
 
-### Issue B: Apple opens Safari and says “missing OAuth secret”
+```text
+Add a sign-in page before the user accesses the app.
+Google: <SUPABASE_GOOGLE_CALLBACK_URL>
+```
 
-If Apple sign-in routes through a browser, and you get:
+**Add Google and Apple OAuth:**
 
-- “missing OAuth secret”
+```text
+Add Google and Apple OAuth using Supabase.
+Google: <SUPABASE_GOOGLE_CALLBACK_URL>
+Apple: <SUPABASE_APPLE_CALLBACK_URL>
+```
 
-That’s typically because the flow is using a web-based OAuth path instead of native Sign in with Apple.
+**Fix Apple to be native-only:**
 
-**Fix (recommended):** tell Rork to redo Apple sign-in as **native-only**.
-
-### Prompt you can use
-
-> “Redo Apple sign-in as native only. Do not use a web browser for Apple sign-in.”
-
-After this, Apple Sign-In should appear in the **native Apple UI** (not Safari).
-
-## Recommended Prompt Templates (Copy/Paste)
-
-### 1) Add sign-in screen + Google
-
-> Add a sign-in page before the user accesses the app.\
-> Google: `<SUPABASE_GOOGLE_CALLBACK_URL>`
-
-### 2) Add Google + Apple OAuth using Supabase
-
-> Add Google and Apple OAuth using Supabase.\
-> Google: `<SUPABASE_GOOGLE_CALLBACK_URL>`\
-> Apple: `<SUPABASE_APPLE_CALLBACK_URL>`
-
-### 3) Fix Apple to be native-only
-
-> Redo Apple sign-in as native only. Do not call the web browser for Apple sign-in.
-
-<CtaBanner />
+```text
+Redo Apple sign-in as native only. Do not call the web browser for Apple sign-in.
+```

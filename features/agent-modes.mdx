@@ -1,36 +1,28 @@
 ---
-title: "Design mode, Plan mode, and building"
+title: "Design Mode, Plan Mode, and Building in Rork"
+sidebarTitle: "Agent Modes"
+description: "Rork can design your screens, write a plan before coding, or build straight away. Learn the three paths, where the switches are, and what each one costs."
 ---
 
-Rork can design your app before it writes code, write a plan before it changes files, or build straight away. This page explains the three paths, where the switches are, and what each one costs.
+Rork can design your app before it writes code, write a plan before it changes files, or build straight away. Every path ends in the same place (a working app) but they cost different amounts and give you different moments to change your mind.
 
-Rork has three ways to answer a message. It can **design** the screens first, **plan** the work first, or **build** the change straight away. Every path ends in the same place, a working app, but they cost different amounts and give you different moments to change your mind.
-
-| Path            | Rork produces                                | Use it when                                      |
-| --------------- | -------------------------------------------- | ------------------------------------------------ |
-| **Design mode** | Pictures of the screens, nothing built yet   | You start a new app and care how it looks        |
-| **Plan mode**   | A written plan of the work, no files changed | The change is large or touches many screens      |
-| **Build**       | Working code in the preview                  | You know what you want and it is a normal change |
+| Path | Rork produces | Use it when |
+| --- | --- | --- |
+| **Design mode** | Pictures of the screens, nothing built yet | You start a new app and care how it looks |
+| **Plan mode** | A written plan of the work, no files changed | The change is large or touches many screens |
+| **Build** | Working code in the preview | You know what you want and it is a normal change |
 
 ## Where the switches are
 
-On [rork.com](https://rork.com), open the **+** button under the prompt box. **Plan mode** and **Design mode** sit in that menu.
-
-<Frame>
-  <img alt="The Rork prompt box with the plus menu open, showing Upload image, Upload attachment, Plan mode, and Design mode switches" />
-</Frame>
+On [rork.com](https://rork.com), open the **\+** button under the prompt box. **Plan mode** and **Design mode** sit in that menu.
 
 The two switches are exclusive. Turning one on turns the other off.
 
 <Note>
-  The **Design mode** switch belongs to paid plans. On the free plan Rork still designs your app first, and pressing **Build** on the design asks you to pick a plan. The paywall says it plainly: "Free credits cover design — building your app needs a plan." See [Plans & Subscriptions](/introduction/subscriptions).
+  The **Design mode** switch belongs to paid plans. On the free plan Rork still designs your app first, and pressing **Build** on the design asks you to pick a plan. See [Plans and Subscriptions](/introduction/subscriptions).
 </Note>
 
-Inside a project the composer has a **Plan** button instead. Its tooltip reads **Enable plan mode**. There is no Design switch inside a project, because Design mode belongs to the start of an app.
-
-<Frame>
-  <img alt="The Rork chat input with a prompt typed and the Plan button switched on" />
-</Frame>
+Inside a project the composer has a **Plan** button instead. There is no Design switch inside a project, because Design mode belongs to the start of an app.
 
 ## Design mode
 
@@ -38,30 +30,20 @@ Design mode is the cheap way to decide how your app looks. Rork draws the screen
 
 <Steps>
   <Step title="Answer a few questions about the look">
-    Rork asks a few short questions before it draws anything, usually one to three, sometimes a follow-up. Most answers come with a small preview of the style they stand for, so you pick a look rather than describe one. Every question also offers **Surprise me** and an **Other...** box for your own words. Press **Submit** when you are done.
+    Rork asks a few short questions before it draws anything. Most answers come with a small preview of the style they stand for, so you pick a look rather than describe one. Every question also offers **Surprise me** and an **Other...** box for your own words. Press **Submit** when you are done.
   </Step>
-
   <Step title="Read the proposal">
     Rork proposes three or four screens and opens them in the **Design** tab. This is a picture of your app, not a running app.
   </Step>
-
   <Step title="Change your mind, for very little">
     Ask for a different screen, a different palette, or a different layout in chat. Changing a design costs far less than rebuilding a working app.
   </Step>
-
   <Step title="Press Build">
     The **Review Design** card sits at the bottom of the chat. **View Design** reopens the screens and **Build** turns them into a working app.
-
-    <Frame>
-      <img alt="A Review Design card in the Rork chat listing three screens, with View Design and Built shown below it" />
-    </Frame>
-
   </Step>
 </Steps>
 
-**Build** sends one message for you: `Build a working app from the approved design.` Rork then writes the app and saves the design decisions to `.rork/DESIGN.md`, so later messages keep the same look. You can read that file in **More → Code**.
-
-After the build, the proposal does not disappear. Find it again in **More → Design**.
+**Build** sends one message for you: `Build a working app from the approved design.` Rork then writes the app and saves the design decisions to `.rork/DESIGN.md`, so later messages keep the same look.
 
 <Tip>
   Write the look into your first prompt and Rork has less to ask. "A dark, smoky roastery site with big photo cards" answers most of the questions before Rork asks them.
@@ -84,19 +66,13 @@ Plan mode has no separate price. It uses the same build credits as any other mes
 
 Building is the default. Neither switch is on, you describe the change, and Rork edits the code.
 
-While it works, the chat shows what it does: **Explored 7 files**, **Made 9 actions**, **Running checks**, **Building app**. Each finished message lists the files it touched, and a preview of the result.
+While it works, the chat shows what it does: **Explored 7 files**, **Made 9 actions**, **Running checks**, **Building app**. Each finished message lists the files it touched.
 
 Rork stops and asks when a step needs you: a key it does not have, a question with several sensible answers, a design decision it cannot guess. Those arrive as cards in the chat with buttons, not as walls of text.
 
 ## Choose the AI model
 
-The composer has a model picker. It reads **Auto** by default.
-
-<Frame>
-  <img alt="The Rork model menu open, with Auto selected and a list of named models below it" />
-</Frame>
-
-**Auto** picks the model and the reasoning effort for each message, so most people never open this menu. Pick a model by hand when you want a specific one. Models above your plan carry a **Pro** or **Max** badge, and choosing one opens the plan picker. See the full list in [Plans & Subscriptions](/introduction/subscriptions).
+The composer has a model picker. It reads **Auto** by default. Auto picks the model and reasoning effort for each message, so most people never open this menu. Pick a model by hand when you want a specific one. Models above your plan carry a **Pro** or **Max** badge, and choosing one opens the plan picker.
 
 ## Talk instead of typing
 
@@ -104,17 +80,15 @@ The microphone button records your voice and writes the text into the composer. 
 
 ## Attach what you already have
 
-Use **+ → Upload image** or drop a file onto the chat. Rork reads screenshots, photos, PDFs, video, audio, and 3D models.
-
-A screenshot is the fastest way to describe a design. Take a picture of a Figma frame, or of an app you like, and say what you want from it.
+Use **\+ → Upload image** or drop a file onto the chat. Rork reads screenshots, photos, PDFs, video, audio, and 3D models.
 
 Free accounts attach files up to **10MB**. Paid plans go up to **5GB**.
 
 ## Queue the next message
 
-You do not have to wait for the agent. Send another message while it works and Rork queues it. The queue header counts them, for example **2 Queued**, and each row can be edited or removed before its turn.
+You do not have to wait for the agent. Send another message while it works and Rork queues it. The queue header counts them, and each row can be edited or removed before its turn.
 
-If a turn stops or fails, the queue marks itself **· Paused** so nothing runs on top of broken work. Press **Resume** when you are ready.
+If a turn stops or fails, the queue marks itself **Paused** so nothing runs on top of broken work. Press **Resume** when you are ready.
 
 ## FAQ
 
@@ -124,11 +98,11 @@ If a turn stops or fails, the queue marks itself **· Paused** so nothing runs o
   </Accordion>
 
   <Accordion title="Can I skip Design mode?">
-    Yes. Turn the switch off in the **+** menu, or press **Build** on the first proposal without asking for changes.
+    Yes. Turn the switch off in the **\+** menu, or press **Build** on the first proposal without asking for changes.
   </Accordion>
 
   <Accordion title="How much did that message cost?">
-    Open the **⋯** menu under any answer. It shows the model that ran, the credits it used, and the size of the context. See [Undo a change and go back a version](/features/undo-and-history).
+    Open the **⋯** menu under any answer. It shows the model that ran, the credits it used, and the size of the context.
   </Accordion>
 
   <Accordion title="Rork keeps breaking the same thing. What now?">
@@ -136,28 +110,26 @@ If a turn stops or fails, the queue marks itself **· Paused** so nothing runs o
   </Accordion>
 
   <Accordion title="Where do the plan and design files live?">
-    Plans go to `.rork/plans/` and the design contract to `.rork/DESIGN.md`. Both travel with your code to GitHub. See [How to sync your project with GitHub](/tutorials/how-to-connect-github).
+    Plans go to `.rork/plans/` and the design contract to `.rork/DESIGN.md`. Both travel with your code to GitHub.
   </Accordion>
 </AccordionGroup>
 
 ## Next steps
 
 <CardGroup>
-  <Card icon="rotate-left" href="/features/undo-and-history" title="Undo and version history">
+  <Card title="Undo and Version History" icon="rotate-left" href="/features/undo-and-history">
     Take back a change, or go back several versions.
   </Card>
 
-  <Card icon="wand-magic-sparkles" href="/features/assets" title="Images, video, and 3D">
+  <Card title="Images, Video, and 3D" icon="wand-magic-sparkles" href="/features/assets">
     Generate the pictures and sounds your app needs.
   </Card>
 
-  <Card icon="message" href="/introduction/introduction/prompting-strategy" title="How to prompt successfully">
+  <Card title="Prompting Strategy" icon="message" href="/introduction/introduction/prompting-strategy">
     Ask for an experience, not a list of features.
   </Card>
 
-  <Card icon="users" href="/collaborate/share-a-project" title="Share the project">
+  <Card title="Share the Project" icon="users" href="/collaborate/share-a-project">
     Invite people to view or edit the same app.
   </Card>
 </CardGroup>
-
-<CtaBanner />

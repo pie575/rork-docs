@@ -1,39 +1,39 @@
 ---
-title: "Publishing"
+title: "Publishing Questions about Rork"
+sidebarTitle: "Publishing"
+description: "Answers to publishing questions: sharing apps before the store, submitting to App Store or TestFlight, Google Play, APK downloads, and web publishing."
 ---
 
-Frequently Asked Questions about publishing with Rork
+These are the most common questions about publishing and distributing Rork apps.
 
-## Publishing
+<AccordionGroup>
+  <Accordion title="How can I share my app before it is in a store?">
+    Publish the web app in your project and share its `.rork.app` link. Anyone can open it in a browser with no App Store, no TestFlight, and no install. See [Rork Web](/web/rork-web).
 
-Not sure which route to take? Start with the [publishing overview](/introduction/deploy-your-app).
+    For an iPhone app, send testers a TestFlight link after your first submission. See [TestFlight and testers](/store-guides/testflight-beta-testers).
+  </Accordion>
 
-### How can I share my app before it is in a store?
+  <Accordion title="How can I publish to the App Store or TestFlight?">
+    Use Rork's built-in publishing feature: **Publish → App Store → Submit to App Store**. You need an Apple Developer Account (\$99/year). Rork builds and uploads the app on its own machines, so no Mac, Xcode, or extra build account is needed. You finish the store listing (product page, pricing, screenshots) in App Store Connect. See [Publish to the App Store](/store-guides/publish-app-store).
+  </Accordion>
 
-Publish the web app in your project and share its `.rork.app` link. Anyone can open it in a browser, with no App Store, no TestFlight, and no install. See [Rork Web](/web/rork-web).\
-For an iPhone app, send testers a TestFlight link after your first submission. See [TestFlight and testers](/store-guides/testflight-beta-testers).
+  <Accordion title="How can I publish to Google Play or download an APK file?">
+    Open **Publish → Google Play → Upload to Google Play**. Rork builds an Android App Bundle (AAB), signs it with a stable upload key, and can send it to your internal testing track. You create the app record in Google Play Console yourself and send releases for review there. The same build also gives you an APK download to install on your own phone. See [Publish to Google Play](/submitting-to-play-store/creating-the-aab-file).
+  </Accordion>
 
-### How can I publish to App Store or TestFlight?
+  <Accordion title="How can I publish to the web?">
+    One click: **Publish → Publish to web**. Rork hosts the app at `your-app.rork.app`, and you can change the subdomain in the same panel. After the first publish you can buy a domain or connect one you own. See [Rork Web](/web/rork-web).
+  </Accordion>
 
-Use Rork’s built-in publishing feature: **Publish → App Store → Submit to App Store**.\
-You’ll need an **Apple Developer Account**. Rork builds and uploads the app on its own machines, so no Mac, Xcode, or extra build account is needed.\
-You finish the store listing (product page, pricing, screenshots) in App Store Connect.
+  <Accordion title="Do I need a Mac to publish an iPhone app?">
+    No. Rork builds and uploads your app on its own cloud machines. You do not need a Mac, Xcode, or any local build environment.
+  </Accordion>
 
-### How can I publish to Google Play or download an .apk file?
-
-Open **Publish → Google Play → Upload to Google Play**. Rork builds an Android App Bundle (AAB), signs it with a stable upload key, and can send it to your internal testing track.\
-You create the app record in Google Play Console yourself, and you send releases for review there.\
-The same build gives you an **APK download** when you want to install the app on a phone by hand.
-
-### How can I publish to the web?
-
-One click: **Publish → Publish to web**. Rork hosts the app at `your-app.rork.app`, and you can change the subdomain in the same panel. After the first publish you can buy a domain or connect one you own. See [Domains](/web/rork-web#domains).
+  <Accordion title="My build succeeded but the app is not in App Store Connect. What should I do?">
+    Open the App Store tab in your project. Every submission is listed there with its state and logs. Common causes: build still running (wait for it), a capability needing Apple approval, or a version already in review. See [Submission errors](/submitting-to-app-store/apple/submission-errors).
+  </Accordion>
+</AccordionGroup>
 
 ---
 
-## Need more help?
-
-Still have questions?\
-📩 [Contact Support](mailto:support@rork.com)
-
-<CtaBanner />
+Still have questions? Email [support@rork.com](mailto:support@rork.com) or join the [Rork Discord](https://discord.gg/rxBHytVKaT).

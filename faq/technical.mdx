@@ -1,34 +1,37 @@
 ---
-title: "Technical"
+title: "Technical Questions about Rork"
+sidebarTitle: "Technical"
+description: "Answers to technical questions about Rork: native vs webview, production readiness, iOS and Android support, Expo compatibility, and platform features."
 ---
 
-Frequently Asked Questions about technical building with Rork
+These are the most common technical questions about how Rork builds apps.
 
-## Are Rork apps actually native iOS/Android apps? Or is it just web apps?
+<AccordionGroup>
+  <Accordion title="Are Rork apps actually native iOS/Android? Or are they web apps?">
+    They are real native apps. Rork writes SwiftUI for iPhone and Kotlin with Jetpack Compose for Android: the same languages Apple and Google use for their own apps. New projects are Swift, Kotlin, or web. They are not websites wrapped in a webview.
 
-They are real native apps. Rork writes **SwiftUI** for iPhone and **Kotlin + Compose** for Android: the same languages Apple and Google use for their own apps. New projects are Swift, Kotlin, or web. They are not a website wrapped in a web view.
+    Native code delivers smooth animations, responsive interfaces, and immediate access to the latest platform features, from widgets and Live Activities on iOS to Material You theming and background work on Android.
 
-Native code is designed for performance, precision, and polish. It delivers smooth animations, responsive interfaces, and immediate access to the latest platform features, from widgets and Live Activities on iOS to Material You theming and background work on Android.
+    Rork also builds web apps in React when the product belongs in a browser. Those are web apps by design, published to your own address instead of an app store. See [iPhone, Android, or web: what's the difference](/swift-vs-react-native/whats-the-difference).
+  </Accordion>
 
-Rork also builds **web apps** in React when the product belongs in a browser. Those are web apps by design, and you publish them to your own address instead of an app store. See [iPhone, Android, or web: what's the difference](/swift-vs-react-native/whats-the-difference).
+  <Accordion title="Can I use Rork to build production-ready apps?">
+    Yes. Rork supports apps ranging from 0 to 100,000 users. Apps built with Rork are live on the App Store and Google Play with real paying customers.
+  </Accordion>
 
-### Can I use Rork to build production-ready apps?
+  <Accordion title="Does it work on iOS and Android?">
+    Yes. An iPhone app and an Android app are two separate native apps, and one Rork project can hold both. Ask for the second platform at any time and the agent rebuilds your screens and flows in it. See [Convert your app between iOS, Android, and web](/import/convert-between-platforms).
+  </Accordion>
 
-Yes. Rork supports apps ranging from 0 users to 100k users.
+  <Accordion title="I have an older Expo (React Native) project. Does it still work?">
+    Yes. Rork no longer creates new Expo projects, but the ones you already have keep working: you can build them, publish them, and export the code to GitHub. If you want Swift or Kotlin instead, ask the agent to add a native iPhone or Android app to the project.
+  </Accordion>
 
-### Does it work on iOS and Android?
-
-Yes. An iPhone app and an Android app are two separate native apps, and one Rork project can hold both. Ask for the second platform at any time and the agent rebuilds your screens and flows in it. See [Convert your app between iOS, Android, and web](/import/convert-between-platforms).
-
-### I have an older Expo (React Native) project. Does it still work?
-
-Yes. Rork no longer creates Expo projects, but the ones you already have keep working: you can build them, publish them, and export the code to GitHub. If you want Swift or Kotlin instead, ask the agent to add a native iPhone or Android app to the project. See [What happened to Expo?](/expo).
+  <Accordion title="What are the limits of the browser preview?">
+    The browser preview is great for seeing how your app looks and feels quickly. However, the preview may not match the native app exactly, and some native features (camera, Bluetooth, push notifications, background tasks) are not available in the browser. Test on a real device or in the iOS/Android simulator for accurate results.
+  </Accordion>
+</AccordionGroup>
 
 ---
 
-## Need more help?
-
-Still have questions?\
-📩 [Contact Support](mailto:support@rork.com)
-
-<CtaBanner />
+Still have questions? Email [support@rork.com](mailto:support@rork.com) or join the [Rork Discord](https://discord.gg/rxBHytVKaT).

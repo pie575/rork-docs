@@ -1,143 +1,118 @@
 {
-  "groups": [
+  "tabs": [
     {
-      "group": "入门指南",
-      "pages": [
-        "zh/index",
-        "zh/elements-of-a-good-idea/how-to-tell-if-your-idea-is-good",
-        "zh/introduction/build-your-first-app",
-        "zh/introduction/introduction/prompting-strategy"
-      ]
-    },
-    {
-      "group": "平台选择",
-      "pages": [
-        "zh/swift-vs-react-native/whats-the-difference",
-        "zh/android/rork-android",
-        "zh/web/rork-web",
-        "zh/expo"
-      ]
-    },
-    {
-      "group": "项目导入与迁移",
-      "pages": [
-        "zh/import/lovable-to-mobile-app",
-        "zh/import/import-from-github",
-        "zh/import/import-from-any-app-builder",
-        "zh/import/website-to-mobile-app",
-        "zh/import/convert-between-platforms"
-      ]
-    },
-    {
-      "group": "故障排除与功能",
-      "pages": [
-        "zh/introduction/introduction/agent-loops",
-        "zh/features/agent-modes",
-        "zh/features/analytics",
-        "zh/features/assets",
-        "zh/features/code-and-logs",
-        "zh/features/index",
-        "zh/features-apis/apis/how-to-connect-an-api-to-your-project",
-        "zh/features/imagegeneration",
-        "zh/features/secrets",
-        "zh/features/undo-and-history",
-        "zh/quick-start-examples/nano-banana-image-app",
-        "zh/tutorials/how-to-connect-github"
-      ]
-    },
-    {
-      "group": "后端设置",
-      "pages": [
-        "zh/backend/index",
-        "zh/backend/rork-cloud",
-        "zh/integrations/backend/how-to-set-up-oauth",
-        "zh/building-complex-apps/backend/what-is-rork-toolkit",
-        "zh/backend/supabase",
-        "zh/backend/firebase"
-      ]
-    },
-    {
-      "group": "测试与发布",
-      "pages": [
-        "zh/rork-max-swift",
-        "zh/rork-max/rork-max-app",
-        "zh/how-to-set-up-xcode/how-to-set-up-xcoe",
-        "zh/introduction/deploy-your-app"
-      ]
-    },
-    {
-      "group": "Apple App Store",
-      "pages": [
-        "zh/store-guides/apple-developer-account",
-        "zh/store-guides/publish-app-store",
-        "zh/publishing",
-        "zh/submitting-to-app-store/apple/submission-errors",
-        "zh/submitting-to-app-store/apple/app-store-checklist",
-        "zh/appstore-screenshots/app-store-screenshots",
-        "zh/store-guides/screenshot-studio",
-        "zh/store-guides/testflight-beta-testers",
-        "zh/ai-app-store-reviewer",
-        "zh/appstore-submission-checklist/app-review-guide",
-        "zh/appstore-submission-checklist/whats-next-after-the-apps-finished"
-      ]
-    },
-    {
-      "group": "Google Play Store",
-      "pages": [
-        "zh/store-guides/google-play-developer-account",
-        "zh/submitting-to-play-store/apk-file",
-        "zh/submitting-to-play-store/creating-the-aab-file"
-      ]
-    },
-    {
-      "group": "变现",
-      "pages": [
-        "zh/payment-guides/revenuecat-copied-1",
-        "zh/make-your-app-profitable/paywalls/how-to-add-a-free-trial",
-        "zh/make-your-app-profitable/paywalls/how-to-set-up-your-policies"
-      ]
-    },
-    {
-      "group": "Rork 实战指南",
-      "pages": [
-        "zh/rork-playbook/playbook",
-        "zh/rork-playbook/untitled-page",
-        "zh/rork-playbook/untitled-page-1",
-        "zh/rork-playbook/untitled-page-2",
-        "zh/rork-playbook/untitled-page-3",
-        "zh/rork-playbook/untitled-page-4",
-        "zh/rork-playbook/scale-to-50k-month",
-        "zh/rork-playbook/seven-ways-to-scale-your-app"
-      ]
-    },
-    {
-      "group": "账单与套餐",
-      "pages": [
-        "zh/introduction/subscriptions",
-        "zh/billing/build-credits-vs-cloud-credits"
-      ]
-    },
-    {
-      "group": "常见问题",
-      "pages": [
-        "zh/faq/index",
-        "zh/faq/general",
-        "zh/faq/technical",
-        "zh/faq/integrations",
-        "zh/faq/publishing",
-        "zh/faq/code-export",
-        "zh/faq/collaboration",
-        "zh/faq/billing",
-        "zh/faq/support"
-      ]
-    },
-    {
-      "group": "更多",
-      "pages": [
-        "zh/request-documentation",
-        "zh/development",
-        "zh/quick-start-examples/share-and-clone",
-        "zh/collaborate/share-a-project"
+      "tab": "文档",
+      "groups": [
+        {
+          "group": "入门指南",
+          "icon": "rocket",
+          "pages": [
+            "zh/index",
+            "zh/introduction/build-your-first-app",
+            "zh/elements-of-a-good-idea/how-to-tell-if-your-idea-is-good",
+            "zh/introduction/subscriptions"
+          ]
+        },
+        {
+          "group": "构建你的应用",
+          "icon": "hammer",
+          "pages": [
+            "zh/swift-vs-react-native/whats-the-difference",
+            "zh/android/rork-android",
+            "zh/web/rork-web",
+            "zh/features/agent-modes",
+            "zh/features/assets",
+            "zh/features/imagegeneration",
+            "zh/features/secrets",
+            "zh/features/undo-and-history",
+            "zh/features/code-and-logs"
+          ]
+        },
+        {
+          "group": "后端与集成",
+          "icon": "database",
+          "pages": [
+            "zh/backend/index",
+            "zh/backend/rork-cloud",
+            "zh/backend/supabase",
+            "zh/backend/firebase",
+            "zh/features-apis/apis/how-to-connect-an-api-to-your-project",
+            "zh/integrations/backend/how-to-set-up-oauth"
+          ]
+        },
+        {
+          "group": "导入与迁移",
+          "icon": "arrow-right-to-bracket",
+          "pages": [
+            "zh/import/lovable-to-mobile-app",
+            "zh/import/import-from-github",
+            "zh/import/website-to-mobile-app",
+            "zh/import/import-from-any-app-builder",
+            "zh/import/convert-between-platforms",
+            "zh/tutorials/how-to-connect-github"
+          ]
+        },
+        {
+          "group": "发布上架",
+          "icon": "cloud-arrow-up",
+          "pages": [
+            "zh/store-guides/apple-developer-account",
+            "zh/store-guides/publish-app-store",
+            "zh/store-guides/testflight-beta-testers",
+            "zh/submitting-to-app-store/apple/submission-errors",
+            "zh/submitting-to-app-store/apple/app-store-checklist",
+            "zh/appstore-screenshots/app-store-screenshots",
+            "zh/store-guides/screenshot-studio",
+            "zh/ai-app-store-reviewer",
+            "zh/store-guides/google-play-developer-account",
+            "zh/submitting-to-play-store/apk-file",
+            "zh/submitting-to-play-store/creating-the-aab-file"
+          ]
+        },
+        {
+          "group": "Rork Max",
+          "icon": "bolt",
+          "pages": [
+            "zh/rork-max/rork-max-app",
+            "zh/rork-max-swift",
+            "zh/how-to-set-up-xcode/how-to-set-up-xcoe"
+          ]
+        },
+        {
+          "group": "变现盈利",
+          "icon": "circle-dollar-sign",
+          "pages": [
+            "zh/payment-guides/revenuecat-copied-1",
+            "zh/make-your-app-profitable/paywalls/how-to-add-a-free-trial",
+            "zh/make-your-app-profitable/paywalls/how-to-set-up-your-policies"
+          ]
+        },
+        {
+          "group": "增长你的应用",
+          "icon": "chart-line",
+          "pages": [
+            "zh/features/analytics",
+            "zh/collaborate/share-a-project",
+            "zh/rork-playbook/playbook",
+            "zh/rork-playbook/scale-to-50k-month",
+            "zh/rork-playbook/seven-ways-to-scale-your-app"
+          ]
+        },
+        {
+          "group": "常见问题",
+          "icon": "circle-question",
+          "pages": [
+            "zh/faq/index",
+            "zh/faq/general",
+            "zh/faq/technical",
+            "zh/faq/publishing",
+            "zh/faq/billing",
+            "zh/faq/integrations",
+            "zh/faq/collaboration",
+            "zh/faq/code-export",
+            "zh/faq/support"
+          ]
+        }
       ]
     }
   ]

@@ -1,212 +1,83 @@
 ---
-title: "Do You Need a Backend for Your App?"
+title: "Does Your App Need a Backend?"
+sidebarTitle: "Do I Need a Backend?"
+description: "Learn when a Rork app needs a backend and when local storage is enough. Covers local-only, sync-required, and gray-zone apps with clear examples."
 ---
-
-Learn exactly when your Rork project requires backend setup and when you can skip it entirely. This guide helps you avoid building a backend for no reason.
-
-### After building your app in Rork, use this documentation to decide if your app needs a backend or can stay local only.
-
-## **Summary**
 
 Rork builds the **frontend** of your app: the screens people see and touch, on iPhone, on Android, and on the web. A **backend** is the part they never see. It stores data, keeps accounts, and enforces rules. Not every app needs one.
 
 By the end of this page you will know which category your idea falls into, and what to do next.
 
-**You need:**
+## 1. Apps that need no backend
 
-- A Rork project
-- A general idea of what your app does
+### Local-only apps (everything stays on the device)
 
----
+These are apps that store all their data on the user's phone. No sync needed. No logins required. No sharing.
 
-## **1. What Counts as “No Backend.”**
+Examples: todo lists, notes apps, journals, habit trackers, mood logs, calculators, timers, unit converters, offline flashcards, photo filters, utility widgets.
 
-### Local-Only Apps (Everything Stays on the Device)
+Rork can build and store the data for all of these with no backend at all, using the device's own storage.
 
-These are apps that store all their data on the user's phone.\
-No sync needed. No logins required. No sharing implemented.
-
-**Examples:**
-
-- Todo lists
-- Notes apps
-- Journals
-- Habit trackers
-- Mood logs
-- Calculators
-- Timers
-- Unit converters
-- Offline flashcards
-- Photo filters/AI Gen
-- Utility widgets
-
-Rork can build and store the data for all of these with **no backend at all**, using the device's own storage: the local store on the phone, and a secure store for anything sensitive.
-
-As long as the data never leaves the device, local storage is enough. If your app is not saving data yet, ask in chat:
-
-```
+```text
 Make sure the data is stored on the device and survives a restart
 ```
 
----
+### Tools with temporary or non-persistent data
 
-### Tools With Temporary / Non-Persistent Data
+If nothing needs to persist after the app closes, no backend is needed. Examples: playground apps (drawing, sandbox), local mini-games, one-off AI generators that do not keep the result.
 
-These apps don’t care about storing long-term state at all.
+### AI apps that only call an external API
 
-**Examples:**
+If your app just sends a prompt to GPT and returns the response, you do not need a backend. You are just making requests to OpenAI or another AI provider.
 
-- Playground apps (drawing, sandbox)
-- Local mini-games
-- One-off AI generators that do not keep the result
-- Fun tools that make something but do not need to remember it
+A backend becomes useful only when you want user history, personalization, or usage tracking. This applies to any external API: as long as you do not need to store the data, you can use any API without a backend.
 
-If nothing needs to persist after the app closes, then no backend is needed to store or manipulate anything. Most simple applications built on Rork will behave like this by default.
+## 2. Apps that always need a backend
 
----
+### Apps with accounts or login
 
-### AI Apps That Only Call an External API
+If the user "has an account," you need authentication, the ability to restore their data, and sync across devices. Examples: social apps, productivity apps with cloud sync, finance apps, any multi-device workflow.
 
-If your app just sends a prompt to GPT and returns the response:
+### Apps that sync across devices
 
-**You do not need a backend.**
+A user writes a note on their phone and expects it on their laptop. That requires a database, cloud sync, and persistent storage.
 
-You’re just making requests to OpenAI or another AI provider.
+### Apps with sharing, collaboration, or multiplayer
 
-Backend becomes optional only when:
+If more than one person can see, edit, or comment on the same thing: messaging, friends lists, comments, posts, social feeds, real-time collaboration, dating apps. All of this needs a backend.
 
-- You want the user history
-- You want personalization
-- You want usage tracking
+### Apps that store files
 
-This extends to any external API. As long as you do not need to store this data, then feel free to use any API without a backend.
+If your app handles images, videos, PDFs, or audio recordings that must persist across devices, you need a backend.
 
----
+### Apps with security or access rules
 
-## **2. Apps That Always Need a Backend**
+Client-only apps cannot enforce rules. If your app needs blocking, moderation, rate limiting, or anti-spam, a backend is required.
 
-### Apps With Accounts or Login
+## 3. Gray-zone apps (optional backend)
 
-If the user “has an account,” you need:
+### Local-first apps with optional sync later
 
-- Authentication
-- Restoring user data
-- Sync across devices
+Some apps work great without a backend, then add cloud features later. You can ship v1 with no backend and add sync when you grow. Examples: journal that adds cloud backup, notes app that adds multi-device sync.
 
-**Examples:**
+### AI apps with memory or personalization
 
-- Social apps
-- Productivity apps with cloud sync
-- Finance apps
-- Any multi-device workflow
-
----
-
-### Apps That Sync Across Devices
-
-A user writes a note on their phone and expects it on their laptop.\
-That requires:
-
-- Database
-- Cloud sync
-- Persistent storage
-
-A backend is required.
-
----
-
-### Apps With Sharing, Collaboration, or Multiplayer
-
-If more than one person can see, edit, or comment on the same thing:
-
-- Messaging
-- Friends lists
-- Comments
-- Posts
-- Social Feeds
-- Real-time collaboration
-- Matchmaking like Dating apps
-
-All of this needs a backend.
-
----
-
-### Apps That Store Files
-
-If your app handles:
-
-- Images
-- Videos
-- PDFs
-- Audio recordings
-
-…and these files need to persist across different devices, you need to use a backend.
-
-Local storage will not cut it for cross-device or sharable content.
-
----
-
-### Apps With Security or Access Rules
-
-If the app enforces any rule between users:
-
-- Blocking
-- Moderation
-- Rate limiting
-- Anti-spam
-
-Client-only apps can’t enforce rules. A backend would be required.
-
----
-
-## **3. Gray-Zone Apps (Optional Backend)**
-
-### Local-First Apps With Optional Sync Later
-
-Some apps work great without a backend, then add cloud features later.
-
-**Examples:**
-
-- Journal → adds cloud backup
-- Notes app → adds multi-device sync
-- Offline photo editor → adds “share to cloud.”
-
-You can ship v1 with no backend and add sync when you grow.
-
----
-
-### AI Apps With Memory or Personalization
-
-You can choose:
-
-- **Local-only memory** → no backend
-- **Cloud memory across devices** → backend
-- **Personalized models** → backend
-
-Your v1 can be simple with local storage; once you have users, you can move to a more secure and advanced system, such as cloud or Personalized.
+You can choose local-only memory (no backend) or cloud memory across devices (backend). Your v1 can be simple with local storage; once you have users, you can move to a more advanced system.
 
 ## Decided that you need one?
 
 You have three routes. **Rork Cloud** is the shortest, because it lives inside Rork and there is no second account to manage.
 
 <CardGroup>
-  <Card icon="cloud" href="/backend/rork-cloud" title="Rork Cloud">
+  <Card title="Rork Cloud" icon="cloud" href="/backend/rork-cloud">
     A managed backend inside Rork: Postgres, server functions, and AI models. No separate account.
   </Card>
 
-  <Card icon="database" href="/backend/supabase" title="Supabase">
-    ⏱️ *1 hour*
-
+  <Card title="Supabase" icon="database" href="/backend/supabase">
     Your own Postgres project, with auth and storage. Good if you want to own the database.
-
   </Card>
 
-  <Card icon="database" href="/backend/firebase" title="Firebase">
-    ⏱️ *1 hour*
-
+  <Card title="Firebase" icon="database" href="/backend/firebase">
     Google's NoSQL option, with Firestore, auth, and storage.
-
   </Card>
 </CardGroup>
-
-<CtaBanner />

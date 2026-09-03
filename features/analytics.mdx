@@ -1,27 +1,21 @@
 ---
-title: "Project analytics and revenue"
+title: "Track Build Activity and App Revenue in Rork"
+sidebarTitle: "Analytics"
+description: "The Rork Analytics tab shows your build activity heatmap and, once you connect RevenueCat, your app revenue, MRR, subscriptions, and conversion rates."
 ---
 
-The Analytics tab shows how much you have built in a project and, once you connect RevenueCat, what your app earns: revenue, MRR, subscriptions, trials, and conversion.
-
-Open **More → Analytics** in a project. The tab has two halves: **Activity**, which is about your building, and **Revenue**, which is about your app's money.
-
-<Frame>
-  <img alt="The Rork Analytics tab showing an Activity heatmap with This week, Best streak, Best day and Daily avg, and a Revenue section offering to connect RevenueCat" />
-</Frame>
+The Analytics tab shows how much you have built in a project and, once you connect RevenueCat, what your app earns: revenue, MRR, subscriptions, trials, and conversion. Open **More → Analytics** in a project. The tab has two halves: **Activity** (about your building) and **Revenue** (about your app's money).
 
 ## Activity
 
-Activity counts **the messages you sent in this project**, over the last year, as a heatmap. It is a picture of your own work, not of your users.
+Activity counts the messages you sent in this project, over the last year, as a heatmap.
 
-| Stat            | What it counts                                       |
-| --------------- | ---------------------------------------------------- |
-| **This week**   | Messages you sent in this project this week          |
+| Stat | What it counts |
+| --- | --- |
+| **This week** | Messages you sent in this project this week |
 | **Best streak** | The longest run of consecutive days you worked on it |
-| **Best day**    | The busiest single day, in messages                  |
-| **Daily avg**   | Messages per day, averaged across the year           |
-
-The **Daily**, **Weekly**, **Monthly** switch and the range picker above, from **Last 7 days** to **Last 12 months**, change how the charts are grouped.
+| **Best day** | The busiest single day, in messages |
+| **Daily avg** | Messages per day, averaged across the year |
 
 <Tip>
   **Share** turns the graph into an image you can post. Pick what to include, press **Generate**, and Rork renders a PNG with your totals, the heatmap, and your streak.
@@ -29,19 +23,17 @@ The **Daily**, **Weekly**, **Monthly** switch and the range picker above, from *
 
 ## Revenue
 
-Revenue comes from **RevenueCat**, the service that handles in-app purchases and subscriptions in your app. Until you connect it, this section only offers the connect button.
+Revenue comes from **RevenueCat**, the service that handles in-app purchases and subscriptions. Until you connect it, this section only offers the connect button.
 
 <Steps>
   <Step title="Press Connect RevenueCat">
     Rork opens RevenueCat and asks for access to your account.
   </Step>
-
   <Step title="Pick the RevenueCat project">
     Choose the project that matches this app, or press **Create new project** if you have none yet.
   </Step>
-
   <Step title="Read the numbers">
-    The section fills with your app's money.
+    The section fills with your app's revenue data.
   </Step>
 </Steps>
 
@@ -52,21 +44,19 @@ Once connected, the tab shows:
 - **Downloads**, for the selected range and all time
 - **Conversion**, and charts grouped as **Overview**, **Revenue Metrics**, **Subscriptions**, and **Conversion**
 
-If a range has nothing in it, Rork says so rather than drawing an empty chart: "RevenueCat has no revenue points in the selected range."
-
 <Note>
   Connecting RevenueCat here is about **reading** the numbers. To make your app sell subscriptions in the first place, follow [How to add a paywall with RevenueCat](/payment-guides/revenuecat-copied-1).
 </Note>
 
 ## Ask Rork about your numbers
 
-**Evaluate metrics** sends your activity and revenue snapshot into the chat and asks the agent to read it. You get a written assessment in the chat: what stands out, what looks weak, and what to try next. It is a normal message, so it costs credits like any other.
+**Evaluate metrics** sends your activity and revenue snapshot into the chat and asks the agent to read it. You get a written assessment: what stands out, what looks weak, and what to try next.
 
 ## What analytics does not include
 
 - **Your app's users.** Screen views, sessions, and retention are not here. Ask Rork to add an analytics SDK to your app if you need those.
 - **Web traffic.** A published web app's visitor numbers are not in this tab.
-- **Credits spent.** That lives in your account. See [Build credits vs Cloud credits](/billing/build-credits-vs-cloud-credits), or open the **⋯** menu under any answer for the cost of that single message.
+- **Credits spent.** That lives in your account. See [Build credits vs Cloud credits](/billing/build-credits-vs-cloud-credits).
 
 ## FAQ
 
@@ -76,11 +66,11 @@ If a range has nothing in it, Rork says so rather than drawing an empty chart: "
   </Accordion>
 
   <Accordion title="I connected RevenueCat but see no revenue.">
-    Check that you picked the RevenueCat project that matches this app, and that the range you selected contains sales. A brand new app with no purchases yet has nothing to show.
+    Check that you picked the RevenueCat project that matches this app, and that the range you selected contains sales.
   </Accordion>
 
   <Accordion title="Do collaborators see the revenue numbers?">
-    Anyone with access to the project sees the tab. Invite deliberately. See [Share a project and work together](/collaborate/share-a-project).
+    Anyone with access to the project sees the tab. Invite deliberately. See [Share a project](/collaborate/share-a-project).
   </Accordion>
 
   <Accordion title="Can I track downloads without RevenueCat?">
@@ -91,21 +81,15 @@ If a range has nothing in it, Rork says so rather than drawing an empty chart: "
 ## Next steps
 
 <CardGroup>
-  <Card icon="credit-card" href="/payment-guides/revenuecat-copied-1" title="Add a paywall">
+  <Card title="Add a Paywall" icon="credit-card" href="/payment-guides/revenuecat-copied-1">
     Set up subscriptions with RevenueCat.
   </Card>
 
-  <Card icon="megaphone" href="/rork-playbook/scale-to-50k-month" title="Scale to $50k a month">
+  <Card title="Scale to $50k/Month" icon="megaphone" href="/rork-playbook/scale-to-50k-month">
     What to do once the numbers start moving.
   </Card>
 
-  <Card icon="coins" href="/billing/build-credits-vs-cloud-credits" title="Credits">
-    What building costs you, as opposed to what your app earns.
-  </Card>
-
-  <Card icon="sparkles" href="/features/agent-modes" title="How the agent works">
-    Design mode, Plan mode, and building.
+  <Card title="Credits Explained" icon="coins" href="/billing/build-credits-vs-cloud-credits">
+    What building costs, separate from what your app earns.
   </Card>
 </CardGroup>
-
-<CtaBanner />

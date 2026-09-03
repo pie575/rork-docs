@@ -1,143 +1,21 @@
 ---
-title: "What is Rork Cloud"
+title: "Rork Cloud: Managed Backend Inside Rork"
+sidebarTitle: "Rork Cloud"
+description: "Rork Cloud gives you Postgres, Row Level Security, and Edge Functions with no extra account. Free in beta, transferable to your own Supabase later."
 ---
 
-Why use Rork's built-in backend instead of setting up your own, what it costs, and what to expect.
+Rork Cloud is a backend that Rork creates and hosts for your app, so you do not have to set one up or configure it yourself. When your app needs to store data, the agent shows a **Create Rork Cloud** confirmation in the chat. After you confirm, Rork provisions the backend in the background and connects it to your app automatically.
 
 <Note>
   Rork Cloud is currently in **beta**. It is free to use while in beta, and your data is never deleted, even if your subscription ends.
 </Note>
 
-Rork Cloud is a backend that Rork creates and hosts for your app, so you do not have to set one up or configure it yourself. When your app needs to store data, the agent shows a **"Create Rork Cloud"** confirmation in the chat. After you confirm, Rork provisions the backend in the background and connects it to your app automatically.
-
-This is the card you will see in the chat:
-
-<div>
-  <div>
-    <div>
-      <svg>
-        <path />
-
-        <path />
-
-        <path />
-
-        <path />
-
-        <path />
-
-        <path />
-
-        <path />
-
-        <path />
-
-        <path />
-
-        <path />
-      </svg>
-    </div>
-
-    <div>
-      <div>Create Rork Cloud?</div>
-      <div>Create a hosted backend before adding database tables, RLS policies, or Edge Functions.</div>
-    </div>
-
-  </div>
-
-  <div>
-    <div>
-      <div>
-        <svg>
-          <path />
-
-          <path />
-
-          <path />
-        </svg>
-
-        <span>Postgres</span>
-      </div>
-
-      <div>
-        <svg>
-          <path />
-
-          <path />
-        </svg>
-
-        <span>RLS</span>
-      </div>
-
-      <div>
-        <svg>
-          <path />
-        </svg>
-
-        <span>Edge Functions</span>
-      </div>
-    </div>
-
-  </div>
-
-  <div>
-    <div>
-      <span>Cancel</span>
-
-      <span>
-        <svg>
-          <path />
-
-          <path />
-
-          <path />
-
-          <path />
-        </svg>
-
-        Connect my Supabase
-      </span>
-
-      <span>
-        <svg>
-          <path />
-
-          <path />
-
-          <path />
-
-          <path />
-
-          <path />
-
-          <path />
-
-          <path />
-
-          <path />
-
-          <path />
-
-          <path />
-        </svg>
-
-        Create Rork Cloud
-      </span>
-    </div>
-
-    <div>Connect a Supabase project from your own org and bill compute directly to Supabase.</div>
-
-  </div>
-</div>
-
-**Create Rork Cloud** sets up the managed backend for you. **Connect my Supabase** is the same card's path for bringing your own Supabase project instead.
-
 ## What you get
 
-- **No extra sign-ups.** Your Rork account is all you need. Rork manages everything for you, and you can ask the Rork agent in chat for anything you need, at any time.
-- A **database** for accounts, shared data, and anything that must sync across devices and users.
-- **Secure access rules** so each user can only read and write their own data.
-- **Server-side functions** for logic that should not run on the user's device, such as private API keys, payments, and webhooks.
+- **No extra sign-ups.** Your Rork account is all you need. Rork manages everything for you, and you can ask the agent in chat for anything at any time.
+- A **Postgres database** for accounts, shared data, and anything that must sync across devices and users.
+- **Row Level Security** so each user can only read and write their own data.
+- **Edge Functions** for logic that should not run on the user's device, such as private API keys, payments, and webhooks.
 
 ## Rork Cloud or your own Supabase?
 
@@ -148,49 +26,33 @@ Both work with Rork the same way, so pick based on what you want to own:
 
 You are not locked in either way: you can start on Rork Cloud and [transfer to your own Supabase later](#transfer-to-your-own-supabase).
 
-<CardGroup>
-  <Card icon="database" href="/backend/supabase" title="Connect Supabase">
-    Connect your own Supabase project to your Rork app.
-  </Card>
-
-  <Card icon="database" href="/backend/firebase" title="Connect Firebase">
-    Connect your own Firebase project to your Rork app.
-  </Card>
-</CardGroup>
-
 ## How to add it
 
 There are two ways to get a backend:
 
-- **Just ask in chat.** Say _"Add a database to my app"_ or _"Add a backend"_ and Rork takes care of the rest.
-- **From the project panel.** Click **More** (the last icon in the top toolbar), open **Database**, and press **Add a database**.
+- **Just ask in chat.** Say "Add a database to my app" or "Add a backend" and Rork takes care of the rest.
+- **From the project panel.** Click **More**, open **Database**, and press **Add a database**.
 
-<Frame>
-  <img alt="The Database section under More with the Add a database button" />
-</Frame>
+When Rork needs to create a backend, it shows a **Create Rork Cloud** confirmation card in the chat. Press **Create Rork Cloud** to confirm, or **Connect my Supabase** to bring your own project instead.
 
 ## See what your app is storing
 
-Once your backend exists, the **Database** tab under **More** shows your tables and row counts, so you can always see what is inside.
+Once your backend exists, the **Database** tab under **More** shows your tables and row counts.
 
-<Frame>
-  <img alt="The Database tab under More showing the app's tables with row counts" />
-</Frame>
+If you want a friendlier view than raw tables, ask Rork in chat to build one:
 
-If you want a friendlier view than raw tables, ask Rork in chat to build one, for example: _"Build me a web admin panel where I can browse and edit my app's users and orders."_
+```text
+Build me a web admin panel where I can browse and edit my app's users and orders.
+```
 
 ## Transfer to your own Supabase
 
-If you later want the backend to belong to you and be managed by you, press **Transfer to your Supabase** at the top of the **Database** tab. The whole backend moves into your Supabase organization, with your data. The project's URL, data, and keys stay the same, so your published app keeps working with zero changes.
-
-<Frame>
-  <img alt="The Managed by Rork card in the Database tab with the Transfer to your Supabase button" />
-</Frame>
+If you later want the backend to belong to you and be managed by you, press **Transfer to your Supabase** at the top of the **Database** tab. The whole backend moves into your Supabase organization with your data. The project's URL, data, and keys stay the same, so your published app keeps working with zero changes.
 
 Two things to know:
 
-- The transfer is one-way: Rork cannot take the project back afterwards.
-- Billing moves to you: from then on you pay Supabase directly for this project, on [Supabase's pricing](https://supabase.com/pricing).
+- The transfer is one-way. Rork cannot take the project back afterwards.
+- Billing moves to you. From then on you pay Supabase directly for this project.
 
 ## What it costs
 
@@ -198,28 +60,27 @@ Two things to know:
 
 Two related costs are separate from the backend itself:
 
-- **AI features inside your app** (in-app chat, image generation, voice, and similar) run on **Cloud credits**, pay as you go. See [Build credits vs Cloud credits](/billing/build-credits-vs-cloud-credits).
+- **AI features inside your app** (in-app chat, image generation, voice) run on **Cloud credits**, pay as you go. See [Build credits vs Cloud credits](/billing/build-credits-vs-cloud-credits).
 - **After a transfer to your own Supabase**, Supabase bills you directly for the project.
-
-## What to expect
-
-- **It is a real, production backend.** It runs your app's live data for real users, not a sandbox.
-- **Changes are live right away.** There is no separate preview step, so be careful with actions that delete or overwrite data.
-- **Your code is yours.** On a paid plan you own all generated code and can export it any time through the GitHub integration, with two-way sync. See [Code Export](/faq/code-export).
-- **You can add accounts and social sign in.** Follow [How to add sign in with Apple/Google to your Rork app](/integrations/backend/how-to-set-up-oauth).
 
 ## If you cancel or stop paying
 
 - **Your data is not deleted.** Rork does not delete your app's data, even if your subscription ends.
 - **Your app keeps working.** If you cancel your Rork subscription, your app and its backend keep running.
 
-Keep in mind that Rork Cloud is still in beta, so these details may be refined as it matures.
-
 ## When you may not need it
 
 - Prototypes that only store data on one device can use local storage.
 - Logic, webhooks, or private keys can use server-side functions without a full database.
 
-If you are not sure whether your app needs a backend at all, read [Do You Need a Backend for Your App?](/backend/index).
+Not sure whether your app needs a backend at all? Read [Do you need a backend?](/backend/index)
 
-<CtaBanner />
+<CardGroup>
+  <Card title="Connect Supabase" icon="database" href="/backend/supabase">
+    Connect your own Supabase project to your Rork app.
+  </Card>
+
+  <Card title="Connect Firebase" icon="database" href="/backend/firebase">
+    Connect your own Firebase project to your Rork app.
+  </Card>
+</CardGroup>

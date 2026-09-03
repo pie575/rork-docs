@@ -1,114 +1,97 @@
 ---
-title: "Convert your app between iOS, Android, and web"
+title: "Add iOS, Android, or Web to Any Rork Project"
+sidebarTitle: "Convert Platforms"
+description: "One Rork project can hold a native iPhone app, Android app, and web app. Add any platform at any time from the same chat, no separate project needed."
 ---
 
-Convert an Android app to iOS with AI (or the reverse), turn a React Native codebase into native Swift and Kotlin, and ship every platform from one Rork project.
-
-<video />
-
-A Rork project isn't locked to one platform. One project can contain a **native iOS app (Swift)**, a **native Android app (Kotlin)**, and a **web app**. Each app has its own code. They can share one chat and one backend. That makes "convert my app to another platform" a feature, not a rewrite from scratch.
-
-## Convert an Android app to iOS (with AI)
-
-Have an Android app (in Rork, or imported from a repository) and want it on iPhone?
-
-1. If the app isn't in Rork yet, [import its repository](/import/import-from-github) first, Kotlin/Java source included. The agent reads it even though the new iOS app will be Swift.
-2. In the project, ask in chat:
-
-```
-Create an iOS version of this app
-```
-
-3. Confirm the **"Add iOS app?"** widget. The agent rebuilds the screens with native iOS UI, reusing the same backend, data model, and business rules.
-4. Preview it in the iOS cloud simulator, then [publish to the App Store](/store-guides/publish-app-store).
-
-## iOS app → native Android app
-
-The mirror path. In your iOS project, click **+** (Add preview platform) → **Android (Kotlin)**, or ask in chat:
-
-<Frame>
-  <img alt="The add platform menu: Android (Kotlin) and Web" />
-</Frame>
-
-Rork builds a native Kotlin app in the same project. Publishing: [create the AAB for Google Play](/submitting-to-play-store/creating-the-aab-file).
-
-## React Native / Expo codebase → native app
-
-Already have a React Native or Expo codebase (from Bolt, a contractor, or your own work)? Rork rebuilds it as native code.
-
-1. Push it to GitHub if it isn't there already.
-2. Import it: **GitHub to Mobile App** on [rork.com](https://rork.com) → paste the repo URL → **Generate app now**.
-
-<Frame>
-  <img alt="The GitHub import dialog" />
-</Frame>
-
-The agent reads your JavaScript or TypeScript source, then rebuilds the screens, navigation, data flows, and design as a **native iPhone app (Swift)**, a **native Android app (Kotlin)**, or a **web app**, whichever you pick. Your product stays the same. The UI code becomes Swift, Kotlin, or React.
-
-From there, publishing runs through Rork: the built-in Publish flow handles the build and the App Store or Google Play submission, so there is nothing to configure yourself.
-
-<Info>
-  Not sure which platform to pick? See [iPhone, Android, or web: what's the difference](/swift-vs-react-native/whats-the-difference).
-</Info>
-
-## Mobile app → web app
-
-Any mobile project can grow a web version: **Project Settings → Add new app → Web**, or ask:
-
-```
-Add a web version of this app
-```
-
-The web app publishes to a `your-app.rork.app` URL from the **Publish** menu (you can attach a custom domain later). Great for landing pages, admin panels, or a desktop companion.
+A Rork project is not locked to one platform. One project can contain a native iOS app (Swift), a native Android app (Kotlin), and a web app. Each app has its own code. They can share one chat and one backend. That makes "convert my app to another platform" a feature, not a rewrite from scratch.
 
 ## Every combination at a glance
 
-| From \ To                                 | iOS (Swift)                | Android (Kotlin)           | Web                 |
-| ----------------------------------------- | -------------------------- | -------------------------- | ------------------- |
-| **iOS (Swift)**                           | n/a                        | Add platform / chat        | Add platform / chat |
-| **Android (Kotlin)**                      | Add platform / chat        | n/a                        | Add platform / chat |
-| **Web (incl. imported sites & builders)** | Add platform / chat        | Add platform / chat        | n/a                 |
-| **React Native / Expo (imported repo)**   | agent rebuilds it natively | agent rebuilds it natively | Add platform / chat |
+| From | To iOS (Swift) | To Android (Kotlin) | To Web |
+| --- | --- | --- | --- |
+| **iOS (Swift)** | n/a | Add platform / chat | Add platform / chat |
+| **Android (Kotlin)** | Add platform / chat | n/a | Add platform / chat |
+| **Web** | Add platform / chat | Add platform / chat | n/a |
+| **React Native / Expo (imported repo)** | Agent rebuilds it natively | Agent rebuilds it natively | Add platform / chat |
 
-"Add platform / chat" = click **+** in the project header, use **Project Settings → Add new app**, or just ask the agent.
+"Add platform / chat" means: click **\+** in the project header, use **Project Settings → Add new app**, or just ask the agent.
+
+## Three ways to add a platform
+
+**Option 1: The + button.** In the project header, click **\+** (Add preview platform) and choose the platform to add.
+
+**Option 2: Project Settings.** Open **Project Settings → Add new app** and pick iOS, Android, or Web.
+
+**Option 3: Ask in chat.**
+
+```text
+Add an Android version of this app
+```
+
+The agent shows an **Add Android app?** confirmation, then builds the native Kotlin app reusing your project's logic and backend.
+
+## Convert an Android app to iOS
+
+1. If the app is not in Rork yet, import its repository first (Kotlin/Java source included).
+2. In the project, ask in chat:
+
+```text
+Create an iOS version of this app
+```
+
+3. Confirm the widget. The agent rebuilds the screens with native iOS UI, reusing the same backend, data model, and business rules.
+4. Preview it in the iOS cloud simulator, then [publish to the App Store](/store-guides/publish-app-store).
+
+## Convert an iOS app to Android
+
+In your iOS project, click **\+** → **Android (Kotlin)**, or ask in chat:
+
+```text
+Add an Android version of this app
+```
+
+Rork builds a native Kotlin app in the same project. To publish, see [create the AAB for Google Play](/submitting-to-play-store/creating-the-aab-file).
+
+## React Native / Expo to native app
+
+1. Push the repo to GitHub if it is not there already.
+2. On [rork.com](https://rork.com), click **GitHub to Mobile App** → paste the repo URL → **Generate app now**.
+
+The agent reads your JavaScript or TypeScript source, then rebuilds the screens, navigation, data flows, and design as a native iPhone app (Swift), a native Android app (Kotlin), or a web app.
+
+## Mobile app to web app
+
+Any mobile project can grow a web version:
+
+```text
+Add a web version of this app
+```
+
+The web app publishes to a `your-app.rork.app` URL from the **Publish** menu. You can attach a custom domain later.
 
 ## Per-app settings
 
-Each app in the project has its own icon, home screen name, and bundle identifier / package name. Configure them in **Project Settings** before publishing:
-
-<Frame>
-  <img alt="Per-app settings: icon, name, bundle identifier" />
-</Frame>
+Each app in the project has its own icon, home screen name, and bundle identifier / package name. Configure them in **Project Settings** before publishing.
 
 ## Publishing each platform
 
-- **iOS**: [Publish to the App Store](/store-guides/publish-app-store) directly from Rork:
-
-<Frame>
-  <img alt="The Publish to App Store wizard in Rork" />
-</Frame>
-
-Every submission (and its TestFlight link) is tracked in the project's **Publish** dialog:
-
-<Frame>
-  <img alt="App Store submission history with TestFlight links" />
-</Frame>
-
-- **Android**: [generate the AAB and upload to Google Play](/submitting-to-play-store/creating-the-aab-file).
-- **Web**: one click in the project's **Publish** menu.
+- **iOS:** [Publish to the App Store](/store-guides/publish-app-store) directly from Rork.
+- **Android:** [Generate the AAB and upload to Google Play](/submitting-to-play-store/creating-the-aab-file).
+- **Web:** One click in the project's **Publish** menu.
 
 ## FAQ
 
-### Is the conversion a literal code translation?
+<AccordionGroup>
+  <Accordion title="Is the conversion a literal code translation?">
+    No, and that is a good thing. The agent rebuilds the UI with each platform's native components while keeping your product identical: same screens, same flows, same data. You get apps that feel right on each platform instead of a lowest-common-denominator port.
+  </Accordion>
 
-No, and that's a good thing. The agent rebuilds the UI with each platform's native components while keeping your product identical: same screens, same flows, same data. You get apps that feel right on each platform instead of a lowest-common-denominator port.
+  <Accordion title="Do the platforms stay in sync afterwards?">
+    They share the project, the backend, and the chat. When you ask for a feature, tell the agent which apps it applies to ("add dark mode to both iOS and Android") and it updates each native codebase.
+  </Accordion>
 
-### Do the platforms stay in sync afterwards?
-
-They share the project, the backend, and the chat. When you ask for a feature, tell the agent which apps it applies to ("add dark mode to both iOS and Android") and it updates each native codebase.
-
-### Can I have different features per platform?
-
-Yes. It's common to keep the field-crew features mobile-only and add an admin dashboard as the web app.
-
-<CtaBanner />
+  <Accordion title="Can I have different features per platform?">
+    Yes. It is common to keep field-crew features mobile-only and add an admin dashboard as the web app.
+  </Accordion>
+</AccordionGroup>

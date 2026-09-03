@@ -1,45 +1,20 @@
 ---
-title: "AI App Store Reviewer"
+title: "Check Your App with the AI App Store Reviewer"
+sidebarTitle: "AI Reviewer"
+description: "Run your app through Rork's AI App Store Reviewer before submitting to catch guideline violations and common rejection reasons before Apple does."
 ---
-
-Rork reads your iOS build against the App Store Review Guidelines before Apple does, and reports each rejection risk with its guideline number, the evidence behind it, and a suggested fix.
-
-<div>
-  <video aria-label="Opening More, App Store, App Review in a Rork project and running the AI App Store Reviewer until the report appears" />
-</div>
-
-<p>The whole flow: open More → App Store → App Review, press Run, and read the report.</p>
 
 Apple's review takes days, and a rejection costs you another round trip. The **AI App Store Reviewer** reads the build you are about to submit and tells you what a reviewer is likely to flag, before you send it.
 
 It checks five areas at once, the same five sections the App Store Review Guidelines use:
 
-<div>
-  <div>
-    <span>Safety</span>
-    <span>Guideline 1.x</span>
-  </div>
-
-  <div>
-    <span>Performance</span>
-    <span>Guideline 2.x</span>
-  </div>
-
-  <div>
-    <span>Business</span>
-    <span>Guideline 3.x</span>
-  </div>
-
-  <div>
-    <span>Design</span>
-    <span>Guideline 4.x</span>
-  </div>
-
-  <div>
-    <span>Legal</span>
-    <span>Guideline 5.x</span>
-  </div>
-</div>
+| Area | Guidelines |
+| --- | --- |
+| Safety | 1.x |
+| Performance | 2.x |
+| Business | 3.x |
+| Design | 4.x |
+| Legal | 5.x |
 
 <Info>
   The reviewer is advisory. It never blocks a submission and it never promises an approval. Apple makes the final decision, and Apple's own review still takes days.
@@ -47,9 +22,9 @@ It checks five areas at once, the same five sections the App Store Review Guidel
 
 ## What you need
 
-- A paid Rork subscription of any tier. Credits do not substitute for a subscription here.
-- Editor access to the project. Viewers can open the panel and read past reports, but cannot start a review.
-- An iOS app in the project: a Swift app, or an older Expo project. Android and web apps are not reviewed.
+- A paid Rork subscription of any tier (credits do not substitute for a subscription)
+- Editor access to the project (viewers can read past reports but cannot start a review)
+- An iOS (Swift) app in the project. Android and web apps are not reviewed.
 
 ## Run a review
 
@@ -57,50 +32,28 @@ It checks five areas at once, the same five sections the App Store Review Guidel
   <Step title="Open More, then App Store">
     In your project, open **More → App Store** and stay on the **App Review** tab. It is the first tab. The reviewer does not live in the publish menu.
   </Step>
-
   <Step title="Check the build in the panel header">
-    Under the title you see the app name and the build being reviewed, for example `Current build src_62bb`. Before the first run the panel lists the five areas it covers.
-
-    <Frame>
-      <img alt="AI App Store Reviewer panel showing Check this build for App Review risks with Safety, Performance, Business, Design and Legal" />
-    </Frame>
-
+    Under the title you see the app name and the build being reviewed. Before the first run the panel lists the five areas it covers.
   </Step>
-
   <Step title="Press Run">
     All five areas are checked at the same time. **Run** becomes **Stop**, which cancels the review. You can leave the tab and come back while it works.
-
-    <Frame>
-      <img alt="Review running with a spinner next to Safety, Performance, Business, Design and Legal" />
-    </Frame>
-
   </Step>
-
   <Step title="Wait for the report">
-    When the run ends, the header switches to the build it looked at, for example `Reviewed build src_62bb`, and how long ago the review finished.
-
-    <Frame>
-      <img alt="Report showing no rejection risks found, zero rejections, zero warnings and five passed areas" />
-    </Frame>
-
+    When the run ends, the header switches to the build it looked at and how long ago the review finished.
   </Step>
 </Steps>
 
 ## Read the report
 
-The report has one row per review area, not one row per rule. Each row ends as **Passed**, a warning, a rejection, or **Fixed**.
+The report has one row per review area. Each row ends as **Passed**, a warning, a rejection, or **Fixed**.
 
-Above the rows you get the counts and a status line:
+| Status line | What it means |
+| --- | --- |
+| **Rejection risks found** | At least one finding looks likely to get the app rejected. |
+| **Warnings need review** | No rejection risk, but something is worth checking. |
+| **No rejection risks found** | Nothing was flagged. |
 
-| Status line                  | What it means                                              |
-| ---------------------------- | ---------------------------------------------------------- |
-| **Rejection risks found**    | At least one finding looks likely to get the app rejected. |
-| **Warnings need review**     | No rejection risk, but something is worth checking.        |
-| **No rejection risks found** | Nothing was flagged.                                       |
-
-Press a row to open it. Inside you get the guideline number, what was found, the evidence behind it, sometimes the file it lives in, and the suggested fix.
-
-Once the report is saved, the panel also shows an estimated outcome: **Likely to pass**, **Likely rejection**, or **Outcome uncertain**. Next to it the panel says "Apple makes the final decision."
+Press a row to open it. Inside you get the guideline number, what was found, the evidence behind it, and the suggested fix.
 
 <Warning>
   Treat the estimate as a prediction about your build, not a verdict. A clean report does not guarantee approval, and a rejection risk does not stop you from submitting.
@@ -108,28 +61,19 @@ Once the report is saved, the panel also shows an estimated outcome: **Likely to
 
 ## Fix what the review found
 
-Findings are not fixed for you. Ask Rork in chat to fix them, one finding at a time, and name the guideline:
+Findings are not fixed for you. Ask Rork in chat to fix them, naming the guideline:
 
-> The App Review report flagged guideline 5.1.1: the app has no way to delete an account. Add an in-app account deletion flow.
-
-You can also ask Rork in chat to run the review for you. A review started from chat asks you what to do when it finds something: **Cancel**, or **Fix warnings** when there are warnings, or **Done** when there are none. **Fix warnings** lets Rork edit the app and check it again in the same turn. While that review waits for your answer, the App Store panel says "This review is running in chat — respond there."
-
-A review started with the **Run** button reports and stops. It changes no code and asks you nothing.
+```text
+The App Review report flagged guideline 5.1.1: the app has no way to delete an account.
+Add an in-app account deletion flow.
+```
 
 After Rork changes the app, run the review again so the report matches the code you are about to submit.
-
-## Previous reviews and new builds
-
-Rork keeps the last four reports. The newest one is the report in the panel, and the older ones sit under **Previous reviews** below it. Each entry shows the build it reviewed, its counts, and when it ran. Open one to see its findings again.
-
-When the code changes after a review, the panel adds a **New build available** badge next to the build id. The saved report now describes an older build, so run the review again before you submit.
 
 ## Limits
 
 - Up to 40 reviews per day, counted across the account that pays for the project.
-- Six review runs per chat turn. After that the agent says so and asks you to finish the remaining fixes, then start a fresh review from the App Store panel.
-- Only iOS apps are reviewed. In a project with only Android or web apps, the panel asks you to add an app instead of showing a report.
-- The reviewer reads your project source, plus your App Store Connect readiness data when the app is connected to App Store Connect. Without that connection, the review is based on the source alone.
+- Only iOS apps are reviewed. In a project with only Android or web apps, the panel asks you to add an app.
 - The reviewer does not submit your app. Submitting is still a separate step.
 
 ## Troubleshooting
@@ -140,48 +84,30 @@ When the code changes after a review, the panel adds a **New build available** b
   </Accordion>
 
   <Accordion title="Pressing Run opens a paywall">
-    The message says "App Store reviews require a paid Rork subscription". Any tier works, on the account that pays for the project. Buying credits does not unlock it.
+    Any paid Rork plan works. Buying credits does not unlock it.
   </Accordion>
 
   <Accordion title="Run does nothing and shows Could not start the App Store review">
-    The most common cause is access: you need editor rights on the project, not viewer. Ask the project owner to change your role, then try again.
-  </Accordion>
-
-  <Accordion title="Run is greyed out">
-    It stays disabled while the panel loads, while a review runs, and when the project has no build to review yet. Wait a moment, reload the page, and try again.
-  </Accordion>
-
-  <Accordion title="The panel asks me to add an app">
-    "Add an Expo or Swift app to this project before running an App Store review" means the project has no iOS app. Add a Swift app: an existing Expo app is reviewed too, but Expo is no longer offered for new apps, see [What happened to Expo?](/expo).
+    You need editor rights on the project, not viewer. Ask the project owner to change your role.
   </Accordion>
 
   <Accordion title="The review seems stuck">
-    Press **Stop**, then **Run** again. If the run ended badly, the panel shows "Review could not complete" with the reason above the report. If it keeps failing, contact support with the project link and the time of the run.
-  </Accordion>
-
-  <Accordion title="The daily limit was reached">
-    The message says "Daily App Store preflight review limit reached." The count resets each day.
+    Press **Stop**, then **Run** again.
   </Accordion>
 </AccordionGroup>
 
 ## Next steps
 
 <CardGroup>
-  <Card icon="list-check" href="/submitting-to-app-store/apple/app-store-checklist" title="App Store checklist">
-    Everything else to prepare before you submit.
+  <Card title="Publish to the App Store" icon="upload" href="/store-guides/publish-app-store">
+    Take the reviewed build to App Store Connect.
   </Card>
 
-  <Card icon="apple" href="/appstore-submission-checklist/app-review-guide" title="How Apple's review works">
-    Timing, what slows a review down, and expedited review.
-  </Card>
-
-  <Card icon="image" href="/appstore-screenshots/app-store-screenshots" title="App Store screenshots">
+  <Card title="App Store Screenshots" icon="image" href="/appstore-screenshots/app-store-screenshots">
     Generate the screenshots your listing needs.
   </Card>
 
-  <Card icon="rocket" href="/publishing" title="Publish your app">
-    Take the reviewed build to App Store Connect.
+  <Card title="Submission Errors" icon="triangle-alert" href="/submitting-to-app-store/apple/submission-errors">
+    Fix build failures before submitting.
   </Card>
 </CardGroup>
-
-<CtaBanner />

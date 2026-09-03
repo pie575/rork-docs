@@ -1,12 +1,10 @@
 ---
-title: "TestFlight: put your app on real phones"
+title: "Invite Beta Testers with TestFlight"
+sidebarTitle: "TestFlight"
+description: "Rork uploads your iPhone build to TestFlight automatically. Share a beta link and guide testers through the five-step install before submitting to the App Store."
 ---
 
-Rork uploads your iPhone build to TestFlight, then gives you a link to invite testers. This page covers the submission steps, the beta link, and exactly what a tester has to do.
-
-TestFlight is Apple's way of putting an app on real phones before it reaches the App Store. Use it to check your app on a real device, and to let other people try it before review.
-
-Rork uploads the build for you. You do not need Xcode and you do not need a Mac.
+TestFlight is Apple's way of putting an app on real phones before it reaches the App Store. Use it to check your app on a real device, and to let other people try it before review. Rork uploads the build for you. You do not need Xcode and you do not need a Mac.
 
 ## Get a build onto TestFlight
 
@@ -14,19 +12,15 @@ Rork uploads the build for you. You do not need Xcode and you do not need a Mac.
   <Step title="Open Publish, then Submit to App Store">
     In the project header, press **Publish** and choose your iPhone app.
   </Step>
-
   <Step title="Check the app info">
-    Rork shows the name and details the store will see, then **Continue**.
+    Rork shows the name and details the store will see, then press **Continue**.
   </Step>
-
   <Step title="Sign in to Apple">
-    Rork needs your Apple Developer account. Membership costs **\$99 a year**, and it may vary by country. If you do not have it yet, see [Create your Apple Developer Account](/store-guides/apple-developer-account).
+    Rork needs your Apple Developer account (\$99/year). If you do not have one yet, see [Create your Apple Developer Account](/store-guides/apple-developer-account).
   </Step>
-
   <Step title="Start the submission">
-    Rork downloads the project, prepares the build, builds the app, and uploads it to App Store Connect. The chat shows each stage, so you can leave and come back.
+    Rork downloads the project, prepares the build, builds the app, and uploads it to App Store Connect. The chat shows each stage.
   </Step>
-
   <Step title="Wait for Available on TestFlight">
     When the upload finishes, Rork says the build is available on TestFlight and names the build number.
   </Step>
@@ -36,12 +30,10 @@ Apple processes the build for a few minutes after the upload. Until that finishe
 
 ## Invite testers with a link
 
-After a successful build, Rork offers **Share Beta Link**. It gives you an address like `rork.com/beta/…` that walks a tester through the whole install.
-
-The dialog lets you **Copy invite link**, **Regenerate** it if it leaked, and **Revoke** it when testing is over.
+After a successful build, Rork offers **Share Beta Link**. It gives you an address that walks a tester through the whole install. The dialog lets you **Copy invite link**, **Regenerate** it if it leaked, and **Revoke** it when testing is over.
 
 <Note>
-  Only the project owner and editors can share a beta link. A viewer does not get the button. See [Share a project and work together](/collaborate/share-a-project).
+  Only the project owner and editors can share a beta link. A viewer does not get the button. See [Share a project](/collaborate/share-a-project).
 </Note>
 
 ## What your tester does
@@ -50,45 +42,29 @@ Send them the link and they see "You've been invited to test", with your app's n
 
 <Steps>
   <Step title="Install TestFlight">
-    Apple's TestFlight app, from the App Store. The page offers **Get TestFlight** for people who do not have it.
+    Apple's TestFlight app, from the App Store.
   </Step>
-
   <Step title="Enter their email">
-    It has to be the email on their **Apple ID**, otherwise the invite lands nowhere.
+    It must be the email on their **Apple ID**, otherwise the invite lands nowhere.
   </Step>
-
   <Step title="Accept the App Store Connect team invite">
-    They press **Request Team Invitation**, then accept the email Apple sends. **Resend** is there if it does not arrive.
+    They press **Request Team Invitation**, then accept the email Apple sends.
   </Step>
-
   <Step title="Join the TestFlight group">
-    **Join TestFlight**, then accept in the TestFlight app. **Refresh Status** updates the page.
+    Press **Join TestFlight**, then accept in the TestFlight app.
   </Step>
-
   <Step title="Open the app">
-    The page confirms it: the app is installed, and they open it from the home screen like any other app.
+    The app is installed and opens from the home screen like any other app.
   </Step>
 </Steps>
 
-Tell your testers to use their Apple ID email, and warn them there are two invitations to accept, one by email and one in TestFlight. Those two things cause most of the confusion.
-
-## How big a beta this suits
-
-Rork's link adds testers through your **App Store Connect team**. That route is quick and needs no extra Apple review, and Apple caps how many people it allows, so it fits a tester group of friends, colleagues, and early users.
-
-For a large public beta, add external testers in App Store Connect yourself. Apple reviews a build before it goes to an external group, which is a separate wait.
-
-## After the beta
-
-TestFlight is not the App Store. A build on TestFlight is not for sale and not public.
-
-When the app survives your testers, submit it for review. See [Publish Your App to the Apple App Store](/store-guides/publish-app-store), run the [AI App Store Reviewer](/ai-app-store-reviewer) first, and read [Main App Store rejection reasons](/appstore-submission-checklist/whats-next-after-the-apps-finished) so review does not surprise you.
+Tell your testers to use their Apple ID email, and warn them there are two invitations to accept: one by email and one in TestFlight. Those two things cause most of the confusion.
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="Do I need a Mac or Xcode?">
-    No. Rork builds and uploads in the cloud. Xcode is optional, and only for people who want to debug locally. See [How to test & publish your Rork app via Xcode](/how-to-set-up-xcode/how-to-set-up-xcoe).
+    No. Rork builds and uploads in the cloud.
   </Accordion>
 
   <Accordion title="Do I need the $99 Apple membership just to use TestFlight?">
@@ -96,7 +72,7 @@ When the app survives your testers, submit it for review. See [Publish Your App 
   </Accordion>
 
   <Accordion title="Can I test on my own iPhone without TestFlight?">
-    Yes, install straight from Rork over USB with the Companion app, or use the Rork Max app. See [Rork Max app for iPhone](/rork-max/rork-max-app).
+    Yes, use the Rork Max app. See [Rork Max app for iPhone](/rork-max/rork-max-app).
   </Accordion>
 
   <Accordion title="My tester says the link does nothing.">
@@ -108,28 +84,22 @@ When the app survives your testers, submit it for review. See [Publish Your App 
   </Accordion>
 
   <Accordion title="Does a new build reach testers automatically?">
-    Testers already in the group get the next build you upload. They do not have to accept the invitations again.
+    Testers already in the group get the next build you upload. They do not have to accept invitations again.
   </Accordion>
 </AccordionGroup>
 
 ## Next steps
 
 <CardGroup>
-  <Card icon="upload" href="/store-guides/publish-app-store" title="Publish to the App Store">
+  <Card title="Publish to the App Store" icon="upload" href="/store-guides/publish-app-store">
     Take the tested build to review.
   </Card>
 
-  <Card icon="shield-check" href="/ai-app-store-reviewer" title="AI App Store Reviewer">
+  <Card title="AI App Store Reviewer" icon="shield-check" href="/ai-app-store-reviewer">
     Catch guideline problems before Apple does.
   </Card>
 
-  <Card icon="triangle-alert" href="/submitting-to-app-store/apple/submission-errors" title="Submission errors">
+  <Card title="Submission Errors" icon="triangle-alert" href="/submitting-to-app-store/apple/submission-errors">
     When the build fails or never appears.
   </Card>
-
-  <Card icon="apple" href="/store-guides/apple-developer-account" title="Apple Developer account">
-    The membership TestFlight needs.
-  </Card>
 </CardGroup>
-
-<CtaBanner />

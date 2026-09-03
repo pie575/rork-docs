@@ -1,33 +1,49 @@
 ---
-title: "How to test Android apps on your Android device"
+title: "Test Your Android App on Your Phone with an APK"
+sidebarTitle: "Install APK"
+description: "Download an APK from Rork and sideload it on your Android phone to test before submitting to Google Play. No Play Console account required."
 ---
 
-How to test your Rork app on a real Android phone, and how to get an installable APK build when you need one.
-
-Android apps in Rork are **native Android (Kotlin)** apps. They come with a built-in Android emulator: Rork builds the app and runs it in the emulator right in your browser, so most testing needs no extra setup. See [Build a native Android app with Rork](/android/rork-android) for what the emulator can do.
-
-When you want the app on your own phone, you have two ways: install the APK by hand, or test through Google Play.
+Android apps in Rork come with a built-in Android emulator that runs the app in your browser. When you want the app on your own phone, you have two ways: install the APK by hand (no Play account needed), or test through Google Play's internal testing track.
 
 <Note>
-  An iPhone (Swift) app is iOS only and does not run on Android. To reach Android users, add an Android app to the same project, see [Convert your app between iOS, Android, and web](/import/convert-between-platforms).
+  An iPhone (Swift) app is iOS only and does not run on Android. To reach Android users, add an Android app to the same project. See [Convert your app between platforms](/import/convert-between-platforms).
 </Note>
 
 ## Install the APK on your own phone
 
 Rork builds the APK for you, so you do not need a terminal or any build service:
 
-1. Open your project and click **Publish** at the top of the page, then open the Google Play section.
-2. Click **Download APK**. If the button is not there yet, build the app first and wait for the build to finish.
-3. Open the downloaded `.apk` file on your Android phone and install it. Android asks you to allow installs from your browser or file manager the first time.
+<Steps>
+  <Step title="Open Publish in your project">
+    Click **Publish** at the top of the page, then open the Google Play section.
+  </Step>
+  <Step title="Click Download APK">
+    If the button is not there yet, build the app first and wait for the build to finish.
+  </Step>
+  <Step title="Install on your Android phone">
+    Open the downloaded `.apk` file on your Android phone and install it. Android asks you to allow installs from your browser or file manager the first time.
+  </Step>
+</Steps>
 
 ## Test through Google Play instead
 
-Use Google Play internal testing when you want testers to install from the Play Store, or when you want to check your Play Console setup before launch:
+Use Google Play internal testing when you want testers to install from the Play Store, or when you want to verify your Play Console setup before launch:
 
 1. Follow the [Google Play publishing guide](/submitting-to-play-store/creating-the-aab-file) to build the AAB and send it to an internal testing track.
 2. Add your own email as a tester and accept the invite link.
 3. Install the app on your phone directly from the Play Store.
 
-Internal testing releases are only visible to your testers. This is the same path you will use for the real launch, so testing this way also verifies your Play Console setup.
+Internal testing releases are only visible to your testers. This path also verifies your Play Console setup, so it is the right choice before your real launch.
 
-<CtaBanner />
+## Next steps
+
+<CardGroup>
+  <Card title="Publish to Google Play" icon="upload" href="/submitting-to-play-store/creating-the-aab-file">
+    Build the AAB and upload to Play Console.
+  </Card>
+
+  <Card title="Google Play Account" icon="user" href="/store-guides/google-play-developer-account">
+    Set up your developer account before launch.
+  </Card>
+</CardGroup>

@@ -1,53 +1,67 @@
 ---
-title: "How to add a Supabase backend to Rork"
+title: "Connect a Supabase Backend to Your Rork App"
+sidebarTitle: "Supabase"
+description: "Add a Supabase backend to your Rork project by asking in chat, or follow the manual setup to connect your existing Supabase project directly."
 ---
 
-This guide will help you create a Supabase backend for your Rork project. This includes authentication for users and also custom database schemas for functionalities in your app.
+Supabase gives your Rork app a Postgres database with Row Level Security, authentication, and storage. You can connect an existing Supabase project, or let Rork help you create one.
 
 ## The easiest way: just ask in chat
 
 You can skip the manual setup below entirely. In your project chat, ask Rork:
 
-> Add a backend to my app
+```text
+Add a backend to my app
+```
 
-or, if you specifically want Supabase under your own account:
+Or, if you specifically want Supabase under your own account:
 
-> Add a Supabase backend to my app
+```text
+Add a Supabase backend to my app
+```
 
-Rork walks you through connecting it. If the backend runs under your own Supabase account, Supabase bills you directly for it on [their pricing](https://supabase.com/pricing). If you would rather have Rork host the backend for you, see [What is Rork Cloud](/backend/rork-cloud).
+Rork walks you through connecting it. If the backend runs under your own Supabase account, Supabase bills you directly on [their pricing](https://supabase.com/pricing). If you would rather have Rork host the backend for you with no separate account, see [Rork Cloud](/backend/rork-cloud).
 
 ## Manual setup
 
-### First, go to Supabase and click new project
+<Steps>
+  <Step title="Create a new Supabase project">
+    Go to [Supabase](https://supabase.com/) and click **New project**. Name it, choose a region, and wait for it to provision.
+  </Step>
+  <Step title="Copy your project credentials">
+    In your Supabase project, go to **Project Settings → API**. Copy the **Project URL** (anon/public key) and the **Service role** key.
+  </Step>
+  <Step title="Paste them into Rork">
+    Open your Rork project and send this prompt, pasting the values you just copied:
 
-<Frame>
-  <img alt="Image" />
-</Frame>
+    ```text
+    Connect Supabase. Here are my credentials:
+    Project URL: [paste here]
+    Anon key: [paste here]
+    ```
 
-Second, copy the Publishable key and the Project link
+    Rork will instruct you on any additional setup needed.
+  </Step>
+</Steps>
 
-<Frame>
-  <img alt="Image" />
-</Frame>
+## What to do next
 
-Then, paste them into Rork with the prompt "Connect Supabase."
+Once Supabase is connected, you can ask Rork to:
 
-<Frame>
-  <img alt="Image" />
-</Frame>
+- Set up user authentication (email/password, OAuth, magic links)
+- Create database tables and RLS policies
+- Build server-side Edge Functions for private API calls
 
-Rork will then instruct you on how to set it up
+If you want to add OAuth (Sign in with Apple or Google), see [Add Sign in with Apple or Google](/integrations/backend/how-to-set-up-oauth).
 
-<Frame>
-  <img alt="Image" />
-</Frame>
+If you want to connect a third-party API via an Edge Function, see [Connect an API to your app](/features-apis/apis/how-to-connect-an-api-to-your-project).
 
-If you want to implement Auth, check out our YouTube tutorial:
+<CardGroup>
+  <Card title="Rork Cloud" icon="cloud" href="/backend/rork-cloud">
+    Prefer a backend with no separate account? Rork Cloud is built in.
+  </Card>
 
-<iframe title="YouTube video player" />
-
-Or if you want to implement an api via edge function, read our guide:
-
-[How to add an api to your app?](/features-apis/apis/how-to-connect-an-api-to-your-project)
-
-<CtaBanner />
+  <Card title="Firebase" icon="database" href="/backend/firebase">
+    Looking for a NoSQL option? Connect Firebase instead.
+  </Card>
+</CardGroup>

@@ -1,111 +1,99 @@
 ---
-title: "Turn your website into a mobile app"
+title: "Turn Your Website Into a Native Mobile App"
+sidebarTitle: "Website to Mobile"
+description: "Convert any website to an iOS or Android app with Rork. Import the GitHub repo for best results, or give Rork your URL and screenshots for any site."
 ---
 
-How to convert a website to an app for iOS and Android: import your site into Rork and get a real native mobile app, not a webview wrapper or APK converter output.
-
-You have a website (a store, a booking page, a SaaS, a community) and you want it on your customers' home screens as a real app. Rork builds a **native** iOS / Android app for your existing site: native navigation and screens, powered by the same content and backend you already run.
+You have a website (a store, a booking page, a SaaS, a community) and you want it on your customers' home screens as a real app. Rork builds a native iOS and Android app for your existing site: native navigation and screens, powered by the same content and backend you already run.
 
 ## Pick your path
 
-| Your situation                                                          | Best path                                                                                 |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| The site's code is on GitHub (or you can export it)                     | [Import the repository](#path-a-import-the-website-code)                                  |
-| Built with Lovable                                                      | [Lovable import](/import/lovable-to-mobile-app)                                           |
-| Built with another builder (Bolt, v0, Replit, FlutterFlow\...)          | [Import from any app builder](/import/import-from-any-app-builder)                        |
-| No access to the code (Wix, Squarespace, WordPress, custom agency site) | [Describe + screenshots](#path-b-no-code-access)                                          |
-| You already have a Rork web app                                         | [Add iOS / Android to the project](#add-ios-and-android-apps-to-an-existing-rork-project) |
+| Your situation | Best path |
+| --- | --- |
+| The site's code is on GitHub (or you can export it) | Import the repository |
+| Built with Lovable | [Lovable import](/import/lovable-to-mobile-app) |
+| Built with another builder (Bolt, v0, Replit, FlutterFlow) | [Import from any app builder](/import/import-from-any-app-builder) |
+| No access to the code (Wix, Squarespace, WordPress, agency site) | Describe and attach screenshots |
+| You already have a Rork web app | Add iOS/Android to the project |
 
-## Path A. Import the website code
+## Path A: Import the website code
 
 If your website's source is available, import gives the agent the most to work with:
 
-1. On [rork.com](https://rork.com), click **GitHub to Mobile App** and paste the repository URL.
-2. In your prompt (via **I have extra requests**), say what the mobile app should focus on, e.g. "make a customer app for browsing and booking; skip the admin pages".
-3. The agent inspects the source, keeps your branding and data flows, and builds native mobile screens.
+<Steps>
+  <Step title="Click GitHub to Mobile App">
+    On [rork.com](https://rork.com), click **GitHub to Mobile App** and paste the repository URL.
+  </Step>
+  <Step title="Add extra instructions">
+    Press **I have extra requests** to tell the agent what the mobile app should focus on:
 
-<Frame>
-  <img alt="The GitHub import dialog on rork.com" />
-</Frame>
+    ```text
+    Make a customer app for browsing and booking; skip the admin pages.
+    ```
+  </Step>
+  <Step title="Review the result">
+    The agent inspects the source, keeps your branding and data flows, and builds native mobile screens. Keep iterating in chat.
+  </Step>
+</Steps>
 
-## Path B. No code access
+## Path B: No code access
 
-No repository? No problem, give the agent the product instead:
+No repository? Give the agent the product instead:
 
-1. Start a new Rork project and paste your **website URL** in the prompt.
-2. Attach **screenshots** of the key pages (home, product/detail page, checkout/booking, profile).
-3. Describe what the app should do in one or two sentences, for example:
+<Steps>
+  <Step title="Start a new project">
+    On [rork.com](https://rork.com), create a new project.
+  </Step>
+  <Step title="Paste your URL and attach screenshots">
+    Paste your website URL in the prompt, attach screenshots of the key pages (home, product page, checkout, profile), and describe what the app should do:
 
-```
-Make an iOS app for my salon website https://example.com.
-Customers should browse services, pick a stylist, book a time slot,
-and get a reminder push notification before the appointment.
-```
-
-The agent designs a native app around your site's content and connects to your existing systems where possible (APIs, booking systems, payment links).
+    ```text
+    Make an iOS app for my salon website https://example.com.
+    Customers should browse services, pick a stylist, book a time slot,
+    and get a reminder push notification before the appointment.
+    ```
+  </Step>
+  <Step title="Iterate in chat">
+    The agent designs a native app around your site's content and connects to your existing systems where possible.
+  </Step>
+</Steps>
 
 ## Add iOS and Android apps to an existing Rork project
 
-Every Rork project can hold **multiple apps that share one project and backend**: iOS, Android, and web. Each platform keeps its own native codebase, and Rork updates them from the same project. If you already have (or just imported) a web app in Rork, adding native mobile is two clicks:
+Every Rork project can hold multiple apps that share one project and backend. If you already have a web app in Rork, adding native mobile is quick.
 
-### Option 1. The "+" button next to the platform switcher
+**Option 1: The + button.** In the project header, click **\+** (Add preview platform) and choose the platform.
 
-In the project header, click **+** (Add preview platform) and choose the platform to add:
+**Option 2: Project Settings.** Open **Project Settings → Add new app** → pick Android or iOS.
 
-<Frame>
-  <img alt="The add platform menu in a project: Android (Kotlin) and Web" />
-</Frame>
+**Option 3: Just ask in chat.**
 
-### Option 2. Project Settings → Add new app
-
-Open **Project Settings** (gear next to the project title) → **Add new app** → pick **Android** or **Web** (or iOS if the project started elsewhere):
-
-<Frame>
-  <img alt="Project Settings with the Add new app menu open" />
-</Frame>
-
-### Option 3. Just ask in chat
-
-```
+```text
 Add an Android version of this app
 ```
 
-The agent shows an **"Add Android app?"** confirmation, then builds the native Android (Kotlin) app reusing your project's logic and backend.
-
-Each app gets its own icon, home-screen name, and bundle identifier in Project Settings:
-
-<Frame>
-  <img alt="Per-app settings: icon, home screen name, bundle identifier" />
-</Frame>
-
 ## Why native instead of a webview wrapper?
 
-Website-to-app converter services wrap your URL in a webview. That's fast, but:
+Website-to-app converter services wrap your URL in a webview. That is fast, but:
 
-- **App Store risk**: Apple's Guideline 4.2 (Minimum Functionality) regularly rejects apps that are "just a website".
-- **No real native features**: camera metadata, offline mode, background tasks, widgets, and push notifications that reach every user need native code. On the web, iOS delivers push only after the user adds the site to the Home Screen on iOS 16.4 or later and grants permission.
-- **It never feels right**: browser scrolling, no native gestures, no home-screen-quality polish.
+- **App Store risk.** Apple's Guideline 4.2 (Minimum Functionality) regularly rejects apps that are "just a website".
+- **No real native features.** Camera metadata, offline mode, background tasks, widgets, and push notifications need native code.
+- **It never feels right.** Browser scrolling, no native gestures, no home-screen quality polish.
 
-A Rork app is compiled native code with native UI. Your website keeps doing what it does best, and the app becomes a first-class channel: same data, better experience.
+A Rork app is compiled native code with native UI.
 
 ## FAQ
 
-### Does this work with WordPress, Shopify, Wix, or Squarespace sites?
+<AccordionGroup>
+  <Accordion title="Does this work with WordPress, Shopify, Wix, or Squarespace?">
+    Yes, use Path B (describe and attach screenshots). These platforms do not expose app-ready source code. For stores, tell the agent which checkout to keep.
+  </Accordion>
 
-Yes, use [Path B](#path-b-no-code-access). These platforms don't expose app-ready source code, so give the agent your URL and screenshots. For stores, tell the agent which checkout to keep (many businesses link out to the existing web checkout in v1).
+  <Accordion title="Website-to-app converters give me an APK in minutes. Why is this different?">
+    Those converters wrap your URL in a webview shell. Rork builds real native screens. It takes longer, and the result feels like an actual app. Native screens also help you meet Apple's Guideline 4.2, which is where webview wrappers usually fail.
+  </Accordion>
 
-### Can I convert my website to an app for free?
-
-You can start for free: the **Free** plan runs Design mode, so you can import the site and explore how the app would look. To build the working app, preview it in the simulator, and run it on your phone, you need a paid plan. Publishing to the App Store / Google Play also needs the stores' own developer accounts (Apple $99/year, Google $25 one-time).
-
-### Website-to-app converters give me an APK in minutes. Why is this different?
-
-Those converters wrap your URL in a webview, so the "app" is your website in a browser shell. Rork builds real native screens. It takes longer than 60 seconds, and the result feels like an actual app. Native screens also help you meet Apple's Guideline 4.2 (Minimum Functionality), which is where webview wrappers usually fail. App Review still judges each submission on its own, so native UI alone does not guarantee approval.
-
-## Ship it
-
-- [Publish to the App Store](/store-guides/publish-app-store) from inside Rork, no Xcode.
-- [Create the Android AAB for Google Play](/submitting-to-play-store/creating-the-aab-file).
-- Keep the web version alive at your own domain: see the web publish flow in your project's **Publish** menu.
-
-<CtaBanner />
+  <Accordion title="Can I convert my website to an app for free?">
+    You can start for free: the Free plan runs Design mode. To build the working app and preview it in the simulator, you need a paid plan. Publishing to the App Store and Google Play also needs the stores' own developer accounts.
+  </Accordion>
+</AccordionGroup>

@@ -1,57 +1,43 @@
 ---
-title: "Publish Your App to the Apple App Store"
+title: "Publish Your Rork App to the Apple App Store"
+sidebarTitle: "Publish to App Store"
+description: "Submit your iPhone app to the App Store from Rork in minutes. Update your icon, sign in with Apple, and let Rork handle the build and upload."
 ---
 
-This guide will publish your Rork project to the App Store in minutes.
+Publishing an iPhone app through Rork is straightforward. Once you have your Apple Developer account, you enter a few details about your app and Rork handles the build and upload. No Xcode or Mac required.
 
-To publish your apps to the App Store, you need to set up your **Apple Developer account**.
+You need an Apple Developer account before you begin. See [Create your Apple Developer account](/store-guides/apple-developer-account).
 
-We've made a step-by-step guide so you can quickly set up your account. [Please go here to do that and come back once that's finished.](/store-guides/apple-developer-account)
+<Steps>
+  <Step title="Update your icon, app name, and bundle identifier">
+    Inside your project, click on the title at the top left. This opens **Project Settings**.
 
-> Publishing an App through Rork is incredibly simple. Once you have your developer account, you just have to enter a few details about your app and submit it. This guide will go through each step.
+    Update your **Project Name**, **bundle identifier**, and **App Icon** before submitting. Once finished, save your changes.
 
-### 1. Update Your Icon and App Name
+    <Tip>
+      You can ask Rork in chat to generate an App Icon and it will integrate it automatically.
+    </Tip>
+  </Step>
+  <Step title="Press Publish to App Store">
+    In your project, press **Publish → Publish to App Store**. A new window opens.
+  </Step>
+  <Step title="Sign in with your Apple Developer account">
+    Rork builds the app on its own machines. You do not need Xcode, a Mac, or any other build account.
+  </Step>
+  <Step title="Start submission">
+    Your project name and bundle ID are already filled in from the settings you updated earlier. Press **Start Submission**.
 
-<img alt="Image" />
+    <Warning>
+      Stay on this page while the app builds and submits. At some point Apple will ask for a verification code on one of your signed-in Apple devices. Have that device handy to enter the code into Rork when asked.
+    </Warning>
+  </Step>
+  <Step title="Check App Store Connect">
+    When the app submits, it appears in your [App Store Connect Apps Dashboard](https://appstoreconnect.apple.com).
+  </Step>
+</Steps>
 
-Inside your app, we need to update your App Icon, Name, and Variables before we submit it to the App Store. Inside your project, click on the title on the top left of your project. This will open a window with your Project Settings.
+## After submission
 
-Please update your **Project Name, bundle identifier, and App Icon** to whichever one you prefer. Once finished, **save your changes.**
+From App Store Connect, complete your product page: screenshots, description, keywords, age rating, privacy information, and pricing. Then submit for review. Apple typically reviews apps within 24 to 48 hours.
 
-**Generate a new App Icon directly in Rork**
-
-You can ask your Rork editor to generate an App Icon for you, and it will integrate it for you automatically.
-
-### 2. Press Publish to App Store
-
-Press **Publish to App Store**. Another window will open up.
-
-[_Remember, if you haven't set up an Apple Developer account. Check out our guide._](/store-guides/apple-developer-account)
-
-<Frame>
-  <img alt="Screenshot 2025-11-03 at 2.38.28 PM.png" />
-</Frame>
-
-Sign in with your Apple Developer account. Rork builds the app on its own machines, so you do not need Xcode, a Mac, or any other build account.
-
-**You should not have to do anything at this point since we already updated our names earlier. Start Submission.**
-
-<Frame>
-  <img alt="Screenshot 2025-11-03 at 2.54.18 PM.png" />
-</Frame>
-
-**Stay on this page while the app builds and submits. There will be a point where Apple asks for a code through one of your signed-in devices. Please have that ready to enter into Rork when asked.**
-
-<img alt="Screenshot 2025-11-03 at 2.54.31 PM.png" />
-
-**When the app submits, you will see it show up on App Store Connect Apps Dashboard.**
-
-[Click this link to get to it quickly](https://appstoreconnect.apple.com)
-
-### Congrats! You have successfully submitted your app to the App Store
-
-From this point, just follow all the instructions inside your app in App Store Connect to finish entering your [Product Page](https://developer.apple.com/app-store/product-page/), then you can finally submit to the App Store!
-
-You will have an app in the App Store in no time! Good luck and tweet us your app link! [@rork_app](https://x.com/rork_app)
-
-<CtaBanner />
+Good luck! Tweet your app link to [@rork_app](https://x.com/rork_app).

@@ -1,87 +1,60 @@
 ---
-title: "How to test & publish your Rork app via Xcode"
+title: "Test and Publish Your Rork App with Xcode"
+sidebarTitle: "Xcode Setup"
+description: "Connect Xcode to your Rork project via GitHub to run your iPhone app on a real device, debug natively, and publish to the App Store from your Mac."
 ---
 
-How to open your Rork iPhone app in Xcode on your Mac, run it on the simulator or your device, read the logs, and archive a build for TestFlight and the App Store.
+<Note>
+  Rork can publish to the App Store and TestFlight without Xcode. This guide is for developers who want to run the app locally, use Apple's native debugger, or make code-level changes in Xcode.
+</Note>
 
-<Info>
-  You do not need Xcode to publish. Rork builds and submits your app on its own machines, see [Publish Your App to the Apple App Store](/store-guides/publish-app-store). Use Xcode when you want to dig into logs, debug on your own device, or archive a build yourself.
-</Info>
+Xcode is Apple's native IDE for iOS development. By connecting your Rork project to Xcode through GitHub, you can run your app on a real device, inspect crashes with the debugger, and make precise code-level changes.
 
-### Why do you need Xcode?
+## What you need
 
-Xcode is great because it helps you track logs and look more in-depth at why your app may or may not work. It also allows one-click submission to the App Store and is very efficient due to its being an Apple product.
+- A Mac running macOS 13 or later
+- Xcode installed from the Mac App Store (free)
+- A paid Apple Developer account for device testing
+- Your Rork project connected to GitHub (see [GitHub Sync](/tutorials/how-to-connect-github))
 
-**Requirements**
+## Connect and run your app in Xcode
 
-- A Mac
-- Xcode installed
-- Your project connected to GitHub
-- GitHub Desktop installed (or `git` in the terminal)
-- An Apple Developer account
+<Steps>
+  <Step title="Connect your project to GitHub">
+    In your Rork project, click **Integrations → Connect with GitHub** and follow the steps. See [GitHub Sync](/tutorials/how-to-connect-github).
+  </Step>
+  <Step title="Clone the repository">
+    Open Terminal and run:
 
-### Installing Xcode
+    ```bash
+    git clone https://github.com/your-org/your-repo
+    cd your-repo
+    ```
+  </Step>
+  <Step title="Open the Xcode project">
+    In Xcode, go to **File → Open** and select the `.xcodeproj` or `.xcworkspace` file inside the repo.
+  </Step>
+  <Step title="Set up signing">
+    Select your project in the file tree, open the **Signing and Capabilities** tab, and sign in with your Apple Developer account. Xcode creates the signing certificate and provisioning profile automatically.
+  </Step>
+  <Step title="Run on a real device">
+    Connect your iPhone via USB. Select it as the run destination in the toolbar and press **Cmd + R**. Xcode builds and installs the app.
+  </Step>
+  <Step title="Debug with the console">
+    Use the Xcode console and debugger to inspect crashes, set breakpoints, and see log output in real time.
+  </Step>
+</Steps>
 
-Download Xcode from the App Store
+<Tip>
+  Changes you make in Xcode and push to GitHub flow back into the Rork editor automatically through two-way sync.
+</Tip>
 
-<img alt="Image" />
+<CardGroup>
+  <Card title="GitHub Sync" icon="github" href="/tutorials/how-to-connect-github">
+    Connect your Rork project to GitHub first.
+  </Card>
 
-Then install the command line tools and accept the license:
-
-```shellscript theme={null}
-xcode-select --install
-sudo xcodebuild -license accept
-```
-
-### Opening your Rork project in Xcode
-
-Rork iPhone apps are native Swift projects, so Xcode opens them directly. There is nothing to generate first.
-
-Connect to GitHub
-
-<img alt="Image" />
-
-Go to GitHub
-
-<img alt="Image" />
-
-Open with GitHub Desktop
-
-<img alt="Image" />
-
-Now open a terminal in the project folder and run:
-
-```shellscript theme={null}
-xed .
-```
-
-Your project opens in Xcode. If your project holds more than one app, run the command inside the iOS app folder.
-
-Xcode resolves the Swift packages your app uses on the first open. Wait for that to finish before you build.
-
-### Run the app
-
-- **Simulator:** pick a simulator in the toolbar and press the play button.
-- **Your own iPhone:** plug it in, select it in the toolbar, then press play. Your device needs Developer Mode, under **Settings → Privacy & Security → Developer Mode**.
-
-Open the debug console at the bottom of the window to read the logs while the app runs.
-
-### Publish to the App Store (via TestFlight)
-
-Navigate to "Product" and click "Archive."
-
-<img alt="Image" />
-
-When the archive finishes, the Organizer opens. Choose **Distribute App**, then **App Store Connect**, and your build appears in TestFlight.
-
-## Troubleshooting
-
-**The build fails right after opening the project.** Xcode may still be resolving Swift packages. Wait for it to finish, then build again.
-
-**A Swift package fails to resolve.** In Xcode, choose **File → Packages → Reset Package Caches**, then build again.
-
-**Stale build errors that make no sense.** Clean the build folder with **Product → Clean Build Folder** (Shift + Command + K), then build again.
-
-**Signing errors.** Open the project settings, select the target, then **Signing & Capabilities**, and pick your Apple Developer team.
-
-<CtaBanner />
+  <Card title="Publish to App Store" icon="upload" href="/store-guides/publish-app-store">
+    Ship your app from Rork without opening Xcode at all.
+  </Card>
+</CardGroup>

@@ -1,143 +1,118 @@
 {
-  "groups": [
+  "tabs": [
     {
-      "group": "Primeros pasos",
-      "pages": [
-        "es/index",
-        "es/elements-of-a-good-idea/how-to-tell-if-your-idea-is-good",
-        "es/introduction/build-your-first-app",
-        "es/introduction/introduction/prompting-strategy"
-      ]
-    },
-    {
-      "group": "Selección de plataforma",
-      "pages": [
-        "es/swift-vs-react-native/whats-the-difference",
-        "es/android/rork-android",
-        "es/web/rork-web",
-        "es/expo"
-      ]
-    },
-    {
-      "group": "Importación y migración de proyectos",
-      "pages": [
-        "es/import/lovable-to-mobile-app",
-        "es/import/import-from-github",
-        "es/import/import-from-any-app-builder",
-        "es/import/website-to-mobile-app",
-        "es/import/convert-between-platforms"
-      ]
-    },
-    {
-      "group": "Solución de problemas y funciones",
-      "pages": [
-        "es/introduction/introduction/agent-loops",
-        "es/features/agent-modes",
-        "es/features/analytics",
-        "es/features/assets",
-        "es/features/code-and-logs",
-        "es/features/index",
-        "es/features-apis/apis/how-to-connect-an-api-to-your-project",
-        "es/features/imagegeneration",
-        "es/features/secrets",
-        "es/features/undo-and-history",
-        "es/quick-start-examples/nano-banana-image-app",
-        "es/tutorials/how-to-connect-github"
-      ]
-    },
-    {
-      "group": "Configuración del backend",
-      "pages": [
-        "es/backend/index",
-        "es/backend/rork-cloud",
-        "es/integrations/backend/how-to-set-up-oauth",
-        "es/building-complex-apps/backend/what-is-rork-toolkit",
-        "es/backend/supabase",
-        "es/backend/firebase"
-      ]
-    },
-    {
-      "group": "Pruebas y publicación",
-      "pages": [
-        "es/rork-max-swift",
-        "es/rork-max/rork-max-app",
-        "es/how-to-set-up-xcode/how-to-set-up-xcoe",
-        "es/introduction/deploy-your-app"
-      ]
-    },
-    {
-      "group": "Apple App Store",
-      "pages": [
-        "es/store-guides/apple-developer-account",
-        "es/store-guides/publish-app-store",
-        "es/publishing",
-        "es/submitting-to-app-store/apple/submission-errors",
-        "es/submitting-to-app-store/apple/app-store-checklist",
-        "es/appstore-screenshots/app-store-screenshots",
-        "es/store-guides/screenshot-studio",
-        "es/store-guides/testflight-beta-testers",
-        "es/ai-app-store-reviewer",
-        "es/appstore-submission-checklist/app-review-guide",
-        "es/appstore-submission-checklist/whats-next-after-the-apps-finished"
-      ]
-    },
-    {
-      "group": "Google Play Store",
-      "pages": [
-        "es/store-guides/google-play-developer-account",
-        "es/submitting-to-play-store/apk-file",
-        "es/submitting-to-play-store/creating-the-aab-file"
-      ]
-    },
-    {
-      "group": "Monetización",
-      "pages": [
-        "es/payment-guides/revenuecat-copied-1",
-        "es/make-your-app-profitable/paywalls/how-to-add-a-free-trial",
-        "es/make-your-app-profitable/paywalls/how-to-set-up-your-policies"
-      ]
-    },
-    {
-      "group": "Guía de Rork",
-      "pages": [
-        "es/rork-playbook/playbook",
-        "es/rork-playbook/untitled-page",
-        "es/rork-playbook/untitled-page-1",
-        "es/rork-playbook/untitled-page-2",
-        "es/rork-playbook/untitled-page-3",
-        "es/rork-playbook/untitled-page-4",
-        "es/rork-playbook/scale-to-50k-month",
-        "es/rork-playbook/seven-ways-to-scale-your-app"
-      ]
-    },
-    {
-      "group": "Facturación y planes",
-      "pages": [
-        "es/introduction/subscriptions",
-        "es/billing/build-credits-vs-cloud-credits"
-      ]
-    },
-    {
-      "group": "Preguntas frecuentes",
-      "pages": [
-        "es/faq/index",
-        "es/faq/general",
-        "es/faq/technical",
-        "es/faq/integrations",
-        "es/faq/publishing",
-        "es/faq/code-export",
-        "es/faq/collaboration",
-        "es/faq/billing",
-        "es/faq/support"
-      ]
-    },
-    {
-      "group": "Más",
-      "pages": [
-        "es/request-documentation",
-        "es/development",
-        "es/quick-start-examples/share-and-clone",
-        "es/collaborate/share-a-project"
+      "tab": "Documentación",
+      "groups": [
+        {
+          "group": "Primeros pasos",
+          "icon": "rocket",
+          "pages": [
+            "es/index",
+            "es/introduction/build-your-first-app",
+            "es/elements-of-a-good-idea/how-to-tell-if-your-idea-is-good",
+            "es/introduction/subscriptions"
+          ]
+        },
+        {
+          "group": "Construyendo tu app",
+          "icon": "hammer",
+          "pages": [
+            "es/swift-vs-react-native/whats-the-difference",
+            "es/android/rork-android",
+            "es/web/rork-web",
+            "es/features/agent-modes",
+            "es/features/assets",
+            "es/features/imagegeneration",
+            "es/features/secrets",
+            "es/features/undo-and-history",
+            "es/features/code-and-logs"
+          ]
+        },
+        {
+          "group": "Backend e integraciones",
+          "icon": "database",
+          "pages": [
+            "es/backend/index",
+            "es/backend/rork-cloud",
+            "es/backend/supabase",
+            "es/backend/firebase",
+            "es/features-apis/apis/how-to-connect-an-api-to-your-project",
+            "es/integrations/backend/how-to-set-up-oauth"
+          ]
+        },
+        {
+          "group": "Importar y migrar",
+          "icon": "arrow-right-to-bracket",
+          "pages": [
+            "es/import/lovable-to-mobile-app",
+            "es/import/import-from-github",
+            "es/import/website-to-mobile-app",
+            "es/import/import-from-any-app-builder",
+            "es/import/convert-between-platforms",
+            "es/tutorials/how-to-connect-github"
+          ]
+        },
+        {
+          "group": "Publicación",
+          "icon": "cloud-arrow-up",
+          "pages": [
+            "es/store-guides/apple-developer-account",
+            "es/store-guides/publish-app-store",
+            "es/store-guides/testflight-beta-testers",
+            "es/submitting-to-app-store/apple/submission-errors",
+            "es/submitting-to-app-store/apple/app-store-checklist",
+            "es/appstore-screenshots/app-store-screenshots",
+            "es/store-guides/screenshot-studio",
+            "es/ai-app-store-reviewer",
+            "es/store-guides/google-play-developer-account",
+            "es/submitting-to-play-store/apk-file",
+            "es/submitting-to-play-store/creating-the-aab-file"
+          ]
+        },
+        {
+          "group": "Rork Max",
+          "icon": "bolt",
+          "pages": [
+            "es/rork-max/rork-max-app",
+            "es/rork-max-swift",
+            "es/how-to-set-up-xcode/how-to-set-up-xcoe"
+          ]
+        },
+        {
+          "group": "Monetización",
+          "icon": "circle-dollar-sign",
+          "pages": [
+            "es/payment-guides/revenuecat-copied-1",
+            "es/make-your-app-profitable/paywalls/how-to-add-a-free-trial",
+            "es/make-your-app-profitable/paywalls/how-to-set-up-your-policies"
+          ]
+        },
+        {
+          "group": "Crecer tu app",
+          "icon": "chart-line",
+          "pages": [
+            "es/features/analytics",
+            "es/collaborate/share-a-project",
+            "es/rork-playbook/playbook",
+            "es/rork-playbook/scale-to-50k-month",
+            "es/rork-playbook/seven-ways-to-scale-your-app"
+          ]
+        },
+        {
+          "group": "Preguntas frecuentes",
+          "icon": "circle-question",
+          "pages": [
+            "es/faq/index",
+            "es/faq/general",
+            "es/faq/technical",
+            "es/faq/publishing",
+            "es/faq/billing",
+            "es/faq/integrations",
+            "es/faq/collaboration",
+            "es/faq/code-export",
+            "es/faq/support"
+          ]
+        }
       ]
     }
   ]
